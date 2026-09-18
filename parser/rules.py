@@ -166,6 +166,14 @@ def nominal_head(token):
     preposition. Taking some as the head produced the concept "some", which no lexicon
     can draw. The quantifier is kept; only the head moves.
     """
+    # A preposition is never a nominal head. spaCy labels the "to" of a prepositional
+    # dative as the dative itself, so "gave the book to his sister" made the recipient
+    # the concept "to" -- a nonsense concept in an argument position.
+    if token.pos_ == "ADP":
+        pobj = next((c for c in token.children if c.dep_ == "pobj"), None)
+        if pobj is not None:
+            return nominal_head(pobj)
+
     if token.pos_ != "PRON" or token.lower_ not in lex.QUANTIFIERS | {"all", "none", "one"}:
         return token, None
     for child in token.children:
