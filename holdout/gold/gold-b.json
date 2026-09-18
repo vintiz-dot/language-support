@@ -1,0 +1,414 @@
+[
+  {
+    "schema_version": "0.2.0", "id": "h027",
+    "text": "He hitches Sport to this wagon, and drives over the country.",
+    "tokens": ["He", "hitches", "Sport", "to", "this", "wagon", ",", "and", "drives", "over", "the", "country", "."],
+    "entities": {
+      "e1": { "concept": "person", "person": "3sg", "gender": "male", "number": "sg", "animacy": "person" },
+      "e2": { "concept": "person", "proper_name": "Sport", "number": "sg", "animacy": "person" },
+      "e3": { "concept": "wagon", "number": "sg", "definite": true, "deixis": "proximal", "animacy": "object" },
+      "e4": { "concept": "country", "number": "sg", "definite": true, "animacy": "place" }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "hitch", "roles": { "agent": "e1", "patient": "e2" },
+        "spatial": { "figure": "e2", "relation": "to", "ground": "e3" },
+        "tense": "present", "aspect": "simple", "polarity": "positive", "mood": "declarative" },
+      { "id": "ev2", "predicate": "drive", "roles": { "agent": "e1" },
+        "spatial": { "figure": "e1", "relation": "over", "ground": "e4" },
+        "tense": "present", "aspect": "simple", "polarity": "positive", "mood": "declarative" }
+    ],
+    "discourse": [{ "id": "d1", "type": "sequence", "from": "ev1", "to": "ev2", "marker": "and" }],
+    "alignment": [
+      { "node": "e1", "tokens": [0] }, { "node": "ev1", "tokens": [1, 3] }, { "node": "e2", "tokens": [2] },
+      { "node": "e3", "tokens": [4, 5] }, { "node": "ev2", "tokens": [8, 9] }, { "node": "e4", "tokens": [10, 11] },
+      { "node": "d1", "tokens": [7] }
+    ],
+    "notes": "Sport is a horse in the source, but the sentence gives no clue, so it annotates as a proper name like any other."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h029",
+    "text": "Susie was always pleasant in her play with other children.",
+    "tokens": ["Susie", "was", "always", "pleasant", "in", "her", "play", "with", "other", "children", "."],
+    "entities": {
+      "e1": { "concept": "person", "proper_name": "Susie", "number": "sg", "animacy": "person" }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "be.attribute", "roles": { "theme": "e1" }, "attribute": "pleasant",
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "declarative" }
+    ],
+    "alignment": [{ "node": "e1", "tokens": [0] }, { "node": "ev1", "tokens": [1, 3] }],
+    "notes": "Three gaps at once: always is frequency, in her play is a circumstance rather than a location, and with other children is comitative. More than half the sentence is unrepresentable."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h031",
+    "text": "Bees live in a house that is called a hive.",
+    "tokens": ["Bees", "live", "in", "a", "house", "that", "is", "called", "a", "hive", "."],
+    "entities": {
+      "e1": { "concept": "bee", "number": "pl", "definite": false, "animacy": "animal" },
+      "e2": { "concept": "house", "number": "sg", "definite": false, "animacy": "place" }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "live", "roles": { "agent": "e1" },
+        "spatial": { "figure": "e1", "relation": "in", "ground": "e2" },
+        "tense": "present", "aspect": "simple", "polarity": "positive", "mood": "declarative" },
+      { "id": "ev2", "predicate": "call", "roles": { "patient": "e2" }, "attribute": "hive",
+        "tense": "present", "aspect": "simple", "polarity": "positive", "mood": "declarative" }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0] }, { "node": "ev1", "tokens": [1, 2] }, { "node": "e2", "tokens": [3, 4] },
+      { "node": "ev2", "tokens": [5, 6, 7, 8, 9] }
+    ],
+    "notes": "GAP: a relative clause modifies an entity, and there is no way to say so. The two events end up with no stated relation, and discourse has no type that means this one restricts that one."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h032",
+    "text": "It would make her unhappy, and would annoy her friends.",
+    "tokens": ["It", "would", "make", "her", "unhappy", ",", "and", "would", "annoy", "her", "friends", "."],
+    "entities": {
+      "e1": { "concept": "thing", "person": "3sg", "number": "sg" },
+      "e2": { "concept": "person", "person": "3sg", "gender": "female", "number": "sg", "animacy": "person" },
+      "e3": { "concept": "friend", "number": "pl", "definite": true, "animacy": "person", "possessor": "e2" }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "make", "roles": { "agent": "e1", "patient": "e2" }, "attribute": "unhappy",
+        "tense": "present", "aspect": "simple", "polarity": "positive", "mood": "declarative", "irrealis": true },
+      { "id": "ev2", "predicate": "annoy", "roles": { "agent": "e1", "patient": "e3" },
+        "tense": "present", "aspect": "simple", "polarity": "positive", "mood": "declarative", "irrealis": true }
+    ],
+    "discourse": [{ "id": "d1", "type": "addition", "from": "ev1", "to": "ev2", "marker": "and" }],
+    "alignment": [
+      { "node": "e1", "tokens": [0] }, { "node": "ev1", "tokens": [1, 2, 4] }, { "node": "e2", "tokens": [3] },
+      { "node": "ev2", "tokens": [7, 8] }, { "node": "e3", "tokens": [9, 10] }, { "node": "d1", "tokens": [6] }
+    ],
+    "notes": "GAP: would has no value in the modality enum. Marked irrealis, which captures that it is hypothetical but loses that it is conditional rather than merely possible."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h033",
+    "text": "He went along slowly, reading a book.",
+    "tokens": ["He", "went", "along", "slowly", ",", "reading", "a", "book", "."],
+    "entities": {
+      "e1": { "concept": "person", "person": "3sg", "gender": "male", "number": "sg", "animacy": "person" },
+      "e2": { "concept": "book", "number": "sg", "definite": false, "animacy": "object" }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "go", "roles": { "agent": "e1" },
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "declarative" },
+      { "id": "ev2", "predicate": "read", "roles": { "agent": "e1", "patient": "e2" }, "aspect": "progressive" }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0] }, { "node": "ev1", "tokens": [1, 2] },
+      { "node": "ev2", "tokens": [5] }, { "node": "e2", "tokens": [6, 7] }
+    ],
+    "notes": "GAP: the two events are simultaneous, and discourse has no type for that. Also slowly is manner and along is a direction with no ground."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h034",
+    "text": "Edgar soon wanted a stick which Thomas held in his hand.",
+    "tokens": ["Edgar", "soon", "wanted", "a", "stick", "which", "Thomas", "held", "in", "his", "hand", "."],
+    "entities": {
+      "e1": { "concept": "person", "proper_name": "Edgar", "number": "sg", "animacy": "person" },
+      "e2": { "concept": "stick", "number": "sg", "definite": false, "animacy": "object" },
+      "e3": { "concept": "person", "proper_name": "Thomas", "number": "sg", "animacy": "person" },
+      "e4": { "concept": "hand", "number": "sg", "definite": true, "animacy": "object", "possessor": "e3" }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "want", "roles": { "experiencer": "e1", "theme": "e2" },
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "declarative" },
+      { "id": "ev2", "predicate": "hold", "roles": { "agent": "e3", "patient": "e2" },
+        "spatial": { "figure": "e2", "relation": "in", "ground": "e4" },
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "declarative" }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0] }, { "node": "ev1", "tokens": [2] }, { "node": "e2", "tokens": [3, 4] },
+      { "node": "e3", "tokens": [6] }, { "node": "ev2", "tokens": [7, 8] }, { "node": "e4", "tokens": [9, 10] }
+    ],
+    "notes": "A second relative clause, sharing e2 between both events. That sharing is the only thing recording the link, since there is no field for modification."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h035",
+    "text": "With a sharp cry, it answered the voice outside.",
+    "tokens": ["With", "a", "sharp", "cry", ",", "it", "answered", "the", "voice", "outside", "."],
+    "entities": {
+      "e1": { "concept": "thing", "person": "3sg", "number": "sg" },
+      "e2": { "concept": "voice", "number": "sg", "definite": true, "animacy": "abstract" },
+      "e3": { "concept": "cry", "number": "sg", "definite": false, "animacy": "abstract", "modifiers": ["sharp"] }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "answer", "roles": { "agent": "e1", "patient": "e2", "instrument": "e3" },
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "declarative" }
+    ],
+    "alignment": [
+      { "node": "ev1", "tokens": [0, 6] }, { "node": "e3", "tokens": [1, 2, 3] },
+      { "node": "e1", "tokens": [5] }, { "node": "e2", "tokens": [7, 8] }
+    ],
+    "notes": "The instrument role earns its keep here. GAP: outside locates the voice, not the answering, and there is no entity-level location field."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h037",
+    "text": "Away they all marched around the room, keeping step.",
+    "tokens": ["Away", "they", "all", "marched", "around", "the", "room", ",", "keeping", "step", "."],
+    "entities": {
+      "e1": { "concept": "thing", "person": "3pl", "number": "pl", "quantifier": "all" },
+      "e2": { "concept": "room", "number": "sg", "definite": true, "animacy": "place" },
+      "e3": { "concept": "step", "number": "sg", "animacy": "abstract" }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "march", "roles": { "agent": "e1" },
+        "spatial": { "figure": "e1", "relation": "around", "ground": "e2" },
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "declarative" },
+      { "id": "ev2", "predicate": "keep", "roles": { "agent": "e1", "patient": "e3" }, "aspect": "progressive" }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [1, 2] }, { "node": "ev1", "tokens": [3, 4] }, { "node": "e2", "tokens": [5, 6] },
+      { "node": "ev2", "tokens": [8] }, { "node": "e3", "tokens": [9] }
+    ],
+    "notes": "Simultaneous again, and again unrepresentable. Away is a direction with no ground."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h038",
+    "text": "Then the leaf asked the tree what this meant.",
+    "tokens": ["Then", "the", "leaf", "asked", "the", "tree", "what", "this", "meant", "."],
+    "entities": {
+      "e1": { "concept": "leaf", "number": "sg", "definite": true, "animacy": "object" },
+      "e2": { "concept": "tree", "number": "sg", "definite": true, "animacy": "object" },
+      "e3": { "concept": "thing", "number": "sg", "deixis": "proximal", "definite": true },
+      "e4": { "concept": "thing", "number": "sg" }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "ask", "roles": { "agent": "e1", "recipient": "e2" }, "complement": "ev2",
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "declarative" },
+      { "id": "ev2", "predicate": "mean", "roles": { "agent": "e3", "theme": "e4" },
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "interrogative",
+        "question": { "type": "what", "role": "theme", "target": "e4" } }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [1, 2] }, { "node": "ev1", "tokens": [3] }, { "node": "e2", "tokens": [4, 5] },
+      { "node": "e4", "tokens": [6] }, { "node": "e3", "tokens": [7] }, { "node": "ev2", "tokens": [8] }
+    ],
+    "notes": "An embedded question inside a declarative matrix. mood sits on each event separately, which handles it, though nothing marks that the embedded one is reported rather than asked."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h039",
+    "text": "After that we had a picnic dinner in the woods.",
+    "tokens": ["After", "that", "we", "had", "a", "picnic", "dinner", "in", "the", "woods", "."],
+    "entities": {
+      "e1": { "concept": "speaker", "person": "1pl", "number": "pl", "animacy": "person" },
+      "e2": { "concept": "dinner", "number": "sg", "definite": false, "animacy": "object", "modifiers": ["picnic"] },
+      "e3": { "concept": "wood", "number": "pl", "definite": true, "animacy": "place" }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "have", "roles": { "agent": "e1", "theme": "e2" },
+        "spatial": { "figure": "e1", "relation": "in", "ground": "e3" },
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "declarative" }
+    ],
+    "alignment": [
+      { "node": "ev1", "tokens": [3, 7] }, { "node": "e1", "tokens": [2] },
+      { "node": "e2", "tokens": [4, 5, 6] }, { "node": "e3", "tokens": [8, 9] }
+    ],
+    "notes": "After that points at an event in the previous sentence, so the sequence relation has nothing to attach to. picnic is a noun used as a modifier, recorded as one."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h040",
+    "text": "You must not touch it.",
+    "tokens": ["You", "must", "not", "touch", "it", "."],
+    "entities": {
+      "e1": { "concept": "addressee", "person": "2sg", "number": "sg", "animacy": "person" },
+      "e2": { "concept": "thing", "person": "3sg", "number": "sg" }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "touch", "roles": { "agent": "e1", "patient": "e2" },
+        "tense": "present", "aspect": "simple", "polarity": "negative", "mood": "declarative", "modality": "must" }
+    ],
+    "alignment": [{ "node": "e1", "tokens": [0] }, { "node": "ev1", "tokens": [1, 2, 3] }, { "node": "e2", "tokens": [4] }],
+    "notes": "Prohibition. Negation scopes over the touching, not the obligation, and the schema gets that right by keeping polarity and modality apart."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h041",
+    "text": "Peter Pindar was a great storyteller.",
+    "tokens": ["Peter", "Pindar", "was", "a", "great", "storyteller", "."],
+    "entities": {
+      "e1": { "concept": "person", "proper_name": "Peter Pindar", "number": "sg", "animacy": "person" }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "be.attribute", "roles": { "theme": "e1" }, "attribute": "storyteller",
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "declarative" }
+    ],
+    "alignment": [{ "node": "e1", "tokens": [0, 1] }, { "node": "ev1", "tokens": [2, 3, 4, 5] }],
+    "notes": "GAP: nominal predication. attribute is a single concept id, so a great storyteller loses great and there is nowhere to put it."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h042",
+    "text": "The broad leaves were green and fresh.",
+    "tokens": ["The", "broad", "leaves", "were", "green", "and", "fresh", "."],
+    "entities": {
+      "e1": { "concept": "leaf", "number": "pl", "definite": true, "animacy": "object", "modifiers": ["broad"] }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "be.attribute", "roles": { "theme": "e1" }, "attribute": "green",
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "declarative" },
+      { "id": "ev2", "predicate": "be.attribute", "roles": { "theme": "e1" }, "attribute": "fresh",
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "declarative" }
+    ],
+    "discourse": [{ "id": "d1", "type": "addition", "from": "ev1", "to": "ev2", "marker": "and" }],
+    "alignment": [
+      { "node": "e1", "tokens": [0, 1, 2] }, { "node": "ev1", "tokens": [3, 4] },
+      { "node": "ev2", "tokens": [6] }, { "node": "d1", "tokens": [5] }
+    ],
+    "notes": "One event per attribute, because attribute holds a single concept. Defensible, but it draws two panels where a reader sees one leaf."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h043",
+    "text": "The little girls ran and opened it.",
+    "tokens": ["The", "little", "girls", "ran", "and", "opened", "it", "."],
+    "entities": {
+      "e1": { "concept": "girl", "number": "pl", "definite": true, "animacy": "person", "gender": "female", "modifiers": ["little"] },
+      "e2": { "concept": "thing", "person": "3sg", "number": "sg" }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "run", "roles": { "agent": "e1" },
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "declarative" },
+      { "id": "ev2", "predicate": "open", "roles": { "agent": "e1", "patient": "e2" },
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "declarative" }
+    ],
+    "discourse": [{ "id": "d1", "type": "sequence", "from": "ev1", "to": "ev2", "marker": "and" }],
+    "alignment": [
+      { "node": "e1", "tokens": [0, 1, 2] }, { "node": "ev1", "tokens": [3] },
+      { "node": "ev2", "tokens": [5] }, { "node": "e2", "tokens": [6] }, { "node": "d1", "tokens": [4] }
+    ],
+    "notes": "Here and is a sequence, unlike h017 and h042 where it is addition. The same word, three different readings across this set."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h044",
+    "text": "Her kitten never eats more than it needs.",
+    "tokens": ["Her", "kitten", "never", "eats", "more", "than", "it", "needs", "."],
+    "entities": {
+      "e1": { "concept": "person", "person": "3sg", "gender": "female", "number": "sg", "animacy": "person" },
+      "e2": { "concept": "kitten", "number": "sg", "definite": true, "animacy": "animal", "possessor": "e1" },
+      "e3": { "concept": "thing", "person": "3sg", "number": "sg", "coref": "e2" }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "eat", "roles": { "agent": "e2" },
+        "tense": "present", "aspect": "simple", "polarity": "negative", "mood": "declarative" },
+      { "id": "ev2", "predicate": "need", "roles": { "experiencer": "e3" },
+        "tense": "present", "aspect": "simple", "polarity": "positive", "mood": "declarative" }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0] }, { "node": "e2", "tokens": [0, 1] }, { "node": "ev1", "tokens": [2, 3] },
+      { "node": "e3", "tokens": [6] }, { "node": "ev2", "tokens": [7] }
+    ],
+    "notes": "GAP: more than compares quantities across two clauses, and degree lives on an attribute. never is frequency, recorded only as negative polarity, which loses that it is habitual rather than a single non-event."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h045",
+    "text": "I am willing to lend mine to you, Mary.",
+    "tokens": ["I", "am", "willing", "to", "lend", "mine", "to", "you", ",", "Mary", "."],
+    "entities": {
+      "e1": { "concept": "speaker", "person": "1sg", "number": "sg", "animacy": "person" },
+      "e2": { "concept": "addressee", "person": "2sg", "number": "sg", "animacy": "person" },
+      "e3": { "concept": "thing", "number": "sg", "possessor": "e1" }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "be.attribute", "roles": { "theme": "e1" }, "attribute": "willing",
+        "complement": "ev2",
+        "tense": "present", "aspect": "simple", "polarity": "positive", "mood": "declarative" },
+      { "id": "ev2", "predicate": "lend", "roles": { "agent": "e1", "theme": "e3", "recipient": "e2" }, "aspect": "simple" }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0] }, { "node": "ev1", "tokens": [1, 2] }, { "node": "ev2", "tokens": [3, 4, 6] },
+      { "node": "e3", "tokens": [5] }, { "node": "e2", "tokens": [7] }
+    ],
+    "notes": "mine is a possessive pronoun standing in for an unnamed thing, so the concept is unknown and only the possessor is recoverable. GAP: Mary is a vocative."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h046",
+    "text": "With the music of thy voice, Bid my little heart rejoice?",
+    "tokens": ["With", "the", "music", "of", "thy", "voice", ",", "Bid", "my", "little", "heart", "rejoice", "?"],
+    "entities": {
+      "e1": { "concept": "addressee", "person": "2sg", "number": "sg", "animacy": "person", "implicit": true },
+      "e2": { "concept": "voice", "number": "sg", "definite": true, "animacy": "abstract", "possessor": "e1" },
+      "e3": { "concept": "music", "number": "sg", "definite": true, "animacy": "abstract", "possessor": "e2" },
+      "e4": { "concept": "speaker", "person": "1sg", "number": "sg", "animacy": "person" },
+      "e5": { "concept": "heart", "number": "sg", "definite": true, "animacy": "object", "possessor": "e4", "modifiers": ["little"] }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "bid", "roles": { "agent": "e1", "patient": "e5", "instrument": "e3" },
+        "complement": "ev2",
+        "tense": "present", "aspect": "simple", "polarity": "positive", "mood": "imperative" },
+      { "id": "ev2", "predicate": "rejoice", "roles": { "agent": "e5" }, "aspect": "simple" }
+    ],
+    "alignment": [
+      { "node": "ev1", "tokens": [0, 7] }, { "node": "e3", "tokens": [1, 2] }, { "node": "e2", "tokens": [4, 5] },
+      { "node": "e4", "tokens": [8] }, { "node": "e5", "tokens": [8, 9, 10] }, { "node": "ev2", "tokens": [11] }
+    ],
+    "notes": "Archaic verse, kept because held-out data does not get to be tidy. Annotated imperative on the verb form despite the question mark, the same principle as h022 where grammar beat punctuation the other way."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h047",
+    "text": "He rang the doorbell.",
+    "tokens": ["He", "rang", "the", "doorbell", "."],
+    "entities": {
+      "e1": { "concept": "person", "person": "3sg", "gender": "male", "number": "sg", "animacy": "person" },
+      "e2": { "concept": "doorbell", "number": "sg", "definite": true, "animacy": "object" }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "ring", "roles": { "agent": "e1", "patient": "e2" },
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "declarative" }
+    ],
+    "alignment": [{ "node": "e1", "tokens": [0] }, { "node": "ev1", "tokens": [1] }, { "node": "e2", "tokens": [2, 3] }]
+  },
+  {
+    "schema_version": "0.2.0", "id": "h048",
+    "text": "His mother was very patient and kind.",
+    "tokens": ["His", "mother", "was", "very", "patient", "and", "kind", "."],
+    "entities": {
+      "e1": { "concept": "person", "person": "3sg", "gender": "male", "number": "sg", "animacy": "person" },
+      "e2": { "concept": "mother", "number": "sg", "definite": true, "animacy": "person", "gender": "female", "possessor": "e1" }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "be.attribute", "roles": { "theme": "e2" }, "attribute": "patient", "degree": "very",
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "declarative" },
+      { "id": "ev2", "predicate": "be.attribute", "roles": { "theme": "e2" }, "attribute": "kind",
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "declarative" }
+    ],
+    "discourse": [{ "id": "d1", "type": "addition", "from": "ev1", "to": "ev2", "marker": "and" }],
+    "alignment": [
+      { "node": "e1", "tokens": [0] }, { "node": "e2", "tokens": [0, 1] }, { "node": "ev1", "tokens": [2, 3, 4] },
+      { "node": "ev2", "tokens": [6] }, { "node": "d1", "tokens": [5] }
+    ],
+    "notes": "very plausibly scopes over both adjectives, but the split into two events forces a choice, and it is recorded only on the first."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h049",
+    "text": "He still felt sad.",
+    "tokens": ["He", "still", "felt", "sad", "."],
+    "entities": {
+      "e1": { "concept": "person", "person": "3sg", "gender": "male", "number": "sg", "animacy": "person" }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "feel", "roles": { "experiencer": "e1" }, "attribute": "sad",
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "declarative" }
+    ],
+    "alignment": [{ "node": "e1", "tokens": [0] }, { "node": "ev1", "tokens": [1, 2, 3] }],
+    "notes": "GAP: still is continuative aspect, meaning the state held before and holds now. aspect has simple, progressive and perfect, none of which says that."
+  },
+  {
+    "schema_version": "0.2.0", "id": "h050",
+    "text": "The squirrels peeped out of their holes at Bessie.",
+    "tokens": ["The", "squirrels", "peeped", "out", "of", "their", "holes", "at", "Bessie", "."],
+    "entities": {
+      "e1": { "concept": "squirrel", "number": "pl", "definite": true, "animacy": "animal" },
+      "e2": { "concept": "hole", "number": "pl", "definite": true, "animacy": "object", "possessor": "e1" },
+      "e3": { "concept": "person", "proper_name": "Bessie", "number": "sg", "animacy": "person" }
+    },
+    "events": [
+      { "id": "ev1", "predicate": "peep", "roles": { "agent": "e1", "theme": "e3" },
+        "spatial": { "figure": "e1", "relation": "out-of", "ground": "e2" },
+        "tense": "past", "aspect": "simple", "polarity": "positive", "mood": "declarative" }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0, 1] }, { "node": "ev1", "tokens": [2, 3, 4, 7] },
+      { "node": "e2", "tokens": [5, 6] }, { "node": "e3", "tokens": [8] }
+    ],
+    "notes": "Two prepositional phrases again. out of their holes is spatial; at Bessie is the target of looking, recorded as a theme so it is not lost as h007 was."
+  }
+]

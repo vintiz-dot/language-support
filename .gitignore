@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+lexicon/.arasaac-cache/
+holdout/.source-cache/
+predictions.json

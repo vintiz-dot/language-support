@@ -1,0 +1,466 @@
+[
+  {
+    "concept": "cat",
+    "count": 13,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "be.attribute",
+    "count": 12,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "person",
+    "count": 12,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "ball",
+    "count": 11,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "speaker",
+    "count": 11,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "be.located",
+    "count": 10,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "dog",
+    "count": 10,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "box",
+    "count": 9,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "big",
+    "count": 5,
+    "roles": [
+      "attribute",
+      "modifier"
+    ]
+  },
+  {
+    "concept": "book",
+    "count": 5,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "eat",
+    "count": 5,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "have",
+    "count": 5,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "addressee",
+    "count": 4,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "apple",
+    "count": 4,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "boy",
+    "count": 4,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "red",
+    "count": 4,
+    "roles": [
+      "attribute",
+      "modifier"
+    ]
+  },
+  {
+    "concept": "thing",
+    "count": 4,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "exist",
+    "count": 3,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "girl",
+    "count": 3,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "like",
+    "count": 3,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "school",
+    "count": 3,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "swim",
+    "count": 3,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "walk",
+    "count": 3,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "bird",
+    "count": 2,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "cake",
+    "count": 2,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "chase",
+    "count": 2,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "fly",
+    "count": 2,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "location",
+    "count": 2,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "open",
+    "count": 2,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "rain",
+    "count": 2,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "read",
+    "count": 2,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "see",
+    "count": 2,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "sit",
+    "count": 2,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "want",
+    "count": 2,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "bat.animal",
+    "count": 1,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "cave",
+    "count": 1,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "child",
+    "count": 1,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "cry",
+    "count": 1,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "door",
+    "count": 1,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "fall",
+    "count": 1,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "fence",
+    "count": 1,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "food",
+    "count": 1,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "friend",
+    "count": 1,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "give",
+    "count": 1,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "go",
+    "count": 1,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "hand",
+    "count": 1,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "happy",
+    "count": 1,
+    "roles": [
+      "attribute"
+    ]
+  },
+  {
+    "concept": "heavy",
+    "count": 1,
+    "roles": [
+      "attribute"
+    ]
+  },
+  {
+    "concept": "hungry",
+    "count": 1,
+    "roles": [
+      "attribute"
+    ]
+  },
+  {
+    "concept": "indoors",
+    "count": 1,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "kick",
+    "count": 1,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "look-after",
+    "count": 1,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "lost",
+    "count": 1,
+    "roles": [
+      "attribute"
+    ]
+  },
+  {
+    "concept": "mat",
+    "count": 1,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "mother",
+    "count": 1,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "new",
+    "count": 1,
+    "roles": [
+      "attribute"
+    ]
+  },
+  {
+    "concept": "park",
+    "count": 1,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "pear",
+    "count": 1,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "play",
+    "count": 1,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "put",
+    "count": 1,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "sad",
+    "count": 1,
+    "roles": [
+      "attribute"
+    ]
+  },
+  {
+    "concept": "sister",
+    "count": 1,
+    "roles": [
+      "entity"
+    ]
+  },
+  {
+    "concept": "sleep",
+    "count": 1,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "stay",
+    "count": 1,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "think",
+    "count": 1,
+    "roles": [
+      "predicate"
+    ]
+  },
+  {
+    "concept": "wash",
+    "count": 1,
+    "roles": [
+      "predicate"
+    ]
+  }
+]

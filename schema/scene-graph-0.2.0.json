@@ -1,0 +1,565 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/language-support/scene-graph-0.2.0.json",
+  "title": "Scene graph",
+  "description": "FROZEN. Schema 0.2.0, kept so the locked held-out annotations keep validating against the version they were written for. Do not edit; edit scene-graph.schema.json.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "text",
+    "tokens",
+    "entities",
+    "events"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "0.2.0"
+    },
+    "id": {
+      "type": "string",
+      "description": "Stable id, normally a hash of the normalised text."
+    },
+    "lang": {
+      "type": "string",
+      "default": "en"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tokens": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      },
+      "description": "Tokenisation that alignment indices refer to."
+    },
+    "pattern": {
+      "enum": [
+        "svo",
+        "sv_locative",
+        "existential",
+        "possession",
+        "modal_ability",
+        "preference",
+        "imperative",
+        "attribution",
+        "intransitive",
+        "ditransitive",
+        "other"
+      ],
+      "description": "Dominant sentence pattern. Diagnostic only: tense, polarity and mood are orthogonal to it."
+    },
+    "entities": {
+      "type": "object",
+      "minProperties": 0,
+      "description": "May legitimately be empty: weather and other expletive-subject sentences assert an event with no participants.",
+      "propertyNames": {
+        "$ref": "#/$defs/entityRef"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/entity"
+      }
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    },
+    "setting": {
+      "$ref": "#/$defs/setting"
+    },
+    "discourse": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/discourseRelation"
+      }
+    },
+    "alignment": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/alignmentSpan"
+      },
+      "description": "Node to token-span map. Drives highlight-on-read, tap-a-word and the fading scaffold."
+    },
+    "review": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reviewFlag"
+      },
+      "description": "Low-confidence nodes to surface in the teacher review queue."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Rationale for the gold annotation. Not consumed by renderers."
+    }
+  },
+  "$defs": {
+    "entityRef": {
+      "type": "string",
+      "pattern": "^e[0-9]+$"
+    },
+    "eventRef": {
+      "type": "string",
+      "pattern": "^ev[0-9]+$"
+    },
+    "nodeRef": {
+      "type": "string",
+      "pattern": "^(e|ev|d)[0-9]+$"
+    },
+    "discourseRef": {
+      "type": "string",
+      "pattern": "^d[0-9]+$"
+    },
+    "conceptId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*(\\.[a-z][a-z0-9-]*)*$",
+      "description": "Lemma, optionally sense-discriminated: dog, bat.animal, look-after. Resolved to art by the lexicon, never here."
+    },
+    "entity": {
+      "type": "object",
+      "required": [
+        "concept"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "concept": {
+          "$ref": "#/$defs/conceptId"
+        },
+        "number": {
+          "enum": [
+            "sg",
+            "pl",
+            "mass"
+          ]
+        },
+        "quantity": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Explicit count when stated. The renderer draws this many."
+        },
+        "quantifier": {
+          "enum": [
+            "some",
+            "many",
+            "few",
+            "all",
+            "no",
+            "any",
+            "every"
+          ]
+        },
+        "definite": {
+          "type": "boolean",
+          "description": "the vs a. Kept because article use is a known ESL failure point."
+        },
+        "proper_name": {
+          "type": "string"
+        },
+        "person": {
+          "enum": [
+            "1sg",
+            "2sg",
+            "3sg",
+            "1pl",
+            "2pl",
+            "3pl"
+          ]
+        },
+        "deixis": {
+          "enum": [
+            "proximal",
+            "distal"
+          ],
+          "description": "Speaker-relative distance. With number this covers all four demonstratives: proximal+sg is this, distal+pl is those. On an entity whose concept is location it covers here and there."
+        },
+        "gender": {
+          "enum": [
+            "male",
+            "female",
+            "unspecified"
+          ],
+          "description": "Carried only because English pronouns encode it and the figure has to be drawn. Default unspecified; never inferred from a name."
+        },
+        "animacy": {
+          "enum": [
+            "person",
+            "animal",
+            "object",
+            "place",
+            "abstract"
+          ]
+        },
+        "modifiers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/modifier"
+          }
+        },
+        "possessor": {
+          "$ref": "#/$defs/entityRef"
+        },
+        "coref": {
+          "$ref": "#/$defs/entityRef",
+          "description": "Antecedent this entity refers back to."
+        },
+        "implicit": {
+          "type": "boolean",
+          "description": "Not present in the text, such as the addressee of an imperative."
+        }
+      }
+    },
+    "event": {
+      "type": "object",
+      "required": [
+        "id",
+        "predicate"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/eventRef"
+        },
+        "predicate": {
+          "$ref": "#/$defs/conceptId"
+        },
+        "roles": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "agent": {
+              "$ref": "#/$defs/entityRef"
+            },
+            "patient": {
+              "$ref": "#/$defs/entityRef"
+            },
+            "theme": {
+              "$ref": "#/$defs/entityRef"
+            },
+            "recipient": {
+              "$ref": "#/$defs/entityRef"
+            },
+            "experiencer": {
+              "$ref": "#/$defs/entityRef"
+            },
+            "beneficiary": {
+              "$ref": "#/$defs/entityRef"
+            },
+            "instrument": {
+              "$ref": "#/$defs/entityRef"
+            }
+          }
+        },
+        "attribute": {
+          "$ref": "#/$defs/conceptId",
+          "description": "Asserted property, for attribution. Distinct from an entity modifier: the assertion is what a distractor has to contradict."
+        },
+        "complement": {
+          "$ref": "#/$defs/eventRef",
+          "description": "Embedded event, such as the reading in: I like reading."
+        },
+        "spatial": {
+          "$ref": "#/$defs/spatial"
+        },
+        "tense": {
+          "enum": [
+            "past",
+            "present",
+            "future"
+          ]
+        },
+        "aspect": {
+          "enum": [
+            "simple",
+            "progressive",
+            "perfect"
+          ]
+        },
+        "polarity": {
+          "enum": [
+            "positive",
+            "negative"
+          ]
+        },
+        "modality": {
+          "enum": [
+            "can",
+            "must",
+            "may",
+            "should",
+            "want",
+            "going-to"
+          ]
+        },
+        "mood": {
+          "enum": [
+            "declarative",
+            "interrogative",
+            "imperative"
+          ]
+        },
+        "degree": {
+          "$ref": "#/$defs/degree",
+          "description": "Degree on the asserted attribute. Requires attribute."
+        },
+        "comparand": {
+          "$ref": "#/$defs/entityRef",
+          "description": "What the theme is compared against. Requires degree comparative."
+        },
+        "irrealis": {
+          "type": "boolean",
+          "description": "The event is not asserted to happen at all: the antecedent of a condition, or an ability rather than an action. Future tense is NOT irrealis, being asserted to happen later. The renderer must not draw an irrealis event as taking place."
+        },
+        "question": {
+          "$ref": "#/$defs/question"
+        }
+      }
+    },
+    "spatial": {
+      "type": "object",
+      "required": [
+        "relation",
+        "ground"
+      ],
+      "additionalProperties": false,
+      "description": "Figure-ground relation. Prepositions are modelled explicitly because they are a primary ESL failure point and are directly renderable.",
+      "properties": {
+        "figure": {
+          "$ref": "#/$defs/entityRef"
+        },
+        "relation": {
+          "enum": [
+            "at",
+            "on",
+            "in",
+            "under",
+            "over",
+            "above",
+            "below",
+            "behind",
+            "in-front-of",
+            "next-to",
+            "between",
+            "near",
+            "into",
+            "onto",
+            "out-of",
+            "off",
+            "up",
+            "down",
+            "through",
+            "across",
+            "around",
+            "to",
+            "from"
+          ]
+        },
+        "ground": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/entityRef"
+            },
+            {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "$ref": "#/$defs/entityRef"
+              }
+            }
+          ],
+          "description": "Array form is for between, which needs two reference objects."
+        }
+      }
+    },
+    "question": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "who",
+            "what",
+            "where",
+            "when",
+            "why",
+            "how",
+            "how-many",
+            "yes-no"
+          ]
+        },
+        "role": {
+          "enum": [
+            "agent",
+            "patient",
+            "theme",
+            "recipient",
+            "experiencer",
+            "beneficiary",
+            "instrument",
+            "attribute",
+            "location",
+            "time",
+            "quantity"
+          ],
+          "description": "Which slot the question leaves empty. The renderer draws a gap there."
+        },
+        "target": {
+          "$ref": "#/$defs/nodeRef"
+        }
+      }
+    },
+    "setting": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "location": {
+          "$ref": "#/$defs/entityRef"
+        },
+        "time": {
+          "$ref": "#/$defs/conceptId"
+        },
+        "weather": {
+          "$ref": "#/$defs/conceptId"
+        }
+      }
+    },
+    "discourseRelation": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "from",
+        "to"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/discourseRef"
+        },
+        "type": {
+          "enum": [
+            "sequence",
+            "cause",
+            "contrast",
+            "addition",
+            "condition",
+            "purpose",
+            "disjunction"
+          ]
+        },
+        "from": {
+          "$ref": "#/$defs/eventRef"
+        },
+        "to": {
+          "$ref": "#/$defs/eventRef"
+        },
+        "marker": {
+          "type": "string",
+          "description": "Surface connective: then, because, but."
+        },
+        "inferred": {
+          "type": "boolean",
+          "description": "The relation is supplied by the reader rather than marked by any word. A rule parser cannot find these, and a language model will assert them confidently, so they are held apart rather than mixed into the same pool."
+        }
+      }
+    },
+    "degree": {
+      "enum": [
+        "very",
+        "too",
+        "comparative",
+        "superlative"
+      ],
+      "description": "Absent means plain. very and too are kept apart because too is excessive and renders with a problem marker, while very is merely intense. Intensity and comparison are collapsed into one enum deliberately: much bigger than is beyond this reading level, and separating them now would add a field nothing uses."
+    },
+    "modifier": {
+      "description": "A bare concept id, or an object when the modifier carries a degree. Consumers should normalise through the helper in tools rather than branching at each use.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/conceptId"
+        },
+        {
+          "type": "object",
+          "required": [
+            "concept"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "concept": {
+              "$ref": "#/$defs/conceptId"
+            },
+            "degree": {
+              "$ref": "#/$defs/degree"
+            }
+          }
+        }
+      ]
+    },
+    "alignmentSpan": {
+      "type": "object",
+      "required": [
+        "node",
+        "tokens"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "node": {
+          "$ref": "#/$defs/nodeRef"
+        },
+        "tokens": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "reviewFlag": {
+      "type": "object",
+      "required": [
+        "node",
+        "reason"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "node": {
+          "$ref": "#/$defs/nodeRef"
+        },
+        "reason": {
+          "enum": [
+            "sense_ambiguous",
+            "role_uncertain",
+            "no_symbol",
+            "idiom_suspected",
+            "out_of_vocabulary",
+            "parse_uncertain",
+            "not_depictable"
+          ]
+        },
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/conceptId"
+          }
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

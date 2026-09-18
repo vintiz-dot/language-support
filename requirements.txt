@@ -1,0 +1,6 @@
+# Runtime. Everything here runs offline after first install.
+spacy>=3.8,<4
+jsonschema>=4
+
+# The English model is not on PyPI under its own name:
+#   python -m spacy download en_core_web_sm

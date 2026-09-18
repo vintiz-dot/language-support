@@ -1,0 +1,780 @@
+[
+  {
+    "search_term": "cat",
+    "status": "exact",
+    "results": 8,
+    "pictogram_id": 7114,
+    "pictogram_keywords": [
+      "cat",
+      "pussy",
+      "kitty"
+    ],
+    "concept": "cat",
+    "uses": 13
+  },
+  {
+    "concept": "be.attribute",
+    "uses": 12,
+    "status": "structural",
+    "note": "attribution, drawn by applying the attribute to the figure"
+  },
+  {
+    "search_term": "person",
+    "status": "exact",
+    "results": 164,
+    "pictogram_id": 34560,
+    "pictogram_keywords": [
+      "person"
+    ],
+    "concept": "person",
+    "uses": 12,
+    "note": "drawn by the character rig; symbol is a fallback only"
+  },
+  {
+    "search_term": "ball",
+    "status": "exact",
+    "results": 35,
+    "pictogram_id": 3241,
+    "pictogram_keywords": [
+      "ball",
+      "beach ball",
+      "beachball"
+    ],
+    "concept": "ball",
+    "uses": 11
+  },
+  {
+    "search_term": "me",
+    "status": "exact",
+    "results": 12,
+    "pictogram_id": 6632,
+    "pictogram_keywords": [
+      "i",
+      "me",
+      "for me"
+    ],
+    "concept": "speaker",
+    "uses": 11,
+    "note": "drawn by the character rig; symbol is a fallback only"
+  },
+  {
+    "concept": "be.located",
+    "uses": 10,
+    "status": "structural",
+    "note": "locative relation, drawn by placing the figure against the ground"
+  },
+  {
+    "search_term": "dog",
+    "status": "exact",
+    "results": 25,
+    "pictogram_id": 7202,
+    "pictogram_keywords": [
+      "dog",
+      "hound"
+    ],
+    "concept": "dog",
+    "uses": 10
+  },
+  {
+    "search_term": "box",
+    "status": "exact",
+    "results": 45,
+    "pictogram_id": 24749,
+    "pictogram_keywords": [
+      "beat",
+      "ill-treated",
+      "maltreat",
+      "mistreat",
+      "batter",
+      "punch",
+      "box"
+    ],
+    "concept": "box",
+    "uses": 9
+  },
+  {
+    "search_term": "big",
+    "status": "exact",
+    "results": 6,
+    "pictogram_id": 4658,
+    "pictogram_keywords": [
+      "large",
+      "greater",
+      "greater than",
+      "big"
+    ],
+    "concept": "big",
+    "uses": 5
+  },
+  {
+    "search_term": "book",
+    "status": "exact",
+    "results": 88,
+    "pictogram_id": 25191,
+    "pictogram_keywords": [
+      "book"
+    ],
+    "concept": "book",
+    "uses": 5
+  },
+  {
+    "search_term": "eat",
+    "status": "exact",
+    "results": 13,
+    "pictogram_id": 6456,
+    "pictogram_keywords": [
+      "eat"
+    ],
+    "concept": "eat",
+    "uses": 5
+  },
+  {
+    "search_term": "have",
+    "status": "exact",
+    "results": 58,
+    "pictogram_id": 32761,
+    "pictogram_keywords": [
+      "have",
+      "hold",
+      "keep hold",
+      "own",
+      "possess",
+      "have got"
+    ],
+    "concept": "have",
+    "uses": 5
+  },
+  {
+    "search_term": "you",
+    "status": "exact",
+    "results": 53,
+    "pictogram_id": 6625,
+    "pictogram_keywords": [
+      "you"
+    ],
+    "concept": "addressee",
+    "uses": 4,
+    "note": "drawn by the character rig; symbol is a fallback only"
+  },
+  {
+    "search_term": "apple",
+    "status": "exact",
+    "results": 8,
+    "pictogram_id": 2462,
+    "pictogram_keywords": [
+      "apple"
+    ],
+    "concept": "apple",
+    "uses": 4
+  },
+  {
+    "search_term": "boy",
+    "status": "exact",
+    "results": 54,
+    "pictogram_id": 7176,
+    "pictogram_keywords": [
+      "boy",
+      "child"
+    ],
+    "concept": "boy",
+    "uses": 4
+  },
+  {
+    "search_term": "red",
+    "status": "exact",
+    "results": 28,
+    "pictogram_id": 2808,
+    "pictogram_keywords": [
+      "red"
+    ],
+    "concept": "red",
+    "uses": 4
+  },
+  {
+    "concept": "thing",
+    "uses": 4,
+    "status": "structural",
+    "note": "coreference placeholder, resolves to its antecedent's concept"
+  },
+  {
+    "concept": "exist",
+    "uses": 3,
+    "status": "structural",
+    "note": "existential, drawn by showing the things themselves"
+  },
+  {
+    "search_term": "girl",
+    "status": "exact",
+    "results": 54,
+    "pictogram_id": 27509,
+    "pictogram_keywords": [
+      "girl",
+      "kid",
+      "little girl"
+    ],
+    "concept": "girl",
+    "uses": 3
+  },
+  {
+    "search_term": "like",
+    "status": "exact",
+    "results": 23,
+    "pictogram_id": 37826,
+    "pictogram_keywords": [
+      "like",
+      "enjoy",
+      "i like that"
+    ],
+    "concept": "like",
+    "uses": 3
+  },
+  {
+    "search_term": "school",
+    "status": "exact",
+    "results": 40,
+    "pictogram_id": 32446,
+    "pictogram_keywords": [
+      "school",
+      "high school",
+      "secondary school",
+      "high school"
+    ],
+    "concept": "school",
+    "uses": 3
+  },
+  {
+    "search_term": "swim",
+    "status": "exact",
+    "results": 21,
+    "pictogram_id": 6568,
+    "pictogram_keywords": [
+      "swim"
+    ],
+    "concept": "swim",
+    "uses": 3
+  },
+  {
+    "search_term": "walk",
+    "status": "exact",
+    "results": 51,
+    "pictogram_id": 29951,
+    "pictogram_keywords": [
+      "stroll",
+      "walk",
+      "saunter",
+      "go for a walk"
+    ],
+    "concept": "walk",
+    "uses": 3
+  },
+  {
+    "search_term": "bird",
+    "status": "exact",
+    "results": 56,
+    "pictogram_id": 2490,
+    "pictogram_keywords": [
+      "bird"
+    ],
+    "concept": "bird",
+    "uses": 2
+  },
+  {
+    "search_term": "cake",
+    "status": "exact",
+    "results": 21,
+    "pictogram_id": 2502,
+    "pictogram_keywords": [
+      "cake",
+      "chocolate cake"
+    ],
+    "concept": "cake",
+    "uses": 2
+  },
+  {
+    "search_term": "chase",
+    "status": "exact",
+    "results": 3,
+    "pictogram_id": 7037,
+    "pictogram_keywords": [
+      "chase",
+      "pursue",
+      "follow"
+    ],
+    "concept": "chase",
+    "uses": 2
+  },
+  {
+    "search_term": "fly",
+    "status": "exact",
+    "results": 8,
+    "pictogram_id": 6246,
+    "pictogram_keywords": [
+      "fly",
+      "beat",
+      "flap"
+    ],
+    "concept": "fly",
+    "uses": 2
+  },
+  {
+    "concept": "location",
+    "uses": 2,
+    "status": "structural",
+    "note": "deictic placeholder for here and there, drawn as a position relative to the reader"
+  },
+  {
+    "search_term": "open",
+    "status": "exact",
+    "results": 42,
+    "pictogram_id": 24825,
+    "pictogram_keywords": [
+      "open",
+      "open up",
+      "unfold"
+    ],
+    "concept": "open",
+    "uses": 2
+  },
+  {
+    "search_term": "rain",
+    "status": "exact",
+    "results": 5,
+    "pictogram_id": 7148,
+    "pictogram_keywords": [
+      "rain"
+    ],
+    "concept": "rain",
+    "uses": 2
+  },
+  {
+    "search_term": "read",
+    "status": "exact",
+    "results": 20,
+    "pictogram_id": 7141,
+    "pictogram_keywords": [
+      "read"
+    ],
+    "concept": "read",
+    "uses": 2
+  },
+  {
+    "search_term": "see",
+    "status": "exact",
+    "results": 13,
+    "pictogram_id": 6564,
+    "pictogram_keywords": [
+      "see",
+      "look",
+      "look at",
+      "watch",
+      "observe"
+    ],
+    "concept": "see",
+    "uses": 2
+  },
+  {
+    "search_term": "sit",
+    "status": "exact",
+    "results": 40,
+    "pictogram_id": 6611,
+    "pictogram_keywords": [
+      "sit",
+      "sit down"
+    ],
+    "concept": "sit",
+    "uses": 2
+  },
+  {
+    "search_term": "want",
+    "status": "exact",
+    "results": 11,
+    "pictogram_id": 5441,
+    "pictogram_keywords": [
+      "want",
+      "wish for",
+      "i want",
+      "i want that one",
+      "wish",
+      "feel like"
+    ],
+    "concept": "want",
+    "uses": 2
+  },
+  {
+    "search_term": "bat",
+    "status": "exact",
+    "results": 7,
+    "pictogram_id": 2903,
+    "pictogram_keywords": [
+      "bat"
+    ],
+    "concept": "bat.animal",
+    "uses": 1
+  },
+  {
+    "search_term": "cave",
+    "status": "exact",
+    "results": 4,
+    "pictogram_id": 2729,
+    "pictogram_keywords": [
+      "cave",
+      "cavern"
+    ],
+    "concept": "cave",
+    "uses": 1
+  },
+  {
+    "search_term": "child",
+    "status": "exact",
+    "results": 54,
+    "pictogram_id": 7176,
+    "pictogram_keywords": [
+      "boy",
+      "child"
+    ],
+    "concept": "child",
+    "uses": 1
+  },
+  {
+    "search_term": "cry",
+    "status": "exact",
+    "results": 7,
+    "pictogram_id": 7147,
+    "pictogram_keywords": [
+      "cry",
+      "weep"
+    ],
+    "concept": "cry",
+    "uses": 1
+  },
+  {
+    "search_term": "door",
+    "status": "exact",
+    "results": 29,
+    "pictogram_id": 3244,
+    "pictogram_keywords": [
+      "door"
+    ],
+    "concept": "door",
+    "uses": 1
+  },
+  {
+    "search_term": "fall",
+    "status": "exact",
+    "results": 8,
+    "pictogram_id": 39440,
+    "pictogram_keywords": [
+      "fall"
+    ],
+    "concept": "fall",
+    "uses": 1
+  },
+  {
+    "search_term": "fence",
+    "status": "exact",
+    "results": 11,
+    "pictogram_id": 6651,
+    "pictogram_keywords": [
+      "fence",
+      "fencing"
+    ],
+    "concept": "fence",
+    "uses": 1
+  },
+  {
+    "search_term": "food",
+    "status": "exact",
+    "results": 766,
+    "pictogram_id": 4610,
+    "pictogram_keywords": [
+      "food"
+    ],
+    "concept": "food",
+    "uses": 1
+  },
+  {
+    "search_term": "friend",
+    "status": "exact",
+    "results": 6,
+    "pictogram_id": 25790,
+    "pictogram_keywords": [
+      "friend"
+    ],
+    "concept": "friend",
+    "uses": 1
+  },
+  {
+    "search_term": "give",
+    "status": "exact",
+    "results": 48,
+    "pictogram_id": 28431,
+    "pictogram_keywords": [
+      "give",
+      "offer",
+      "hand"
+    ],
+    "concept": "give",
+    "uses": 1
+  },
+  {
+    "search_term": "go",
+    "status": "exact",
+    "results": 95,
+    "pictogram_id": 8142,
+    "pictogram_keywords": [
+      "go"
+    ],
+    "concept": "go",
+    "uses": 1
+  },
+  {
+    "search_term": "hand",
+    "status": "exact",
+    "results": 48,
+    "pictogram_id": 28431,
+    "pictogram_keywords": [
+      "give",
+      "offer",
+      "hand"
+    ],
+    "concept": "hand",
+    "uses": 1
+  },
+  {
+    "search_term": "happy",
+    "status": "exact",
+    "results": 19,
+    "pictogram_id": 35533,
+    "pictogram_keywords": [
+      "happy",
+      "cheerful"
+    ],
+    "concept": "happy",
+    "uses": 1
+  },
+  {
+    "search_term": "heavy",
+    "status": "exact",
+    "results": 1,
+    "pictogram_id": 27025,
+    "pictogram_keywords": [
+      "heavy"
+    ],
+    "concept": "heavy",
+    "uses": 1
+  },
+  {
+    "search_term": "hungry",
+    "status": "exact",
+    "results": 5,
+    "pictogram_id": 4962,
+    "pictogram_keywords": [
+      "hungry"
+    ],
+    "concept": "hungry",
+    "uses": 1
+  },
+  {
+    "search_term": "inside",
+    "status": "exact",
+    "results": 3,
+    "pictogram_id": 5439,
+    "pictogram_keywords": [
+      "inside",
+      "content",
+      "within"
+    ],
+    "concept": "indoors",
+    "uses": 1
+  },
+  {
+    "search_term": "kick",
+    "status": "exact",
+    "results": 16,
+    "pictogram_id": 9017,
+    "pictogram_keywords": [
+      "stamp",
+      "kick",
+      "make a fuss",
+      "act up"
+    ],
+    "concept": "kick",
+    "uses": 1
+  },
+  {
+    "search_term": "look after",
+    "status": "exact",
+    "results": 84,
+    "pictogram_id": 11691,
+    "pictogram_keywords": [
+      "care for",
+      "take care of",
+      "look after"
+    ],
+    "concept": "look-after",
+    "uses": 1
+  },
+  {
+    "search_term": "lost",
+    "status": "exact",
+    "results": 2,
+    "pictogram_id": 36295,
+    "pictogram_keywords": [
+      "lost",
+      "disoriented"
+    ],
+    "concept": "lost",
+    "uses": 1
+  },
+  {
+    "search_term": "mat",
+    "status": "exact",
+    "results": 12,
+    "pictogram_id": 2346,
+    "pictogram_keywords": [
+      "mat",
+      "gym mat"
+    ],
+    "concept": "mat",
+    "uses": 1
+  },
+  {
+    "search_term": "mother",
+    "status": "exact",
+    "results": 3,
+    "pictogram_id": 2458,
+    "pictogram_keywords": [
+      "mum",
+      "mom",
+      "mommy",
+      "mother"
+    ],
+    "concept": "mother",
+    "uses": 1
+  },
+  {
+    "search_term": "new",
+    "status": "exact",
+    "results": 16,
+    "pictogram_id": 11316,
+    "pictogram_keywords": [
+      "new"
+    ],
+    "concept": "new",
+    "uses": 1
+  },
+  {
+    "search_term": "park",
+    "status": "exact",
+    "results": 20,
+    "pictogram_id": 5379,
+    "pictogram_keywords": [
+      "park"
+    ],
+    "concept": "park",
+    "uses": 1
+  },
+  {
+    "search_term": "pear",
+    "status": "exact",
+    "results": 6,
+    "pictogram_id": 2561,
+    "pictogram_keywords": [
+      "pear"
+    ],
+    "concept": "pear",
+    "uses": 1
+  },
+  {
+    "search_term": "play",
+    "status": "exact",
+    "results": 79,
+    "pictogram_id": 23392,
+    "pictogram_keywords": [
+      "play"
+    ],
+    "concept": "play",
+    "uses": 1
+  },
+  {
+    "search_term": "put",
+    "status": "exact",
+    "results": 130,
+    "pictogram_id": 32757,
+    "pictogram_keywords": [
+      "put",
+      "place"
+    ],
+    "concept": "put",
+    "uses": 1
+  },
+  {
+    "search_term": "sad",
+    "status": "exact",
+    "results": 5,
+    "pictogram_id": 35545,
+    "pictogram_keywords": [
+      "sad",
+      "depressed",
+      "unhappy"
+    ],
+    "concept": "sad",
+    "uses": 1
+  },
+  {
+    "search_term": "sister",
+    "status": "exact",
+    "results": 2,
+    "pictogram_id": 2422,
+    "pictogram_keywords": [
+      "sister"
+    ],
+    "concept": "sister",
+    "uses": 1
+  },
+  {
+    "search_term": "sleep",
+    "status": "exact",
+    "results": 15,
+    "pictogram_id": 6479,
+    "pictogram_keywords": [
+      "sleep"
+    ],
+    "concept": "sleep",
+    "uses": 1
+  },
+  {
+    "search_term": "stay",
+    "status": "fuzzy",
+    "results": 1,
+    "pictogram_id": 34337,
+    "pictogram_keywords": [
+      "half-stay unit",
+      "long-stay unit"
+    ],
+    "concept": "stay",
+    "uses": 1
+  },
+  {
+    "search_term": "think",
+    "status": "exact",
+    "results": 5,
+    "pictogram_id": 38796,
+    "pictogram_keywords": [
+      "think"
+    ],
+    "concept": "think",
+    "uses": 1
+  },
+  {
+    "search_term": "wash",
+    "status": "exact",
+    "results": 26,
+    "pictogram_id": 34826,
+    "pictogram_keywords": [
+      "wash"
+    ],
+    "concept": "wash",
+    "uses": 1
+  }
+]

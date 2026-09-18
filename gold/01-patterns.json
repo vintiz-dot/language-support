@@ -1,0 +1,298 @@
+[
+  {
+    "schema_version": "0.3.0",
+    "id": "g001",
+    "text": "The dog chased the cat.",
+    "tokens": ["The", "dog", "chased", "the", "cat", "."],
+    "pattern": "svo",
+    "entities": {
+      "e1": { "concept": "dog", "number": "sg", "definite": true, "animacy": "animal" },
+      "e2": { "concept": "cat", "number": "sg", "definite": true, "animacy": "animal" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "chase",
+        "roles": { "agent": "e1", "patient": "e2" },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0, 1] },
+      { "node": "ev1", "tokens": [2] },
+      { "node": "e2", "tokens": [3, 4] }
+    ],
+    "notes": "The reference case. Compare against g001b: identical entities and predicate, roles swapped. A word-substitution system cannot tell these apart, which is the whole argument for this layer."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g001b",
+    "text": "The cat chased the dog.",
+    "tokens": ["The", "cat", "chased", "the", "dog", "."],
+    "pattern": "svo",
+    "entities": {
+      "e1": { "concept": "cat", "number": "sg", "definite": true, "animacy": "animal" },
+      "e2": { "concept": "dog", "number": "sg", "definite": true, "animacy": "animal" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "chase",
+        "roles": { "agent": "e1", "patient": "e2" },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0, 1] },
+      { "node": "ev1", "tokens": [2] },
+      { "node": "e2", "tokens": [3, 4] }
+    ],
+    "notes": "Minimal pair with g001. Also the template for agent-patient swap distractors."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g002",
+    "text": "The cat sat on the mat.",
+    "tokens": ["The", "cat", "sat", "on", "the", "mat", "."],
+    "pattern": "sv_locative",
+    "entities": {
+      "e1": { "concept": "cat", "number": "sg", "definite": true, "animacy": "animal" },
+      "e2": { "concept": "mat", "number": "sg", "definite": true, "animacy": "object" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "sit",
+        "roles": { "agent": "e1" },
+        "spatial": [
+          { "figure": "e1", "relation": "on", "ground": "e2" }
+        ],
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0, 1] },
+      { "node": "ev1", "tokens": [2, 3] },
+      { "node": "e2", "tokens": [4, 5] }
+    ],
+    "notes": "The preposition is aligned to the event, not the ground entity, because it expresses the relation rather than identifying a thing."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g003",
+    "text": "There are three cats.",
+    "tokens": ["There", "are", "three", "cats", "."],
+    "pattern": "existential",
+    "entities": {
+      "e1": {
+        "concept": "cat",
+        "number": "pl",
+        "quantity": 3,
+        "definite": false,
+        "animacy": "animal"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "exist",
+        "roles": { "theme": "e1" },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      { "node": "ev1", "tokens": [0, 1] },
+      { "node": "e1", "tokens": [2, 3] }
+    ],
+    "notes": "Quantity is explicit, so the renderer draws three cats rather than one cat with a multiplier badge."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g004",
+    "text": "I have a dog.",
+    "tokens": ["I", "have", "a", "dog", "."],
+    "pattern": "possession",
+    "entities": {
+      "e1": { "concept": "speaker", "person": "1sg", "number": "sg", "animacy": "person" },
+      "e2": {
+        "concept": "dog",
+        "number": "sg",
+        "definite": false,
+        "animacy": "animal",
+        "possessor": "e1"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "have",
+        "roles": { "agent": "e1", "theme": "e2" },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0] },
+      { "node": "ev1", "tokens": [1] },
+      { "node": "e2", "tokens": [2, 3] }
+    ],
+    "notes": "Possession is recorded twice on purpose: the event asserts it, the entity property records the resulting state. The assertion is what a distractor negates; the property is what the scene draws."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g005",
+    "text": "She can swim.",
+    "tokens": ["She", "can", "swim", "."],
+    "pattern": "modal_ability",
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "female",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "swim",
+        "roles": { "agent": "e1" },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "modality": "can",
+        "mood": "declarative",
+        "irrealis": true
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0] },
+      { "node": "ev1", "tokens": [1, 2] }
+    ],
+    "review": [
+      {
+        "node": "e1",
+        "reason": "role_uncertain",
+        "score": 0.5,
+        "message": "Pronoun with no antecedent in this sentence. Needs the surrounding text or a generic figure."
+      }
+    ],
+    "notes": "Ability is not the same as doing. The renderer must not draw a plain swimming scene, or the child learns can as present progressive."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g006",
+    "text": "I like reading.",
+    "tokens": ["I", "like", "reading", "."],
+    "pattern": "preference",
+    "entities": {
+      "e1": { "concept": "speaker", "person": "1sg", "number": "sg", "animacy": "person" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "like",
+        "roles": { "experiencer": "e1" },
+        "complement": "ev2",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "read",
+        "roles": { "agent": "e1" },
+        "aspect": "progressive"
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0] },
+      { "node": "ev1", "tokens": [1] },
+      { "node": "ev2", "tokens": [2] }
+    ],
+    "notes": "Two events, one of them embedded. The scene shows the person reading plus a liking marker, not two separate panels."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g007",
+    "text": "Open your book.",
+    "tokens": ["Open", "your", "book", "."],
+    "pattern": "imperative",
+    "entities": {
+      "e1": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person",
+        "implicit": true
+      },
+      "e2": {
+        "concept": "book",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object",
+        "possessor": "e1"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "open",
+        "roles": { "agent": "e1", "patient": "e2" },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "imperative"
+      }
+    ],
+    "alignment": [
+      { "node": "ev1", "tokens": [0] },
+      { "node": "e1", "tokens": [1] },
+      { "node": "e2", "tokens": [1, 2] }
+    ],
+    "notes": "The agent is implicit as the subject but surfaces as the possessive your, so it still gets a span. Imperatives should render second person as the reader, which is the hook for student avatars."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g008",
+    "text": "The ball is red.",
+    "tokens": ["The", "ball", "is", "red", "."],
+    "pattern": "attribution",
+    "entities": {
+      "e1": { "concept": "ball", "number": "sg", "definite": true, "animacy": "object" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": { "theme": "e1" },
+        "attribute": "red",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0, 1] },
+      { "node": "ev1", "tokens": [2, 3] }
+    ],
+    "notes": "red is an event attribute, not an entity modifier. Compare g029, where red is a modifier. The difference decides whether a blue ball is a valid distractor."
+  }
+]

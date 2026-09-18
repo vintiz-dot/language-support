@@ -1,0 +1,8 @@
+{
+  "locked": "2026-09-18",
+  "note": "Annotations were written and validated before the parser was run on any held-out sentence. These hashes exist so a later change is visible. Scored once; the parser must not be tuned against this set.",
+  "files": {
+    "gold-a.json": "9ad817456176019f",
+    "gold-b.json": "60aa1820b01ae437"
+  }
+}

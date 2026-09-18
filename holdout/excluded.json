@@ -1,0 +1,20 @@
+[
+  {
+    "id": "h028",
+    "text": "Little fly, good day.",
+    "source": "mcguffey-2",
+    "reason": "a greeting with no predicate; evidence for the documented speech-act gap"
+  },
+  {
+    "id": "h030",
+    "text": "Emily Huntington Miller.",
+    "source": "mcguffey-2",
+    "reason": "a byline, not a sentence: no predicate, so it cannot be a scene graph"
+  },
+  {
+    "id": "h036",
+    "text": "A friend who was in the store said to Mr.",
+    "source": "mcguffey-2",
+    "reason": "sampling artifact: the splitter cut the sentence at the abbreviation Mr."
+  }
+]

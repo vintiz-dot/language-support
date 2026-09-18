@@ -1,0 +1,1136 @@
+{
+  "name": "Dolch",
+  "scope": "Pre-primer through second grade service words, plus the noun list. Third-grade service words are excluded as out of scope for Grade 1-2.",
+  "provenance": "Transcribed from the standard published list (Dolch, 1936), which is public domain. VERIFY against an authoritative source before relying on it: this was written out by hand and may contain transcription errors.",
+  "caveat": "The noun list is from 1936 and is culturally narrow. Entries marked dated are poor fits for a contemporary multilingual classroom and should not drive art commissioning priorities.",
+  "classes": {
+    "content": "Needs a symbol. Counted in the coverage denominator.",
+    "function": "Carried by a scene graph field rather than a picture. handled_by names the field.",
+    "gap": "Function word with no home in schema 0.1.0. These are the findings."
+  },
+  "service_words": [
+    {
+      "word": "a",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "entity.definite"
+    },
+    {
+      "word": "and",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "discourse.addition"
+    },
+    {
+      "word": "away",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "spatial.relation"
+    },
+    {
+      "word": "big",
+      "level": "pre-primer",
+      "class": "content"
+    },
+    {
+      "word": "blue",
+      "level": "pre-primer",
+      "class": "content"
+    },
+    {
+      "word": "can",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "event.modality"
+    },
+    {
+      "word": "come",
+      "level": "pre-primer",
+      "class": "content"
+    },
+    {
+      "word": "down",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "spatial.relation"
+    },
+    {
+      "word": "find",
+      "level": "pre-primer",
+      "class": "content"
+    },
+    {
+      "word": "for",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "roles.beneficiary"
+    },
+    {
+      "word": "funny",
+      "level": "pre-primer",
+      "class": "content"
+    },
+    {
+      "word": "go",
+      "level": "pre-primer",
+      "class": "content"
+    },
+    {
+      "word": "help",
+      "level": "pre-primer",
+      "class": "content"
+    },
+    {
+      "word": "here",
+      "level": "pre-primer",
+      "class": "gap",
+      "handled_by": "deixis: no field for speaker-relative location"
+    },
+    {
+      "word": "I",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "entity.person"
+    },
+    {
+      "word": "in",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "spatial.relation"
+    },
+    {
+      "word": "is",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "event.tense"
+    },
+    {
+      "word": "it",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "entity.coref"
+    },
+    {
+      "word": "jump",
+      "level": "pre-primer",
+      "class": "content"
+    },
+    {
+      "word": "little",
+      "level": "pre-primer",
+      "class": "content"
+    },
+    {
+      "word": "look",
+      "level": "pre-primer",
+      "class": "content"
+    },
+    {
+      "word": "make",
+      "level": "pre-primer",
+      "class": "content"
+    },
+    {
+      "word": "me",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "entity.person"
+    },
+    {
+      "word": "my",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "entity.possessor"
+    },
+    {
+      "word": "not",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "event.polarity"
+    },
+    {
+      "word": "one",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "entity.quantity"
+    },
+    {
+      "word": "play",
+      "level": "pre-primer",
+      "class": "content"
+    },
+    {
+      "word": "red",
+      "level": "pre-primer",
+      "class": "content"
+    },
+    {
+      "word": "run",
+      "level": "pre-primer",
+      "class": "content"
+    },
+    {
+      "word": "said",
+      "level": "pre-primer",
+      "class": "content",
+      "lemma": "say"
+    },
+    {
+      "word": "see",
+      "level": "pre-primer",
+      "class": "content"
+    },
+    {
+      "word": "the",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "entity.definite"
+    },
+    {
+      "word": "three",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "entity.quantity"
+    },
+    {
+      "word": "to",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "spatial.relation"
+    },
+    {
+      "word": "two",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "entity.quantity"
+    },
+    {
+      "word": "up",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "spatial.relation"
+    },
+    {
+      "word": "we",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "entity.person"
+    },
+    {
+      "word": "where",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "question.type"
+    },
+    {
+      "word": "yellow",
+      "level": "pre-primer",
+      "class": "content"
+    },
+    {
+      "word": "you",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "entity.person"
+    },
+    {
+      "word": "all",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "entity.quantifier"
+    },
+    {
+      "word": "am",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "event.tense"
+    },
+    {
+      "word": "are",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "event.tense"
+    },
+    {
+      "word": "at",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "spatial.relation"
+    },
+    {
+      "word": "ate",
+      "level": "primer",
+      "class": "content",
+      "lemma": "eat"
+    },
+    {
+      "word": "be",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "event.tense"
+    },
+    {
+      "word": "black",
+      "level": "primer",
+      "class": "content"
+    },
+    {
+      "word": "brown",
+      "level": "primer",
+      "class": "content"
+    },
+    {
+      "word": "but",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "discourse.contrast"
+    },
+    {
+      "word": "came",
+      "level": "primer",
+      "class": "content",
+      "lemma": "come"
+    },
+    {
+      "word": "did",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "event.tense"
+    },
+    {
+      "word": "do",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "event.tense"
+    },
+    {
+      "word": "eat",
+      "level": "primer",
+      "class": "content"
+    },
+    {
+      "word": "four",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "entity.quantity"
+    },
+    {
+      "word": "get",
+      "level": "primer",
+      "class": "content"
+    },
+    {
+      "word": "good",
+      "level": "primer",
+      "class": "content"
+    },
+    {
+      "word": "have",
+      "level": "primer",
+      "class": "content",
+      "note": "Content as a possession predicate, function as a perfect auxiliary. The parser has to disambiguate."
+    },
+    {
+      "word": "he",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "entity.person"
+    },
+    {
+      "word": "into",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "spatial.relation"
+    },
+    {
+      "word": "like",
+      "level": "primer",
+      "class": "content"
+    },
+    {
+      "word": "must",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "event.modality"
+    },
+    {
+      "word": "new",
+      "level": "primer",
+      "class": "content"
+    },
+    {
+      "word": "no",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "entity.quantifier"
+    },
+    {
+      "word": "now",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "setting.time"
+    },
+    {
+      "word": "on",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "spatial.relation"
+    },
+    {
+      "word": "our",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "entity.possessor"
+    },
+    {
+      "word": "out",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "spatial.relation"
+    },
+    {
+      "word": "please",
+      "level": "primer",
+      "class": "gap",
+      "handled_by": "speech act: no field for politeness or interactional moves"
+    },
+    {
+      "word": "pretty",
+      "level": "primer",
+      "class": "content"
+    },
+    {
+      "word": "ran",
+      "level": "primer",
+      "class": "content",
+      "lemma": "run"
+    },
+    {
+      "word": "ride",
+      "level": "primer",
+      "class": "content"
+    },
+    {
+      "word": "saw",
+      "level": "primer",
+      "class": "content",
+      "lemma": "see"
+    },
+    {
+      "word": "say",
+      "level": "primer",
+      "class": "content"
+    },
+    {
+      "word": "she",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "entity.person"
+    },
+    {
+      "word": "so",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "discourse.cause"
+    },
+    {
+      "word": "soon",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "setting.time"
+    },
+    {
+      "word": "that",
+      "level": "primer",
+      "class": "gap",
+      "handled_by": "deixis: no demonstrative field"
+    },
+    {
+      "word": "there",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "predicate exist"
+    },
+    {
+      "word": "they",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "entity.person"
+    },
+    {
+      "word": "this",
+      "level": "primer",
+      "class": "gap",
+      "handled_by": "deixis: no demonstrative field"
+    },
+    {
+      "word": "too",
+      "level": "primer",
+      "class": "gap",
+      "handled_by": "intensifier: no degree field"
+    },
+    {
+      "word": "under",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "spatial.relation"
+    },
+    {
+      "word": "want",
+      "level": "primer",
+      "class": "content"
+    },
+    {
+      "word": "was",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "event.tense"
+    },
+    {
+      "word": "well",
+      "level": "primer",
+      "class": "content"
+    },
+    {
+      "word": "went",
+      "level": "primer",
+      "class": "content",
+      "lemma": "go"
+    },
+    {
+      "word": "what",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "question.type"
+    },
+    {
+      "word": "white",
+      "level": "primer",
+      "class": "content"
+    },
+    {
+      "word": "who",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "question.type"
+    },
+    {
+      "word": "will",
+      "level": "primer",
+      "class": "function",
+      "handled_by": "event.tense"
+    },
+    {
+      "word": "with",
+      "level": "primer",
+      "class": "gap",
+      "handled_by": "comitative: no accompaniment role"
+    },
+    {
+      "word": "yes",
+      "level": "primer",
+      "class": "gap",
+      "handled_by": "speech act: no field for response moves"
+    },
+    {
+      "word": "after",
+      "level": "first",
+      "class": "function",
+      "handled_by": "discourse.sequence"
+    },
+    {
+      "word": "again",
+      "level": "first",
+      "class": "gap",
+      "handled_by": "repetition: no iterative aspect value"
+    },
+    {
+      "word": "an",
+      "level": "first",
+      "class": "function",
+      "handled_by": "entity.definite"
+    },
+    {
+      "word": "any",
+      "level": "first",
+      "class": "function",
+      "handled_by": "entity.quantifier"
+    },
+    {
+      "word": "as",
+      "level": "first",
+      "class": "gap",
+      "handled_by": "comparison: no field"
+    },
+    {
+      "word": "ask",
+      "level": "first",
+      "class": "content"
+    },
+    {
+      "word": "by",
+      "level": "first",
+      "class": "function",
+      "handled_by": "spatial.relation"
+    },
+    {
+      "word": "could",
+      "level": "first",
+      "class": "function",
+      "handled_by": "event.modality"
+    },
+    {
+      "word": "every",
+      "level": "first",
+      "class": "function",
+      "handled_by": "entity.quantifier"
+    },
+    {
+      "word": "fly",
+      "level": "first",
+      "class": "content"
+    },
+    {
+      "word": "from",
+      "level": "first",
+      "class": "function",
+      "handled_by": "spatial.relation"
+    },
+    {
+      "word": "give",
+      "level": "first",
+      "class": "content"
+    },
+    {
+      "word": "going",
+      "level": "first",
+      "class": "function",
+      "handled_by": "event.modality"
+    },
+    {
+      "word": "had",
+      "level": "first",
+      "class": "function",
+      "handled_by": "event.tense"
+    },
+    {
+      "word": "has",
+      "level": "first",
+      "class": "function",
+      "handled_by": "event.tense"
+    },
+    {
+      "word": "her",
+      "level": "first",
+      "class": "function",
+      "handled_by": "entity.possessor"
+    },
+    {
+      "word": "him",
+      "level": "first",
+      "class": "function",
+      "handled_by": "entity.person"
+    },
+    {
+      "word": "his",
+      "level": "first",
+      "class": "function",
+      "handled_by": "entity.possessor"
+    },
+    {
+      "word": "how",
+      "level": "first",
+      "class": "function",
+      "handled_by": "question.type"
+    },
+    {
+      "word": "just",
+      "level": "first",
+      "class": "gap",
+      "handled_by": "focus particle: no field"
+    },
+    {
+      "word": "know",
+      "level": "first",
+      "class": "content"
+    },
+    {
+      "word": "let",
+      "level": "first",
+      "class": "gap",
+      "handled_by": "hortative: mood enum has no let's value"
+    },
+    {
+      "word": "live",
+      "level": "first",
+      "class": "content"
+    },
+    {
+      "word": "may",
+      "level": "first",
+      "class": "function",
+      "handled_by": "event.modality"
+    },
+    {
+      "word": "of",
+      "level": "first",
+      "class": "function",
+      "handled_by": "entity.possessor"
+    },
+    {
+      "word": "old",
+      "level": "first",
+      "class": "content"
+    },
+    {
+      "word": "once",
+      "level": "first",
+      "class": "function",
+      "handled_by": "setting.time"
+    },
+    {
+      "word": "open",
+      "level": "first",
+      "class": "content"
+    },
+    {
+      "word": "over",
+      "level": "first",
+      "class": "function",
+      "handled_by": "spatial.relation"
+    },
+    {
+      "word": "put",
+      "level": "first",
+      "class": "content"
+    },
+    {
+      "word": "round",
+      "level": "first",
+      "class": "function",
+      "handled_by": "spatial.relation"
+    },
+    {
+      "word": "some",
+      "level": "first",
+      "class": "function",
+      "handled_by": "entity.quantifier"
+    },
+    {
+      "word": "stop",
+      "level": "first",
+      "class": "content"
+    },
+    {
+      "word": "take",
+      "level": "first",
+      "class": "content"
+    },
+    {
+      "word": "thank",
+      "level": "first",
+      "class": "gap",
+      "handled_by": "speech act: no field for politeness"
+    },
+    {
+      "word": "them",
+      "level": "first",
+      "class": "function",
+      "handled_by": "entity.person"
+    },
+    {
+      "word": "then",
+      "level": "first",
+      "class": "function",
+      "handled_by": "discourse.sequence"
+    },
+    {
+      "word": "think",
+      "level": "first",
+      "class": "content"
+    },
+    {
+      "word": "walk",
+      "level": "first",
+      "class": "content"
+    },
+    {
+      "word": "were",
+      "level": "first",
+      "class": "function",
+      "handled_by": "event.tense"
+    },
+    {
+      "word": "when",
+      "level": "first",
+      "class": "function",
+      "handled_by": "question.type"
+    },
+    {
+      "word": "always",
+      "level": "second",
+      "class": "gap",
+      "handled_by": "frequency: no habitual or frequency field"
+    },
+    {
+      "word": "around",
+      "level": "second",
+      "class": "function",
+      "handled_by": "spatial.relation"
+    },
+    {
+      "word": "because",
+      "level": "second",
+      "class": "function",
+      "handled_by": "discourse.cause"
+    },
+    {
+      "word": "been",
+      "level": "second",
+      "class": "function",
+      "handled_by": "event.aspect"
+    },
+    {
+      "word": "before",
+      "level": "second",
+      "class": "function",
+      "handled_by": "discourse.sequence"
+    },
+    {
+      "word": "best",
+      "level": "second",
+      "class": "gap",
+      "handled_by": "superlative: no degree field"
+    },
+    {
+      "word": "both",
+      "level": "second",
+      "class": "function",
+      "handled_by": "entity.quantifier"
+    },
+    {
+      "word": "buy",
+      "level": "second",
+      "class": "content"
+    },
+    {
+      "word": "call",
+      "level": "second",
+      "class": "content"
+    },
+    {
+      "word": "cold",
+      "level": "second",
+      "class": "content"
+    },
+    {
+      "word": "does",
+      "level": "second",
+      "class": "function",
+      "handled_by": "event.tense"
+    },
+    {
+      "word": "don't",
+      "level": "second",
+      "class": "function",
+      "handled_by": "event.polarity"
+    },
+    {
+      "word": "fast",
+      "level": "second",
+      "class": "content"
+    },
+    {
+      "word": "first",
+      "level": "second",
+      "class": "function",
+      "handled_by": "discourse.sequence"
+    },
+    {
+      "word": "five",
+      "level": "second",
+      "class": "function",
+      "handled_by": "entity.quantity"
+    },
+    {
+      "word": "found",
+      "level": "second",
+      "class": "content",
+      "lemma": "find"
+    },
+    {
+      "word": "gave",
+      "level": "second",
+      "class": "content",
+      "lemma": "give"
+    },
+    {
+      "word": "goes",
+      "level": "second",
+      "class": "content",
+      "lemma": "go"
+    },
+    {
+      "word": "green",
+      "level": "second",
+      "class": "content"
+    },
+    {
+      "word": "its",
+      "level": "second",
+      "class": "function",
+      "handled_by": "entity.possessor"
+    },
+    {
+      "word": "made",
+      "level": "second",
+      "class": "content",
+      "lemma": "make"
+    },
+    {
+      "word": "many",
+      "level": "second",
+      "class": "function",
+      "handled_by": "entity.quantifier"
+    },
+    {
+      "word": "off",
+      "level": "second",
+      "class": "function",
+      "handled_by": "spatial.relation"
+    },
+    {
+      "word": "or",
+      "level": "second",
+      "class": "gap",
+      "handled_by": "disjunction: discourse has no or relation type"
+    },
+    {
+      "word": "pull",
+      "level": "second",
+      "class": "content"
+    },
+    {
+      "word": "read",
+      "level": "second",
+      "class": "content"
+    },
+    {
+      "word": "right",
+      "level": "second",
+      "class": "content"
+    },
+    {
+      "word": "sing",
+      "level": "second",
+      "class": "content"
+    },
+    {
+      "word": "sit",
+      "level": "second",
+      "class": "content"
+    },
+    {
+      "word": "sleep",
+      "level": "second",
+      "class": "content"
+    },
+    {
+      "word": "tell",
+      "level": "second",
+      "class": "content"
+    },
+    {
+      "word": "their",
+      "level": "second",
+      "class": "function",
+      "handled_by": "entity.possessor"
+    },
+    {
+      "word": "these",
+      "level": "second",
+      "class": "gap",
+      "handled_by": "deixis: no demonstrative field"
+    },
+    {
+      "word": "those",
+      "level": "second",
+      "class": "gap",
+      "handled_by": "deixis: no demonstrative field"
+    },
+    {
+      "word": "upon",
+      "level": "second",
+      "class": "function",
+      "handled_by": "spatial.relation"
+    },
+    {
+      "word": "us",
+      "level": "second",
+      "class": "function",
+      "handled_by": "entity.person"
+    },
+    {
+      "word": "use",
+      "level": "second",
+      "class": "content"
+    },
+    {
+      "word": "very",
+      "level": "second",
+      "class": "gap",
+      "handled_by": "intensifier: no degree field"
+    },
+    {
+      "word": "wash",
+      "level": "second",
+      "class": "content"
+    },
+    {
+      "word": "which",
+      "level": "second",
+      "class": "function",
+      "handled_by": "question.type"
+    },
+    {
+      "word": "why",
+      "level": "second",
+      "class": "function",
+      "handled_by": "question.type"
+    },
+    {
+      "word": "wish",
+      "level": "second",
+      "class": "content"
+    },
+    {
+      "word": "work",
+      "level": "second",
+      "class": "content"
+    },
+    {
+      "word": "would",
+      "level": "second",
+      "class": "function",
+      "handled_by": "event.modality"
+    },
+    {
+      "word": "write",
+      "level": "second",
+      "class": "content"
+    },
+    {
+      "word": "your",
+      "level": "second",
+      "class": "function",
+      "handled_by": "entity.possessor"
+    }
+  ],
+  "nouns": [
+    "apple",
+    "baby",
+    "back",
+    "ball",
+    "bear",
+    "bed",
+    "bell",
+    "bird",
+    "birthday",
+    "boat",
+    "box",
+    "boy",
+    "bread",
+    "brother",
+    "cake",
+    "car",
+    "cat",
+    "chair",
+    "chicken",
+    "children",
+    "coat",
+    "corn",
+    "cow",
+    "day",
+    "dog",
+    "doll",
+    "door",
+    "duck",
+    "egg",
+    "eye",
+    "farm",
+    "farmer",
+    "father",
+    "feet",
+    "fire",
+    "fish",
+    "floor",
+    "flower",
+    "game",
+    "garden",
+    "girl",
+    "grass",
+    "ground",
+    "hand",
+    "head",
+    "hill",
+    "home",
+    "horse",
+    "house",
+    "leg",
+    "letter",
+    "man",
+    "men",
+    "milk",
+    "money",
+    "morning",
+    "mother",
+    "name",
+    "nest",
+    "night",
+    "paper",
+    "party",
+    "picture",
+    "pig",
+    "rabbit",
+    "rain",
+    "ring",
+    "robin",
+    "school",
+    "seed",
+    "sheep",
+    "shoe",
+    "sister",
+    "snow",
+    "song",
+    "squirrel",
+    "stick",
+    "street",
+    "sun",
+    "table",
+    "time",
+    "top",
+    "toy",
+    "tree",
+    "watch",
+    "water",
+    "wind",
+    "window",
+    "wood"
+  ],
+  "nouns_dated": {
+    "note": "Present in the 1936 list but poor fits for a contemporary multilingual classroom. Excluded from the noun array above rather than silently carried forward.",
+    "words": [
+      "Christmas",
+      "Santa Claus",
+      "kitty",
+      "good-bye"
+    ]
+  },
+  "nouns_abstract": {
+    "note": "In the 1936 noun list but not depictable. Carried structurally or by fallback, and excluded from the coverage denominator.",
+    "words": {
+      "thing": "placeholder; resolves to its antecedent via entity.coref",
+      "way": "abstract and polysemous; the spatial sense is a spatial.relation"
+    }
+  }
+}

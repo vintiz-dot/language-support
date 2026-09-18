@@ -1,0 +1,4 @@
+-r requirements.txt
+
+# Development only. Nothing here is needed to parse a sentence.
+pytest>=8

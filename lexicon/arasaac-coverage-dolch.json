@@ -1,0 +1,1935 @@
+[
+  {
+    "search_term": "big",
+    "status": "exact",
+    "results": 6,
+    "pictogram_id": 4658,
+    "pictogram_keywords": [
+      "large",
+      "greater",
+      "greater than",
+      "big"
+    ],
+    "word": "big",
+    "source": "service"
+  },
+  {
+    "search_term": "blue",
+    "status": "exact",
+    "results": 5,
+    "pictogram_id": 4869,
+    "pictogram_keywords": [
+      "blue"
+    ],
+    "word": "blue",
+    "source": "service"
+  },
+  {
+    "search_term": "come",
+    "status": "exact",
+    "results": 17,
+    "pictogram_id": 32669,
+    "pictogram_keywords": [
+      "come",
+      "call",
+      "send for"
+    ],
+    "word": "come",
+    "source": "service"
+  },
+  {
+    "search_term": "find",
+    "status": "exact",
+    "results": 11,
+    "pictogram_id": 24742,
+    "pictogram_keywords": [
+      "find",
+      "turn up",
+      "appear",
+      "locate"
+    ],
+    "word": "find",
+    "source": "service"
+  },
+  {
+    "search_term": "funny",
+    "status": "exact",
+    "results": 7,
+    "pictogram_id": 24733,
+    "pictogram_keywords": [
+      "fun",
+      "funny"
+    ],
+    "word": "funny",
+    "source": "service"
+  },
+  {
+    "search_term": "go",
+    "status": "exact",
+    "results": 95,
+    "pictogram_id": 8142,
+    "pictogram_keywords": [
+      "go"
+    ],
+    "word": "go",
+    "source": "service"
+  },
+  {
+    "search_term": "help",
+    "status": "exact",
+    "results": 14,
+    "pictogram_id": 32648,
+    "pictogram_keywords": [
+      "help",
+      "aid",
+      "assist"
+    ],
+    "word": "help",
+    "source": "service"
+  },
+  {
+    "search_term": "jump",
+    "status": "exact",
+    "results": 26,
+    "pictogram_id": 39052,
+    "pictogram_keywords": [
+      "jump",
+      "leap",
+      "hop"
+    ],
+    "word": "jump",
+    "source": "service"
+  },
+  {
+    "search_term": "little",
+    "status": "exact",
+    "results": 23,
+    "pictogram_id": 25839,
+    "pictogram_keywords": [
+      "short",
+      "little",
+      "smaller",
+      "littler"
+    ],
+    "word": "little",
+    "source": "service"
+  },
+  {
+    "search_term": "look",
+    "status": "exact",
+    "results": 24,
+    "pictogram_id": 6564,
+    "pictogram_keywords": [
+      "see",
+      "look",
+      "look at",
+      "watch",
+      "observe"
+    ],
+    "word": "look",
+    "source": "service"
+  },
+  {
+    "search_term": "make",
+    "status": "exact",
+    "results": 38,
+    "pictogram_id": 32751,
+    "pictogram_keywords": [
+      "make",
+      "do"
+    ],
+    "word": "make",
+    "source": "service"
+  },
+  {
+    "search_term": "play",
+    "status": "exact",
+    "results": 79,
+    "pictogram_id": 23392,
+    "pictogram_keywords": [
+      "play"
+    ],
+    "word": "play",
+    "source": "service"
+  },
+  {
+    "search_term": "red",
+    "status": "exact",
+    "results": 28,
+    "pictogram_id": 2808,
+    "pictogram_keywords": [
+      "red"
+    ],
+    "word": "red",
+    "source": "service"
+  },
+  {
+    "search_term": "run",
+    "status": "exact",
+    "results": 19,
+    "pictogram_id": 6465,
+    "pictogram_keywords": [
+      "run"
+    ],
+    "word": "run",
+    "source": "service"
+  },
+  {
+    "search_term": "say",
+    "status": "exact",
+    "results": 7,
+    "pictogram_id": 9693,
+    "pictogram_keywords": [
+      "say",
+      "express",
+      "tell",
+      "verbalize"
+    ],
+    "word": "said",
+    "source": "service"
+  },
+  {
+    "search_term": "see",
+    "status": "exact",
+    "results": 13,
+    "pictogram_id": 6564,
+    "pictogram_keywords": [
+      "see",
+      "look",
+      "look at",
+      "watch",
+      "observe"
+    ],
+    "word": "see",
+    "source": "service"
+  },
+  {
+    "search_term": "yellow",
+    "status": "exact",
+    "results": 7,
+    "pictogram_id": 2648,
+    "pictogram_keywords": [
+      "yellow"
+    ],
+    "word": "yellow",
+    "source": "service"
+  },
+  {
+    "search_term": "eat",
+    "status": "exact",
+    "results": 13,
+    "pictogram_id": 6456,
+    "pictogram_keywords": [
+      "eat"
+    ],
+    "word": "ate",
+    "source": "service"
+  },
+  {
+    "search_term": "black",
+    "status": "exact",
+    "results": 16,
+    "pictogram_id": 2886,
+    "pictogram_keywords": [
+      "black"
+    ],
+    "word": "black",
+    "source": "service"
+  },
+  {
+    "search_term": "brown",
+    "status": "exact",
+    "results": 9,
+    "pictogram_id": 2923,
+    "pictogram_keywords": [
+      "brown"
+    ],
+    "word": "brown",
+    "source": "service"
+  },
+  {
+    "search_term": "come",
+    "status": "exact",
+    "results": 17,
+    "pictogram_id": 32669,
+    "pictogram_keywords": [
+      "come",
+      "call",
+      "send for"
+    ],
+    "word": "came",
+    "source": "service"
+  },
+  {
+    "search_term": "eat",
+    "status": "exact",
+    "results": 13,
+    "pictogram_id": 6456,
+    "pictogram_keywords": [
+      "eat"
+    ],
+    "word": "eat",
+    "source": "service"
+  },
+  {
+    "search_term": "get",
+    "status": "exact",
+    "results": 118,
+    "pictogram_id": 24208,
+    "pictogram_keywords": [
+      "get",
+      "obtain",
+      "reach"
+    ],
+    "word": "get",
+    "source": "service"
+  },
+  {
+    "search_term": "good",
+    "status": "exact",
+    "results": 15,
+    "pictogram_id": 4581,
+    "pictogram_keywords": [
+      "good",
+      "saintly",
+      "blessed"
+    ],
+    "word": "good",
+    "source": "service"
+  },
+  {
+    "search_term": "have",
+    "status": "exact",
+    "results": 58,
+    "pictogram_id": 32761,
+    "pictogram_keywords": [
+      "have",
+      "hold",
+      "keep hold",
+      "own",
+      "possess",
+      "have got"
+    ],
+    "word": "have",
+    "source": "service"
+  },
+  {
+    "search_term": "like",
+    "status": "exact",
+    "results": 23,
+    "pictogram_id": 37826,
+    "pictogram_keywords": [
+      "like",
+      "enjoy",
+      "i like that"
+    ],
+    "word": "like",
+    "source": "service"
+  },
+  {
+    "search_term": "new",
+    "status": "exact",
+    "results": 16,
+    "pictogram_id": 11316,
+    "pictogram_keywords": [
+      "new"
+    ],
+    "word": "new",
+    "source": "service"
+  },
+  {
+    "search_term": "pretty",
+    "status": "exact",
+    "results": 2,
+    "pictogram_id": 11194,
+    "pictogram_keywords": [
+      "pretty",
+      "beautiful",
+      "cute"
+    ],
+    "word": "pretty",
+    "source": "service"
+  },
+  {
+    "search_term": "run",
+    "status": "exact",
+    "results": 19,
+    "pictogram_id": 6465,
+    "pictogram_keywords": [
+      "run"
+    ],
+    "word": "ran",
+    "source": "service"
+  },
+  {
+    "search_term": "ride",
+    "status": "exact",
+    "results": 25,
+    "pictogram_id": 6045,
+    "pictogram_keywords": [
+      "ride a bike",
+      "bike",
+      "ride"
+    ],
+    "word": "ride",
+    "source": "service"
+  },
+  {
+    "search_term": "see",
+    "status": "exact",
+    "results": 13,
+    "pictogram_id": 6564,
+    "pictogram_keywords": [
+      "see",
+      "look",
+      "look at",
+      "watch",
+      "observe"
+    ],
+    "word": "saw",
+    "source": "service"
+  },
+  {
+    "search_term": "say",
+    "status": "exact",
+    "results": 7,
+    "pictogram_id": 9693,
+    "pictogram_keywords": [
+      "say",
+      "express",
+      "tell",
+      "verbalize"
+    ],
+    "word": "say",
+    "source": "service"
+  },
+  {
+    "search_term": "want",
+    "status": "exact",
+    "results": 11,
+    "pictogram_id": 5441,
+    "pictogram_keywords": [
+      "want",
+      "wish for",
+      "i want",
+      "i want that one",
+      "wish",
+      "feel like"
+    ],
+    "word": "want",
+    "source": "service"
+  },
+  {
+    "search_term": "well",
+    "status": "exact",
+    "results": 12,
+    "pictogram_id": 5397,
+    "pictogram_keywords": [
+      "well",
+      "ok",
+      "okay",
+      "fine",
+      "all right",
+      "right"
+    ],
+    "word": "well",
+    "source": "service"
+  },
+  {
+    "search_term": "go",
+    "status": "exact",
+    "results": 95,
+    "pictogram_id": 8142,
+    "pictogram_keywords": [
+      "go"
+    ],
+    "word": "went",
+    "source": "service"
+  },
+  {
+    "search_term": "white",
+    "status": "exact",
+    "results": 18,
+    "pictogram_id": 8043,
+    "pictogram_keywords": [
+      "white"
+    ],
+    "word": "white",
+    "source": "service"
+  },
+  {
+    "search_term": "ask",
+    "status": "exact",
+    "results": 15,
+    "pictogram_id": 25062,
+    "pictogram_keywords": [
+      "order",
+      "ask",
+      "task",
+      "request",
+      "order"
+    ],
+    "word": "ask",
+    "source": "service"
+  },
+  {
+    "search_term": "fly",
+    "status": "exact",
+    "results": 8,
+    "pictogram_id": 6246,
+    "pictogram_keywords": [
+      "fly",
+      "beat",
+      "flap"
+    ],
+    "word": "fly",
+    "source": "service"
+  },
+  {
+    "search_term": "give",
+    "status": "exact",
+    "results": 48,
+    "pictogram_id": 28431,
+    "pictogram_keywords": [
+      "give",
+      "offer",
+      "hand"
+    ],
+    "word": "give",
+    "source": "service"
+  },
+  {
+    "search_term": "know",
+    "status": "exact",
+    "results": 7,
+    "pictogram_id": 16885,
+    "pictogram_keywords": [
+      "know",
+      "raise hand"
+    ],
+    "word": "know",
+    "source": "service"
+  },
+  {
+    "search_term": "live",
+    "status": "exact",
+    "results": 8,
+    "pictogram_id": 11605,
+    "pictogram_keywords": [
+      "live",
+      "reside"
+    ],
+    "word": "live",
+    "source": "service"
+  },
+  {
+    "search_term": "old",
+    "status": "exact",
+    "results": 17,
+    "pictogram_id": 11394,
+    "pictogram_keywords": [
+      "old"
+    ],
+    "word": "old",
+    "source": "service"
+  },
+  {
+    "search_term": "open",
+    "status": "exact",
+    "results": 42,
+    "pictogram_id": 24825,
+    "pictogram_keywords": [
+      "open",
+      "open up",
+      "unfold"
+    ],
+    "word": "open",
+    "source": "service"
+  },
+  {
+    "search_term": "put",
+    "status": "exact",
+    "results": 130,
+    "pictogram_id": 32757,
+    "pictogram_keywords": [
+      "put",
+      "place"
+    ],
+    "word": "put",
+    "source": "service"
+  },
+  {
+    "search_term": "stop",
+    "status": "exact",
+    "results": 26,
+    "pictogram_id": 7196,
+    "pictogram_keywords": [
+      "stop"
+    ],
+    "word": "stop",
+    "source": "service"
+  },
+  {
+    "search_term": "take",
+    "status": "exact",
+    "results": 156,
+    "pictogram_id": 10148,
+    "pictogram_keywords": [
+      "take",
+      "pick up"
+    ],
+    "word": "take",
+    "source": "service"
+  },
+  {
+    "search_term": "think",
+    "status": "exact",
+    "results": 5,
+    "pictogram_id": 38796,
+    "pictogram_keywords": [
+      "think"
+    ],
+    "word": "think",
+    "source": "service"
+  },
+  {
+    "search_term": "walk",
+    "status": "exact",
+    "results": 51,
+    "pictogram_id": 29951,
+    "pictogram_keywords": [
+      "stroll",
+      "walk",
+      "saunter",
+      "go for a walk"
+    ],
+    "word": "walk",
+    "source": "service"
+  },
+  {
+    "search_term": "buy",
+    "status": "exact",
+    "results": 6,
+    "pictogram_id": 8986,
+    "pictogram_keywords": [
+      "buy",
+      "go shopping",
+      "do the shopping",
+      "shop"
+    ],
+    "word": "buy",
+    "source": "service"
+  },
+  {
+    "search_term": "call",
+    "status": "exact",
+    "results": 15,
+    "pictogram_id": 32669,
+    "pictogram_keywords": [
+      "come",
+      "call",
+      "send for"
+    ],
+    "word": "call",
+    "source": "service"
+  },
+  {
+    "search_term": "cold",
+    "status": "exact",
+    "results": 46,
+    "pictogram_id": 4652,
+    "pictogram_keywords": [
+      "cold"
+    ],
+    "word": "cold",
+    "source": "service"
+  },
+  {
+    "search_term": "fast",
+    "status": "exact",
+    "results": 4,
+    "pictogram_id": 5306,
+    "pictogram_keywords": [
+      "quick",
+      "swift",
+      "prompt",
+      "quickly",
+      "speedy",
+      "fast"
+    ],
+    "word": "fast",
+    "source": "service"
+  },
+  {
+    "search_term": "find",
+    "status": "exact",
+    "results": 11,
+    "pictogram_id": 24742,
+    "pictogram_keywords": [
+      "find",
+      "turn up",
+      "appear",
+      "locate"
+    ],
+    "word": "found",
+    "source": "service"
+  },
+  {
+    "search_term": "give",
+    "status": "exact",
+    "results": 48,
+    "pictogram_id": 28431,
+    "pictogram_keywords": [
+      "give",
+      "offer",
+      "hand"
+    ],
+    "word": "gave",
+    "source": "service"
+  },
+  {
+    "search_term": "go",
+    "status": "exact",
+    "results": 95,
+    "pictogram_id": 8142,
+    "pictogram_keywords": [
+      "go"
+    ],
+    "word": "goes",
+    "source": "service"
+  },
+  {
+    "search_term": "green",
+    "status": "exact",
+    "results": 26,
+    "pictogram_id": 4887,
+    "pictogram_keywords": [
+      "green",
+      "dark green",
+      "dark-green"
+    ],
+    "word": "green",
+    "source": "service"
+  },
+  {
+    "search_term": "make",
+    "status": "exact",
+    "results": 38,
+    "pictogram_id": 32751,
+    "pictogram_keywords": [
+      "make",
+      "do"
+    ],
+    "word": "made",
+    "source": "service"
+  },
+  {
+    "search_term": "pull",
+    "status": "fuzzy",
+    "results": 19,
+    "pictogram_id": 36601,
+    "pictogram_keywords": [
+      "pull the chain",
+      "flush the toilet"
+    ],
+    "word": "pull",
+    "source": "service"
+  },
+  {
+    "search_term": "read",
+    "status": "exact",
+    "results": 20,
+    "pictogram_id": 7141,
+    "pictogram_keywords": [
+      "read"
+    ],
+    "word": "read",
+    "source": "service"
+  },
+  {
+    "search_term": "right",
+    "status": "exact",
+    "results": 12,
+    "pictogram_id": 5397,
+    "pictogram_keywords": [
+      "well",
+      "ok",
+      "okay",
+      "fine",
+      "all right",
+      "right"
+    ],
+    "word": "right",
+    "source": "service"
+  },
+  {
+    "search_term": "sing",
+    "status": "exact",
+    "results": 10,
+    "pictogram_id": 6960,
+    "pictogram_keywords": [
+      "sing"
+    ],
+    "word": "sing",
+    "source": "service"
+  },
+  {
+    "search_term": "sit",
+    "status": "exact",
+    "results": 40,
+    "pictogram_id": 6611,
+    "pictogram_keywords": [
+      "sit",
+      "sit down"
+    ],
+    "word": "sit",
+    "source": "service"
+  },
+  {
+    "search_term": "sleep",
+    "status": "exact",
+    "results": 15,
+    "pictogram_id": 6479,
+    "pictogram_keywords": [
+      "sleep"
+    ],
+    "word": "sleep",
+    "source": "service"
+  },
+  {
+    "search_term": "tell",
+    "status": "exact",
+    "results": 12,
+    "pictogram_id": 9693,
+    "pictogram_keywords": [
+      "say",
+      "express",
+      "tell",
+      "verbalize"
+    ],
+    "word": "tell",
+    "source": "service"
+  },
+  {
+    "search_term": "use",
+    "status": "exact",
+    "results": 22,
+    "pictogram_id": 15485,
+    "pictogram_keywords": [
+      "use"
+    ],
+    "word": "use",
+    "source": "service"
+  },
+  {
+    "search_term": "wash",
+    "status": "exact",
+    "results": 26,
+    "pictogram_id": 34826,
+    "pictogram_keywords": [
+      "wash"
+    ],
+    "word": "wash",
+    "source": "service"
+  },
+  {
+    "search_term": "wish",
+    "status": "exact",
+    "results": 3,
+    "pictogram_id": 5441,
+    "pictogram_keywords": [
+      "want",
+      "wish for",
+      "i want",
+      "i want that one",
+      "wish",
+      "feel like"
+    ],
+    "word": "wish",
+    "source": "service"
+  },
+  {
+    "search_term": "work",
+    "status": "exact",
+    "results": 1935,
+    "pictogram_id": 6624,
+    "pictogram_keywords": [
+      "work"
+    ],
+    "word": "work",
+    "source": "service"
+  },
+  {
+    "search_term": "write",
+    "status": "exact",
+    "results": 6,
+    "pictogram_id": 2380,
+    "pictogram_keywords": [
+      "write",
+      "writing"
+    ],
+    "word": "write",
+    "source": "service"
+  },
+  {
+    "search_term": "apple",
+    "status": "exact",
+    "results": 8,
+    "pictogram_id": 2462,
+    "pictogram_keywords": [
+      "apple"
+    ],
+    "word": "apple",
+    "source": "noun"
+  },
+  {
+    "search_term": "baby",
+    "status": "exact",
+    "results": 7,
+    "pictogram_id": 6060,
+    "pictogram_keywords": [
+      "baby"
+    ],
+    "word": "baby",
+    "source": "noun"
+  },
+  {
+    "search_term": "back",
+    "status": "exact",
+    "results": 23,
+    "pictogram_id": 2748,
+    "pictogram_keywords": [
+      "back"
+    ],
+    "word": "back",
+    "source": "noun"
+  },
+  {
+    "search_term": "ball",
+    "status": "exact",
+    "results": 35,
+    "pictogram_id": 3241,
+    "pictogram_keywords": [
+      "ball",
+      "beach ball",
+      "beachball"
+    ],
+    "word": "ball",
+    "source": "noun"
+  },
+  {
+    "search_term": "bear",
+    "status": "exact",
+    "results": 7,
+    "pictogram_id": 2488,
+    "pictogram_keywords": [
+      "bear"
+    ],
+    "word": "bear",
+    "source": "noun"
+  },
+  {
+    "search_term": "bed",
+    "status": "exact",
+    "results": 29,
+    "pictogram_id": 25900,
+    "pictogram_keywords": [
+      "bed"
+    ],
+    "word": "bed",
+    "source": "noun"
+  },
+  {
+    "search_term": "bell",
+    "status": "exact",
+    "results": 8,
+    "pictogram_id": 5949,
+    "pictogram_keywords": [
+      "bell"
+    ],
+    "word": "bell",
+    "source": "noun"
+  },
+  {
+    "search_term": "bird",
+    "status": "exact",
+    "results": 56,
+    "pictogram_id": 2490,
+    "pictogram_keywords": [
+      "bird"
+    ],
+    "word": "bird",
+    "source": "noun"
+  },
+  {
+    "search_term": "birthday",
+    "status": "exact",
+    "results": 45,
+    "pictogram_id": 37363,
+    "pictogram_keywords": [
+      "birthday"
+    ],
+    "word": "birthday",
+    "source": "noun"
+  },
+  {
+    "search_term": "boat",
+    "status": "exact",
+    "results": 11,
+    "pictogram_id": 6932,
+    "pictogram_keywords": [
+      "boat",
+      "ocean liner"
+    ],
+    "word": "boat",
+    "source": "noun"
+  },
+  {
+    "search_term": "box",
+    "status": "exact",
+    "results": 45,
+    "pictogram_id": 24749,
+    "pictogram_keywords": [
+      "beat",
+      "ill-treated",
+      "maltreat",
+      "mistreat",
+      "batter",
+      "punch",
+      "box"
+    ],
+    "word": "box",
+    "source": "noun"
+  },
+  {
+    "search_term": "boy",
+    "status": "exact",
+    "results": 54,
+    "pictogram_id": 7176,
+    "pictogram_keywords": [
+      "boy",
+      "child"
+    ],
+    "word": "boy",
+    "source": "noun"
+  },
+  {
+    "search_term": "bread",
+    "status": "exact",
+    "results": 28,
+    "pictogram_id": 2494,
+    "pictogram_keywords": [
+      "bread",
+      "bread stick",
+      "french bread",
+      "baguette"
+    ],
+    "word": "bread",
+    "source": "noun"
+  },
+  {
+    "search_term": "brother",
+    "status": "exact",
+    "results": 2,
+    "pictogram_id": 2423,
+    "pictogram_keywords": [
+      "brother"
+    ],
+    "word": "brother",
+    "source": "noun"
+  },
+  {
+    "search_term": "cake",
+    "status": "exact",
+    "results": 21,
+    "pictogram_id": 2502,
+    "pictogram_keywords": [
+      "cake",
+      "chocolate cake"
+    ],
+    "word": "cake",
+    "source": "noun"
+  },
+  {
+    "search_term": "car",
+    "status": "exact",
+    "results": 33,
+    "pictogram_id": 2339,
+    "pictogram_keywords": [
+      "car",
+      "family touring car",
+      "auto"
+    ],
+    "word": "car",
+    "source": "noun"
+  },
+  {
+    "search_term": "cat",
+    "status": "exact",
+    "results": 8,
+    "pictogram_id": 7114,
+    "pictogram_keywords": [
+      "cat",
+      "pussy",
+      "kitty"
+    ],
+    "word": "cat",
+    "source": "noun"
+  },
+  {
+    "search_term": "chair",
+    "status": "exact",
+    "results": 33,
+    "pictogram_id": 3155,
+    "pictogram_keywords": [
+      "chair"
+    ],
+    "word": "chair",
+    "source": "noun"
+  },
+  {
+    "search_term": "chicken",
+    "status": "exact",
+    "results": 20,
+    "pictogram_id": 4952,
+    "pictogram_keywords": [
+      "chicken",
+      "roast chicken",
+      "spit-roast chicken",
+      "grilled chicken"
+    ],
+    "word": "chicken",
+    "source": "noun"
+  },
+  {
+    "search_term": "children",
+    "status": "exact",
+    "results": 54,
+    "pictogram_id": 6975,
+    "pictogram_keywords": [
+      "boys",
+      "children",
+      "kids"
+    ],
+    "word": "children",
+    "source": "noun"
+  },
+  {
+    "search_term": "coat",
+    "status": "exact",
+    "results": 24,
+    "pictogram_id": 2242,
+    "pictogram_keywords": [
+      "coat",
+      "overcoat",
+      "greatcoat"
+    ],
+    "word": "coat",
+    "source": "noun"
+  },
+  {
+    "search_term": "corn",
+    "status": "exact",
+    "results": 6,
+    "pictogram_id": 4879,
+    "pictogram_keywords": [
+      "toasted corn",
+      "corn"
+    ],
+    "word": "corn",
+    "source": "noun"
+  },
+  {
+    "search_term": "cow",
+    "status": "exact",
+    "results": 2,
+    "pictogram_id": 2609,
+    "pictogram_keywords": [
+      "cow"
+    ],
+    "word": "cow",
+    "source": "noun"
+  },
+  {
+    "search_term": "day",
+    "status": "exact",
+    "results": 26,
+    "pictogram_id": 37731,
+    "pictogram_keywords": [
+      "day"
+    ],
+    "word": "day",
+    "source": "noun"
+  },
+  {
+    "search_term": "dog",
+    "status": "exact",
+    "results": 25,
+    "pictogram_id": 7202,
+    "pictogram_keywords": [
+      "dog",
+      "hound"
+    ],
+    "word": "dog",
+    "source": "noun"
+  },
+  {
+    "search_term": "doll",
+    "status": "exact",
+    "results": 6,
+    "pictogram_id": 26238,
+    "pictogram_keywords": [
+      "doll"
+    ],
+    "word": "doll",
+    "source": "noun"
+  },
+  {
+    "search_term": "door",
+    "status": "exact",
+    "results": 29,
+    "pictogram_id": 3244,
+    "pictogram_keywords": [
+      "door"
+    ],
+    "word": "door",
+    "source": "noun"
+  },
+  {
+    "search_term": "duck",
+    "status": "exact",
+    "results": 5,
+    "pictogram_id": 28479,
+    "pictogram_keywords": [
+      "duck"
+    ],
+    "word": "duck",
+    "source": "noun"
+  },
+  {
+    "search_term": "egg",
+    "status": "exact",
+    "results": 13,
+    "pictogram_id": 2427,
+    "pictogram_keywords": [
+      "egg"
+    ],
+    "word": "egg",
+    "source": "noun"
+  },
+  {
+    "search_term": "eye",
+    "status": "exact",
+    "results": 20,
+    "pictogram_id": 6573,
+    "pictogram_keywords": [
+      "eye",
+      "sight"
+    ],
+    "word": "eye",
+    "source": "noun"
+  },
+  {
+    "search_term": "farm",
+    "status": "exact",
+    "results": 8,
+    "pictogram_id": 32482,
+    "pictogram_keywords": [
+      "farm"
+    ],
+    "word": "farm",
+    "source": "noun"
+  },
+  {
+    "search_term": "farmer",
+    "status": "exact",
+    "results": 9,
+    "pictogram_id": 2982,
+    "pictogram_keywords": [
+      "farmer",
+      "peasant",
+      "farmworker",
+      "farmhand"
+    ],
+    "word": "farmer",
+    "source": "noun"
+  },
+  {
+    "search_term": "father",
+    "status": "exact",
+    "results": 8,
+    "pictogram_id": 2497,
+    "pictogram_keywords": [
+      "father"
+    ],
+    "word": "father",
+    "source": "noun"
+  },
+  {
+    "search_term": "feet",
+    "status": "exact",
+    "results": 15,
+    "pictogram_id": 37227,
+    "pictogram_keywords": [
+      "feet"
+    ],
+    "word": "feet",
+    "source": "noun"
+  },
+  {
+    "search_term": "fire",
+    "status": "exact",
+    "results": 21,
+    "pictogram_id": 4654,
+    "pictogram_keywords": [
+      "fire",
+      "flame"
+    ],
+    "word": "fire",
+    "source": "noun"
+  },
+  {
+    "search_term": "fish",
+    "status": "exact",
+    "results": 96,
+    "pictogram_id": 2520,
+    "pictogram_keywords": [
+      "fish"
+    ],
+    "word": "fish",
+    "source": "noun"
+  },
+  {
+    "search_term": "floor",
+    "status": "exact",
+    "results": 20,
+    "pictogram_id": 2575,
+    "pictogram_keywords": [
+      "floor"
+    ],
+    "word": "floor",
+    "source": "noun"
+  },
+  {
+    "search_term": "flower",
+    "status": "exact",
+    "results": 38,
+    "pictogram_id": 7104,
+    "pictogram_keywords": [
+      "flower"
+    ],
+    "word": "flower",
+    "source": "noun"
+  },
+  {
+    "search_term": "game",
+    "status": "exact",
+    "results": 55,
+    "pictogram_id": 6170,
+    "pictogram_keywords": [
+      "game",
+      "match"
+    ],
+    "word": "game",
+    "source": "noun"
+  },
+  {
+    "search_term": "garden",
+    "status": "exact",
+    "results": 16,
+    "pictogram_id": 2974,
+    "pictogram_keywords": [
+      "garden",
+      "vegetable garden"
+    ],
+    "word": "garden",
+    "source": "noun"
+  },
+  {
+    "search_term": "girl",
+    "status": "exact",
+    "results": 54,
+    "pictogram_id": 27509,
+    "pictogram_keywords": [
+      "girl",
+      "kid",
+      "little girl"
+    ],
+    "word": "girl",
+    "source": "noun"
+  },
+  {
+    "search_term": "grass",
+    "status": "exact",
+    "results": 6,
+    "pictogram_id": 3113,
+    "pictogram_keywords": [
+      "grass"
+    ],
+    "word": "grass",
+    "source": "noun"
+  },
+  {
+    "search_term": "ground",
+    "status": "exact",
+    "results": 4,
+    "pictogram_id": 3160,
+    "pictogram_keywords": [
+      "ground",
+      "earth"
+    ],
+    "word": "ground",
+    "source": "noun"
+  },
+  {
+    "search_term": "hand",
+    "status": "exact",
+    "results": 48,
+    "pictogram_id": 28431,
+    "pictogram_keywords": [
+      "give",
+      "offer",
+      "hand"
+    ],
+    "word": "hand",
+    "source": "noun"
+  },
+  {
+    "search_term": "head",
+    "status": "exact",
+    "results": 47,
+    "pictogram_id": 2673,
+    "pictogram_keywords": [
+      "head"
+    ],
+    "word": "head",
+    "source": "noun"
+  },
+  {
+    "search_term": "hill",
+    "status": "exact",
+    "results": 1,
+    "pictogram_id": 38728,
+    "pictogram_keywords": [
+      "hill"
+    ],
+    "word": "hill",
+    "source": "noun"
+  },
+  {
+    "search_term": "home",
+    "status": "exact",
+    "results": 152,
+    "pictogram_id": 6964,
+    "pictogram_keywords": [
+      "house",
+      "household",
+      "home"
+    ],
+    "word": "home",
+    "source": "noun"
+  },
+  {
+    "search_term": "horse",
+    "status": "exact",
+    "results": 35,
+    "pictogram_id": 2294,
+    "pictogram_keywords": [
+      "horse"
+    ],
+    "word": "horse",
+    "source": "noun"
+  },
+  {
+    "search_term": "house",
+    "status": "exact",
+    "results": 21,
+    "pictogram_id": 6964,
+    "pictogram_keywords": [
+      "house",
+      "household",
+      "home"
+    ],
+    "word": "house",
+    "source": "noun"
+  },
+  {
+    "search_term": "leg",
+    "status": "exact",
+    "results": 13,
+    "pictogram_id": 8666,
+    "pictogram_keywords": [
+      "leg"
+    ],
+    "word": "leg",
+    "source": "noun"
+  },
+  {
+    "search_term": "letter",
+    "status": "exact",
+    "results": 96,
+    "pictogram_id": 2688,
+    "pictogram_keywords": [
+      "letter",
+      "mail"
+    ],
+    "word": "letter",
+    "source": "noun"
+  },
+  {
+    "search_term": "man",
+    "status": "exact",
+    "results": 34,
+    "pictogram_id": 4665,
+    "pictogram_keywords": [
+      "man",
+      "adult male"
+    ],
+    "word": "man",
+    "source": "noun"
+  },
+  {
+    "search_term": "men",
+    "status": "exact",
+    "results": 12,
+    "pictogram_id": 32362,
+    "pictogram_keywords": [
+      "males",
+      "men"
+    ],
+    "word": "men",
+    "source": "noun"
+  },
+  {
+    "search_term": "milk",
+    "status": "exact",
+    "results": 16,
+    "pictogram_id": 2445,
+    "pictogram_keywords": [
+      "milk",
+      "cows' milk",
+      "pasteurized milk",
+      "whole milk"
+    ],
+    "word": "milk",
+    "source": "noun"
+  },
+  {
+    "search_term": "money",
+    "status": "exact",
+    "results": 36,
+    "pictogram_id": 4630,
+    "pictogram_keywords": [
+      "money"
+    ],
+    "word": "money",
+    "source": "noun"
+  },
+  {
+    "search_term": "morning",
+    "status": "exact",
+    "results": 7,
+    "pictogram_id": 25704,
+    "pictogram_keywords": [
+      "morning",
+      "morning time"
+    ],
+    "word": "morning",
+    "source": "noun"
+  },
+  {
+    "search_term": "mother",
+    "status": "exact",
+    "results": 3,
+    "pictogram_id": 2458,
+    "pictogram_keywords": [
+      "mum",
+      "mom",
+      "mommy",
+      "mother"
+    ],
+    "word": "mother",
+    "source": "noun"
+  },
+  {
+    "search_term": "name",
+    "status": "exact",
+    "results": 11,
+    "pictogram_id": 27357,
+    "pictogram_keywords": [
+      "first name",
+      "name"
+    ],
+    "word": "name",
+    "source": "noun"
+  },
+  {
+    "search_term": "nest",
+    "status": "exact",
+    "results": 3,
+    "pictogram_id": 7173,
+    "pictogram_keywords": [
+      "nest"
+    ],
+    "word": "nest",
+    "source": "noun"
+  },
+  {
+    "search_term": "night",
+    "status": "exact",
+    "results": 7,
+    "pictogram_id": 26997,
+    "pictogram_keywords": [
+      "night",
+      "nighttime"
+    ],
+    "word": "night",
+    "source": "noun"
+  },
+  {
+    "search_term": "paper",
+    "status": "exact",
+    "results": 28,
+    "pictogram_id": 8349,
+    "pictogram_keywords": [
+      "paper",
+      "sheet"
+    ],
+    "word": "paper",
+    "source": "noun"
+  },
+  {
+    "search_term": "party",
+    "status": "exact",
+    "results": 10,
+    "pictogram_id": 7099,
+    "pictogram_keywords": [
+      "party",
+      "celebration"
+    ],
+    "word": "party",
+    "source": "noun"
+  },
+  {
+    "search_term": "picture",
+    "status": "exact",
+    "results": 3,
+    "pictogram_id": 2360,
+    "pictogram_keywords": [
+      "painting",
+      "picture"
+    ],
+    "word": "picture",
+    "source": "noun"
+  },
+  {
+    "search_term": "pig",
+    "status": "exact",
+    "results": 11,
+    "pictogram_id": 24972,
+    "pictogram_keywords": [
+      "pig",
+      "hog"
+    ],
+    "word": "pig",
+    "source": "noun"
+  },
+  {
+    "search_term": "rabbit",
+    "status": "exact",
+    "results": 7,
+    "pictogram_id": 2351,
+    "pictogram_keywords": [
+      "rabbit"
+    ],
+    "word": "rabbit",
+    "source": "noun"
+  },
+  {
+    "search_term": "rain",
+    "status": "exact",
+    "results": 5,
+    "pictogram_id": 7148,
+    "pictogram_keywords": [
+      "rain"
+    ],
+    "word": "rain",
+    "source": "noun"
+  },
+  {
+    "search_term": "ring",
+    "status": "exact",
+    "results": 27,
+    "pictogram_id": 6900,
+    "pictogram_keywords": [
+      "ring",
+      "solitaire ring",
+      "engagement ring"
+    ],
+    "word": "ring",
+    "source": "noun"
+  },
+  {
+    "search_term": "robin",
+    "status": "none",
+    "results": 0,
+    "word": "robin",
+    "source": "noun"
+  },
+  {
+    "search_term": "school",
+    "status": "exact",
+    "results": 40,
+    "pictogram_id": 32446,
+    "pictogram_keywords": [
+      "school",
+      "high school",
+      "secondary school",
+      "high school"
+    ],
+    "word": "school",
+    "source": "noun"
+  },
+  {
+    "search_term": "seed",
+    "status": "exact",
+    "results": 3,
+    "pictogram_id": 7245,
+    "pictogram_keywords": [
+      "sow",
+      "sowing",
+      "seed",
+      "plant"
+    ],
+    "word": "seed",
+    "source": "noun"
+  },
+  {
+    "search_term": "sheep",
+    "status": "exact",
+    "results": 3,
+    "pictogram_id": 2489,
+    "pictogram_keywords": [
+      "sheep",
+      "lamb"
+    ],
+    "word": "sheep",
+    "source": "noun"
+  },
+  {
+    "search_term": "shoe",
+    "status": "exact",
+    "results": 18,
+    "pictogram_id": 32922,
+    "pictogram_keywords": [
+      "shoe"
+    ],
+    "word": "shoe",
+    "source": "noun"
+  },
+  {
+    "search_term": "sister",
+    "status": "exact",
+    "results": 2,
+    "pictogram_id": 2422,
+    "pictogram_keywords": [
+      "sister"
+    ],
+    "word": "sister",
+    "source": "noun"
+  },
+  {
+    "search_term": "snow",
+    "status": "exact",
+    "results": 6,
+    "pictogram_id": 7172,
+    "pictogram_keywords": [
+      "snow"
+    ],
+    "word": "snow",
+    "source": "noun"
+  },
+  {
+    "search_term": "song",
+    "status": "exact",
+    "results": 4,
+    "pictogram_id": 24791,
+    "pictogram_keywords": [
+      "music",
+      "composition",
+      "score",
+      "staff",
+      "stave",
+      "song"
+    ],
+    "word": "song",
+    "source": "noun"
+  },
+  {
+    "search_term": "squirrel",
+    "status": "exact",
+    "results": 2,
+    "pictogram_id": 25815,
+    "pictogram_keywords": [
+      "squirrel"
+    ],
+    "word": "squirrel",
+    "source": "noun"
+  },
+  {
+    "search_term": "stick",
+    "status": "exact",
+    "results": 32,
+    "pictogram_id": 11322,
+    "pictogram_keywords": [
+      "stick",
+      "pole",
+      "rod"
+    ],
+    "word": "stick",
+    "source": "noun"
+  },
+  {
+    "search_term": "street",
+    "status": "exact",
+    "results": 71,
+    "pictogram_id": 2299,
+    "pictogram_keywords": [
+      "street",
+      "avenue",
+      "boulevard"
+    ],
+    "word": "street",
+    "source": "noun"
+  },
+  {
+    "search_term": "sun",
+    "status": "exact",
+    "results": 9,
+    "pictogram_id": 7252,
+    "pictogram_keywords": [
+      "sun"
+    ],
+    "word": "sun",
+    "source": "noun"
+  },
+  {
+    "search_term": "table",
+    "status": "exact",
+    "results": 63,
+    "pictogram_id": 3129,
+    "pictogram_keywords": [
+      "table"
+    ],
+    "word": "table",
+    "source": "noun"
+  },
+  {
+    "search_term": "time",
+    "status": "exact",
+    "results": 331,
+    "pictogram_id": 22631,
+    "pictogram_keywords": [
+      "time"
+    ],
+    "word": "time",
+    "source": "noun"
+  },
+  {
+    "search_term": "top",
+    "status": "exact",
+    "results": 14,
+    "pictogram_id": 16601,
+    "pictogram_keywords": [
+      "bottle top",
+      "cap",
+      "top"
+    ],
+    "word": "top",
+    "source": "noun"
+  },
+  {
+    "search_term": "toy",
+    "status": "exact",
+    "results": 113,
+    "pictogram_id": 9813,
+    "pictogram_keywords": [
+      "toys",
+      "toy"
+    ],
+    "word": "toy",
+    "source": "noun"
+  },
+  {
+    "search_term": "tree",
+    "status": "exact",
+    "results": 43,
+    "pictogram_id": 3057,
+    "pictogram_keywords": [
+      "tree"
+    ],
+    "word": "tree",
+    "source": "noun"
+  },
+  {
+    "search_term": "watch",
+    "status": "exact",
+    "results": 22,
+    "pictogram_id": 6564,
+    "pictogram_keywords": [
+      "see",
+      "look",
+      "look at",
+      "watch",
+      "observe"
+    ],
+    "word": "watch",
+    "source": "noun"
+  },
+  {
+    "search_term": "water",
+    "status": "exact",
+    "results": 121,
+    "pictogram_id": 32464,
+    "pictogram_keywords": [
+      "water"
+    ],
+    "word": "water",
+    "source": "noun"
+  },
+  {
+    "search_term": "wind",
+    "status": "exact",
+    "results": 42,
+    "pictogram_id": 7259,
+    "pictogram_keywords": [
+      "wind"
+    ],
+    "word": "wind",
+    "source": "noun"
+  },
+  {
+    "search_term": "window",
+    "status": "exact",
+    "results": 21,
+    "pictogram_id": 2611,
+    "pictogram_keywords": [
+      "window"
+    ],
+    "word": "window",
+    "source": "noun"
+  },
+  {
+    "search_term": "wood",
+    "status": "exact",
+    "results": 3,
+    "pictogram_id": 6143,
+    "pictogram_keywords": [
+      "wood",
+      "plank",
+      "board"
+    ],
+    "word": "wood",
+    "source": "noun"
+  }
+]

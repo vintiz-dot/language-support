@@ -1,0 +1,341 @@
+[
+  {
+    "schema_version": "0.3.0",
+    "id": "g051",
+    "text": "I want that cat.",
+    "tokens": ["I", "want", "that", "cat", "."],
+    "pattern": "svo",
+    "entities": {
+      "e1": { "concept": "speaker", "person": "1sg", "number": "sg", "animacy": "person" },
+      "e2": {
+        "concept": "cat",
+        "number": "sg",
+        "definite": true,
+        "deixis": "distal",
+        "animacy": "animal"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "want",
+        "roles": { "experiencer": "e1", "theme": "e2" },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0] },
+      { "node": "ev1", "tokens": [1] },
+      { "node": "e2", "tokens": [2, 3] }
+    ],
+    "notes": "Distal demonstrative as a determiner. deixis and definite co-occur because a demonstrative is inherently definite; they are not alternatives."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g052",
+    "text": "These books are new.",
+    "tokens": ["These", "books", "are", "new", "."],
+    "pattern": "attribution",
+    "entities": {
+      "e1": {
+        "concept": "book",
+        "number": "pl",
+        "definite": true,
+        "deixis": "proximal",
+        "animacy": "object"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": { "theme": "e1" },
+        "attribute": "new",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0, 1] },
+      { "node": "ev1", "tokens": [2, 3] }
+    ],
+    "notes": "proximal plus pl gives these. All four demonstratives fall out of deixis crossed with number, so no separate four-way enum was needed."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g053",
+    "text": "The cat is here.",
+    "tokens": ["The", "cat", "is", "here", "."],
+    "pattern": "sv_locative",
+    "entities": {
+      "e1": { "concept": "cat", "number": "sg", "definite": true, "animacy": "animal" },
+      "e2": { "concept": "location", "number": "sg", "deixis": "proximal", "animacy": "place" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.located",
+        "roles": { "theme": "e1" },
+        "spatial": [
+          { "figure": "e1", "relation": "at", "ground": "e2" }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0, 1] },
+      { "node": "ev1", "tokens": [2] },
+      { "node": "e2", "tokens": [3] }
+    ],
+    "notes": "here is a ground entity with deixis, not a new relation type. The same field covers demonstratives and deictic locations, which is why it earns its place. Rendering it needs a visible speaker position, so this is the first graph that requires the scene to know where the reader stands."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g054",
+    "text": "Put those books there.",
+    "tokens": ["Put", "those", "books", "there", "."],
+    "pattern": "imperative",
+    "entities": {
+      "e1": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person",
+        "implicit": true
+      },
+      "e2": {
+        "concept": "book",
+        "number": "pl",
+        "definite": true,
+        "deixis": "distal",
+        "animacy": "object"
+      },
+      "e3": { "concept": "location", "number": "sg", "deixis": "distal", "animacy": "place" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "put",
+        "roles": { "agent": "e1", "patient": "e2" },
+        "spatial": [
+          { "figure": "e2", "relation": "at", "ground": "e3" }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "imperative"
+      }
+    ],
+    "alignment": [
+      { "node": "ev1", "tokens": [0] },
+      { "node": "e2", "tokens": [1, 2] },
+      { "node": "e3", "tokens": [3] }
+    ],
+    "notes": "The figure is the patient, not the agent. Every earlier spatial graph had the agent moving, so this is the case that proves spatial.figure is genuinely independent of the role structure rather than a convenience field."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g055",
+    "text": "The dog is very big.",
+    "tokens": ["The", "dog", "is", "very", "big", "."],
+    "pattern": "attribution",
+    "entities": {
+      "e1": { "concept": "dog", "number": "sg", "definite": true, "animacy": "animal" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": { "theme": "e1" },
+        "attribute": "big",
+        "degree": "very",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0, 1] },
+      { "node": "ev1", "tokens": [2, 3, 4] }
+    ],
+    "notes": "Minimal pair with g015, which negates the same attribute. very scales the drawn property; it does not change what is asserted."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g056",
+    "text": "This box is too heavy.",
+    "tokens": ["This", "box", "is", "too", "heavy", "."],
+    "pattern": "attribution",
+    "entities": {
+      "e1": {
+        "concept": "box",
+        "number": "sg",
+        "definite": true,
+        "deixis": "proximal",
+        "animacy": "object"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": { "theme": "e1" },
+        "attribute": "heavy",
+        "degree": "too",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0, 1] },
+      { "node": "ev1", "tokens": [2, 3, 4] }
+    ],
+    "notes": "too is excessive, not merely intense: it says the heaviness defeats some purpose. Rendering it as a bigger version of very loses the meaning, which is why very and too are separate enum values rather than one intensity scale."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g057",
+    "text": "The dog is bigger than the cat.",
+    "tokens": ["The", "dog", "is", "bigger", "than", "the", "cat", "."],
+    "pattern": "attribution",
+    "entities": {
+      "e1": { "concept": "dog", "number": "sg", "definite": true, "animacy": "animal" },
+      "e2": { "concept": "cat", "number": "sg", "definite": true, "animacy": "animal" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": { "theme": "e1" },
+        "attribute": "big",
+        "degree": "comparative",
+        "comparand": "e2",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0, 1] },
+      { "node": "ev1", "tokens": [2, 3, 4] },
+      { "node": "e2", "tokens": [5, 6] }
+    ],
+    "notes": "A comparison needs both figures drawn, so the comparand is a full entity rather than a label. The distractor writes itself: swap e1 and e2 and the sentence becomes false."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g058",
+    "text": "The red ball is the biggest.",
+    "tokens": ["The", "red", "ball", "is", "the", "biggest", "."],
+    "pattern": "attribution",
+    "entities": {
+      "e1": {
+        "concept": "ball",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object",
+        "modifiers": ["red"]
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": { "theme": "e1" },
+        "attribute": "big",
+        "degree": "superlative",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0, 1, 2] },
+      { "node": "ev1", "tokens": [3, 4, 5] }
+    ],
+    "notes": "A superlative takes no comparand but implies a comparison set that the sentence never names. The renderer has to invent other balls to be biggest than, which is the one place degree forces it to draw something the text does not say."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g059",
+    "text": "I have a very big dog.",
+    "tokens": ["I", "have", "a", "very", "big", "dog", "."],
+    "pattern": "possession",
+    "entities": {
+      "e1": { "concept": "speaker", "person": "1sg", "number": "sg", "animacy": "person" },
+      "e2": {
+        "concept": "dog",
+        "number": "sg",
+        "definite": false,
+        "animacy": "animal",
+        "modifiers": [
+          { "concept": "big", "degree": "very" }
+        ],
+        "possessor": "e1"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "have",
+        "roles": { "agent": "e1", "theme": "e2" },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0] },
+      { "node": "ev1", "tokens": [1] },
+      { "node": "e2", "tokens": [2, 3, 4, 5] }
+    ],
+    "notes": "The only graph exercising the object form of a modifier. Compare g058, where red is a bare string: both forms are legal, and consumers go through the accessor in tools rather than branching at each use."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g060",
+    "text": "We may go to the park.",
+    "tokens": ["We", "may", "go", "to", "the", "park", "."],
+    "pattern": "sv_locative",
+    "entities": {
+      "e1": { "concept": "speaker", "person": "1pl", "number": "pl", "animacy": "person" },
+      "e2": { "concept": "park", "number": "sg", "definite": true, "animacy": "place" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "go",
+        "roles": { "agent": "e1" },
+        "spatial": [
+          { "figure": "e1", "relation": "to", "ground": "e2" }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "modality": "may",
+        "irrealis": true,
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0] },
+      { "node": "ev1", "tokens": [1, 2, 3] },
+      { "node": "e2", "tokens": [4, 5] }
+    ],
+    "notes": "Possibility, so the going is not asserted. Contrast g011, which is future and asserted: the difference is exactly what irrealis records, and tense alone cannot express it."
+  }
+]

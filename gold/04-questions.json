@@ -1,0 +1,174 @@
+[
+  {
+    "schema_version": "0.3.0",
+    "id": "g021",
+    "text": "Where is the cat?",
+    "tokens": ["Where", "is", "the", "cat", "?"],
+    "pattern": "sv_locative",
+    "entities": {
+      "e1": { "concept": "cat", "number": "sg", "definite": true, "animacy": "animal" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.located",
+        "roles": { "theme": "e1" },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "interrogative",
+        "question": { "type": "where", "role": "location" }
+      }
+    ],
+    "alignment": [
+      { "node": "ev1", "tokens": [0, 1] },
+      { "node": "e1", "tokens": [2, 3] }
+    ],
+    "notes": "No ground entity exists, because the ground is what is being asked for. The renderer draws the cat and an empty place-slot rather than guessing a setting."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g022",
+    "text": "Who ate the cake?",
+    "tokens": ["Who", "ate", "the", "cake", "?"],
+    "pattern": "svo",
+    "entities": {
+      "e1": { "concept": "person", "animacy": "person", "number": "sg" },
+      "e2": { "concept": "cake", "number": "sg", "definite": true, "animacy": "object" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "eat",
+        "roles": { "agent": "e1", "patient": "e2" },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "interrogative",
+        "question": { "type": "who", "role": "agent", "target": "e1" }
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0] },
+      { "node": "ev1", "tokens": [1] },
+      { "node": "e2", "tokens": [2, 3] }
+    ],
+    "notes": "The unknown is still a real entity node so that the role structure stays complete. question.target marks it as the gap, and the renderer draws a silhouette in the agent position."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g023",
+    "text": "What is in the box?",
+    "tokens": ["What", "is", "in", "the", "box", "?"],
+    "pattern": "sv_locative",
+    "entities": {
+      "e1": { "concept": "thing", "animacy": "object", "number": "sg" },
+      "e2": { "concept": "box", "number": "sg", "definite": true, "animacy": "object" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.located",
+        "roles": { "theme": "e1" },
+        "spatial": [
+          { "figure": "e1", "relation": "in", "ground": "e2" }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "interrogative",
+        "question": { "type": "what", "role": "theme", "target": "e1" }
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0] },
+      { "node": "ev1", "tokens": [1, 2] },
+      { "node": "e2", "tokens": [3, 4] }
+    ],
+    "notes": "Here the relation is known and the figure is the gap, the mirror image of g021. Both cases have to render as a visible empty slot, in different positions."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g024",
+    "text": "Is the ball red?",
+    "tokens": ["Is", "the", "ball", "red", "?"],
+    "pattern": "attribution",
+    "entities": {
+      "e1": { "concept": "ball", "number": "sg", "definite": true, "animacy": "object" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": { "theme": "e1" },
+        "attribute": "red",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "interrogative",
+        "question": { "type": "yes-no" }
+      }
+    ],
+    "alignment": [
+      { "node": "ev1", "tokens": [0, 3] },
+      { "node": "e1", "tokens": [1, 2] }
+    ],
+    "notes": "A yes-no question has no gap: the whole proposition is what is in doubt. Alignment spans need not be contiguous, which this case exists to prove."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g025",
+    "text": "Can you swim?",
+    "tokens": ["Can", "you", "swim", "?"],
+    "pattern": "modal_ability",
+    "entities": {
+      "e1": { "concept": "addressee", "person": "2sg", "number": "sg", "animacy": "person" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "swim",
+        "roles": { "agent": "e1" },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "modality": "can",
+        "mood": "interrogative",
+        "question": { "type": "yes-no" },
+        "irrealis": true
+      }
+    ],
+    "alignment": [
+      { "node": "ev1", "tokens": [0, 2] },
+      { "node": "e1", "tokens": [1] }
+    ],
+    "notes": "Second person addressed directly. Combined with an avatar this is the one case where the child should see themselves in the scene."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g026",
+    "text": "How many cats are there?",
+    "tokens": ["How", "many", "cats", "are", "there", "?"],
+    "pattern": "existential",
+    "entities": {
+      "e1": { "concept": "cat", "number": "pl", "definite": false, "animacy": "animal" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "exist",
+        "roles": { "theme": "e1" },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "interrogative",
+        "question": { "type": "how-many", "role": "quantity", "target": "e1" }
+      }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0, 1, 2] },
+      { "node": "ev1", "tokens": [3, 4] }
+    ],
+    "notes": "The gap is a property of an entity rather than a whole slot. Deliberately absent quantity, so a renderer that defaults a missing quantity to one will produce a wrong picture here."
+  }
+]

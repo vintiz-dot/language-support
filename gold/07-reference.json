@@ -1,0 +1,213 @@
+[
+  {
+    "schema_version": "0.3.0",
+    "id": "g038",
+    "text": "Sam has a ball. He kicked it.",
+    "tokens": ["Sam", "has", "a", "ball", ".", "He", "kicked", "it", "."],
+    "pattern": "possession",
+    "entities": {
+      "e1": { "concept": "person", "proper_name": "Sam", "number": "sg", "animacy": "person" },
+      "e2": {
+        "concept": "ball",
+        "number": "sg",
+        "definite": false,
+        "animacy": "object",
+        "possessor": "e1"
+      },
+      "e3": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person",
+        "coref": "e1"
+      },
+      "e4": { "concept": "thing", "person": "3sg", "number": "sg", "coref": "e2" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "have",
+        "roles": { "agent": "e1", "theme": "e2" },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "kick",
+        "roles": { "agent": "e3", "patient": "e4" },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "discourse": [
+      { "id": "d1", "type": "sequence", "from": "ev1", "to": "ev2", "inferred": true }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0] },
+      { "node": "ev1", "tokens": [1] },
+      { "node": "e2", "tokens": [2, 3] },
+      { "node": "e3", "tokens": [5] },
+      { "node": "ev2", "tokens": [6] },
+      { "node": "e4", "tokens": [7] }
+    ],
+    "notes": "e1 carries no gender. The name does not supply one; the later pronoun does, and the renderer propagates it from e3 back to e1 through coref. Guessing gender from a name is how you draw the wrong child."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g039",
+    "text": "The girl saw a dog. She was happy.",
+    "tokens": ["The", "girl", "saw", "a", "dog", ".", "She", "was", "happy", "."],
+    "pattern": "svo",
+    "entities": {
+      "e1": {
+        "concept": "girl",
+        "number": "sg",
+        "definite": true,
+        "animacy": "person",
+        "gender": "female"
+      },
+      "e2": { "concept": "dog", "number": "sg", "definite": false, "animacy": "animal" },
+      "e3": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "female",
+        "number": "sg",
+        "animacy": "person",
+        "coref": "e1"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "see",
+        "roles": { "experiencer": "e1", "theme": "e2" },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "be.attribute",
+        "roles": { "theme": "e3" },
+        "attribute": "happy",
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "discourse": [
+      { "id": "d1", "type": "cause", "from": "ev1", "to": "ev2", "inferred": true }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0, 1] },
+      { "node": "ev1", "tokens": [2] },
+      { "node": "e2", "tokens": [3, 4] },
+      { "node": "e3", "tokens": [6] },
+      { "node": "ev2", "tokens": [7, 8] }
+    ],
+    "notes": "The causal link is not marked by any word; it is inferred. Flagging it as inferred matters, because a rule parser will not find it and an LLM will assert it confidently."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g040",
+    "text": "Mum gave me a book. I read it.",
+    "tokens": ["Mum", "gave", "me", "a", "book", ".", "I", "read", "it", "."],
+    "pattern": "ditransitive",
+    "entities": {
+      "e1": {
+        "concept": "mother",
+        "proper_name": "Mum",
+        "number": "sg",
+        "animacy": "person",
+        "gender": "female"
+      },
+      "e2": { "concept": "speaker", "person": "1sg", "number": "sg", "animacy": "person" },
+      "e3": { "concept": "book", "number": "sg", "definite": false, "animacy": "object" },
+      "e4": { "concept": "thing", "person": "3sg", "number": "sg", "coref": "e3" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "give",
+        "roles": { "agent": "e1", "recipient": "e2", "theme": "e3" },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "read",
+        "roles": { "agent": "e2", "patient": "e4" },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "discourse": [
+      { "id": "d1", "type": "sequence", "from": "ev1", "to": "ev2", "inferred": true }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0] },
+      { "node": "ev1", "tokens": [1] },
+      { "node": "e2", "tokens": [2] },
+      { "node": "e3", "tokens": [3, 4] },
+      { "node": "e2", "tokens": [6] },
+      { "node": "ev2", "tokens": [7] },
+      { "node": "e4", "tokens": [8] }
+    ],
+    "notes": "Three roles on one event, and e2 appears twice in the alignment because me and I are the same referent surfacing twice. Validators must allow a node to hold more than one span. read is also a past form spelled like its present, so tense comes from the discourse, not the token."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "g041",
+    "text": "The dogs are hungry. They want food.",
+    "tokens": ["The", "dogs", "are", "hungry", ".", "They", "want", "food", "."],
+    "pattern": "attribution",
+    "entities": {
+      "e1": { "concept": "dog", "number": "pl", "definite": true, "animacy": "animal" },
+      "e2": { "concept": "thing", "person": "3pl", "number": "pl", "coref": "e1" },
+      "e3": { "concept": "food", "number": "mass", "definite": false, "animacy": "object" }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": { "theme": "e1" },
+        "attribute": "hungry",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "want",
+        "roles": { "experiencer": "e2", "theme": "e3" },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "discourse": [
+      { "id": "d1", "type": "cause", "from": "ev1", "to": "ev2", "inferred": true }
+    ],
+    "alignment": [
+      { "node": "e1", "tokens": [0, 1] },
+      { "node": "ev1", "tokens": [2, 3] },
+      { "node": "e2", "tokens": [5] },
+      { "node": "ev2", "tokens": [6] },
+      { "node": "e3", "tokens": [7] }
+    ],
+    "notes": "A mass noun, so number is mass and quantity never applies. want is a mental state with no depiction, which the thought-bubble convention has to cover alongside think in g049."
+  }
+]
