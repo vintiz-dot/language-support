@@ -1,0 +1,62 @@
+language-support
+Copyright 2026 the language-support contributors
+
+This product includes software developed by the language-support contributors,
+licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Not all of this repository is software, and not all of it is under that licence.
+See LICENSE-DATA and the sections below.
+
+--------------------------------------------------------------------------------
+ARASAAC pictograms and pictogram metadata
+--------------------------------------------------------------------------------
+
+ARASAAC pictograms: author Sergio Palao, origin ARASAAC (https://arasaac.org),
+owned by the Government of Aragon, licensed CC BY-NC-SA.
+
+No pictogram image is contained in this repository. The editor's images are
+fetched by the viewer's browser directly from ARASAAC's servers.
+
+`lexicon/concepts.json` is derived from ARASAAC's search API: it holds pictogram
+identifiers and keywords, not images. It is redistributed here under the same
+CC BY-NC-SA terms as its source, which means it carries a non-commercial
+restriction that the Apache-2.0 licence on the code does not. Anything built on
+that file inherits the restriction; anything built on the parser, the schema or
+the scoring harness does not.
+
+Any rendered output, export or printed material that includes an ARASAAC
+pictogram must carry the attribution above. `renderer/strip.py` emits it as a
+field on every strip so that it travels with the data rather than depending on
+a particular page.
+
+An ARASAAC pictogram may not be composited with a Mulberry Symbols pictogram in
+a single image; the two symbol sets' licences are not compatible for that use.
+
+--------------------------------------------------------------------------------
+Dolch sight word list
+--------------------------------------------------------------------------------
+
+`lexicon/wordlists/dolch.json` is a hand transcription of the Dolch sight word
+list (Edward William Dolch, 1936), with this project's own classification of
+each word added. The underlying list is widely treated as being in the public
+domain, but that has not been verified against an authoritative source, and the
+transcription has not been checked against one either. Verify before relying on
+it. The classification layer is this project's own work and is covered by
+LICENSE-DATA.
+
+--------------------------------------------------------------------------------
+Held-out sentences
+--------------------------------------------------------------------------------
+
+The sentences in `holdout/`, `holdout2/` and `holdout3/` are drawn from
+McGuffey's Eclectic Readers (William Holmes McGuffey, 1836-1879), which are in
+the public domain. The annotations over them are this project's own work and are
+covered by LICENSE-DATA.
+
+--------------------------------------------------------------------------------
+Optional development dependencies
+--------------------------------------------------------------------------------
+
+The AMR benchmark and the hybrid fallback can use amrlib and a trained parsing
+model. Neither is included here, neither is in requirements.txt, and nothing in
+the rendering path loads them. Their own licences apply if you install them.

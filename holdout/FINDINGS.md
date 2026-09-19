@@ -19,8 +19,14 @@ about the system.
 
 Sentences came from McGuffey's First and Second Eclectic Readers via Project Gutenberg —
 genuine Grade 1–2 material that nobody here wrote. 516 candidates passed a shape filter
-(4–12 tokens, no digits, no dialogue), then 50 were taken at a fixed stride. `tools/sample_holdout.py`
-reproduces the same 50.
+(4–12 tokens, no digits, no dialogue), then 50 were taken at a fixed stride.
+
+**Correction, made while drawing set two:** `tools/sample_holdout.py` no longer reproduces
+these 50. The sentence splitter was changed after this set was drawn, and the current code
+finds 485 candidates rather than 516 and redraws only 8 of the 50. The set itself is intact
+— the sentences are in `sentences.json` and the annotations are hashed — but the claim that
+it can be regenerated was true when written and is not true now. Set two is therefore made
+disjoint by comparing sentence text rather than by index arithmetic.
 
 Three were dropped before any annotation, on structural grounds recorded in
 `excluded.json`: a byline, a sentence the splitter cut at "Mr.", and a greeting with no

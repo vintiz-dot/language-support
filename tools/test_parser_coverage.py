@@ -66,6 +66,17 @@ def test_a_possessive_pronoun_is_a_thing_with_an_owner():
     assert concept_of(g, g["entities"][ref].get("possessor")) == "speaker"
 
 
+def test_a_prepositional_dative_recipient_is_the_noun():
+    """spaCy labels the "to" itself as the dative, which made the recipient "to"."""
+    g = run("The boy gave the book to his sister.")
+    assert role(g, "recipient") == "sister"
+
+
+def test_a_prepositional_dative_still_follows_a_partitive():
+    g = run("He showed the picture to some of the children.")
+    assert role(g, "recipient") == "child"
+
+
 def test_a_relative_pronoun_is_not_an_entity():
     g = run("The bird that sang flew away.")
     assert "that" not in [e["concept"] for e in g["entities"].values()]

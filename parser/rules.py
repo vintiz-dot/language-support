@@ -1,6 +1,6 @@
 """Rule-based scene graph parser over a spaCy dependency parse.
 
-Deliberately not a model. The target is Grade 1-2 syntax, which is short and regular
+Deliberately not a model. The target is Grade 1-3 syntax, which is short and regular
 enough that rules cover it, and rules can say when they do not apply — a model cannot,
 and a confidently wrong picture is the worst output this system can produce.
 
@@ -13,6 +13,7 @@ and a plausible, wrong picture of someone standing behind a girl.
 """
 
 import functools
+import pathlib
 
 from . import lexicon as lex
 from . import patterns
@@ -21,10 +22,27 @@ CLAUSE_DEPS = {"ROOT", "conj", "advcl", "ccomp", "xcomp", "relcl"}
 RELATIVE_PRONOUNS = {"that", "which", "who", "whom", "whose"}
 SUBJECT_DEPS = {"nsubj", "nsubjpass", "expl"}
 NP_CHILD_DEPS = {"det", "amod", "nummod", "poss", "compound", "predet", "quantmod", "nmod"}
+NOMINAL_POS = {"NOUN", "PROPN", "PRON"}
 WH_WORDS = {"who", "what", "where", "when", "why", "how", "which"}
 
 
 @functools.lru_cache(maxsize=1)
+def _schema_version():
+    """The version the schema currently declares.
+
+    Hardcoding this drifted: the parser said 0.2.0 for two schema releases while emitting
+    members, focus and measure, and nothing caught it because the only gate on parser
+    output was the referential checker, not the schema itself.
+    """
+    import json
+
+    path = pathlib.Path(__file__).resolve().parent.parent / "schema" / "scene-graph.schema.json"
+    return json.loads(path.read_text(encoding="utf-8"))["properties"]["schema_version"]["const"]
+
+
+SCHEMA_VERSION = _schema_version()
+
+
 def _nlp():
     import spacy
 
@@ -93,6 +111,14 @@ class Builder:
         if tokens:
             self.alignment.append({"node": node, "tokens": tokens})
 
+    def span_of(self, node):
+        """Every token index aligned to a node, across however many spans it has."""
+        found = set()
+        for entry in self.alignment:
+            if entry["node"] == node:
+                found.update(entry["tokens"])
+        return found
+
     def flag(self, node, reason, message=None, options=None, score=None):
         entry = {"node": node, "reason": reason}
         if message:
@@ -105,7 +131,7 @@ class Builder:
 
     def graph(self, pattern=None):
         out = {
-            "schema_version": "0.2.0",
+            "schema_version": SCHEMA_VERSION,
             "text": self.text,
             "tokens": self.tokens,
             "entities": self.entities,
@@ -128,15 +154,29 @@ class Builder:
 # --- multi-word units, resolved before roles ---------------------------------------
 
 
-def find_idiom(doc):
-    """Return (predicate, token indices) for a recognised idiom, else None."""
+def _match_lemma_run(doc, table):
+    """Find a contiguous run of lemmas from table; return (value, token indices) or None."""
     lemmas = [token.lemma_.lower() for token in doc]
-    for key, predicate in lex.IDIOMS.items():
+    for key, value in table.items():
         width = len(key)
         for start in range(len(lemmas) - width + 1):
             if tuple(lemmas[start : start + width]) == key:
-                return predicate, set(range(start, start + width))
+                return value, set(range(start, start + width))
     return None
+
+
+def find_idiom(doc):
+    """Return (predicate, token indices) for an idiom that consumes the clause, else None."""
+    return _match_lemma_run(doc, lex.IDIOMS)
+
+
+def find_predicate_idiom(doc):
+    """Return (predicate, token indices) for an idiom that is only the verb, else None.
+
+    Unlike find_idiom the clause keeps its participants, so the caller has to suppress the
+    idiom's own noun and pick up the object hanging under the idiom's preposition.
+    """
+    return _match_lemma_run(doc, lex.PREDICATE_IDIOMS)
 
 
 def preposition_relation(prep_token):
@@ -299,6 +339,7 @@ class Context:
         self.builder = builder
         self.entity_cache = {}
         self.idiom = find_idiom(doc)
+        self.predicate_idiom = find_predicate_idiom(doc)
         matcher = patterns.build_matcher(doc.vocab)
         self.phrasal = {
             verb_index: (concept, {particle.i}, particle)
@@ -386,6 +427,54 @@ class Context:
             if child.dep_ == "poss":
                 self.builder.entities[node]["possessor"] = self.entity_for(child)
         return node
+
+    def conjuncts(self, token):
+        """token plus everything coordinated with it, in text order."""
+        found = [token]
+        cursor = token
+        while True:
+            nxt = next((c for c in cursor.children if c.dep_ == "conj" and c.pos_ in NOMINAL_POS), None)
+            if nxt is None:
+                break
+            found.append(nxt)
+            cursor = nxt
+        return found
+
+    def entity_or_group(self, tokens):
+        """One entity, or a group entity when the noun phrase is coordinated.
+
+        0.3.0 had nowhere to put "the boy and the girl", so the clause was duplicated into
+        two events sharing a verb token. That is merely clumsy for a distributive verb and
+        wrong for a collective one: "Tom and Ben are friends" is not Tom being a friend and
+        Ben being a friend.
+        """
+        members = []
+        for token in tokens:
+            members += self.conjuncts(token)
+        if len(members) == 1:
+            return self.entity_for(members[0])
+
+        nodes = [self.entity_for(token) for token in members]
+        marker = None
+        for token in members:
+            marker = next((c for c in token.children if c.dep_ == "cc"), marker)
+        coordination = "or" if marker is not None and marker.lower_ == "or" else "and"
+
+        props = {"members": nodes, "coordination": coordination}
+        # An alternative is not a plurality: you get one of milk or water, not both.
+        if coordination == "and":
+            props["number"] = "pl"
+        animacies = {self.builder.entities[n].get("animacy") for n in nodes}
+        if len(animacies) == 1 and None not in animacies:
+            props["animacy"] = animacies.pop()
+
+        spans = [self.builder.span_of(n) for n in nodes]
+        covered = set().union(*spans) if spans else set()
+        if covered:
+            # The group covers the whole phrase, connectors included, so a renderer can
+            # highlight it; the members keep their own spans inside it.
+            covered = set(range(min(covered), max(covered) + 1))
+        return self.builder.entity(props, covered)
 
     def deictic_location(self, adverb):
         node = self.builder.entity(
@@ -478,9 +567,11 @@ def sentence_mood(doc, head):
     subjects = [child for child in head.children if child.dep_ in SUBJECT_DEPS]
     auxes = [child for child in head.children if child.dep_ in ("aux", "auxpass")]
 
+    exclaimed = any(token.text == "!" for token in doc)
+
     # "How fine he looks!" — an exclamative degree word plus an exclamation mark.
-    if any(token.text == "!" for token in doc) and any(
-        token.lower_ == "how" and token.dep_ == "advmod" for token in doc
+    if exclaimed and any(
+        token.lower_ in ("how", "what") and token.dep_ in ("advmod", "det") for token in doc
     ):
         return "exclamative"
 
@@ -496,7 +587,51 @@ def sentence_mood(doc, head):
 
     if head.dep_ == "ROOT" and head.tag_ == "VB" and not subjects:
         return "imperative"
+
+    # Nothing fronted, but the mark is still doing work: "He broke the window!" is not a
+    # statement read flatly. Checked last so that an imperative ending in ! stays one.
+    if exclaimed and subjects:
+        return "exclamative"
     return "declarative"
+
+
+def list_prefix(head, subjects):
+    """Names at the front of a list that spaCy read as something other than the subject.
+
+    "Ann, Ben and Sam sang" arrives with Ann as an npadvmod, which the vocative rule would
+    otherwise claim -- the same label a trailing vocative carries. The two are told apart by
+    position: a list member is FOLLOWED by a comma and precedes the subject, where a
+    vocative is preceded by one and usually ends the clause.
+    """
+    if not subjects:
+        return []
+    first = min(s.i for s in subjects)
+    found = []
+    for child in head.children:
+        if child.dep_ not in ("npadvmod", "dep") or child.pos_ not in NOMINAL_POS:
+            continue
+        if child.i >= first:
+            continue
+        following = child.doc[child.i + 1] if child.i + 1 < len(child.doc) else None
+        if following is not None and following.text == ",":
+            found.append(child)
+    return sorted(found, key=lambda c: c.i)
+
+
+def control_subject(head):
+    """Who performs an embedded clause: the matrix object if it has one, else its subject.
+
+    "Mum told Sam to wash the cup" is Sam washing. Borrowing the matrix subject whatever the
+    clause looked like handed it to Mum, and the swap counter never saw it because that
+    counts agent and patient inverted inside one event, not the wrong person carried into
+    another one. Held out j047.
+    """
+    matrix = head.head
+    if matrix.lemma_.lower() not in lex.SUBJECT_CONTROL_VERBS:
+        objects = [c for c in matrix.children if c.dep_ in ("dobj", "dative")]
+        if objects:
+            return objects[:1]
+    return [c for c in matrix.children if c.dep_ in ("nsubj", "nsubjpass")]
 
 
 def build_event(ctx, head, mood):
@@ -538,6 +673,8 @@ def build_event(ctx, head, mood):
     spatials = []
     coordinated = []
     manner = None
+    measure = None
+    focus = None
     frequency = None
     phase = None
     category = None
@@ -557,8 +694,11 @@ def build_event(ctx, head, mood):
         or (head.dep_ == "ccomp" and head.tag_ == "VB" and not has_finite_aux)
         or (head.dep_ == "advcl" and head.tag_ == "VBG" and not has_finite_aux)
     )
+    borrowed = set()
     if is_complement and not any(c.dep_ in ("nsubj", "nsubjpass") for c in children):
-        children += [c for c in head.head.children if c.dep_ in ("nsubj", "nsubjpass")]
+        controllers = control_subject(head)
+        children += controllers
+        borrowed = {c.i for c in controllers}
     props = {}
     roles = {}
     spatial = None
@@ -584,6 +724,19 @@ def build_event(ctx, head, mood):
         builder.flag(node, "idiom_suspected", "Recognised idiom. Do not render literally.", score=0.3)
         return node
 
+    # --- predicate idiom: the verb is replaced, the participants stay -----------
+    idiom_span = set()
+    idiomatic = False
+    if ctx.predicate_idiom and head.i == min(ctx.predicate_idiom[1]):
+        predicate, idiom_span = ctx.predicate_idiom
+        idiomatic = True
+        span.update(idiom_span)
+        # "take care of your coat": the object hangs under the idiom's own preposition,
+        # two levels down from the verb, so the role loop over head.children never sees it.
+        for token in head.doc:
+            if token.dep_ == "pobj" and token.head.i in idiom_span:
+                roles["patient"] = ctx.entity_for(token)
+
     # --- phrasal verb: the swallowed preposition is not a spatial relation ------
     swallowed = None
     if head.i in ctx.phrasal:
@@ -601,8 +754,36 @@ def build_event(ctx, head, mood):
         predicate = lex.COPULA_ATTRIBUTE
         attribute = head.lower_
 
+    # spaCy sometimes labels a second conjunct as another subject rather than a conj, so
+    # same-dep siblings are merged into one group alongside the conj chain.
+    coordinated_args, skip_children, list_members = {}, set(), set()
+    for dep_name in ("nsubj", "nsubjpass", "dobj"):
+        same = [
+            c
+            for c in children
+            if c.dep_ == dep_name and c.pos_ in NOMINAL_POS and c.i not in borrowed
+        ]
+        if dep_name.startswith("nsubj"):
+            prefix = list_prefix(head, same)
+            list_members.update(c.i for c in prefix)
+            same = prefix + same
+        if len(same) > 1:
+            coordinated_args[same[0].i] = same
+            skip_children.update(c.i for c in same[1:])
+
+    def argument(child):
+        """The entity filling an argument slot, which may be a coordinated group."""
+        return ctx.entity_or_group(coordinated_args.get(child.i, [child]))
+
     for child in children:
-        dep = child.dep_
+        if child.i in skip_children:
+            continue
+        # A borrowed controller keeps its own dependency label -- Sam is still the object
+        # of told -- but it is the subject of this clause, so it is read as one. A name at
+        # the head of a list arrives mislabelled and is read the same way.
+        dep = "nsubj" if child.i in borrowed or child.i in list_members else child.dep_
+        if child.i in idiom_span:
+            continue
 
         # A relative pronoun is not a participant; it stands for the noun the clause
         # modifies, so the role is filled by that noun instead.
@@ -624,6 +805,10 @@ def build_event(ctx, head, mood):
                 span.add(child.i)
                 continue
             role = ctx.roles.get(head.i, {}).get(child.i, "agent")
+            # A borrowed controller is not a child of this verb, so no declarative rule can
+            # match it and the default lands on agent. The verb's own class decides instead.
+            if role == "agent" and child.i in borrowed and head.lemma_.lower() in lex.EXPERIENCER_VERBS:
+                role = "experiencer"
             # Construction overrides the verb's lexical class: a copula has no agent
             # whatever the verb would otherwise take.
             if predicate in (lex.COPULA_ATTRIBUTE, lex.COPULA_LOCATED, lex.EXISTENTIAL):
@@ -635,7 +820,7 @@ def build_event(ctx, head, mood):
                 roles[role] = node
                 question = {"type": child.lower_, "role": role, "target": node}
             else:
-                roles[role] = ctx.entity_for(child)
+                roles[role] = argument(child)
 
         elif dep in ("dobj", "attr", "oprd"):
             if dep == "attr" and child.pos_ in ("NOUN", "PROPN") and not any(
@@ -667,7 +852,7 @@ def build_event(ctx, head, mood):
                 question = {"type": child.lower_, "role": "theme", "target": node}
             else:
                 role = ctx.roles.get(head.i, {}).get(child.i, "patient")
-                roles[role] = ctx.entity_for(child)
+                roles[role] = argument(child)
 
         elif dep == "dative":
             roles[ctx.roles.get(head.i, {}).get(child.i, "recipient")] = ctx.entity_for(child)
@@ -690,6 +875,27 @@ def build_event(ctx, head, mood):
                     continue
             attribute = child.lemma_.lower()
             span.add(child.i)
+            # "seven years old": the noun phrase measures the attribute rather than
+            # participating in anything. Without it the graph says only that she was old.
+            unit = next(
+                (
+                    g
+                    for g in child.children
+                    if g.dep_ == "npadvmod" and g.lemma_.lower() in lex.MEASURE_UNITS
+                ),
+                None,
+            )
+            if unit is not None:
+                number = next((n for n in unit.children if n.dep_ == "nummod"), None)
+                value = lex.NUMBER_WORDS.get(number.lower_) if number is not None else None
+                if value is None and number is not None and number.like_num:
+                    try:
+                        value = int(number.text)
+                    except ValueError:
+                        value = None
+                if value is not None:
+                    measure = {"quantity": value, "unit": unit.lemma_.lower()}
+                    span.update({unit.i, number.i})
             # "red and sweet" asserts two things about one apple, so it is two events.
             coordinated += [c for c in child.children if c.dep_ == "conj" and c.pos_ == "ADJ"]
             if child.morph.get("Degree") == ["Cmp"]:
@@ -710,12 +916,23 @@ def build_event(ctx, head, mood):
                             else:
                                 degree = degree if degree == "comparative" else "comparative"
 
-        elif dep == "prep" and child is not swallowed:
+        elif dep == "prep" and (swallowed is None or child.i != swallowed.i):
             if child.lower_ == "with":
                 for pobj in child.children:
                     if pobj.dep_ == "pobj":
                         roles["comitative"] = ctx.entity_for(pobj)
                         span.add(child.i)
+                continue
+
+            pobj = next((c for c in child.children if c.dep_ == "pobj"), None)
+            if pobj is not None and (
+                head.lemma_.lower(), child.lower_, pobj.lemma_.lower()
+            ) in lex.VERB_PP_IDIOMS:
+                predicate = lex.VERB_PP_IDIOMS[
+                    (head.lemma_.lower(), child.lower_, pobj.lemma_.lower())
+                ]
+                idiomatic = True
+                span.update({child.i, pobj.i})
                 continue
 
             relation, prep_span = preposition_relation(child)
@@ -753,7 +970,11 @@ def build_event(ctx, head, mood):
             phase = lex.PHASE_ADVERBS[child.lower_]
             span.add(child.i)
 
-        elif dep in ("advmod", "prt") and child.lower_ in lex.DIRECTIONAL_ADVERBS:
+        elif (
+            dep in ("advmod", "prt")
+            and child.lower_ in lex.DIRECTIONAL_ADVERBS
+            and (swallowed is None or child.i != swallowed.i)
+        ):
             spatials.append({"relation": lex.DIRECTIONAL_ADVERBS[child.lower_]})
             span.add(child.i)
 
@@ -788,6 +1009,24 @@ def build_event(ctx, head, mood):
         elif dep == "xcomp" and child.pos_ == "VERB" and not going_to:
             props["complement_token"] = child
 
+    # A focus particle sits on whatever it narrows, which may be a noun deep in the clause
+    # rather than a child of the verb, so this runs once the entities exist.
+    for token in head.doc:
+        if token.lower_ not in lex.FOCUS_PARTICLES or token.dep_ != "advmod":
+            continue
+        anchor = token.head
+        if anchor.pos_ == "ADJ":
+            continue  # "too big" is a degree, not a focus
+        target = ctx.entity_cache.get(anchor.i)
+        if target is None and anchor.i == head.i:
+            # Attached to the verb: it focuses the subject, which is the reading in
+            # "He too can swim". Focusing the predicate itself is not distinguished.
+            target = roles.get("agent") or roles.get("theme") or roles.get("experiencer")
+        if target is not None:
+            focus = {"particle": token.lower_, "target": target}
+            span.add(token.i)
+            break
+
     if swallowed is not None:
         for child in swallowed.children:
             if child.dep_ == "pobj":
@@ -803,7 +1042,9 @@ def build_event(ctx, head, mood):
     if going_to:
         tense, modality = "future", "going-to"
 
-    if mood == "interrogative" and question is None:
+    # A non-finite complement carries no mood, so it cannot carry a question either:
+    # "Did you see that boy fall down?" asks about the seeing, not about the falling.
+    if mood == "interrogative" and question is None and not is_complement:
         for token in doc:
             if token.lower_ in WH_WORDS and token.dep_ == "advmod":
                 question = {"type": token.lower_, "role": "location" if token.lower_ == "where" else None}
@@ -864,6 +1105,8 @@ def build_event(ctx, head, mood):
         "predicate": predicate,
         "roles": roles or None,
         "attribute": attribute,
+        "measure": measure,
+        "focus": focus,
         "category": category,
         "manner": manner,
         "frequency": frequency,
@@ -958,7 +1201,10 @@ def build_discourse(ctx, head_to_event):
             marker.lower_, ("sequence", "forward")
         )
 
-        other_head = head.head if head.head is not head else None
+        # spaCy builds a fresh Token proxy on each access, so `head.head is not head` is
+        # true even at the root. Comparing indices is the only reliable identity test, and
+        # getting it wrong related every And-, But- and Then-initial clause to itself.
+        other_head = head.head if head.head.i != head.i else None
         if head.dep_ == "conj":
             other_head = head.head
         if other_head is None or other_head not in head_to_event:
@@ -1002,8 +1248,16 @@ def find_speech_act(doc):
     return None, False
 
 
-def parse(text, tokens=None):
-    """Parse text into a scene graph. tokens fixes the tokenisation alignment refers to."""
+def parse(text, tokens=None, fallback=None):
+    """Parse text into a scene graph. tokens fixes the tokenisation alignment refers to.
+
+    fallback is an optional callable taking the text and returning an AMR graph in penman
+    notation. It is consulted only when the rules produce no events at all -- roughly one
+    sentence in nine on held-out set three, where spaCy's tagger reads the verb as a noun
+    and there is no verbal root to build from. It never overrides a rule that fired,
+    because the rules are the more precise of the two and precision is what a teacher-first
+    renderer needs. See holdout3/AMR-BENCHMARK.md.
+    """
     if tokens is None:
         tokens = [token.text for token in _nlp().tokenizer(text)]
     doc = _doc(tokens)
@@ -1047,5 +1301,18 @@ def parse(text, tokens=None):
             antecedent = by_id.get(relation.get("from"))
             if antecedent is not None:
                 antecedent["irrealis"] = True
+
+    # Gaps only. An empty graph is a blank page where a picture was expected, which is the
+    # one outcome worse than a flagged approximate one.
+    if fallback is not None and not builder.events and builder.speech_act is None:
+        from . import amr_bridge
+
+        spare = Builder(text, tokens)
+        if amr_bridge.build(fallback(text), doc, spare, entity_props, read_tense_aspect):
+            spare.address, spare.speech_act = builder.address, builder.speech_act
+            # No pattern is set: that field names a sentence shape, not a provenance. Every
+            # node the bridge builds carries a parse_uncertain flag instead, which is what a
+            # teacher-facing review queue should be reading anyway.
+            return spare.graph()
 
     return builder.graph()

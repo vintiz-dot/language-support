@@ -1,0 +1,2018 @@
+[
+  {
+    "schema_version": "0.3.0",
+    "id": "j001",
+    "text": "Much is left to the teacher.",
+    "tokens": [
+      "Much",
+      "is",
+      "left",
+      "to",
+      "the",
+      "teacher",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "thing",
+        "number": "mass",
+        "quantifier": "many",
+        "animacy": "abstract"
+      },
+      "e2": {
+        "concept": "teacher",
+        "number": "sg",
+        "definite": true,
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "leave",
+        "roles": {
+          "theme": "e1",
+          "recipient": "e2"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4,
+          5
+        ]
+      }
+    ],
+    "notes": "Passive with no agent expressed. left to is the entrust sense, not physical leaving, and a literal picture would be wrong. Much is mass but the quantifier enum only offers many."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j002",
+    "text": "It is in his hand.",
+    "tokens": [
+      "It",
+      "is",
+      "in",
+      "his",
+      "hand",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "thing",
+        "person": "3sg",
+        "number": "sg"
+      },
+      "e2": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person",
+        "implicit": true
+      },
+      "e3": {
+        "concept": "hand",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object",
+        "possessor": "e2"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.located",
+        "roles": {
+          "theme": "e1"
+        },
+        "spatial": [
+          {
+            "figure": "e1",
+            "relation": "in",
+            "ground": "e3"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          3,
+          4
+        ]
+      }
+    ],
+    "notes": "his has no antecedent in the sentence, so the owner is an implicit entity. It is unresolvable and annotates as thing."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j003",
+    "text": "Ned has fed the hen.",
+    "tokens": [
+      "Ned",
+      "has",
+      "fed",
+      "the",
+      "hen",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "Ned",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "hen",
+        "number": "sg",
+        "definite": true,
+        "animacy": "animal"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "feed",
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
+        "tense": "past",
+        "aspect": "perfect",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3,
+          4
+        ]
+      }
+    ],
+    "notes": "First perfect aspect in either set. The tuning set contains none, so this construction is untested."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j004",
+    "text": "Can the dog catch the rat?",
+    "tokens": [
+      "Can",
+      "the",
+      "dog",
+      "catch",
+      "the",
+      "rat",
+      "?"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "dog",
+        "number": "sg",
+        "definite": true,
+        "animacy": "animal"
+      },
+      "e2": {
+        "concept": "rat",
+        "number": "sg",
+        "definite": true,
+        "animacy": "animal"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "catch",
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "interrogative",
+        "modality": "can",
+        "irrealis": true,
+        "question": {
+          "type": "yes-no"
+        }
+      }
+    ],
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          3
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4,
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j005",
+    "text": "Will you run, too?",
+    "tokens": [
+      "Will",
+      "you",
+      "run",
+      ",",
+      "too",
+      "?"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "run",
+        "roles": {
+          "agent": "e1"
+        },
+        "tense": "future",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "interrogative",
+        "question": {
+          "type": "yes-no"
+        }
+      }
+    ],
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          2
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          1
+        ]
+      }
+    ],
+    "notes": "GAP: too is an additive particle pointing at someone else who is running. Nothing in the schema holds it, and token 4 goes unaligned."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j006",
+    "text": "Now the duck will swim in the pond.",
+    "tokens": [
+      "Now",
+      "the",
+      "duck",
+      "will",
+      "swim",
+      "in",
+      "the",
+      "pond",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "duck",
+        "number": "sg",
+        "definite": true,
+        "animacy": "animal"
+      },
+      "e2": {
+        "concept": "pond",
+        "number": "sg",
+        "definite": true,
+        "animacy": "place"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "swim",
+        "roles": {
+          "agent": "e1"
+        },
+        "spatial": [
+          {
+            "figure": "e1",
+            "relation": "in",
+            "ground": "e2"
+          }
+        ],
+        "tense": "future",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "setting": {
+      "time": "now"
+    },
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          6,
+          7
+        ]
+      }
+    ],
+    "notes": "GAP: setting carries no alignment, so Now at token 0 cannot be highlighted."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j007",
+    "text": "He has left his big top on the box.",
+    "tokens": [
+      "He",
+      "has",
+      "left",
+      "his",
+      "big",
+      "top",
+      "on",
+      "the",
+      "box",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "top",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object",
+        "modifiers": [
+          "big"
+        ],
+        "possessor": "e1"
+      },
+      "e3": {
+        "concept": "box",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "leave",
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
+        "spatial": [
+          {
+            "figure": "e2",
+            "relation": "on",
+            "ground": "e3"
+          }
+        ],
+        "tense": "past",
+        "aspect": "perfect",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2,
+          6
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          7,
+          8
+        ]
+      }
+    ],
+    "notes": "The figure is the top, not the leaver. top is polysemous: spinning toy here, not the upper surface sense that on the box invites."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j008",
+    "text": "No, John, she likes to be in the pond.",
+    "tokens": [
+      "No",
+      ",",
+      "John",
+      ",",
+      "she",
+      "likes",
+      "to",
+      "be",
+      "in",
+      "the",
+      "pond",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "John",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "female",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e3": {
+        "concept": "pond",
+        "number": "sg",
+        "definite": true,
+        "animacy": "place"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "like",
+        "roles": {
+          "experiencer": "e2"
+        },
+        "complement": "ev2",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "be.located",
+        "roles": {
+          "theme": "e2"
+        },
+        "spatial": [
+          {
+            "figure": "e2",
+            "relation": "in",
+            "ground": "e3"
+          }
+        ],
+        "aspect": "simple"
+      }
+    ],
+    "address": "e1",
+    "speech_act": "deny",
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          5
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          7,
+          8
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          9,
+          10
+        ]
+      }
+    ],
+    "notes": "Three utterance-level things at once: a denial, a vocative and a statement. she is the duck in the source, but nothing here says so. Token 6 to marks the complement and has nowhere to align."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j009",
+    "text": "I will not let it fall.",
+    "tokens": [
+      "I",
+      "will",
+      "not",
+      "let",
+      "it",
+      "fall",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "speaker",
+        "person": "1sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "thing",
+        "person": "3sg",
+        "number": "sg"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "let",
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
+        "complement": "ev2",
+        "tense": "future",
+        "aspect": "simple",
+        "polarity": "negative",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "fall",
+        "roles": {
+          "agent": "e2"
+        },
+        "aspect": "simple"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          5
+        ]
+      }
+    ],
+    "notes": "The negation scopes over letting, not over falling: the falling is what is prevented. A picture that negates ev2 says the opposite of a picture that negates ev1, and only ev1 carries it."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j010",
+    "text": "Look, too, at the man on that fine horse.",
+    "tokens": [
+      "Look",
+      ",",
+      "too",
+      ",",
+      "at",
+      "the",
+      "man",
+      "on",
+      "that",
+      "fine",
+      "horse",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person",
+        "implicit": true
+      },
+      "e2": {
+        "concept": "man",
+        "number": "sg",
+        "definite": true,
+        "animacy": "person",
+        "gender": "male",
+        "located": {
+          "relation": "on",
+          "ground": "e3"
+        }
+      },
+      "e3": {
+        "concept": "horse",
+        "number": "sg",
+        "definite": true,
+        "deixis": "distal",
+        "animacy": "animal",
+        "modifiers": [
+          "fine"
+        ]
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "look",
+        "roles": {
+          "agent": "e1",
+          "theme": "e2"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "imperative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          4
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          8,
+          9,
+          10
+        ]
+      }
+    ],
+    "notes": "on that fine horse identifies which man, so it is located on the entity rather than an asserted spatial relation. The entity carrying the anchoring takes the preposition in its span, matching how an event takes its own. GAP: too again unaligned."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j011",
+    "text": "How safe the little chick feels now!",
+    "tokens": [
+      "How",
+      "safe",
+      "the",
+      "little",
+      "chick",
+      "feels",
+      "now",
+      "!"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "chick",
+        "number": "sg",
+        "definite": true,
+        "animacy": "animal",
+        "modifiers": [
+          "little"
+        ]
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "feel",
+        "roles": {
+          "experiencer": "e1"
+        },
+        "attribute": "safe",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "exclamative"
+      }
+    ],
+    "setting": {
+      "time": "now"
+    },
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          1,
+          5
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "notes": "Exclamative with a fronted attribute and a non-copular predicate. safe is what the chick feels, not what it is."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j012",
+    "text": "Rose went under, but she did not drown.",
+    "tokens": [
+      "Rose",
+      "went",
+      "under",
+      ",",
+      "but",
+      "she",
+      "did",
+      "not",
+      "drown",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "Rose",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "female",
+        "number": "sg",
+        "animacy": "person",
+        "coref": "e1"
+      },
+      "e3": {
+        "concept": "thing",
+        "implicit": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "go",
+        "roles": {
+          "agent": "e1"
+        },
+        "spatial": [
+          {
+            "figure": "e1",
+            "relation": "under",
+            "ground": "e3"
+          }
+        ],
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "drown",
+        "roles": {
+          "agent": "e2"
+        },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "negative",
+        "mood": "declarative"
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "contrast",
+        "from": "ev1",
+        "to": "ev2",
+        "marker": "but"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          4
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          5
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          6,
+          7,
+          8
+        ]
+      }
+    ],
+    "notes": "under is not a bare direction, so the thing Rose went under is an implicit entity: the water, in the source, but the sentence does not say it. Rose is female only because she corefers with it. drown takes agent to match how fall is annotated elsewhere, though neither is volitional."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j013",
+    "text": "Where can it be?",
+    "tokens": [
+      "Where",
+      "can",
+      "it",
+      "be",
+      "?"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "thing",
+        "person": "3sg",
+        "number": "sg"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.located",
+        "roles": {
+          "theme": "e1"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "interrogative",
+        "modality": "can",
+        "irrealis": true,
+        "question": {
+          "type": "where",
+          "role": "location"
+        }
+      }
+    ],
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          1,
+          3
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j014",
+    "text": "He keeps it in the pond, near his home.",
+    "tokens": [
+      "He",
+      "keeps",
+      "it",
+      "in",
+      "the",
+      "pond",
+      ",",
+      "near",
+      "his",
+      "home",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "thing",
+        "person": "3sg",
+        "number": "sg"
+      },
+      "e3": {
+        "concept": "pond",
+        "number": "sg",
+        "definite": true,
+        "animacy": "place"
+      },
+      "e4": {
+        "concept": "home",
+        "number": "sg",
+        "definite": true,
+        "animacy": "place",
+        "possessor": "e1"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "keep",
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
+        "spatial": [
+          {
+            "figure": "e2",
+            "relation": "in",
+            "ground": "e3"
+          },
+          {
+            "figure": "e2",
+            "relation": "near",
+            "ground": "e4"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          3,
+          7
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          4,
+          5
+        ]
+      },
+      {
+        "node": "e4",
+        "tokens": [
+          8,
+          9
+        ]
+      }
+    ],
+    "notes": "Two spatial phrases on one event. Arguably near his home describes the pond rather than the keeping, which would make it located on e3. Annotated as two spatials to match g075, which has the same shape."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j015",
+    "text": "It is not best to whip them.",
+    "tokens": [
+      "It",
+      "is",
+      "not",
+      "best",
+      "to",
+      "whip",
+      "them",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "thing",
+        "person": "3pl",
+        "number": "pl"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "attribute": "good",
+        "degree": "superlative",
+        "complement": "ev2",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "negative",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "whip",
+        "roles": {
+          "patient": "e1"
+        },
+        "aspect": "simple"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          5
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          6
+        ]
+      }
+    ],
+    "notes": "It is expletive and aligns to nothing. What is judged is an event, and roles hold only entity references, so complement carries it and ev1 has no theme. them is unresolved; whipping implies animate but the sentence does not say so."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j016",
+    "text": "When Fanny has finished, the three girls will go home.",
+    "tokens": [
+      "When",
+      "Fanny",
+      "has",
+      "finished",
+      ",",
+      "the",
+      "three",
+      "girls",
+      "will",
+      "go",
+      "home",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "Fanny",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "girl",
+        "number": "pl",
+        "quantity": 3,
+        "definite": true,
+        "animacy": "person",
+        "gender": "female"
+      },
+      "e3": {
+        "concept": "home",
+        "number": "sg",
+        "animacy": "place"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "finish",
+        "roles": {
+          "agent": "e1"
+        },
+        "tense": "past",
+        "aspect": "perfect",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "go",
+        "roles": {
+          "agent": "e2"
+        },
+        "spatial": [
+          {
+            "figure": "e2",
+            "relation": "to",
+            "ground": "e3"
+          }
+        ],
+        "tense": "future",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "sequence",
+        "from": "ev1",
+        "to": "ev2",
+        "marker": "when"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "d1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          8,
+          9
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          10
+        ]
+      }
+    ],
+    "notes": "finish has no stated object. home is a bare goal with no preposition, so the to relation is inferred from the verb rather than read off a word."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j017",
+    "text": "The children are not far from home.",
+    "tokens": [
+      "The",
+      "children",
+      "are",
+      "not",
+      "far",
+      "from",
+      "home",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "child",
+        "number": "pl",
+        "definite": true,
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "home",
+        "number": "sg",
+        "animacy": "place"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": {
+          "theme": "e1"
+        },
+        "attribute": "far",
+        "spatial": [
+          {
+            "figure": "e1",
+            "relation": "from",
+            "ground": "e2"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "negative",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          6
+        ]
+      }
+    ],
+    "notes": "GAP: far from is a distance attribute that takes a ground, and the schema has no way to say so. Splitting it into attribute far plus a from relation loses that the negation applies to the distance, not to the direction. The entailed picture is children near home, which this does not say."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j018",
+    "text": "Ellen, do look at Fido!",
+    "tokens": [
+      "Ellen",
+      ",",
+      "do",
+      "look",
+      "at",
+      "Fido",
+      "!"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "Ellen",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "person",
+        "proper_name": "Fido",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "look",
+        "roles": {
+          "agent": "e1",
+          "theme": "e2"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "imperative"
+      }
+    ],
+    "address": "e1",
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          5
+        ]
+      }
+    ],
+    "notes": "Ellen is both the addressee and the one told to look, so address and agent are the same node. Fido is a dog in the source, but nothing in the sentence says so, so it takes the bare proper-name default. GAP: emphatic do has nowhere to go."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j019",
+    "text": "Here you see the rabbits and their little master.",
+    "tokens": [
+      "Here",
+      "you",
+      "see",
+      "the",
+      "rabbits",
+      "and",
+      "their",
+      "little",
+      "master",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "rabbit",
+        "number": "pl",
+        "definite": true,
+        "animacy": "animal"
+      },
+      "e3": {
+        "concept": "master",
+        "number": "sg",
+        "definite": true,
+        "animacy": "person",
+        "modifiers": [
+          "little"
+        ],
+        "possessor": "e2"
+      },
+      "e4": {
+        "concept": "location",
+        "number": "sg",
+        "deixis": "proximal",
+        "animacy": "place"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "see",
+        "roles": {
+          "experiencer": "e1",
+          "theme": "e2"
+        },
+        "spatial": [
+          {
+            "figure": "e1",
+            "relation": "at",
+            "ground": "e4"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "see",
+        "roles": {
+          "experiencer": "e1",
+          "theme": "e3"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "addition",
+        "from": "ev1",
+        "to": "ev2",
+        "marker": "and"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3,
+          4
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          5
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "e4",
+        "tokens": [
+          0
+        ]
+      }
+    ],
+    "notes": "GAP: the first coordinated noun phrase in either set. roles holds one theme, and the schema has no group entity, so one seeing becomes two events sharing a verb token. That is the same workaround the coordinated adjectives in h042 use, and it is a workaround."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j020",
+    "text": "Think the Lord is nigh.",
+    "tokens": [
+      "Think",
+      "the",
+      "Lord",
+      "is",
+      "nigh",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person",
+        "implicit": true
+      },
+      "e2": {
+        "concept": "person",
+        "proper_name": "Lord",
+        "number": "sg",
+        "definite": true,
+        "animacy": "person"
+      },
+      "e3": {
+        "concept": "location",
+        "deixis": "proximal",
+        "animacy": "place",
+        "implicit": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "think",
+        "roles": {
+          "experiencer": "e1"
+        },
+        "complement": "ev2",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "imperative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "be.located",
+        "roles": {
+          "theme": "e2"
+        },
+        "spatial": [
+          {
+            "figure": "e2",
+            "relation": "near",
+            "ground": "e3"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          3,
+          4
+        ]
+      }
+    ],
+    "notes": "nigh is archaic for near. near needs a ground, and the one here is the deictic near us, so it is an implicit proximal location. Not depictable for the intended audience whatever the graph says."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j021",
+    "text": "Have you taken good care of your book?",
+    "tokens": [
+      "Have",
+      "you",
+      "taken",
+      "good",
+      "care",
+      "of",
+      "your",
+      "book",
+      "?"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "book",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object",
+        "possessor": "e1"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "look-after",
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
+        "manner": "well",
+        "tense": "past",
+        "aspect": "perfect",
+        "polarity": "positive",
+        "mood": "interrogative",
+        "question": {
+          "type": "yes-no"
+        }
+      }
+    ],
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          6,
+          7
+        ]
+      }
+    ],
+    "notes": "take care of is an idiom and resolves to the same concept as look after in g050. Literally it would be a taking, with care as the thing taken. good modifies the noun inside the idiom and comes out as manner on the event."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j022",
+    "text": "Brown has put the little sitting room in order.",
+    "tokens": [
+      "Brown",
+      "has",
+      "put",
+      "the",
+      "little",
+      "sitting",
+      "room",
+      "in",
+      "order",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "Brown",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "room",
+        "number": "sg",
+        "definite": true,
+        "animacy": "place",
+        "modifiers": [
+          "little",
+          "sitting"
+        ]
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "tidy",
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
+        "tense": "past",
+        "aspect": "perfect",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2,
+          7,
+          8
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    ],
+    "notes": "put in order is an idiom for tidy. A literal reading puts the room inside a thing called order, which is exactly the confident wrong picture the design exists to prevent. sitting room is a compound noun, annotated as a modifier because the schema has no compound."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j023",
+    "text": "Till the sun is in the sky.",
+    "tokens": [
+      "Till",
+      "the",
+      "sun",
+      "is",
+      "in",
+      "the",
+      "sky",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "sun",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      },
+      "e2": {
+        "concept": "sky",
+        "number": "sg",
+        "definite": true,
+        "animacy": "place"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.located",
+        "roles": {
+          "theme": "e1"
+        },
+        "spatial": [
+          {
+            "figure": "e1",
+            "relation": "in",
+            "ground": "e2"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          3,
+          4
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          5,
+          6
+        ]
+      }
+    ],
+    "notes": "GAP: a verse line, so Till subordinates this clause to one that is not in the sentence. A discourse relation needs two arguments and only one is present, so token 0 goes unaligned and the temporal framing is lost."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j024",
+    "text": "We will watch him, you and I.",
+    "tokens": [
+      "We",
+      "will",
+      "watch",
+      "him",
+      ",",
+      "you",
+      "and",
+      "I."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "speaker",
+        "person": "1pl",
+        "number": "pl",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "watch",
+        "roles": {
+          "experiencer": "e1",
+          "theme": "e2"
+        },
+        "tense": "future",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3
+        ]
+      }
+    ],
+    "notes": "GAP: you and I is an apposition unpacking We, and the schema has no apposition. Dropped rather than added as floating entities, so tokens 5 to 7 go unaligned. The tokeniser also reads I. as one token, so the sentence has no final period."
+  },
+  {
+    "schema_version": "0.3.0",
+    "id": "j025",
+    "text": "She was gone a long time.",
+    "tokens": [
+      "She",
+      "was",
+      "gone",
+      "a",
+      "long",
+      "time",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "female",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": {
+          "theme": "e1"
+        },
+        "attribute": "gone",
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      }
+    ],
+    "notes": "GAP: a long time is a duration, and the schema has no duration. setting.time takes a concept id for when, not for how long. Dropped, so tokens 3 to 5 go unaligned. was gone is a state, not a passive."
+  }
+]

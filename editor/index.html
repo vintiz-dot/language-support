@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sentence pictures</title>
+<style>
+  :root {
+    --bg: #fbfaf7; --panel: #ffffff; --ink: #1d1d1f; --muted: #6b6b70;
+    --line: #e3e1db; --accent: #2f6f4f; --warn: #b8860b; --warn-bg: #fdf7e6;
+    --bad: #b03030; --shadow: 0 1px 3px rgba(0,0,0,.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17181a; --panel: #1f2023; --ink: #eceded; --muted: #9a9ba0;
+      --line: #33353a; --accent: #6fbf94; --warn: #d8a93b; --warn-bg: #2b2517;
+      --bad: #e07a7a; --shadow: 0 1px 3px rgba(0,0,0,.4);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 28px 16px 64px; }
+  h1 { font-size: 1.25rem; margin: 0 0 4px; font-weight: 650; }
+  .sub { color: var(--muted); font-size: .9rem; margin: 0 0 22px; }
+
+  textarea {
+    width: 100%; min-height: 84px; padding: 14px 16px; font-size: 1.35rem;
+    line-height: 1.45; font-family: inherit; color: var(--ink);
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    box-shadow: var(--shadow); resize: vertical;
+  }
+  textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+  .strip {
+    display: flex; flex-wrap: wrap; align-items: flex-end; gap: 6px;
+    margin-top: 22px; min-height: 150px; padding: 18px 14px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    box-shadow: var(--shadow);
+  }
+  .cell {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    padding: 8px 8px 6px; border-radius: 8px; border: 1px solid transparent;
+    background: none; font: inherit; color: inherit; cursor: pointer;
+  }
+  .cell:hover { border-color: var(--line); background: var(--bg); }
+  .cell:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .frame { position: relative; width: 96px; height: 96px; display: grid; place-items: center; }
+  .frame img { max-width: 100%; max-height: 100%; display: block; }
+  .words { font-size: 1.05rem; text-align: center; max-width: 130px; }
+
+  .word { cursor: default; }
+  .word .words { color: var(--muted); }
+  .word .frame { height: 22px; width: auto; min-width: 12px; }
+
+  /* The rest of a span whose picture was drawn earlier: the "on" of "Put ... on", or a
+     pronoun pointing back at a person already shown. One thing, drawn once. */
+  .continues .frame {
+    height: 96px; width: 62px; display: grid; place-items: center;
+    color: var(--muted); font-size: .68rem; text-align: center; line-height: 1.3;
+  }
+  .continues .tie {
+    border-left: 2px dotted var(--line); padding-left: 8px; display: block;
+  }
+  .continues .words { color: var(--muted); }
+
+  .none .frame {
+    border: 1px dashed var(--line); border-radius: 8px; width: 96px; height: 96px;
+    color: var(--muted); font-size: .72rem; text-align: center; padding: 6px;
+  }
+  .fuzzy { background: var(--warn-bg); }
+  .fuzzy .frame { outline: 2px dashed var(--warn); outline-offset: 3px; border-radius: 8px; }
+  .uncertain .words::after { content: " ?"; color: var(--warn); font-weight: 700; }
+  .chosen .frame::after {
+    content: "\2713"; position: absolute; right: -2px; bottom: -2px; font-size: .8rem;
+    background: var(--accent); color: #fff; border-radius: 50%; width: 18px; height: 18px;
+    display: grid; place-items: center;
+  }
+  .negated .frame::before {
+    content: ""; position: absolute; inset: 4px; border-radius: 6px;
+    background:
+      linear-gradient(to top left, transparent calc(50% - 2px), var(--bad) calc(50% - 2px),
+                      var(--bad) calc(50% + 2px), transparent calc(50% + 2px)),
+      linear-gradient(to top right, transparent calc(50% - 2px), var(--bad) calc(50% - 2px),
+                      var(--bad) calc(50% + 2px), transparent calc(50% + 2px));
+  }
+
+  .hint { margin: 0; color: var(--muted); font-size: .85rem; }
+  .hint b { color: var(--ink); font-weight: 600; }
+  .bar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; margin-top: 14px; flex-wrap: wrap;
+  }
+  .go {
+    font: inherit; font-weight: 600; border: 1px solid var(--accent);
+    background: var(--accent); color: #fff; border-radius: 8px;
+    padding: 9px 16px; cursor: pointer;
+  }
+  .go:disabled { opacity: .4; cursor: not-allowed; }
+  .go:not(:disabled):hover { filter: brightness(1.08); }
+
+  .panel {
+    margin-top: 22px; background: var(--panel); border: 1px solid var(--line);
+    border-radius: 10px; box-shadow: var(--shadow); padding: 16px 18px;
+  }
+  .phead {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; flex-wrap: wrap; margin-bottom: 10px;
+  }
+  .phead h2 { margin: 0; font-size: 1rem; font-weight: 650; }
+  .count { color: var(--muted); font-weight: 400; font-size: .85rem; margin-left: 6px; }
+  .controls { display: flex; gap: 8px; }
+  .controls input {
+    font: inherit; padding: 7px 11px; border-radius: 7px; min-width: 190px;
+    border: 1px solid var(--line); background: var(--bg); color: var(--ink);
+  }
+  .controls input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+  .approved { list-style: none; margin: 0; padding: 0; }
+  .approved li {
+    display: flex; align-items: center; gap: 12px; padding: 9px 0;
+    border-top: 1px solid var(--line);
+  }
+  .approved li:first-child { border-top: none; }
+  .thumbs { display: flex; gap: 3px; flex-shrink: 0; }
+  .thumbs img { width: 30px; height: 30px; object-fit: contain; }
+  .said { flex: 1; min-width: 0; }
+  .said .t { display: block; }
+  .said .warn { color: var(--warn); font-size: .78rem; }
+  .drop {
+    font: inherit; border: none; background: none; color: var(--muted);
+    cursor: pointer; padding: 4px 8px; border-radius: 6px; font-size: 1.1rem;
+  }
+  .drop:hover { background: var(--bg); color: var(--bad); }
+  .note { margin: 10px 0 0; color: var(--muted); font-size: .8rem; }
+
+  .setlist { list-style: none; margin: 0; padding: 0; }
+  .setlist li { padding: 8px 0; border-top: 1px solid var(--line); }
+  .setlist li:first-child { border-top: none; }
+  .setlist button {
+    font: inherit; border: none; background: none; color: var(--accent);
+    cursor: pointer; padding: 0; text-align: left; font-weight: 600;
+  }
+  .setlist button:hover { text-decoration: underline; }
+  .setlist .meta { color: var(--muted); font-size: .8rem; }
+  .empty { color: var(--muted); font-size: .85rem; margin: 0; }
+  .reader { color: var(--accent); font-size: .85rem; font-weight: 600; text-decoration: none; }
+  .reader:hover { text-decoration: underline; }
+
+  dialog {
+    border: 1px solid var(--line); border-radius: 12px; background: var(--panel);
+    color: var(--ink); padding: 0; max-width: 620px; width: calc(100% - 32px);
+    box-shadow: 0 8px 40px rgba(0,0,0,.25);
+  }
+  dialog::backdrop { background: rgba(0,0,0,.35); }
+  .dhead { padding: 16px 18px 10px; border-bottom: 1px solid var(--line); }
+  .dhead h2 { margin: 0; font-size: 1.05rem; }
+  .dhead p { margin: 4px 0 0; color: var(--muted); font-size: .85rem; }
+  .options {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+    gap: 10px; padding: 16px 18px; max-height: 50vh; overflow: auto;
+  }
+  .option {
+    border: 1px solid var(--line); background: var(--bg); border-radius: 9px;
+    padding: 8px; cursor: pointer; display: flex; flex-direction: column;
+    align-items: center; gap: 6px; font: inherit; color: inherit;
+  }
+  .option:hover { border-color: var(--accent); }
+  .option img { width: 76px; height: 76px; object-fit: contain; }
+  .option span { font-size: .72rem; color: var(--muted); text-align: center; }
+  .option[aria-current="true"] { border-color: var(--accent); background: var(--panel); }
+  .dfoot {
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    padding: 12px 18px; border-top: 1px solid var(--line);
+  }
+  button.plain {
+    font: inherit; border: 1px solid var(--line); background: var(--bg); color: var(--ink);
+    border-radius: 7px; padding: 7px 13px; cursor: pointer;
+  }
+  button.plain:hover { border-color: var(--accent); }
+  footer { margin-top: 30px; color: var(--muted); font-size: .76rem; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Sentence pictures</h1>
+  <p class="sub">Type a sentence. Pictures appear over the words they came from. Click any picture to change it.</p>
+
+  <textarea id="input" autofocus spellcheck="false"
+            placeholder="The dog chased the cat.">The dog chased the cat.</textarea>
+
+  <div class="strip" id="strip"></div>
+  <div class="bar">
+    <p class="hint" id="hint"></p>
+    <button class="go" id="approve" disabled>Approve this sentence</button>
+  </div>
+
+  <section class="panel" id="working">
+    <div class="phead">
+      <h2>This set <span class="count" id="set-count">empty</span></h2>
+      <div class="controls">
+        <input id="set-title" placeholder="Name this set" autocomplete="off">
+        <button class="plain" id="save-set" disabled>Save set</button>
+      </div>
+    </div>
+    <ol class="approved" id="approved"></ol>
+    <p class="note" id="save-note"></p>
+  </section>
+
+  <section class="panel" id="saved">
+    <div class="phead">
+      <h2>Saved sets</h2>
+      <a class="reader" href="/read" target="_blank" rel="noopener">Open the student view &rarr;</a>
+    </div>
+    <ul class="setlist" id="setlist"></ul>
+  </section>
+
+  <footer>
+    <span id="attribution"></span><br>
+    Pictograms are fetched from ARASAAC by your browser; none are stored here.
+    Any export must carry the attribution above.
+  </footer>
+</div>
+
+<dialog id="picker">
+  <div class="dhead">
+    <h2 id="picker-title"></h2>
+    <p id="picker-note"></p>
+  </div>
+  <div class="options" id="picker-options"></div>
+  <div class="dfoot">
+    <button class="plain" id="picker-reset">Use the default again</button>
+    <button class="plain" id="picker-close">Close</button>
+  </div>
+</dialog>
+
+<script>
+const input = document.getElementById("input");
+const strip = document.getElementById("strip");
+const hint = document.getElementById("hint");
+const picker = document.getElementById("picker");
+
+let timer = null, inflight = 0;
+
+function render(data) {
+  strip.innerHTML = "";
+  document.getElementById("attribution").textContent = data.attribution || "";
+
+  if (data.error) {
+    hint.textContent = "Could not read that sentence yet.";
+    return;
+  }
+  for (const cell of data.cells) {
+    const el = document.createElement(cell.kind === "word" ? "div" : "button");
+    el.className = "cell " + cell.kind;
+    if (cell.continues) el.classList.add("continues");
+    if (cell.kind !== "word") {
+      if (!cell.url && !cell.continues) el.classList.add("none");
+      if (cell.match === "fuzzy") el.classList.add("fuzzy");
+      if (cell.match === "chosen") el.classList.add("chosen");
+      if (cell.uncertain) el.classList.add("uncertain");
+      if (cell.negated) el.classList.add("negated");
+      el.type = "button";
+      el.title = describe(cell);
+      el.addEventListener("click", () => openPicker(cell));
+    }
+
+    const frame = document.createElement("div");
+    frame.className = "frame";
+    if (cell.url) {
+      const img = document.createElement("img");
+      img.src = cell.url;
+      img.alt = cell.concept || cell.text;
+      img.loading = "lazy";
+      frame.appendChild(img);
+    } else if (cell.continues) {
+      const tie = document.createElement("span");
+      tie.className = "tie";
+      tie.textContent = cell.concept;
+      frame.appendChild(tie);
+    } else if (cell.kind !== "word") {
+      // Clicking runs a live lookup, so this invites the click rather than closing it off.
+      frame.textContent = cell.note ? "shown by the scene" : "find a picture";
+    }
+
+    const words = document.createElement("div");
+    words.className = "words";
+    words.textContent = cell.text;
+
+    el.append(frame, words);
+    strip.appendChild(el);
+  }
+  summarise(data);
+}
+
+function describe(cell) {
+  const bits = [cell.concept];
+  if (cell.continues) bits.push("- part of the picture shown earlier");
+  if (cell.predicate) bits.push("(" + cell.predicate + ")");
+  if (cell.match === "fuzzy") bits.push("- no exact symbol, please check");
+  if (cell.match === "chosen") bits.push("- your choice");
+  if (cell.uncertain) bits.push("- the parser was unsure");
+  if (cell.negated) bits.push("- crossed out: the sentence denies this");
+  return bits.join(" ");
+}
+
+function summarise(data) {
+  // A continuation is the same thing shown once, so it must not be counted twice.
+  const drawn = data.cells.filter(c => c.kind !== "word" && !c.continues);
+  const check = drawn.filter(c => c.match === "fuzzy" || c.uncertain || !c.url);
+  if (!drawn.length) {
+    hint.innerHTML = data.tokens.length
+      ? "<b>Nothing to draw yet.</b> The parser found no picture in this sentence."
+      : "";
+    return;
+  }
+  const plural = drawn.length === 1 ? "" : "s";
+  const flagged = check.length
+    ? " &middot; <b>" + check.length + "</b> to check"
+    : " &middot; nothing flagged";
+  hint.innerHTML = "<b>" + drawn.length + "</b> picture" + plural + " over "
+    + data.tokens.length + " words" + flagged;
+}
+
+async function update() {
+  const text = input.value;
+  const mine = ++inflight;
+  const response = await fetch("/api/strip", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: text })
+  });
+  const data = await response.json();
+  if (mine === inflight) render(data);   // ignore a reply overtaken by later typing
+}
+
+input.addEventListener("input", () => {
+  clearTimeout(timer);
+  timer = setTimeout(update, 220);
+});
+
+// --- changing a picture ---------------------------------------------------
+let current = null;
+
+async function openPicker(cell) {
+  current = cell.concept;
+  const response = await fetch("/api/alternatives?concept=" + encodeURIComponent(cell.concept));
+  const data = await response.json();
+
+  document.getElementById("picker-title").textContent = "Picture for: " + cell.concept;
+  document.getElementById("picker-note").textContent =
+    data.note ? data.note
+    : data.match === "fuzzy" ? "No symbol carries this word exactly. Please check the choice."
+    : data.options.length ? "Pick the one your class will recognise."
+    : "ARASAAC has no symbol for this word.";
+
+  const box = document.getElementById("picker-options");
+  box.innerHTML = "";
+  for (const option of data.options) {
+    const button = document.createElement("button");
+    button.className = "option";
+    button.type = "button";
+    if (option.current) button.setAttribute("aria-current", "true");
+    const img = document.createElement("img");
+    img.src = option.url;
+    img.alt = option.keywords.join(", ");
+    img.loading = "lazy";
+    const label = document.createElement("span");
+    label.textContent = option.keywords.slice(0, 3).join(", ");
+    button.append(img, label);
+    button.addEventListener("click", () => choose(option.pictogram));
+    box.appendChild(button);
+  }
+  picker.showModal();
+}
+
+async function choose(pictogram) {
+  await fetch("/api/override", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ concept: current, pictogram: pictogram })
+  });
+  picker.close();
+  update();
+}
+
+document.getElementById("picker-reset").addEventListener("click", () => choose(null));
+document.getElementById("picker-close").addEventListener("click", () => picker.close());
+
+// --- approving, and building a set -------------------------------------------
+// Approving freezes the strip as the teacher sees it. The server stores the resolved
+// pictures, not the sentence, so a later parser change cannot redraw an approved set.
+
+const approveButton = document.getElementById("approve");
+const approvedList = document.getElementById("approved");
+const setTitle = document.getElementById("set-title");
+const saveButton = document.getElementById("save-set");
+const saveNote = document.getElementById("save-note");
+
+let working = [];
+
+function remember() {
+  try {
+    localStorage.setItem("working", JSON.stringify({ title: setTitle.value, working }));
+  } catch (e) { /* a private window is not an error worth showing a teacher */ }
+}
+
+function recall() {
+  try {
+    const saved = JSON.parse(localStorage.getItem("working") || "null");
+    if (saved) { working = saved.working || []; setTitle.value = saved.title || ""; }
+  } catch (e) { working = []; }
+}
+
+function thumbnails(sentence) {
+  const box = document.createElement("div");
+  box.className = "thumbs";
+  for (const cell of (sentence.cells || []).filter(c => c.url).slice(0, 6)) {
+    const img = document.createElement("img");
+    img.src = cell.url;
+    img.alt = cell.concept;
+    img.loading = "lazy";
+    box.appendChild(img);
+  }
+  return box;
+}
+
+function drawWorking() {
+  approvedList.innerHTML = "";
+  for (const [index, sentence] of working.entries()) {
+    const li = document.createElement("li");
+
+    const said = document.createElement("div");
+    said.className = "said";
+    const text = document.createElement("span");
+    text.className = "t";
+    text.textContent = sentence.text;
+    said.appendChild(text);
+    if ((sentence.to_check || []).length) {
+      const warn = document.createElement("span");
+      warn.className = "warn";
+      warn.textContent = sentence.to_check.join(" · ");
+      said.appendChild(warn);
+    }
+
+    const drop = document.createElement("button");
+    drop.className = "drop";
+    drop.type = "button";
+    drop.textContent = "×";
+    drop.title = "Take this out of the set";
+    drop.addEventListener("click", () => {
+      working.splice(index, 1);
+      drawWorking();
+      remember();
+    });
+
+    li.append(thumbnails(sentence), said, drop);
+    approvedList.appendChild(li);
+  }
+  if (!working.length) {
+    const empty = document.createElement("p");
+    empty.className = "empty";
+    empty.textContent = "Nothing approved yet. Type a sentence above, check the pictures, "
+      + "then approve it.";
+    approvedList.appendChild(empty);
+  }
+  document.getElementById("set-count").textContent =
+    working.length ? working.length + (working.length === 1 ? " sentence" : " sentences") : "empty";
+  saveButton.disabled = !working.length;
+}
+
+approveButton.addEventListener("click", async () => {
+  approveButton.disabled = true;
+  const response = await fetch("/api/approve", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: input.value.trim() })
+  });
+  const sentence = await response.json();
+  if (!sentence.error) {
+    working.push(sentence);
+    drawWorking();
+    remember();
+    saveNote.textContent = "";
+    input.value = "";
+    update();
+  }
+  input.focus();
+});
+
+saveButton.addEventListener("click", async () => {
+  const title = setTitle.value.trim() || "Untitled set";
+  const response = await fetch("/api/sets", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name: title, title: title, sentences: working })
+  });
+  const result = await response.json();
+  saveNote.textContent = result.error
+    ? "Could not save: " + result.error
+    : `Saved “${result.title}” — ${result.sentences} sentences, in sets/${result.name}.json`;
+  drawSets();
+});
+
+async function drawSets() {
+  const data = await (await fetch("/api/sets")).json();
+  const list = document.getElementById("setlist");
+  list.innerHTML = "";
+  if (!(data.sets || []).length) {
+    const empty = document.createElement("p");
+    empty.className = "empty";
+    empty.textContent = "No sets saved yet.";
+    list.appendChild(empty);
+    return;
+  }
+  for (const row of data.sets) {
+    const li = document.createElement("li");
+    const open = document.createElement("button");
+    open.type = "button";
+    open.textContent = row.title;
+    open.addEventListener("click", () => openSet(row.name));
+    const meta = document.createElement("div");
+    meta.className = "meta";
+    meta.textContent = row.sentences + (row.sentences === 1 ? " sentence" : " sentences")
+      + (row.to_check ? " · " + row.to_check + " to check" : "")
+      + (row.saved ? " · saved " + row.saved : "");
+    li.append(open, meta);
+    list.appendChild(li);
+  }
+}
+
+async function openSet(name) {
+  const data = await (await fetch("/api/sets?name=" + encodeURIComponent(name))).json();
+  if (data.error) return;
+  working = data.sentences || [];
+  setTitle.value = data.title || "";
+  drawWorking();
+  remember();
+  saveNote.textContent = "Opened. Saving again will replace it.";
+}
+
+input.addEventListener("input", () => {
+  approveButton.disabled = !input.value.trim();
+});
+
+recall();
+drawWorking();
+drawSets();
+update();
+approveButton.disabled = !input.value.trim();
+</script>
+</body>
+</html>

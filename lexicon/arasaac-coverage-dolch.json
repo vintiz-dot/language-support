@@ -872,6 +872,290 @@
     "source": "service"
   },
   {
+    "search_term": "bring",
+    "status": "exact",
+    "results": 7,
+    "pictogram_id": 7280,
+    "pictogram_keywords": [
+      "bring",
+      "contribute"
+    ],
+    "word": "bring",
+    "source": "service"
+  },
+  {
+    "search_term": "carry",
+    "status": "exact",
+    "results": 10,
+    "pictogram_id": 8983,
+    "pictogram_keywords": [
+      "support",
+      "laden",
+      "loaded down",
+      "carry",
+      "transport"
+    ],
+    "word": "carry",
+    "source": "service"
+  },
+  {
+    "search_term": "clean",
+    "status": "exact",
+    "results": 34,
+    "pictogram_id": 26172,
+    "pictogram_keywords": [
+      "clean"
+    ],
+    "word": "clean",
+    "source": "service"
+  },
+  {
+    "search_term": "cut",
+    "status": "exact",
+    "results": 25,
+    "pictogram_id": 5975,
+    "pictogram_keywords": [
+      "cut"
+    ],
+    "word": "cut",
+    "source": "service"
+  },
+  {
+    "search_term": "draw",
+    "status": "exact",
+    "results": 6,
+    "pictogram_id": 8088,
+    "pictogram_keywords": [
+      "draw"
+    ],
+    "word": "draw",
+    "source": "service"
+  },
+  {
+    "search_term": "drink",
+    "status": "exact",
+    "results": 141,
+    "pictogram_id": 6061,
+    "pictogram_keywords": [
+      "drink"
+    ],
+    "word": "drink",
+    "source": "service"
+  },
+  {
+    "search_term": "fall",
+    "status": "exact",
+    "results": 8,
+    "pictogram_id": 39440,
+    "pictogram_keywords": [
+      "fall"
+    ],
+    "word": "fall",
+    "source": "service"
+  },
+  {
+    "search_term": "full",
+    "status": "exact",
+    "results": 7,
+    "pictogram_id": 26176,
+    "pictogram_keywords": [
+      "full"
+    ],
+    "word": "full",
+    "source": "service"
+  },
+  {
+    "search_term": "get",
+    "status": "exact",
+    "results": 118,
+    "pictogram_id": 24208,
+    "pictogram_keywords": [
+      "get",
+      "obtain",
+      "reach"
+    ],
+    "word": "got",
+    "source": "service"
+  },
+  {
+    "search_term": "grow",
+    "status": "exact",
+    "results": 7,
+    "pictogram_id": 7002,
+    "pictogram_keywords": [
+      "grow"
+    ],
+    "word": "grow",
+    "source": "service"
+  },
+  {
+    "search_term": "hold",
+    "status": "exact",
+    "results": 22,
+    "pictogram_id": 32761,
+    "pictogram_keywords": [
+      "have",
+      "hold",
+      "keep hold",
+      "own",
+      "possess",
+      "have got"
+    ],
+    "word": "hold",
+    "source": "service"
+  },
+  {
+    "search_term": "hot",
+    "status": "exact",
+    "results": 20,
+    "pictogram_id": 2300,
+    "pictogram_keywords": [
+      "hot"
+    ],
+    "word": "hot",
+    "source": "service"
+  },
+  {
+    "search_term": "hurt",
+    "status": "exact",
+    "results": 4,
+    "pictogram_id": 5484,
+    "pictogram_keywords": [
+      "injury",
+      "cut",
+      "hurt"
+    ],
+    "word": "hurt",
+    "source": "service"
+  },
+  {
+    "search_term": "keep",
+    "status": "exact",
+    "results": 20,
+    "pictogram_id": 17050,
+    "pictogram_keywords": [
+      "keep",
+      "last",
+      "go on for",
+      "go on"
+    ],
+    "word": "keep",
+    "source": "service"
+  },
+  {
+    "search_term": "kind",
+    "status": "exact",
+    "results": 1,
+    "pictogram_id": 33994,
+    "pictogram_keywords": [
+      "kind"
+    ],
+    "word": "kind",
+    "source": "service"
+  },
+  {
+    "search_term": "laugh",
+    "status": "exact",
+    "results": 6,
+    "pictogram_id": 13354,
+    "pictogram_keywords": [
+      "laugh",
+      "smile",
+      "smile"
+    ],
+    "word": "laugh",
+    "source": "service"
+  },
+  {
+    "search_term": "light",
+    "status": "exact",
+    "results": 59,
+    "pictogram_id": 8619,
+    "pictogram_keywords": [
+      "light",
+      "lighting",
+      "luminosity",
+      "brightness"
+    ],
+    "word": "light",
+    "source": "service"
+  },
+  {
+    "search_term": "long",
+    "status": "exact",
+    "results": 22,
+    "pictogram_id": 26162,
+    "pictogram_keywords": [
+      "long"
+    ],
+    "word": "long",
+    "source": "service"
+  },
+  {
+    "search_term": "pick",
+    "status": "exact",
+    "results": 29,
+    "pictogram_id": 7227,
+    "pictogram_keywords": [
+      "harvest",
+      "pick"
+    ],
+    "word": "pick",
+    "source": "service"
+  },
+  {
+    "search_term": "show",
+    "status": "exact",
+    "results": 42,
+    "pictogram_id": 16823,
+    "pictogram_keywords": [
+      "show",
+      "present",
+      "exhibit"
+    ],
+    "word": "show",
+    "source": "service"
+  },
+  {
+    "search_term": "small",
+    "status": "exact",
+    "results": 3,
+    "pictogram_id": 4716,
+    "pictogram_keywords": [
+      "small",
+      "smaller",
+      "tiny",
+      "little",
+      "littler"
+    ],
+    "word": "small",
+    "source": "service"
+  },
+  {
+    "search_term": "try",
+    "status": "exact",
+    "results": 6,
+    "pictogram_id": 8148,
+    "pictogram_keywords": [
+      "judge",
+      "try"
+    ],
+    "word": "try",
+    "source": "service"
+  },
+  {
+    "search_term": "warm",
+    "status": "exact",
+    "results": 4,
+    "pictogram_id": 8521,
+    "pictogram_keywords": [
+      "warm",
+      "warm up"
+    ],
+    "word": "warm",
+    "source": "service"
+  },
+  {
     "search_term": "apple",
     "status": "exact",
     "results": 8,

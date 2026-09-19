@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading</title>
+<style>
+  :root {
+    --bg: #fbfaf7; --panel: #ffffff; --ink: #1d1d1f; --muted: #6b6b70;
+    --line: #e3e1db; --accent: #2f6f4f; --shadow: 0 1px 3px rgba(0,0,0,.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17181a; --panel: #1f2023; --ink: #eceded; --muted: #9a9ba0;
+      --line: #33353a; --accent: #6fbf94; --shadow: 0 1px 3px rgba(0,0,0,.4);
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+    display: flex; flex-direction: column;
+  }
+
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding: 12px 16px; border-bottom: 1px solid var(--line);
+    background: var(--panel);
+  }
+  header .title { font-weight: 650; }
+  header .where { color: var(--muted); font-size: .9rem; }
+  header a { color: var(--muted); font-size: .85rem; text-decoration: none; }
+  header a:hover { color: var(--accent); text-decoration: underline; }
+
+  main {
+    flex: 1; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; gap: 28px; padding: 24px 16px; min-height: 0;
+  }
+
+  .sentence {
+    display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: center;
+    gap: 10px 14px; max-width: 1100px;
+  }
+  .cell { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .cell img { width: 170px; height: 170px; object-fit: contain; display: block; }
+  .cell .words { font-size: 1.6rem; text-align: center; }
+  .cell.word { align-self: flex-end; }
+  .cell.word .words { color: var(--muted); }
+  .cell.continues img { display: none; }
+
+  .negated { position: relative; }
+  .negated::before {
+    content: ""; position: absolute; inset: 0 0 46px 0; pointer-events: none;
+    background:
+      linear-gradient(to top left, transparent calc(50% - 3px), #b03030 calc(50% - 3px),
+                      #b03030 calc(50% + 3px), transparent calc(50% + 3px)),
+      linear-gradient(to top right, transparent calc(50% - 3px), #b03030 calc(50% - 3px),
+                      #b03030 calc(50% + 3px), transparent calc(50% + 3px));
+  }
+
+  nav {
+    display: flex; align-items: center; gap: 20px;
+    padding: 14px 16px 22px;
+  }
+  nav button {
+    font: inherit; font-size: 1.15rem; font-weight: 600;
+    border: 1px solid var(--line); background: var(--panel); color: var(--ink);
+    border-radius: 12px; padding: 16px 30px; cursor: pointer; min-width: 130px;
+    box-shadow: var(--shadow);
+  }
+  nav button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+  nav button:disabled { opacity: .3; cursor: default; }
+  nav .count { color: var(--muted); font-size: 1rem; min-width: 76px; text-align: center; }
+
+  .chooser { max-width: 560px; width: 100%; }
+  .chooser h1 { font-size: 1.2rem; margin: 0 0 14px; }
+  .chooser ul { list-style: none; margin: 0; padding: 0; }
+  .chooser li { border-top: 1px solid var(--line); }
+  .chooser li:first-child { border-top: none; }
+  .chooser a {
+    display: block; padding: 14px 4px; color: var(--ink);
+    text-decoration: none; font-size: 1.15rem; font-weight: 600;
+  }
+  .chooser a:hover { color: var(--accent); }
+  .chooser .meta { color: var(--muted); font-size: .85rem; font-weight: 400; }
+  .empty { color: var(--muted); }
+
+  footer {
+    padding: 10px 16px 14px; color: var(--muted); font-size: .7rem;
+    text-align: center; line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+<header>
+  <span class="title" id="title">Reading</span>
+  <span class="where" id="where"></span>
+  <a href="/" id="back">Teacher view</a>
+</header>
+
+<main id="main"></main>
+
+<nav id="nav" hidden>
+  <button type="button" id="prev">&larr; Back</button>
+  <span class="count" id="count"></span>
+  <button type="button" id="next">Next &rarr;</button>
+</nav>
+
+<footer id="attribution"></footer>
+
+<script>
+// The student view reads a saved set and nothing else. It never parses, never looks a
+// concept up, and never shows a review flag: the pictures were frozen when the teacher
+// approved them, and whether the parser was unsure is the teacher's business, not a
+// child's. That is why this page needs no parser and no lexicon.
+
+const main = document.getElementById("main");
+const nav = document.getElementById("nav");
+const ATTRIBUTION = "ARASAAC pictograms: author Sergio Palao, origin ARASAAC "
+  + "(https://arasaac.org), owned by the Government of Aragon, licensed CC BY-NC-SA.";
+
+let sentences = [];
+let at = 0;
+
+function setName() {
+  return new URLSearchParams(location.search).get("set");
+}
+
+async function start() {
+  const name = setName();
+  if (!name) return chooser();
+
+  const data = await (await fetch("/api/sets?name=" + encodeURIComponent(name))).json();
+  if (data.error) {
+    main.innerHTML = "";
+    const p = document.createElement("p");
+    p.className = "empty";
+    p.textContent = "That set could not be found.";
+    main.appendChild(p);
+    return;
+  }
+  document.getElementById("title").textContent = data.title || name;
+  document.title = (data.title || name) + " — Reading";
+  sentences = data.sentences || [];
+  if (!sentences.length) {
+    const p = document.createElement("p");
+    p.className = "empty";
+    p.textContent = "This set has no sentences in it yet.";
+    main.appendChild(p);
+    return;
+  }
+  document.getElementById("attribution").textContent = ATTRIBUTION;
+  nav.hidden = false;
+  show(0);
+}
+
+function show(index) {
+  at = Math.max(0, Math.min(index, sentences.length - 1));
+  const sentence = sentences[at];
+
+  main.innerHTML = "";
+  const box = document.createElement("div");
+  box.className = "sentence";
+
+  for (const cell of sentence.cells || []) {
+    const el = document.createElement("div");
+    el.className = "cell " + (cell.kind || "word");
+    if (cell.continues) el.classList.add("continues");
+    if (cell.negated) el.classList.add("negated");
+
+    if (cell.url && !cell.continues) {
+      const img = document.createElement("img");
+      img.src = cell.url;
+      img.alt = cell.concept || cell.text;
+      el.appendChild(img);
+    }
+    const words = document.createElement("div");
+    words.className = "words";
+    words.textContent = cell.text;
+    el.appendChild(words);
+    box.appendChild(el);
+  }
+  main.appendChild(box);
+
+  document.getElementById("count").textContent = (at + 1) + " of " + sentences.length;
+  document.getElementById("where").textContent = "";
+  document.getElementById("prev").disabled = at === 0;
+  document.getElementById("next").disabled = at === sentences.length - 1;
+}
+
+async function chooser() {
+  const data = await (await fetch("/api/sets")).json();
+  main.innerHTML = "";
+  const box = document.createElement("div");
+  box.className = "chooser";
+  const heading = document.createElement("h1");
+  heading.textContent = "Choose a set to read";
+  box.appendChild(heading);
+
+  if (!(data.sets || []).length) {
+    const p = document.createElement("p");
+    p.className = "empty";
+    p.textContent = "No sets have been saved yet. A teacher makes one in the teacher view.";
+    box.appendChild(p);
+  } else {
+    const list = document.createElement("ul");
+    for (const row of data.sets) {
+      const li = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = "/read?set=" + encodeURIComponent(row.name);
+      link.textContent = row.title;
+      const meta = document.createElement("span");
+      meta.className = "meta";
+      meta.textContent = " · " + row.sentences
+        + (row.sentences === 1 ? " sentence" : " sentences");
+      link.appendChild(meta);
+      li.appendChild(link);
+      list.appendChild(li);
+    }
+    box.appendChild(list);
+  }
+  main.appendChild(box);
+}
+
+document.getElementById("prev").addEventListener("click", () => show(at - 1));
+document.getElementById("next").addEventListener("click", () => show(at + 1));
+
+document.addEventListener("keydown", (event) => {
+  if (!sentences.length) return;
+  if (event.key === "ArrowRight" || event.key === " " || event.key === "Enter") {
+    show(at + 1);
+    event.preventDefault();
+  } else if (event.key === "ArrowLeft" || event.key === "Backspace") {
+    show(at - 1);
+    event.preventDefault();
+  }
+});
+
+start();
+</script>
+</body>
+</html>

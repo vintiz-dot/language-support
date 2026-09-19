@@ -1,0 +1,8 @@
+{
+  "locked": "2026-09-18",
+  "note": "Set two. Annotations were written at schema 0.3.0 and validated before the parser was run on any of these sentences. Sentences are disjoint from set one by construction. These hashes exist so a later change is visible. Scored once; the parser must not be tuned against this set.",
+  "files": {
+    "gold-a.json": "997b2cae1d296ba7",
+    "gold-b.json": "f1fa150922b84bb3"
+  }
+}

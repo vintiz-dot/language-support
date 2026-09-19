@@ -1,0 +1,296 @@
+[
+  {
+    "schema_version": "0.4.0",
+    "id": "g076",
+    "text": "The boy and the girl ran.",
+    "tokens": ["The", "boy", "and", "the", "girl", "ran", "."],
+    "entities": {
+      "e1": {"concept": "boy", "number": "sg", "definite": true, "animacy": "person", "gender": "male"},
+      "e2": {"concept": "girl", "number": "sg", "definite": true, "animacy": "person", "gender": "female"},
+      "e3": {"members": ["e1", "e2"], "coordination": "and", "number": "pl", "animacy": "person"}
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "run",
+        "roles": {"agent": "e3"},
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {"node": "e3", "tokens": [0, 1, 2, 3, 4]},
+      {"node": "e1", "tokens": [0, 1]},
+      {"node": "e2", "tokens": [3, 4]},
+      {"node": "ev1", "tokens": [5]}
+    ],
+    "notes": "One running with two runners. At 0.3.0 this became two events sharing a verb token, which said the boy ran and the girl ran -- true here, but not the same claim, and wrong as soon as the verb is reciprocal or collective. The group spans the whole noun phrase so a renderer can highlight it; the members span their own parts inside it."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "g077",
+    "text": "I like bread and cheese.",
+    "tokens": ["I", "like", "bread", "and", "cheese", "."],
+    "entities": {
+      "e1": {"concept": "speaker", "person": "1sg", "number": "sg", "animacy": "person"},
+      "e2": {"concept": "bread", "number": "mass", "definite": false, "animacy": "object"},
+      "e3": {"concept": "cheese", "number": "mass", "definite": false, "animacy": "object"},
+      "e4": {"members": ["e2", "e3"], "coordination": "and", "number": "pl", "animacy": "object"}
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "like",
+        "roles": {"experiencer": "e1", "theme": "e4"},
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {"node": "e1", "tokens": [0]},
+      {"node": "ev1", "tokens": [1]},
+      {"node": "e4", "tokens": [2, 3, 4]},
+      {"node": "e2", "tokens": [2]},
+      {"node": "e3", "tokens": [4]}
+    ],
+    "notes": "A coordinated object. The group is plural even though both members are mass."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "g078",
+    "text": "You may have milk or water.",
+    "tokens": ["You", "may", "have", "milk", "or", "water", "."],
+    "entities": {
+      "e1": {"concept": "addressee", "person": "2sg", "number": "sg", "animacy": "person"},
+      "e2": {"concept": "milk", "number": "mass", "definite": false, "animacy": "object"},
+      "e3": {"concept": "water", "number": "mass", "definite": false, "animacy": "object"},
+      "e4": {"members": ["e2", "e3"], "coordination": "or", "animacy": "object"}
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "have",
+        "roles": {"agent": "e1", "theme": "e4"},
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative",
+        "modality": "may",
+        "irrealis": true
+      }
+    ],
+    "alignment": [
+      {"node": "e1", "tokens": [0]},
+      {"node": "ev1", "tokens": [1, 2]},
+      {"node": "e4", "tokens": [3, 4, 5]},
+      {"node": "e2", "tokens": [3]},
+      {"node": "e3", "tokens": [5]}
+    ],
+    "notes": "The reason coordination carries a type. A picture of milk AND water is a different permission from milk OR water, and a renderer has to know which. The group takes no number: one of them will be had, not both."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "g079",
+    "text": "The cat, the dog and the bird slept.",
+    "tokens": ["The", "cat", ",", "the", "dog", "and", "the", "bird", "slept", "."],
+    "entities": {
+      "e1": {"concept": "cat", "number": "sg", "definite": true, "animacy": "animal"},
+      "e2": {"concept": "dog", "number": "sg", "definite": true, "animacy": "animal"},
+      "e3": {"concept": "bird", "number": "sg", "definite": true, "animacy": "animal"},
+      "e4": {"members": ["e1", "e2", "e3"], "coordination": "and", "number": "pl", "animacy": "animal"}
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "sleep",
+        "roles": {"agent": "e4"},
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {"node": "e4", "tokens": [0, 1, 2, 3, 4, 5, 6, 7]},
+      {"node": "e1", "tokens": [0, 1]},
+      {"node": "e2", "tokens": [3, 4]},
+      {"node": "e3", "tokens": [6, 7]},
+      {"node": "ev1", "tokens": [8]}
+    ],
+    "notes": "Three members, with the comma doing the same work as the and. members is a list rather than a pair for exactly this."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "g080",
+    "text": "Tom and Ben are friends.",
+    "tokens": ["Tom", "and", "Ben", "are", "friends", "."],
+    "entities": {
+      "e1": {"concept": "person", "proper_name": "Tom", "number": "sg", "animacy": "person"},
+      "e2": {"concept": "person", "proper_name": "Ben", "number": "sg", "animacy": "person"},
+      "e3": {"members": ["e1", "e2"], "coordination": "and", "number": "pl", "animacy": "person"},
+      "e4": {"concept": "friend", "number": "pl", "definite": false, "animacy": "person"}
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.category",
+        "roles": {"theme": "e3"},
+        "category": "e4",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {"node": "e3", "tokens": [0, 1, 2]},
+      {"node": "e1", "tokens": [0]},
+      {"node": "e2", "tokens": [2]},
+      {"node": "ev1", "tokens": [3]},
+      {"node": "e4", "tokens": [4]}
+    ],
+    "notes": "A collective predicate, and the clearest case for groups. Tom is a friend and Ben is a friend is not what this says; being friends is a fact about the pair. The 0.3.0 workaround of duplicating the event would have asserted the wrong thing rather than merely a clumsy thing."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "g081",
+    "text": "Only the dog barked.",
+    "tokens": ["Only", "the", "dog", "barked", "."],
+    "entities": {
+      "e1": {"concept": "dog", "number": "sg", "definite": true, "animacy": "animal"}
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "bark",
+        "roles": {"agent": "e1"},
+        "focus": {"particle": "only", "target": "e1"},
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {"node": "ev1", "tokens": [0, 3]},
+      {"node": "e1", "tokens": [1, 2]}
+    ],
+    "notes": "Without focus this is the dog barked, which is true but is not the claim. The claim is that nothing else did, and a picture that cannot show the difference is showing a different sentence. The particle aligns to the event because it scopes over the clause while pointing at the entity."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "g082",
+    "text": "He too can swim.",
+    "tokens": ["He", "too", "can", "swim", "."],
+    "entities": {
+      "e1": {"concept": "person", "person": "3sg", "gender": "male", "number": "sg", "animacy": "person"}
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "swim",
+        "roles": {"agent": "e1"},
+        "focus": {"particle": "too", "target": "e1"},
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative",
+        "modality": "can",
+        "irrealis": true
+      }
+    ],
+    "alignment": [
+      {"node": "e1", "tokens": [0]},
+      {"node": "ev1", "tokens": [1, 2, 3]}
+    ],
+    "notes": "The mirror of only: too adds him to a set rather than narrowing to him. Whoever else swims is outside the sentence, so the graph records that there is someone without saying who."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "g083",
+    "text": "She was seven years old.",
+    "tokens": ["She", "was", "seven", "years", "old", "."],
+    "entities": {
+      "e1": {"concept": "person", "person": "3sg", "gender": "female", "number": "sg", "animacy": "person"}
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": {"theme": "e1"},
+        "attribute": "old",
+        "measure": {"quantity": 7, "unit": "year"},
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {"node": "e1", "tokens": [0]},
+      {"node": "ev1", "tokens": [1, 2, 3, 4]}
+    ],
+    "notes": "The case that motivated measure. Dropping seven years leaves she was old, which for a seven-year-old is not a lossy picture but an inverted one. old here is the dimension being measured, not a claim of age."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "g084",
+    "text": "The wall is two metres high.",
+    "tokens": ["The", "wall", "is", "two", "metres", "high", "."],
+    "entities": {
+      "e1": {"concept": "wall", "number": "sg", "definite": true, "animacy": "object"}
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": {"theme": "e1"},
+        "attribute": "high",
+        "measure": {"quantity": 2, "unit": "metre"},
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {"node": "e1", "tokens": [0, 1]},
+      {"node": "ev1", "tokens": [2, 3, 4, 5]}
+    ],
+    "notes": "The same shape on a spatial dimension rather than time, to show measure is not an age field."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "g085",
+    "text": "The boy and the girl are hungry.",
+    "tokens": ["The", "boy", "and", "the", "girl", "are", "hungry", "."],
+    "entities": {
+      "e1": {"concept": "boy", "number": "sg", "definite": true, "animacy": "person", "gender": "male"},
+      "e2": {"concept": "girl", "number": "sg", "definite": true, "animacy": "person", "gender": "female"},
+      "e3": {"members": ["e1", "e2"], "coordination": "and", "number": "pl", "animacy": "person"}
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": {"theme": "e3"},
+        "attribute": "hungry",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {"node": "e3", "tokens": [0, 1, 2, 3, 4]},
+      {"node": "e1", "tokens": [0, 1]},
+      {"node": "e2", "tokens": [3, 4]},
+      {"node": "ev1", "tokens": [5, 6]}
+    ],
+    "notes": "A distributive predicate, where duplicating the event would have been harmless. Kept as a group anyway, because whether a predicate distributes is a fact about the verb and not something the annotator should have to decide sentence by sentence."
+  }
+]

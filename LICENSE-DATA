@@ -1,0 +1,52 @@
+Licence for the data in this repository
+=======================================
+
+The code is under Apache-2.0 (see LICENSE). Apache-2.0 is a licence written for
+software, and this repository's most valuable artefact is not software: it is
+229 hand-annotated scene graphs, three of the four sets locked and scored
+exactly once. Applying a code licence to data leaves database rights ambiguous
+in jurisdictions that recognise them, so the data is licensed separately and
+explicitly.
+
+The following are licensed under the Creative Commons Attribution 4.0
+International licence (CC BY 4.0):
+
+    schema/                     the scene graph schema, every version
+    gold/                       87 annotated tuning graphs
+    holdout/gold/               47 annotated graphs, locked at 0.2.0
+    holdout2/gold/              48 annotated graphs, locked at 0.3.0
+    holdout3/gold/              47 annotated graphs, locked at 0.4.0
+    holdout*/sentences.json     the drawn sentences and their provenance
+    holdout*/LOCK.json          the hashes that make the locks checkable
+    lexicon/concepts-required.json
+    lexicon/wordlists/dolch.json    (this project's classification layer only --
+                                     see NOTICE on the underlying word list)
+
+To view a copy of this licence, visit
+
+    https://creativecommons.org/licenses/by/4.0/
+
+CC BY 4.0 rather than a non-commercial or share-alike variant, deliberately.
+A held-out set is only worth annotating if other people can measure against it,
+and a licence that forbids some class of user from doing so makes the benchmark
+less useful without protecting anything worth protecting. Attribution is the
+only condition, and attribution is the thing that matters: if a number is
+reported against these sets, it should be traceable to the version and the lock
+it was scored under.
+
+Two caveats that are properties of the data and not of the licence, repeated
+here because they travel with it:
+
+  * Every set in this repository was annotated by the same party that wrote the
+    parser. An independent annotation was attempted and abandoned. Any figure
+    scored against these sets carries that caveat; see holdout3/FINDINGS.md.
+
+  * Each held-out set is locked against the schema version it was annotated at,
+    and correct output at a later version can score as an error against an
+    earlier set. The version is in every graph. Do not migrate a locked set.
+
+NOT COVERED BY THIS FILE
+------------------------
+
+lexicon/concepts.json is derived from ARASAAC's database and is redistributed
+under CC BY-NC-SA, which is a non-commercial licence. See NOTICE.

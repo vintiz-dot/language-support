@@ -14,7 +14,7 @@
   "additionalProperties": false,
   "properties": {
     "schema_version": {
-      "const": "0.3.0"
+      "const": "0.4.0"
     },
     "id": {
       "type": "string",
@@ -139,9 +139,6 @@
     },
     "entity": {
       "type": "object",
-      "required": [
-        "concept"
-      ],
       "additionalProperties": false,
       "properties": {
         "concept": {
@@ -231,8 +228,35 @@
         "implicit": {
           "type": "boolean",
           "description": "Not present in the text, such as the addressee of an imperative."
+        },
+        "members": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/entityRef"
+          },
+          "description": "The parts of a coordinated noun phrase: the rabbits and their little master. A group has no concept of its own, which is why concept is required only when members is absent. 0.3.0 had no way to say this and split the clause into duplicate events sharing a verb token. Held out j019, j046."
+        },
+        "coordination": {
+          "enum": [
+            "and",
+            "or"
+          ],
+          "description": "Whether the members are all present or alternatives. bread and cheese is a different picture from bread or cheese, so this is not decoration."
         }
-      }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "concept"
+          ]
+        },
+        {
+          "required": [
+            "members"
+          ]
+        }
+      ]
     },
     "event": {
       "type": "object",
@@ -283,6 +307,9 @@
           "$ref": "#/$defs/conceptId",
           "description": "Asserted property, for attribution. Distinct from an entity modifier: the assertion is what a distractor has to contradict."
         },
+        "measure": {
+          "$ref": "#/$defs/measure"
+        },
         "complement": {
           "$ref": "#/$defs/eventRef",
           "description": "Embedded event, such as the reading in: I like reading."
@@ -298,6 +325,9 @@
         "manner": {
           "$ref": "#/$defs/conceptId",
           "description": "How the action was done: slowly, still, quietly. Held out h005, h033."
+        },
+        "focus": {
+          "$ref": "#/$defs/focus"
         },
         "frequency": {
           "enum": [
@@ -649,6 +679,47 @@
         "to",
         "from"
       ]
+    },
+    "focus": {
+      "type": "object",
+      "required": [
+        "particle",
+        "target"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "particle": {
+          "enum": [
+            "only",
+            "just",
+            "even",
+            "too",
+            "also"
+          ]
+        },
+        "target": {
+          "$ref": "#/$defs/nodeRef"
+        }
+      },
+      "description": "A particle that narrows or extends what is being claimed. Only one queen can live in each hive is a different fact from a queen can live in each hive, and 0.3.0 dropped the difference. Held out j005, j010, j029; Dolch just, only."
+    },
+    "measure": {
+      "type": "object",
+      "required": [
+        "quantity",
+        "unit"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "quantity": {
+          "type": "number",
+          "minimum": 0
+        },
+        "unit": {
+          "$ref": "#/$defs/conceptId"
+        }
+      },
+      "description": "How much of the attribute there is: seven years old, two feet tall. Without it Ralph Wick was seven years old reduces to Ralph was old, which is not lossy but inverted. Held out j039."
     }
   }
 }

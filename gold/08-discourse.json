@@ -1,9 +1,17 @@
 [
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g042",
     "text": "The boy fell and he cried.",
-    "tokens": ["The", "boy", "fell", "and", "he", "cried", "."],
+    "tokens": [
+      "The",
+      "boy",
+      "fell",
+      "and",
+      "he",
+      "cried",
+      "."
+    ],
     "pattern": "intransitive",
     "entities": {
       "e1": {
@@ -26,7 +34,9 @@
       {
         "id": "ev1",
         "predicate": "fall",
-        "roles": { "agent": "e1" },
+        "roles": {
+          "agent": "e1"
+        },
         "tense": "past",
         "aspect": "simple",
         "polarity": "positive",
@@ -35,7 +45,9 @@
       {
         "id": "ev2",
         "predicate": "cry",
-        "roles": { "agent": "e2" },
+        "roles": {
+          "agent": "e2"
+        },
         "tense": "past",
         "aspect": "simple",
         "polarity": "positive",
@@ -43,25 +55,73 @@
       }
     ],
     "discourse": [
-      { "id": "d1", "type": "sequence", "from": "ev1", "to": "ev2", "marker": "and" }
+      {
+        "id": "d1",
+        "type": "sequence",
+        "from": "ev1",
+        "to": "ev2",
+        "marker": "and"
+      }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2] },
-      { "node": "e2", "tokens": [4] },
-      { "node": "ev2", "tokens": [5] },
-      { "node": "d1", "tokens": [3] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          5
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          3
+        ]
+      }
     ],
     "notes": "Coded as sequence, not cause. The causal reading is an implicature the reader supplies; annotating it as cause would put an inference into the data and let the renderer assert something the sentence does not. Two events means two comic panels."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g043",
     "text": "First we wash our hands, then we eat.",
-    "tokens": ["First", "we", "wash", "our", "hands", ",", "then", "we", "eat", "."],
+    "tokens": [
+      "First",
+      "we",
+      "wash",
+      "our",
+      "hands",
+      ",",
+      "then",
+      "we",
+      "eat",
+      "."
+    ],
     "pattern": "svo",
     "entities": {
-      "e1": { "concept": "speaker", "person": "1pl", "number": "pl", "animacy": "person" },
+      "e1": {
+        "concept": "speaker",
+        "person": "1pl",
+        "number": "pl",
+        "animacy": "person"
+      },
       "e2": {
         "concept": "hand",
         "number": "pl",
@@ -74,7 +134,10 @@
       {
         "id": "ev1",
         "predicate": "wash",
-        "roles": { "agent": "e1", "patient": "e2" },
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
         "tense": "present",
         "aspect": "simple",
         "polarity": "positive",
@@ -83,7 +146,9 @@
       {
         "id": "ev2",
         "predicate": "eat",
-        "roles": { "agent": "e1" },
+        "roles": {
+          "agent": "e1"
+        },
         "tense": "present",
         "aspect": "simple",
         "polarity": "positive",
@@ -91,23 +156,71 @@
       }
     ],
     "discourse": [
-      { "id": "d1", "type": "sequence", "from": "ev1", "to": "ev2", "marker": "then" }
+      {
+        "id": "d1",
+        "type": "sequence",
+        "from": "ev1",
+        "to": "ev2",
+        "marker": "then"
+      }
     ],
     "alignment": [
-      { "node": "ev1", "tokens": [2] },
-      { "node": "e1", "tokens": [1] },
-      { "node": "e2", "tokens": [3, 4] },
-      { "node": "ev2", "tokens": [8] },
-      { "node": "e1", "tokens": [7] },
-      { "node": "d1", "tokens": [0, 6] }
+      {
+        "node": "ev1",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3,
+          4
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          8
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          7
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          0,
+          6
+        ]
+      }
     ],
     "notes": "Explicit sequence markers, the clearest case for comic-strip rendering. One entity serves both clauses with two spans. Classroom routine language like this is high frequency and worth covering early."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g044",
     "text": "She was sad because her cat was lost.",
-    "tokens": ["She", "was", "sad", "because", "her", "cat", "was", "lost", "."],
+    "tokens": [
+      "She",
+      "was",
+      "sad",
+      "because",
+      "her",
+      "cat",
+      "was",
+      "lost",
+      "."
+    ],
     "pattern": "attribution",
     "entities": {
       "e1": {
@@ -129,7 +242,9 @@
       {
         "id": "ev1",
         "predicate": "be.attribute",
-        "roles": { "theme": "e1" },
+        "roles": {
+          "theme": "e1"
+        },
         "attribute": "sad",
         "tense": "past",
         "aspect": "simple",
@@ -139,7 +254,9 @@
       {
         "id": "ev2",
         "predicate": "be.attribute",
-        "roles": { "theme": "e2" },
+        "roles": {
+          "theme": "e2"
+        },
         "attribute": "lost",
         "tense": "past",
         "aspect": "simple",
@@ -148,33 +265,96 @@
       }
     ],
     "discourse": [
-      { "id": "d1", "type": "cause", "from": "ev2", "to": "ev1", "marker": "because" }
+      {
+        "id": "d1",
+        "type": "cause",
+        "from": "ev2",
+        "to": "ev1",
+        "marker": "because"
+      }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0] },
-      { "node": "ev1", "tokens": [1, 2] },
-      { "node": "e2", "tokens": [4, 5] },
-      { "node": "ev2", "tokens": [6, 7] },
-      { "node": "d1", "tokens": [3] }
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4,
+          5
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          6,
+          7
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          3
+        ]
+      }
     ],
     "notes": "The relation runs from ev2 to ev1, against text order. because introduces the cause, so a parser that links clauses left to right gets the arrow backwards and the comic panels land in the wrong order. The token because itself has no alignment slot, which is a known gap."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g045",
     "text": "I like apples but I do not like pears.",
-    "tokens": ["I", "like", "apples", "but", "I", "do", "not", "like", "pears", "."],
+    "tokens": [
+      "I",
+      "like",
+      "apples",
+      "but",
+      "I",
+      "do",
+      "not",
+      "like",
+      "pears",
+      "."
+    ],
     "pattern": "preference",
     "entities": {
-      "e1": { "concept": "speaker", "person": "1sg", "number": "sg", "animacy": "person" },
-      "e2": { "concept": "apple", "number": "pl", "definite": false, "animacy": "object" },
-      "e3": { "concept": "pear", "number": "pl", "definite": false, "animacy": "object" }
+      "e1": {
+        "concept": "speaker",
+        "person": "1sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "apple",
+        "number": "pl",
+        "definite": false,
+        "animacy": "object"
+      },
+      "e3": {
+        "concept": "pear",
+        "number": "pl",
+        "definite": false,
+        "animacy": "object"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "like",
-        "roles": { "experiencer": "e1", "theme": "e2" },
+        "roles": {
+          "experiencer": "e1",
+          "theme": "e2"
+        },
         "tense": "present",
         "aspect": "simple",
         "polarity": "positive",
@@ -183,7 +363,10 @@
       {
         "id": "ev2",
         "predicate": "like",
-        "roles": { "experiencer": "e1", "theme": "e3" },
+        "roles": {
+          "experiencer": "e1",
+          "theme": "e3"
+        },
         "tense": "present",
         "aspect": "simple",
         "polarity": "negative",
@@ -191,28 +374,90 @@
       }
     ],
     "discourse": [
-      { "id": "d1", "type": "contrast", "from": "ev1", "to": "ev2", "marker": "but" }
+      {
+        "id": "d1",
+        "type": "contrast",
+        "from": "ev1",
+        "to": "ev2",
+        "marker": "but"
+      }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0] },
-      { "node": "ev1", "tokens": [1] },
-      { "node": "e2", "tokens": [2] },
-      { "node": "e1", "tokens": [4] },
-      { "node": "ev2", "tokens": [5, 6, 7] },
-      { "node": "e3", "tokens": [8] },
-      { "node": "d1", "tokens": [3] }
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          4
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          8
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          3
+        ]
+      }
     ],
     "notes": "Same predicate, opposite polarity, in one sentence. The two panels must be visually parallel or the contrast does not read."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g046",
     "text": "If it rains, we will stay inside.",
-    "tokens": ["If", "it", "rains", ",", "we", "will", "stay", "inside", "."],
+    "tokens": [
+      "If",
+      "it",
+      "rains",
+      ",",
+      "we",
+      "will",
+      "stay",
+      "inside",
+      "."
+    ],
     "pattern": "other",
     "entities": {
-      "e1": { "concept": "speaker", "person": "1pl", "number": "pl", "animacy": "person" },
-      "e2": { "concept": "indoors", "animacy": "place", "number": "sg" }
+      "e1": {
+        "concept": "speaker",
+        "person": "1pl",
+        "number": "pl",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "indoors",
+        "animacy": "place",
+        "number": "sg"
+      }
     },
     "events": [
       {
@@ -227,9 +472,15 @@
       {
         "id": "ev2",
         "predicate": "stay",
-        "roles": { "agent": "e1" },
+        "roles": {
+          "agent": "e1"
+        },
         "spatial": [
-          { "figure": "e1", "relation": "in", "ground": "e2" }
+          {
+            "figure": "e1",
+            "relation": "in",
+            "ground": "e2"
+          }
         ],
         "tense": "future",
         "aspect": "simple",
@@ -238,14 +489,47 @@
       }
     ],
     "discourse": [
-      { "id": "d1", "type": "condition", "from": "ev1", "to": "ev2", "marker": "if" }
+      {
+        "id": "d1",
+        "type": "condition",
+        "from": "ev1",
+        "to": "ev2",
+        "marker": "if"
+      }
     ],
     "alignment": [
-      { "node": "ev1", "tokens": [1, 2] },
-      { "node": "e1", "tokens": [4] },
-      { "node": "ev2", "tokens": [5, 6] },
-      { "node": "e2", "tokens": [7] },
-      { "node": "d1", "tokens": [0] }
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          4
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          5,
+          6
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          7
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          0
+        ]
+      }
     ],
     "notes": "ev1 is hypothetical, not asserted, and nothing on the event says so. It is only recoverable by noticing the event is the source of a condition relation. That is fragile; an explicit irrealis flag on the event is the likeliest first schema change. An event with no roles at all is legal here because the subject it is expletive."
   }

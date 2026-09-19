@@ -18,7 +18,10 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 SCHEMA_PATH = ROOT / "schema" / "scene-graph.schema.json"
 # Older graphs validate against the version they were written for. The held-out set is
 # locked at 0.2.0 and must keep validating without being rewritten.
-FROZEN_SCHEMAS = {"0.2.0": ROOT / "schema" / "scene-graph-0.2.0.json"}
+FROZEN_SCHEMAS = {
+    "0.2.0": ROOT / "schema" / "scene-graph-0.2.0.json",
+    "0.3.0": ROOT / "schema" / "scene-graph-0.3.0.json",
+}
 
 # Directions that name a path with no landmark: fall down, Away they marched. Every other
 # relation needs a ground, or there is nothing to draw the figure against.
@@ -122,10 +125,45 @@ def check_graph(graph):
             if ground == ref:
                 errors.append(f"{ref}.located anchors the entity to itself")
 
+        members = entity.get("members")
+        if members is not None:
+            for member in members:
+                need_entity(member, f"{ref}.members")
+                referenced.add(member)
+                if member == ref:
+                    errors.append(f"{ref}.members contains the group itself")
+            if len(set(members)) != len(members):
+                errors.append(f"{ref}.members lists the same entity twice")
+            if entity.get("coordination") is None:
+                errors.append(
+                    f"{ref} is a group but does not say whether it is and or or; "
+                    "bread and cheese is a different picture from bread or cheese"
+                )
+            if entity.get("concept") is not None:
+                warnings.append(
+                    f"{ref} has both a concept and members, so it is unclear whether the "
+                    "group or its parts should be drawn"
+                )
+        elif entity.get("coordination") is not None:
+            errors.append(f"{ref} carries a coordination but has no members")
+
         if entity.get("number") == "mass" and "quantity" in entity:
             errors.append(f"{ref} is mass but carries a quantity")
         if entity.get("quantity") is not None and entity.get("number") == "sg" and entity["quantity"] != 1:
             warnings.append(f"{ref} is singular but quantity is {entity['quantity']}")
+
+    # A group cannot contain itself, however many levels down.
+    def group_cycle(ref, seen):
+        for member in entities.get(ref, {}).get("members") or []:
+            if member in seen:
+                return True
+            if group_cycle(member, seen | {member}):
+                return True
+        return False
+
+    for ref in entities:
+        if entities[ref].get("members") and group_cycle(ref, {ref}):
+            errors.append(f"group cycle through {ref}")
 
     # A coref chain must terminate rather than loop.
     for ref in entities:
@@ -143,6 +181,20 @@ def check_graph(graph):
         for role, ref in (event.get("roles") or {}).items():
             need_entity(ref, f"{event_id}.roles.{role}")
             referenced.add(ref)
+
+        focus = event.get("focus")
+        if focus is not None:
+            target = focus.get("target")
+            need_node(target, f"{event_id}.focus.target")
+            if target in entities:
+                referenced.add(target)
+
+        measure = event.get("measure")
+        if measure is not None and event.get("attribute") is None:
+            errors.append(
+                f"{event_id} carries a measure but no attribute, so there is nothing for "
+                "it to measure"
+            )
 
         for n, spatial in enumerate(spatial_list(event)):
             where = f"{event_id}.spatial[{n}]"
@@ -307,22 +359,24 @@ def collect_concepts(graph):
     return found
 
 
+_VALIDATORS = {}
+
+
+def validator_for(version):
+    """A validator for the schema version a graph declares, so old sets keep validating."""
+    if version not in _VALIDATORS:
+        try:
+            from jsonschema import Draft202012Validator
+        except ImportError:
+            raise SystemExit("jsonschema is required: pip install jsonschema")
+        path = FROZEN_SCHEMAS.get(version, SCHEMA_PATH)
+        schema = json.loads(path.read_text(encoding="utf-8"))
+        Draft202012Validator.check_schema(schema)
+        _VALIDATORS[version] = Draft202012Validator(schema)
+    return _VALIDATORS[version]
+
+
 def cmd_validate(directory=None):
-    try:
-        from jsonschema import Draft202012Validator
-    except ImportError:
-        raise SystemExit("jsonschema is required: pip install jsonschema")
-
-    validators = {}
-
-    def validator_for(version):
-        if version not in validators:
-            path = FROZEN_SCHEMAS.get(version, SCHEMA_PATH)
-            schema = json.loads(path.read_text(encoding="utf-8"))
-            Draft202012Validator.check_schema(schema)
-            validators[version] = Draft202012Validator(schema)
-        return validators[version]
-
     total = 0
     failed = 0
     warned = 0

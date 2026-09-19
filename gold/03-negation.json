@@ -1,18 +1,32 @@
 [
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g015",
     "text": "The dog is not big.",
-    "tokens": ["The", "dog", "is", "not", "big", "."],
+    "tokens": [
+      "The",
+      "dog",
+      "is",
+      "not",
+      "big",
+      "."
+    ],
     "pattern": "attribution",
     "entities": {
-      "e1": { "concept": "dog", "number": "sg", "definite": true, "animacy": "animal" }
+      "e1": {
+        "concept": "dog",
+        "number": "sg",
+        "definite": true,
+        "animacy": "animal"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "be.attribute",
-        "roles": { "theme": "e1" },
+        "roles": {
+          "theme": "e1"
+        },
         "attribute": "big",
         "tense": "present",
         "aspect": "simple",
@@ -21,26 +35,60 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3, 4] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3,
+          4
+        ]
+      }
     ],
     "notes": "Render the crossed claim, not the opposite. not big does not entail small, and drawing a small dog teaches a false inference. The safe visual is a big dog crossed out."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g016",
     "text": "I do not have a cat.",
-    "tokens": ["I", "do", "not", "have", "a", "cat", "."],
+    "tokens": [
+      "I",
+      "do",
+      "not",
+      "have",
+      "a",
+      "cat",
+      "."
+    ],
     "pattern": "possession",
     "entities": {
-      "e1": { "concept": "speaker", "person": "1sg", "number": "sg", "animacy": "person" },
-      "e2": { "concept": "cat", "number": "sg", "definite": false, "animacy": "animal" }
+      "e1": {
+        "concept": "speaker",
+        "person": "1sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "cat",
+        "number": "sg",
+        "definite": false,
+        "animacy": "animal"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "have",
-        "roles": { "agent": "e1", "theme": "e2" },
+        "roles": {
+          "agent": "e1",
+          "theme": "e2"
+        },
         "tense": "present",
         "aspect": "simple",
         "polarity": "negative",
@@ -48,17 +96,40 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0] },
-      { "node": "ev1", "tokens": [1, 2, 3] },
-      { "node": "e2", "tokens": [4, 5] }
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4,
+          5
+        ]
+      }
     ],
     "notes": "Note that e2 carries no possessor, unlike g004. Under negation the cat does not exist in the scene, so it must be drawn inside the crossed region and never as a present object."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g017",
     "text": "She cannot swim.",
-    "tokens": ["She", "cannot", "swim", "."],
+    "tokens": [
+      "She",
+      "cannot",
+      "swim",
+      "."
+    ],
     "pattern": "modal_ability",
     "entities": {
       "e1": {
@@ -73,7 +144,9 @@
       {
         "id": "ev1",
         "predicate": "swim",
-        "roles": { "agent": "e1" },
+        "roles": {
+          "agent": "e1"
+        },
         "tense": "present",
         "aspect": "simple",
         "polarity": "negative",
@@ -83,16 +156,34 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0] },
-      { "node": "ev1", "tokens": [1, 2] }
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      }
     ],
     "notes": "Negation scopes over the modality, not the action: it denies the ability. cannot is one token in most tokenisers but two morphemes, which the alignment has to tolerate."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g018",
     "text": "Do not open the door.",
-    "tokens": ["Do", "not", "open", "the", "door", "."],
+    "tokens": [
+      "Do",
+      "not",
+      "open",
+      "the",
+      "door",
+      "."
+    ],
     "pattern": "imperative",
     "entities": {
       "e1": {
@@ -102,13 +193,21 @@
         "animacy": "person",
         "implicit": true
       },
-      "e2": { "concept": "door", "number": "sg", "definite": true, "animacy": "object" }
+      "e2": {
+        "concept": "door",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "open",
-        "roles": { "agent": "e1", "patient": "e2" },
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
         "tense": "present",
         "aspect": "simple",
         "polarity": "negative",
@@ -116,16 +215,35 @@
       }
     ],
     "alignment": [
-      { "node": "ev1", "tokens": [0, 1, 2] },
-      { "node": "e2", "tokens": [3, 4] }
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3,
+          4
+        ]
+      }
     ],
     "notes": "The implicit agent gets no span because nothing in the text realises it. Validators must therefore allow entities with no alignment when implicit is true."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g019",
     "text": "There are no apples.",
-    "tokens": ["There", "are", "no", "apples", "."],
+    "tokens": [
+      "There",
+      "are",
+      "no",
+      "apples",
+      "."
+    ],
     "pattern": "existential",
     "entities": {
       "e1": {
@@ -140,7 +258,9 @@
       {
         "id": "ev1",
         "predicate": "exist",
-        "roles": { "theme": "e1" },
+        "roles": {
+          "theme": "e1"
+        },
         "tense": "present",
         "aspect": "simple",
         "polarity": "negative",
@@ -148,25 +268,51 @@
       }
     ],
     "alignment": [
-      { "node": "ev1", "tokens": [0, 1] },
-      { "node": "e1", "tokens": [2, 3] }
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          2,
+          3
+        ]
+      }
     ],
     "notes": "Negation is marked on both the quantifier and the event polarity. Redundant but deliberate: either alone would let a renderer draw apples."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g020",
     "text": "The bird did not fly.",
-    "tokens": ["The", "bird", "did", "not", "fly", "."],
+    "tokens": [
+      "The",
+      "bird",
+      "did",
+      "not",
+      "fly",
+      "."
+    ],
     "pattern": "intransitive",
     "entities": {
-      "e1": { "concept": "bird", "number": "sg", "definite": true, "animacy": "animal" }
+      "e1": {
+        "concept": "bird",
+        "number": "sg",
+        "definite": true,
+        "animacy": "animal"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "fly",
-        "roles": { "agent": "e1" },
+        "roles": {
+          "agent": "e1"
+        },
         "tense": "past",
         "aspect": "simple",
         "polarity": "negative",
@@ -174,8 +320,21 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3, 4] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3,
+          4
+        ]
+      }
     ],
     "notes": "Tense lives on did while the lemma lives on fly. The alignment span covers all three tokens because they jointly realise one event."
   }

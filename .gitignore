@@ -3,4 +3,4 @@ __pycache__/
 .pytest_cache/
 lexicon/.arasaac-cache/
 holdout/.source-cache/
-predictions.json
+/predictions.json

@@ -1,0 +1,477 @@
+{
+  "set_version": "1.0.0",
+  "name": "week-1-animals",
+  "title": "Week 1 animals",
+  "saved": "2026-09-19",
+  "sentences": [
+    {
+      "text": "The dog chased the cat.",
+      "tokens": [
+        "The",
+        "dog",
+        "chased",
+        "the",
+        "cat",
+        "."
+      ],
+      "cells": [
+        {
+          "tokens": [
+            0,
+            1
+          ],
+          "start": 0,
+          "text": "The dog",
+          "node": "e1",
+          "kind": "entity",
+          "concept": "dog",
+          "predicate": null,
+          "match": "exact",
+          "overridden": false,
+          "negated": false,
+          "uncertain": false,
+          "flags": [],
+          "pictogram": 7202,
+          "url": "https://static.arasaac.org/pictograms/7202/7202_500.png"
+        },
+        {
+          "tokens": [
+            2
+          ],
+          "start": 2,
+          "text": "chased",
+          "node": "ev1",
+          "kind": "event",
+          "concept": "chase",
+          "predicate": null,
+          "match": "exact",
+          "overridden": false,
+          "negated": false,
+          "uncertain": false,
+          "flags": [],
+          "pictogram": 7037,
+          "url": "https://api.arasaac.org/v1/pictograms/7037?action=past"
+        },
+        {
+          "tokens": [
+            3,
+            4
+          ],
+          "start": 3,
+          "text": "the cat",
+          "node": "e2",
+          "kind": "entity",
+          "concept": "cat",
+          "predicate": null,
+          "match": "exact",
+          "overridden": false,
+          "negated": false,
+          "uncertain": false,
+          "flags": [],
+          "pictogram": 7114,
+          "url": "https://static.arasaac.org/pictograms/7114/7114_500.png"
+        },
+        {
+          "tokens": [
+            5
+          ],
+          "start": 5,
+          "text": ".",
+          "kind": "word",
+          "carried": true
+        }
+      ],
+      "approved": "2026-09-19",
+      "provenance": {
+        "schema_version": "0.4.0",
+        "note": "The cells above are what was approved. This graph is how they were produced, kept so a later renderer can compose a scene.",
+        "graph": {
+          "schema_version": "0.4.0",
+          "text": "The dog chased the cat.",
+          "tokens": [
+            "The",
+            "dog",
+            "chased",
+            "the",
+            "cat",
+            "."
+          ],
+          "entities": {
+            "e1": {
+              "concept": "dog",
+              "number": "sg",
+              "animacy": "animal",
+              "definite": true
+            },
+            "e2": {
+              "concept": "cat",
+              "number": "sg",
+              "animacy": "animal",
+              "definite": true
+            }
+          },
+          "events": [
+            {
+              "id": "ev1",
+              "predicate": "chase",
+              "roles": {
+                "agent": "e1",
+                "patient": "e2"
+              },
+              "tense": "past",
+              "aspect": "simple",
+              "polarity": "positive",
+              "mood": "declarative"
+            }
+          ],
+          "alignment": [
+            {
+              "node": "e1",
+              "tokens": [
+                0,
+                1
+              ]
+            },
+            {
+              "node": "e2",
+              "tokens": [
+                3,
+                4
+              ]
+            },
+            {
+              "node": "ev1",
+              "tokens": [
+                2
+              ]
+            }
+          ]
+        }
+      },
+      "to_check": []
+    },
+    {
+      "text": "Two cats sat on the mat.",
+      "tokens": [
+        "Two",
+        "cats",
+        "sat",
+        "on",
+        "the",
+        "mat",
+        "."
+      ],
+      "cells": [
+        {
+          "tokens": [
+            0,
+            1
+          ],
+          "start": 0,
+          "text": "Two cats",
+          "node": "e1",
+          "kind": "entity",
+          "concept": "cat",
+          "predicate": null,
+          "match": "exact",
+          "overridden": false,
+          "negated": false,
+          "uncertain": false,
+          "flags": [],
+          "pictogram": 7114,
+          "url": "https://api.arasaac.org/v1/pictograms/7114?plural=true"
+        },
+        {
+          "tokens": [
+            2,
+            3
+          ],
+          "start": 2,
+          "text": "sat on",
+          "node": "ev1",
+          "kind": "event",
+          "concept": "sit",
+          "predicate": null,
+          "match": "exact",
+          "overridden": false,
+          "negated": false,
+          "uncertain": false,
+          "flags": [],
+          "pictogram": 6611,
+          "url": "https://api.arasaac.org/v1/pictograms/6611?action=past"
+        },
+        {
+          "tokens": [
+            4,
+            5
+          ],
+          "start": 4,
+          "text": "the mat",
+          "node": "e2",
+          "kind": "entity",
+          "concept": "mat",
+          "predicate": null,
+          "match": "exact",
+          "overridden": false,
+          "negated": false,
+          "uncertain": false,
+          "flags": [],
+          "pictogram": 2346,
+          "url": "https://static.arasaac.org/pictograms/2346/2346_500.png"
+        },
+        {
+          "tokens": [
+            6
+          ],
+          "start": 6,
+          "text": ".",
+          "kind": "word",
+          "carried": true
+        }
+      ],
+      "approved": "2026-09-19",
+      "provenance": {
+        "schema_version": "0.4.0",
+        "note": "The cells above are what was approved. This graph is how they were produced, kept so a later renderer can compose a scene.",
+        "graph": {
+          "schema_version": "0.4.0",
+          "text": "Two cats sat on the mat.",
+          "tokens": [
+            "Two",
+            "cats",
+            "sat",
+            "on",
+            "the",
+            "mat",
+            "."
+          ],
+          "entities": {
+            "e1": {
+              "concept": "cat",
+              "number": "pl",
+              "animacy": "animal",
+              "quantity": 2,
+              "definite": false
+            },
+            "e2": {
+              "concept": "mat",
+              "number": "sg",
+              "animacy": "object",
+              "definite": true
+            }
+          },
+          "events": [
+            {
+              "id": "ev1",
+              "predicate": "sit",
+              "roles": {
+                "agent": "e1"
+              },
+              "spatial": [
+                {
+                  "relation": "on",
+                  "ground": "e2",
+                  "figure": "e1"
+                }
+              ],
+              "tense": "past",
+              "aspect": "simple",
+              "polarity": "positive",
+              "mood": "declarative"
+            }
+          ],
+          "alignment": [
+            {
+              "node": "e1",
+              "tokens": [
+                0,
+                1
+              ]
+            },
+            {
+              "node": "e2",
+              "tokens": [
+                4,
+                5
+              ]
+            },
+            {
+              "node": "ev1",
+              "tokens": [
+                2,
+                3
+              ]
+            }
+          ]
+        }
+      },
+      "to_check": []
+    },
+    {
+      "text": "Sam did not look after the dogs.",
+      "tokens": [
+        "Sam",
+        "did",
+        "not",
+        "look",
+        "after",
+        "the",
+        "dogs",
+        "."
+      ],
+      "cells": [
+        {
+          "tokens": [
+            0
+          ],
+          "start": 0,
+          "text": "Sam",
+          "node": "e1",
+          "kind": "entity",
+          "concept": "person",
+          "predicate": null,
+          "match": "exact",
+          "overridden": false,
+          "negated": false,
+          "uncertain": false,
+          "flags": [],
+          "pictogram": 34560,
+          "url": "https://static.arasaac.org/pictograms/34560/34560_500.png"
+        },
+        {
+          "tokens": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "start": 1,
+          "text": "did not look after",
+          "node": "ev1",
+          "kind": "event",
+          "concept": "look-after",
+          "predicate": null,
+          "match": "exact",
+          "overridden": false,
+          "negated": true,
+          "uncertain": true,
+          "flags": [
+            "parse_uncertain"
+          ],
+          "pictogram": 11691,
+          "url": "https://api.arasaac.org/v1/pictograms/11691?action=past"
+        },
+        {
+          "tokens": [
+            5,
+            6
+          ],
+          "start": 5,
+          "text": "the dogs",
+          "node": "e2",
+          "kind": "entity",
+          "concept": "dog",
+          "predicate": null,
+          "match": "exact",
+          "overridden": false,
+          "negated": false,
+          "uncertain": false,
+          "flags": [],
+          "pictogram": 7202,
+          "url": "https://api.arasaac.org/v1/pictograms/7202?plural=true"
+        },
+        {
+          "tokens": [
+            7
+          ],
+          "start": 7,
+          "text": ".",
+          "kind": "word",
+          "carried": true
+        }
+      ],
+      "approved": "2026-09-19",
+      "provenance": {
+        "schema_version": "0.4.0",
+        "note": "The cells above are what was approved. This graph is how they were produced, kept so a later renderer can compose a scene.",
+        "graph": {
+          "schema_version": "0.4.0",
+          "text": "Sam did not look after the dogs.",
+          "tokens": [
+            "Sam",
+            "did",
+            "not",
+            "look",
+            "after",
+            "the",
+            "dogs",
+            "."
+          ],
+          "entities": {
+            "e1": {
+              "concept": "person",
+              "proper_name": "Sam",
+              "number": "sg",
+              "animacy": "person"
+            },
+            "e2": {
+              "concept": "dog",
+              "number": "pl",
+              "animacy": "animal",
+              "definite": true
+            }
+          },
+          "events": [
+            {
+              "id": "ev1",
+              "predicate": "look-after",
+              "roles": {
+                "agent": "e1",
+                "patient": "e2"
+              },
+              "tense": "past",
+              "aspect": "simple",
+              "polarity": "negative",
+              "mood": "declarative"
+            }
+          ],
+          "alignment": [
+            {
+              "node": "e1",
+              "tokens": [
+                0
+              ]
+            },
+            {
+              "node": "e2",
+              "tokens": [
+                5,
+                6
+              ]
+            },
+            {
+              "node": "ev1",
+              "tokens": [
+                1,
+                2,
+                3,
+                4
+              ]
+            }
+          ],
+          "review": [
+            {
+              "node": "ev1",
+              "reason": "parse_uncertain",
+              "message": "Phrasal verb: the particle was absorbed into the predicate, not read as a preposition",
+              "score": 0.5
+            }
+          ]
+        }
+      },
+      "to_check": [
+        "look-after: the parser was unsure"
+      ]
+    }
+  ]
+}

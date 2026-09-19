@@ -233,6 +233,153 @@ check(
 )
 
 
+
+# --- core correct: the same bar on fewer fields --------------------------------
+# scene correct is a conjunction over every field, so it falls as the schema grows
+# richer whether or not the parser got worse. core correct counts only what changes
+# the picture. These tests pin the difference, because a metric that quietly drifts
+# apart from its definition is worse than no metric.
+
+core_failures = []
+for _gid, _gold in GOLD.items():
+    _tally, _ = score_one(copy.deepcopy(_gold), _gold)
+    if not _tally["core_correct"]:
+        core_failures.append(_gid)
+check(
+    f"every gold graph is core correct against itself ({len(GOLD)} graphs)",
+    not core_failures,
+    f"failed: {core_failures[:5]}",
+)
+
+pred, gold = perfect("g001")
+pred["entities"]["e1"]["definite"] = False
+tally, _ = score_one(pred, gold)
+check(
+    "a wrong article sinks scene correct but not core correct",
+    tally["scene_correct"] == 0 and tally["core_correct"] == 1,
+    "this difference is the entire reason core correct exists",
+)
+
+pred, gold = perfect("g010")
+pred["events"][0]["tense"] = "present"
+tally, _ = score_one(pred, gold)
+check(
+    "a wrong tense sinks scene correct but not core correct",
+    tally["scene_correct"] == 0 and tally["core_correct"] == 1,
+)
+
+pred, gold = perfect("g048")
+pred["entities"]["e1"]["concept"] = "bat.sport"
+tally, _ = score_one(pred, gold)
+check("a wrong concept sinks core correct", tally["core_correct"] == 0)
+
+pred, gold = perfect("g001")
+roles = pred["events"][0]["roles"]
+roles["agent"], roles["patient"] = roles["patient"], roles["agent"]
+tally, _ = score_one(pred, gold)
+check("an argument swap sinks core correct", tally["core_correct"] == 0)
+
+pred, gold = perfect("g001")
+pred["events"][0]["polarity"] = "negative"
+tally, _ = score_one(pred, gold)
+check(
+    "a flipped polarity sinks core correct",
+    tally["core_correct"] == 0,
+    "negation is in core because it inverts the picture rather than detailing it",
+)
+
+pred, gold = perfect("g001")
+pred["entities"]["e9"] = {"concept": "bird", "number": "sg"}
+pred["alignment"].append({"node": "e9", "tokens": [5]})
+tally, _ = score_one(pred, gold)
+check(
+    "a spurious entity sinks core correct",
+    tally["core_correct"] == 0,
+    "an extra entity draws something the sentence does not mention",
+)
+
+pred, gold = perfect("g001")
+pred = rename_entities(pred, {"e1": "e77", "e2": "e88"})
+tally, _ = score_one(pred, gold)
+check("core correct is id-independent too", tally["core_correct"] == 1)
+
+
+# --- spurious discourse relations ----------------------------------------------
+# Set two scored self-referential relations as neither right nor wrong, which is part
+# of why every And-initial clause carrying a relation from its only event to itself
+# survived a full scoring run.
+
+pred, gold = perfect("g042")
+pred["discourse"].append({"id": "d9", "type": "cause", "from": "ev1", "to": "ev2"})
+tally, detail = score_one(pred, gold)
+check(
+    "an unmarked relation is counted as spurious",
+    tally["discourse"]["spurious"] == 1 and tally["scene_correct"] == 0,
+)
+
+pred, gold = perfect("g042")
+pred["discourse"].append({"id": "d9", "type": "sequence", "from": "ev1", "to": "ev1"})
+tally, detail = score_one(pred, gold)
+check(
+    "a self-referential relation is counted, and counted as spurious too",
+    tally["discourse"]["self_referential"] == 1 and tally["discourse"]["spurious"] == 1,
+    "the shape check_gold has always forbidden, which the scorer had no opinion about",
+)
+check(
+    "a self-referential relation is named in the detail log",
+    any("relates an event to itself" in m for m in detail["g042"]),
+)
+
+pred, gold = perfect("g044")
+relation = pred["discourse"][0]
+relation["from"], relation["to"] = relation["to"], relation["from"]
+tally, _ = score_one(pred, gold)
+check(
+    "a reversed arrow is not also counted as spurious",
+    tally["discourse"]["reversed"] == 1 and tally["discourse"]["spurious"] == 0,
+    "it is one relation got wrong, not one missed plus one invented",
+)
+
+
+# --- the doer is wrong without being swapped ------------------------------------
+# "Zero argument swaps" only ever meant agent and patient inverted inside one event.
+# Mum told Sam to wash the cup had Mum washing: no inversion, and nothing said so.
+
+pred, gold = perfect("g042")
+pred["events"][1]["roles"]["agent"] = gold["events"][0]["roles"]["agent"]
+tally, detail = score_one(pred, gold)
+check(
+    "a doer taken from another event is counted",
+    tally["wrong_doer"] == 1 and tally["borrowed_doer"] == 1,
+)
+check(
+    "a borrowed subject is not counted as an argument swap",
+    tally["argument_swaps"] == 0,
+    "the two failures are different shapes and want different fixes",
+)
+check(
+    "a borrowed subject is named in the detail log",
+    any("BORROWED SUBJECT" in m for m in detail["g042"]),
+)
+
+pred, gold = perfect("g001")
+pred["events"][0]["roles"]["agent"] = "e2"
+tally, _ = score_one(pred, gold)
+check(
+    "a wrong doer that came from nowhere else is not called borrowed",
+    tally["wrong_doer"] == 1 and tally["borrowed_doer"] == 0,
+)
+
+pred, gold = perfect("g001")
+del pred["events"][0]["roles"]["agent"]
+tally, _ = score_one(pred, gold)
+check(
+    "a missing doer is not a wrong doer",
+    tally["wrong_doer"] == 0,
+    "failing to find one is a different failure from naming the wrong one",
+)
+
+
 @pytest.mark.parametrize(
     "passed,note",
     [pytest.param(passed, note, id=name) for name, passed, note in RESULTS],

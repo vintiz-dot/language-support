@@ -1,21 +1,45 @@
 [
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g032",
     "text": "The ball is on the box.",
-    "tokens": ["The", "ball", "is", "on", "the", "box", "."],
+    "tokens": [
+      "The",
+      "ball",
+      "is",
+      "on",
+      "the",
+      "box",
+      "."
+    ],
     "pattern": "sv_locative",
     "entities": {
-      "e1": { "concept": "ball", "number": "sg", "definite": true, "animacy": "object" },
-      "e2": { "concept": "box", "number": "sg", "definite": true, "animacy": "object" }
+      "e1": {
+        "concept": "ball",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      },
+      "e2": {
+        "concept": "box",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "be.located",
-        "roles": { "theme": "e1" },
+        "roles": {
+          "theme": "e1"
+        },
         "spatial": [
-          { "figure": "e1", "relation": "on", "ground": "e2" }
+          {
+            "figure": "e1",
+            "relation": "on",
+            "ground": "e2"
+          }
         ],
         "tense": "present",
         "aspect": "simple",
@@ -24,29 +48,71 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3] },
-      { "node": "e2", "tokens": [4, 5] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4,
+          5
+        ]
+      }
     ],
     "notes": "First of a six-way contrast set. g032 to g037 hold entities and predicate constant and vary only the relation, so each is a ready-made distractor for the others. This set is the highest-value block in the whole gold file."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g033",
     "text": "The ball is in the box.",
-    "tokens": ["The", "ball", "is", "in", "the", "box", "."],
+    "tokens": [
+      "The",
+      "ball",
+      "is",
+      "in",
+      "the",
+      "box",
+      "."
+    ],
     "pattern": "sv_locative",
     "entities": {
-      "e1": { "concept": "ball", "number": "sg", "definite": true, "animacy": "object" },
-      "e2": { "concept": "box", "number": "sg", "definite": true, "animacy": "object" }
+      "e1": {
+        "concept": "ball",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      },
+      "e2": {
+        "concept": "box",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "be.located",
-        "roles": { "theme": "e1" },
+        "roles": {
+          "theme": "e1"
+        },
         "spatial": [
-          { "figure": "e1", "relation": "in", "ground": "e2" }
+          {
+            "figure": "e1",
+            "relation": "in",
+            "ground": "e2"
+          }
         ],
         "tense": "present",
         "aspect": "simple",
@@ -55,29 +121,71 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3] },
-      { "node": "e2", "tokens": [4, 5] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4,
+          5
+        ]
+      }
     ],
     "notes": "Containment requires the ground to be drawn with an interior, which constrains the box art. Symbol sets drawn as flat silhouettes cannot express this relation at all."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g034",
     "text": "The ball is under the box.",
-    "tokens": ["The", "ball", "is", "under", "the", "box", "."],
+    "tokens": [
+      "The",
+      "ball",
+      "is",
+      "under",
+      "the",
+      "box",
+      "."
+    ],
     "pattern": "sv_locative",
     "entities": {
-      "e1": { "concept": "ball", "number": "sg", "definite": true, "animacy": "object" },
-      "e2": { "concept": "box", "number": "sg", "definite": true, "animacy": "object" }
+      "e1": {
+        "concept": "ball",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      },
+      "e2": {
+        "concept": "box",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "be.located",
-        "roles": { "theme": "e1" },
+        "roles": {
+          "theme": "e1"
+        },
         "spatial": [
-          { "figure": "e1", "relation": "under", "ground": "e2" }
+          {
+            "figure": "e1",
+            "relation": "under",
+            "ground": "e2"
+          }
         ],
         "tense": "present",
         "aspect": "simple",
@@ -86,29 +194,71 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3] },
-      { "node": "e2", "tokens": [4, 5] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4,
+          5
+        ]
+      }
     ],
     "notes": "Occlusion case. The figure is partly hidden, so the compositor needs real depth ordering rather than simple layering by role."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g035",
     "text": "The ball is behind the box.",
-    "tokens": ["The", "ball", "is", "behind", "the", "box", "."],
+    "tokens": [
+      "The",
+      "ball",
+      "is",
+      "behind",
+      "the",
+      "box",
+      "."
+    ],
     "pattern": "sv_locative",
     "entities": {
-      "e1": { "concept": "ball", "number": "sg", "definite": true, "animacy": "object" },
-      "e2": { "concept": "box", "number": "sg", "definite": true, "animacy": "object" }
+      "e1": {
+        "concept": "ball",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      },
+      "e2": {
+        "concept": "box",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "be.located",
-        "roles": { "theme": "e1" },
+        "roles": {
+          "theme": "e1"
+        },
         "spatial": [
-          { "figure": "e1", "relation": "behind", "ground": "e2" }
+          {
+            "figure": "e1",
+            "relation": "behind",
+            "ground": "e2"
+          }
         ],
         "tense": "present",
         "aspect": "simple",
@@ -117,29 +267,72 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3] },
-      { "node": "e2", "tokens": [4, 5] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4,
+          5
+        ]
+      }
     ],
     "notes": "behind and under are the pair children confuse most, and in a flat two-dimensional scene they can render almost identically. Getting these visibly distinct is a concrete test of the art direction."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g036",
     "text": "The ball is next to the box.",
-    "tokens": ["The", "ball", "is", "next", "to", "the", "box", "."],
+    "tokens": [
+      "The",
+      "ball",
+      "is",
+      "next",
+      "to",
+      "the",
+      "box",
+      "."
+    ],
     "pattern": "sv_locative",
     "entities": {
-      "e1": { "concept": "ball", "number": "sg", "definite": true, "animacy": "object" },
-      "e2": { "concept": "box", "number": "sg", "definite": true, "animacy": "object" }
+      "e1": {
+        "concept": "ball",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      },
+      "e2": {
+        "concept": "box",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "be.located",
-        "roles": { "theme": "e1" },
+        "roles": {
+          "theme": "e1"
+        },
         "spatial": [
-          { "figure": "e1", "relation": "next-to", "ground": "e2" }
+          {
+            "figure": "e1",
+            "relation": "next-to",
+            "ground": "e2"
+          }
         ],
         "tense": "present",
         "aspect": "simple",
@@ -148,29 +341,73 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3, 4] },
-      { "node": "e2", "tokens": [5, 6] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          5,
+          6
+        ]
+      }
     ],
     "notes": "A two-word preposition mapping to one relation id. The concept id uses a hyphen because the id space forbids spaces."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g037",
     "text": "The ball is between the boxes.",
-    "tokens": ["The", "ball", "is", "between", "the", "boxes", "."],
+    "tokens": [
+      "The",
+      "ball",
+      "is",
+      "between",
+      "the",
+      "boxes",
+      "."
+    ],
     "pattern": "sv_locative",
     "entities": {
-      "e1": { "concept": "ball", "number": "sg", "definite": true, "animacy": "object" },
-      "e2": { "concept": "box", "number": "pl", "quantity": 2, "definite": true, "animacy": "object" }
+      "e1": {
+        "concept": "ball",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      },
+      "e2": {
+        "concept": "box",
+        "number": "pl",
+        "quantity": 2,
+        "definite": true,
+        "animacy": "object"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "be.located",
-        "roles": { "theme": "e1" },
+        "roles": {
+          "theme": "e1"
+        },
         "spatial": [
-          { "figure": "e1", "relation": "between", "ground": "e2" }
+          {
+            "figure": "e1",
+            "relation": "between",
+            "ground": "e2"
+          }
         ],
         "tense": "present",
         "aspect": "simple",
@@ -179,30 +416,83 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3] },
-      { "node": "e2", "tokens": [4, 5] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4,
+          5
+        ]
+      }
     ],
     "notes": "between over a single plural ground. quantity 2 is inferred from the relation rather than stated in the text, which is the one place in this file where an annotation adds information the words do not carry."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g037b",
     "text": "The cat is between the dog and the box.",
-    "tokens": ["The", "cat", "is", "between", "the", "dog", "and", "the", "box", "."],
+    "tokens": [
+      "The",
+      "cat",
+      "is",
+      "between",
+      "the",
+      "dog",
+      "and",
+      "the",
+      "box",
+      "."
+    ],
     "pattern": "sv_locative",
     "entities": {
-      "e1": { "concept": "cat", "number": "sg", "definite": true, "animacy": "animal" },
-      "e2": { "concept": "dog", "number": "sg", "definite": true, "animacy": "animal" },
-      "e3": { "concept": "box", "number": "sg", "definite": true, "animacy": "object" }
+      "e1": {
+        "concept": "cat",
+        "number": "sg",
+        "definite": true,
+        "animacy": "animal"
+      },
+      "e2": {
+        "concept": "dog",
+        "number": "sg",
+        "definite": true,
+        "animacy": "animal"
+      },
+      "e3": {
+        "concept": "box",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "be.located",
-        "roles": { "theme": "e1" },
+        "roles": {
+          "theme": "e1"
+        },
         "spatial": [
-          { "figure": "e1", "relation": "between", "ground": ["e2", "e3"] }
+          {
+            "figure": "e1",
+            "relation": "between",
+            "ground": [
+              "e2",
+              "e3"
+            ]
+          }
         ],
         "tense": "present",
         "aspect": "simple",
@@ -211,10 +501,34 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3] },
-      { "node": "e2", "tokens": [4, 5] },
-      { "node": "e3", "tokens": [7, 8] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4,
+          5
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          7,
+          8
+        ]
+      }
     ],
     "notes": "The two-ground form, and the only example exercising the array branch of spatial.ground. Kept because an untested schema branch is a schema branch that is wrong."
   }

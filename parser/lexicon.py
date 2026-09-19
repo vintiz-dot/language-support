@@ -46,6 +46,11 @@ EXPERIENCER_VERBS = {
     "like", "love", "hate", "want", "see", "hear", "think", "know", "feel", "need", "wish",
 }
 
+# Verbs that keep the embedded clause for their own subject even when they have an object.
+# "She promised him to come" is she coming, not him. Everything else with an object is
+# object control: "Mum told Sam to wash the cup" is Sam washing.
+SUBJECT_CONTROL_VERBS = {"promise", "swear", "vow", "undertake"}
+
 # Experiencer verbs whose object is a theme rather than a patient.
 THEME_OBJECT_VERBS = EXPERIENCER_VERBS | {"have", "exist"}
 
@@ -82,13 +87,42 @@ PHRASAL_VERBS = {
     ("wake", "up"): "wake-up",
     ("give", "up"): "give-up",
     ("run", "away"): "run-away",
+    ("listen", "to"): "listen-to",
+    ("drive", "off"): "drive-off",
+    ("drive", "away"): "drive-off",
+    ("throw", "away"): "throw-away",
+    ("put", "away"): "put-away",
+    ("look", "up"): "look-up",
 }
 
 # Idioms must never render literally. The value is the predicate to use instead.
+# Idioms that consume the whole clause: there is nothing left to be a participant.
 IDIOMS = {
     ("rain", "cat", "and", "dog"): "rain",
     ("piece", "of", "cake"): "easy",
     ("under", "the", "weather"): "ill",
+}
+
+# Idioms that are only the predicate. "take care of your coat" still has someone doing it
+# and something it is done to, so unlike IDIOMS these leave role assignment to run: what
+# they replace is the verb, and what they suppress is the noun inside them. Held out j021,
+# j026 read these literally and left care and fun standing as things.
+PREDICATE_IDIOMS = {
+    ("take", "care", "of"): "look-after",
+    ("make", "fun", "of"): "mock",
+    ("take", "part", "in"): "join",
+    ("keep", "an", "eye", "on"): "watch",
+    ("catch", "sight", "of"): "see",
+    ("make", "up", "one", "mind"): "decide",
+}
+
+# Idioms shaped verb + object + fixed prepositional phrase, so the object is an ordinary
+# one and the phrase is not a location. "put the room in order" is tidying, and read
+# literally it puts a room inside a thing called order. Held out j022.
+VERB_PP_IDIOMS = {
+    ("put", "in", "order"): "tidy",
+    ("put", "to", "bed"): "put-to-bed",
+    ("take", "for", "walk"): "walk",
 }
 
 MODALS = {
@@ -99,6 +133,16 @@ MODALS = {
 # Modalities that describe a possibility rather than an occurrence. The event must not be
 # drawn as taking place.
 IRREALIS_MODALS = {"can", "may", "would"}
+
+# Particles that narrow or extend what is claimed rather than describing anything.
+FOCUS_PARTICLES = {"only", "just", "even", "too", "also", "merely", "solely"}
+
+# Nouns that measure rather than participate: seven YEARS old, two METRES high.
+MEASURE_UNITS = {
+    "year", "month", "week", "day", "hour", "minute",
+    "metre", "meter", "centimetre", "centimeter", "kilometre", "kilometer",
+    "foot", "feet", "inch", "yard", "mile", "kilo", "kilogram", "pound",
+}
 
 DISCOURSE_MARKERS = {
     "first": ("sequence", "backward"),

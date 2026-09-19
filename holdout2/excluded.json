@@ -1,0 +1,14 @@
+[
+  {
+    "id": "j048",
+    "text": "Mary Mapes Dodge.",
+    "source": "mcguffey-2",
+    "reason": "a byline, not a sentence: no predicate, so it cannot be a scene graph"
+  },
+  {
+    "id": "j050",
+    "text": "Is in her lightsome words.",
+    "source": "mcguffey-2",
+    "reason": "a verse continuation whose subject is on the previous line; a copula with no subject asserts nothing recoverable"
+  }
+]

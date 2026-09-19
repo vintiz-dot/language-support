@@ -4,13 +4,27 @@ The point of a held-out set is that nobody chose the sentences to suit the parse
 sampling is systematic rather than hand-picked: candidates are filtered by shape alone,
 then taken at a fixed stride. Re-running this produces the same 50 sentences.
 
+A second set is drawn from the same corpus with set one's sentences removed from the
+candidate pool first, then strided the same way. Holding the corpus fixed is deliberate:
+set two exists to test whether the parser's fixes generalise, and changing the source at
+the same time would confound that with a change in difficulty.
+
+Disjointness is enforced by text rather than by index arithmetic, because set one is not
+reproducible from this file any more -- the sentence splitter changed afterwards, and only
+8 of its 50 sentences are redrawn by the current code. Set one's sentences survive in
+holdout/sentences.json and its annotations are hashed, so the set itself is intact; what
+was lost is the ability to regenerate it. Reading the exclusion list from that file is
+therefore the only reliable way to guarantee the two sets do not overlap.
+
 Source: McGuffey's First and Second Eclectic Readers (Project Gutenberg, public domain).
 They are genuine Grade 1-2 reading material, with the caveat that they are nineteenth
 century, so the vocabulary skews older and more rural than a contemporary classroom.
 That makes them harder than modern text in one specific way — more unseen words — which
 is worth knowing when reading the score.
 
-    python tools/sample_holdout.py
+    python tools/sample_holdout.py                  # set one, holdout/
+    python tools/sample_holdout.py --set 2          # set two, holdout2/
+    python tools/sample_holdout.py --set 3          # set three, holdout3/, Grade 1-3
 """
 
 import json
@@ -28,8 +42,16 @@ SOURCES = {
     "mcguffey-2": "https://www.gutenberg.org/cache/epub/14668/pg14668.txt",
 }
 
+# Sets one and two were drawn when the target was Grade 1-2, so they use the two readers
+# above and must keep using exactly those to stay reproducible. The target is now Grade
+# 1-3, and neither of those books reaches Grade 3, so set three adds the Third Reader and
+# a wider sentence-length window: twelve tokens was chosen for Grade 1-2 text and would
+# systematically drop the longer sentences that make Grade 3 harder.
+THIRD_READER = {"mcguffey-3": "https://www.gutenberg.org/cache/epub/14766/pg14766.txt"}
+
 TARGET = 50
 MIN_TOKENS, MAX_TOKENS = 4, 12
+MAX_TOKENS_GRADE_3 = 16
 
 
 def fetch(name, url):
@@ -68,7 +90,7 @@ def sentences_from(text):
     return found
 
 
-def acceptable(sentence):
+def acceptable(sentence, max_tokens=MAX_TOKENS):
     """Shape filters only. Nothing here looks at what the sentence means."""
     if not sentence.endswith((".", "!", "?")):
         return False
@@ -81,7 +103,7 @@ def acceptable(sentence):
     if not sentence[0].isupper():
         return False
     words = sentence.rstrip(".!?").split()
-    if not (MIN_TOKENS - 1 <= len(words) <= MAX_TOKENS - 1):
+    if not (MIN_TOKENS - 1 <= len(words) <= max_tokens - 1):
         return False
     if any(word.isupper() and len(word) > 1 for word in words):
         return False  # lesson headings and word lists
@@ -91,11 +113,33 @@ def acceptable(sentence):
 
 
 def main():
+    which = 1
+    if "--set" in sys.argv:
+        which = int(sys.argv[sys.argv.index("--set") + 1])
+    if which not in (1, 2, 3):
+        raise SystemExit(f"--set must be 1, 2 or 3, not {which}")
+    out_dir = ROOT / {1: "holdout", 2: "holdout2", 3: "holdout3"}[which]
+
+    sources = dict(SOURCES)
+    max_tokens = MAX_TOKENS
+    if which == 3:
+        sources.update(THIRD_READER)
+        max_tokens = MAX_TOKENS_GRADE_3
+
+    already = set()
+    for earlier in ("holdout", "holdout2")[: which - 1]:
+        for name in ("sentences.json", "excluded.json"):
+            path = ROOT / earlier / name
+            if path.exists():
+                already |= {item["text"] for item in json.loads(path.read_text(encoding="utf-8"))}
+
     candidates = []
     seen = set()
-    for name, url in SOURCES.items():
+    for name, url in sources.items():
         for index, sentence in enumerate(sentences_from(fetch(name, url))):
-            if acceptable(sentence) and sentence.lower() not in seen:
+            if sentence in already:
+                continue
+            if acceptable(sentence, max_tokens) and sentence.lower() not in seen:
                 seen.add(sentence.lower())
                 candidates.append({"source": name, "index": index, "text": sentence})
 
@@ -105,15 +149,22 @@ def main():
     stride = len(candidates) / TARGET
     sample = [candidates[int(i * stride)] for i in range(TARGET)]
 
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out = OUT_DIR / "sentences.json"
+    overlap = {item["text"] for item in sample} & already
+    if overlap:
+        raise SystemExit(f"set two overlaps set one on {len(overlap)}: {sorted(overlap)[:3]}")
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out = out_dir / "sentences.json"
     payload = [
-        {"id": f"h{i + 1:03d}", "text": item["text"], "source": item["source"]}
+        {"id": f"{ {1: 'h', 2: 'j', 3: 'k'}[which] }{i + 1:03d}", "text": item["text"],
+         "source": item["source"]}
         for i, item in enumerate(sample)
     ]
     out.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
-    print(f"{len(candidates)} candidates, stride {stride:.1f}, sampled {len(sample)}")
+    print(f"set {which}: {len(candidates)} candidates "
+          f"({len(already)} excluded as already drawn), stride {stride:.1f}, "
+          f"max {max_tokens} tokens, sampled {len(sample)}")
     print(f"written to {out.relative_to(ROOT)}")
     print()
     for item in payload[:10]:

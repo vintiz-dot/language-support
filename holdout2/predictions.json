@@ -1,0 +1,4028 @@
+[
+  {
+    "schema_version": "0.2.0",
+    "text": "Much is left to the teacher.",
+    "tokens": [
+      "Much",
+      "is",
+      "left",
+      "to",
+      "the",
+      "teacher",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "much",
+        "number": "sg",
+        "animacy": "object"
+      },
+      "e2": {
+        "concept": "teacher",
+        "number": "sg",
+        "animacy": "person",
+        "definite": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "leave",
+        "roles": {
+          "patient": "e1"
+        },
+        "spatial": [
+          {
+            "relation": "to",
+            "ground": "e2",
+            "figure": "e1"
+          }
+        ],
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4,
+          5
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "id": "j001"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "It is in his hand.",
+    "tokens": [
+      "It",
+      "is",
+      "in",
+      "his",
+      "hand",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "thing",
+        "person": "3sg",
+        "number": "sg"
+      },
+      "e2": {
+        "concept": "hand",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true,
+        "possessor": "e3"
+      },
+      "e3": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.located",
+        "roles": {
+          "theme": "e1"
+        },
+        "spatial": [
+          {
+            "relation": "in",
+            "ground": "e2",
+            "figure": "e1"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3,
+          4
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          3
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      }
+    ],
+    "id": "j002"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Ned has fed the hen.",
+    "tokens": [
+      "Ned",
+      "has",
+      "fed",
+      "the",
+      "hen",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "Ned",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "hen",
+        "number": "sg",
+        "animacy": "animal",
+        "definite": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "feed",
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
+        "tense": "past",
+        "aspect": "perfect",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3,
+          4
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      }
+    ],
+    "id": "j003"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Can the dog catch the rat?",
+    "tokens": [
+      "Can",
+      "the",
+      "dog",
+      "catch",
+      "the",
+      "rat",
+      "?"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "dog",
+        "number": "sg",
+        "animacy": "animal",
+        "definite": true
+      },
+      "e2": {
+        "concept": "rat",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "catch",
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "interrogative",
+        "modality": "can",
+        "question": {
+          "type": "yes-no"
+        },
+        "irrealis": true
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4,
+          5
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          3
+        ]
+      }
+    ],
+    "id": "j004"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Will you run, too?",
+    "tokens": [
+      "Will",
+      "you",
+      "run",
+      ",",
+      "too",
+      "?"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "run",
+        "roles": {
+          "agent": "e1"
+        },
+        "tense": "future",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "interrogative",
+        "question": {
+          "type": "yes-no"
+        }
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          2
+        ]
+      }
+    ],
+    "id": "j005"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Now the duck will swim in the pond.",
+    "tokens": [
+      "Now",
+      "the",
+      "duck",
+      "will",
+      "swim",
+      "in",
+      "the",
+      "pond",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "duck",
+        "number": "sg",
+        "animacy": "animal",
+        "definite": true
+      },
+      "e2": {
+        "concept": "pond",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "swim",
+        "roles": {
+          "agent": "e1"
+        },
+        "spatial": [
+          {
+            "relation": "in",
+            "ground": "e2",
+            "figure": "e1"
+          }
+        ],
+        "tense": "future",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          6,
+          7
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          3,
+          4,
+          5
+        ]
+      }
+    ],
+    "id": "j006"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "He has left his big top on the box.",
+    "tokens": [
+      "He",
+      "has",
+      "left",
+      "his",
+      "big",
+      "top",
+      "on",
+      "the",
+      "box",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "top",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true,
+        "modifiers": [
+          "big"
+        ],
+        "possessor": "e1"
+      },
+      "e3": {
+        "concept": "box",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "leave",
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
+        "spatial": [
+          {
+            "relation": "on",
+            "ground": "e3",
+            "figure": "e1"
+          }
+        ],
+        "tense": "past",
+        "aspect": "perfect",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          7,
+          8
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2,
+          6
+        ]
+      }
+    ],
+    "id": "j007"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "No, John, she likes to be in the pond.",
+    "tokens": [
+      "No",
+      ",",
+      "John",
+      ",",
+      "she",
+      "likes",
+      "to",
+      "be",
+      "in",
+      "the",
+      "pond",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "John",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "female",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e3": {
+        "concept": "pond",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "like",
+        "roles": {
+          "experiencer": "e2"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "be.located",
+        "roles": {
+          "theme": "e2"
+        },
+        "spatial": [
+          {
+            "relation": "in",
+            "ground": "e3",
+            "figure": "e2"
+          }
+        ],
+        "aspect": "simple"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          5
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          9,
+          10
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          6,
+          7,
+          8
+        ]
+      }
+    ],
+    "address": "e1",
+    "speech_act": "deny",
+    "id": "j008"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "I will not let it fall.",
+    "tokens": [
+      "I",
+      "will",
+      "not",
+      "let",
+      "it",
+      "fall",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "speaker",
+        "person": "1sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "thing",
+        "person": "3sg",
+        "number": "sg"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "let",
+        "roles": {
+          "agent": "e1"
+        },
+        "tense": "future",
+        "aspect": "simple",
+        "polarity": "negative",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "fall",
+        "roles": {
+          "agent": "e2"
+        },
+        "aspect": "simple"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          5
+        ]
+      }
+    ],
+    "id": "j009"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Look, too, at the man on that fine horse.",
+    "tokens": [
+      "Look",
+      ",",
+      "too",
+      ",",
+      "at",
+      "the",
+      "man",
+      "on",
+      "that",
+      "fine",
+      "horse",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "man",
+        "number": "sg",
+        "animacy": "person",
+        "gender": "male",
+        "definite": true,
+        "located": {
+          "relation": "on",
+          "ground": "e2"
+        }
+      },
+      "e2": {
+        "concept": "horse",
+        "number": "sg",
+        "animacy": "animal",
+        "deixis": "distal",
+        "definite": true,
+        "modifiers": [
+          "fine"
+        ]
+      },
+      "e3": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person",
+        "implicit": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "look-at",
+        "roles": {
+          "patient": "e1",
+          "agent": "e3"
+        },
+        "spatial": [
+          {
+            "relation": "at",
+            "ground": "e1",
+            "figure": "e3"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "imperative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          5,
+          6
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          7
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          4
+        ]
+      }
+    ],
+    "review": [
+      {
+        "node": "ev1",
+        "reason": "parse_uncertain",
+        "message": "Phrasal verb: the particle was absorbed into the predicate, not read as a preposition",
+        "score": 0.5
+      }
+    ],
+    "id": "j010"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "How safe the little chick feels now!",
+    "tokens": [
+      "How",
+      "safe",
+      "the",
+      "little",
+      "chick",
+      "feels",
+      "now",
+      "!"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "chick",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true,
+        "modifiers": [
+          "little"
+        ]
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "feel",
+        "roles": {
+          "experiencer": "e1"
+        },
+        "attribute": "safe",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "exclamative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          5
+        ]
+      }
+    ],
+    "id": "j011"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Rose went under, but she did not drown.",
+    "tokens": [
+      "Rose",
+      "went",
+      "under",
+      ",",
+      "but",
+      "she",
+      "did",
+      "not",
+      "drown",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "Rose",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "female",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "go",
+        "roles": {
+          "agent": "e1"
+        },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "drown",
+        "roles": {
+          "agent": "e2"
+        },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "negative",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          5
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          4
+        ]
+      },
+      {
+        "node": "d2",
+        "tokens": [
+          4
+        ]
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "contrast",
+        "from": "ev1",
+        "to": "ev1",
+        "marker": "but"
+      },
+      {
+        "id": "d2",
+        "type": "contrast",
+        "from": "ev1",
+        "to": "ev2",
+        "marker": "but"
+      }
+    ],
+    "id": "j012"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Where can it be?",
+    "tokens": [
+      "Where",
+      "can",
+      "it",
+      "be",
+      "?"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "thing",
+        "person": "3sg",
+        "number": "sg"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.located",
+        "roles": {
+          "theme": "e1"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "interrogative",
+        "modality": "can",
+        "question": {
+          "type": "where",
+          "role": "location"
+        },
+        "irrealis": true
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          1,
+          3
+        ]
+      }
+    ],
+    "id": "j013"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "He keeps it in the pond, near his home.",
+    "tokens": [
+      "He",
+      "keeps",
+      "it",
+      "in",
+      "the",
+      "pond",
+      ",",
+      "near",
+      "his",
+      "home",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "thing",
+        "person": "3sg",
+        "number": "sg"
+      },
+      "e3": {
+        "concept": "pond",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true
+      },
+      "e4": {
+        "concept": "home",
+        "number": "sg",
+        "animacy": "place",
+        "definite": true,
+        "possessor": "e1"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "keep",
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
+        "spatial": [
+          {
+            "relation": "in",
+            "ground": "e3",
+            "figure": "e1"
+          },
+          {
+            "relation": "near",
+            "ground": "e4",
+            "figure": "e1"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          4,
+          5
+        ]
+      },
+      {
+        "node": "e4",
+        "tokens": [
+          8,
+          9
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          3,
+          7
+        ]
+      }
+    ],
+    "id": "j014"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "It is not best to whip them.",
+    "tokens": [
+      "It",
+      "is",
+      "not",
+      "best",
+      "to",
+      "whip",
+      "them",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "thing",
+        "person": "3sg",
+        "number": "sg"
+      },
+      "e2": {
+        "concept": "thing",
+        "person": "3pl",
+        "number": "pl"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": {
+          "theme": "e1"
+        },
+        "attribute": "good",
+        "degree": "superlative",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "negative",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "whip",
+        "roles": {
+          "patient": "e2",
+          "agent": "e1"
+        },
+        "aspect": "simple"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          6
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          4,
+          5
+        ]
+      }
+    ],
+    "id": "j015"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "When Fanny has finished, the three girls will go home.",
+    "tokens": [
+      "When",
+      "Fanny",
+      "has",
+      "finished",
+      ",",
+      "the",
+      "three",
+      "girls",
+      "will",
+      "go",
+      "home",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "Fanny",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "girl",
+        "number": "pl",
+        "animacy": "person",
+        "gender": "female",
+        "definite": true,
+        "quantity": 3
+      },
+      "e3": {
+        "concept": "home",
+        "number": "sg",
+        "animacy": "place"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "finish",
+        "roles": {
+          "agent": "e1"
+        },
+        "tense": "past",
+        "aspect": "perfect",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "go",
+        "roles": {
+          "agent": "e2"
+        },
+        "spatial": [
+          {
+            "relation": "at",
+            "ground": "e3",
+            "figure": "e2"
+          }
+        ],
+        "tense": "future",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          10
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          8,
+          9
+        ]
+      }
+    ],
+    "id": "j016"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "The children are not far from home.",
+    "tokens": [
+      "The",
+      "children",
+      "are",
+      "not",
+      "far",
+      "from",
+      "home",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "child",
+        "number": "pl",
+        "animacy": "person",
+        "definite": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": {
+          "theme": "e1"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "negative",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3
+        ]
+      }
+    ],
+    "id": "j017"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Ellen, do look at Fido!",
+    "tokens": [
+      "Ellen",
+      ",",
+      "do",
+      "look",
+      "at",
+      "Fido",
+      "!"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "Ellen",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "person",
+        "proper_name": "Fido",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "look-at",
+        "roles": {
+          "patient": "e2",
+          "agent": "e1"
+        },
+        "spatial": [
+          {
+            "relation": "at",
+            "ground": "e2",
+            "figure": "e1"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "imperative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          5
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "address": "e1",
+    "review": [
+      {
+        "node": "ev1",
+        "reason": "parse_uncertain",
+        "message": "Phrasal verb: the particle was absorbed into the predicate, not read as a preposition",
+        "score": 0.5
+      }
+    ],
+    "id": "j018"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Here you see the rabbits and their little master.",
+    "tokens": [
+      "Here",
+      "you",
+      "see",
+      "the",
+      "rabbits",
+      "and",
+      "their",
+      "little",
+      "master",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "location",
+        "number": "sg",
+        "deixis": "proximal",
+        "animacy": "place"
+      },
+      "e2": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e3": {
+        "concept": "rabbit",
+        "number": "pl",
+        "animacy": "animal",
+        "definite": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "see",
+        "roles": {
+          "experiencer": "e2",
+          "theme": "e3"
+        },
+        "spatial": [
+          {
+            "relation": "at",
+            "ground": "e1",
+            "figure": "e3"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          3,
+          4
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2
+        ]
+      }
+    ],
+    "id": "j019"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Think the Lord is nigh.",
+    "tokens": [
+      "Think",
+      "the",
+      "Lord",
+      "is",
+      "nigh",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person",
+        "implicit": true
+      },
+      "e2": {
+        "concept": "person",
+        "proper_name": "Lord",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "think",
+        "roles": {
+          "agent": "e1"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "imperative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "be.attribute",
+        "roles": {
+          "theme": "e2"
+        },
+        "attribute": "nigh",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          3,
+          4
+        ]
+      }
+    ],
+    "review": [
+      {
+        "node": "ev1",
+        "reason": "not_depictable",
+        "message": "think is a mental state with no depiction",
+        "score": 0.6
+      }
+    ],
+    "id": "j020"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Have you taken good care of your book?",
+    "tokens": [
+      "Have",
+      "you",
+      "taken",
+      "good",
+      "care",
+      "of",
+      "your",
+      "book",
+      "?"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "care",
+        "number": "sg",
+        "animacy": "object",
+        "modifiers": [
+          "good"
+        ]
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "take",
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
+        "tense": "past",
+        "aspect": "perfect",
+        "polarity": "positive",
+        "mood": "interrogative",
+        "question": {
+          "type": "yes-no"
+        }
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3,
+          4
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          2
+        ]
+      }
+    ],
+    "id": "j021"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Brown has put the little sitting room in order.",
+    "tokens": [
+      "Brown",
+      "has",
+      "put",
+      "the",
+      "little",
+      "sitting",
+      "room",
+      "in",
+      "order",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "Brown",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "room",
+        "number": "sg",
+        "animacy": "place",
+        "definite": true,
+        "modifiers": [
+          "little",
+          "sit"
+        ]
+      },
+      "e3": {
+        "concept": "order",
+        "number": "sg",
+        "animacy": "object"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "put",
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
+        "spatial": [
+          {
+            "relation": "in",
+            "ground": "e3",
+            "figure": "e2"
+          }
+        ],
+        "tense": "past",
+        "aspect": "perfect",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          8
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2,
+          7
+        ]
+      }
+    ],
+    "id": "j022"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Till the sun is in the sky.",
+    "tokens": [
+      "Till",
+      "the",
+      "sun",
+      "is",
+      "in",
+      "the",
+      "sky",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "sun",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true
+      },
+      "e2": {
+        "concept": "sky",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.located",
+        "roles": {
+          "theme": "e1"
+        },
+        "spatial": [
+          {
+            "relation": "in",
+            "ground": "e2",
+            "figure": "e1"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          5,
+          6
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          3,
+          4
+        ]
+      }
+    ],
+    "id": "j023"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "We will watch him, you and I.",
+    "tokens": [
+      "We",
+      "will",
+      "watch",
+      "him",
+      ",",
+      "you",
+      "and",
+      "I."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "speaker",
+        "person": "1pl",
+        "number": "pl",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e3": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "watch",
+        "roles": {
+          "agent": "e1",
+          "patient": "e3"
+        },
+        "tense": "future",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          5
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      }
+    ],
+    "id": "j024"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "She was gone a long time.",
+    "tokens": [
+      "She",
+      "was",
+      "gone",
+      "a",
+      "long",
+      "time",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "female",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": {
+          "theme": "e1"
+        },
+        "attribute": "gone",
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      }
+    ],
+    "id": "j025"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Susie heard some children teasing her and making fun of her.",
+    "tokens": [
+      "Susie",
+      "heard",
+      "some",
+      "children",
+      "teasing",
+      "her",
+      "and",
+      "making",
+      "fun",
+      "of",
+      "her",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "Susie",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "child",
+        "number": "pl",
+        "animacy": "person",
+        "quantifier": "some",
+        "definite": false
+      },
+      "e3": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "female",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e4": {
+        "concept": "fun",
+        "number": "sg",
+        "animacy": "object"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "hear",
+        "roles": {
+          "experiencer": "e1"
+        },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "tease",
+        "roles": {
+          "agent": "e2",
+          "patient": "e3"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev3",
+        "predicate": "make",
+        "roles": {
+          "patient": "e4",
+          "theme": "e3"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          5
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          4
+        ]
+      },
+      {
+        "node": "e4",
+        "tokens": [
+          8
+        ]
+      },
+      {
+        "node": "ev3",
+        "tokens": [
+          7,
+          9
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          6
+        ]
+      },
+      {
+        "node": "d2",
+        "tokens": [
+          6
+        ]
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "sequence",
+        "from": "ev1",
+        "to": "ev2",
+        "marker": "and"
+      },
+      {
+        "id": "d2",
+        "type": "sequence",
+        "from": "ev2",
+        "to": "ev3",
+        "marker": "and"
+      }
+    ],
+    "id": "j026"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Don not fall and make a noise.",
+    "tokens": [
+      "Don",
+      "not",
+      "fall",
+      "and",
+      "make",
+      "a",
+      "noise",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "Don",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "noise",
+        "number": "sg",
+        "animacy": "object",
+        "definite": false
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "fall",
+        "roles": {
+          "agent": "e1"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "negative",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "make",
+        "roles": {
+          "patient": "e2"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          5,
+          6
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          4
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          3
+        ]
+      },
+      {
+        "node": "d2",
+        "tokens": [
+          3
+        ]
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "sequence",
+        "from": "ev1",
+        "to": "ev1",
+        "marker": "and"
+      },
+      {
+        "id": "d2",
+        "type": "sequence",
+        "from": "ev1",
+        "to": "ev2",
+        "marker": "and"
+      }
+    ],
+    "id": "j027"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "He never fails to drive off other birds from his nest.",
+    "tokens": [
+      "He",
+      "never",
+      "fails",
+      "to",
+      "drive",
+      "off",
+      "other",
+      "birds",
+      "from",
+      "his",
+      "nest",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "bird",
+        "number": "pl",
+        "animacy": "animal",
+        "modifiers": [
+          "other"
+        ],
+        "definite": false
+      },
+      "e3": {
+        "concept": "nest",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true,
+        "possessor": "e1"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "fail",
+        "roles": {
+          "agent": "e1"
+        },
+        "frequency": "never",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "negative",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "drive",
+        "roles": {
+          "patient": "e2",
+          "agent": "e1"
+        },
+        "spatial": [
+          {
+            "relation": "off",
+            "figure": "e1"
+          },
+          {
+            "relation": "from",
+            "ground": "e3",
+            "figure": "e1"
+          }
+        ],
+        "aspect": "simple"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          6,
+          7
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          9,
+          10
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          3,
+          4,
+          5,
+          8
+        ]
+      }
+    ],
+    "id": "j028"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Only one queen can live in each hive.",
+    "tokens": [
+      "Only",
+      "one",
+      "queen",
+      "can",
+      "live",
+      "in",
+      "each",
+      "hive",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "queen",
+        "number": "sg",
+        "animacy": "object",
+        "gender": "female",
+        "quantity": 1
+      },
+      "e2": {
+        "concept": "hive",
+        "number": "sg",
+        "animacy": "object"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "live",
+        "roles": {
+          "agent": "e1"
+        },
+        "spatial": [
+          {
+            "relation": "in",
+            "ground": "e2",
+            "figure": "e1"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative",
+        "modality": "can",
+        "irrealis": true
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          6,
+          7
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          3,
+          4,
+          5
+        ]
+      }
+    ],
+    "id": "j029"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "He levies a tax!",
+    "tokens": [
+      "He",
+      "levies",
+      "a",
+      "tax",
+      "!"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "tax",
+        "number": "sg",
+        "animacy": "object",
+        "definite": false
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "levy",
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          2,
+          3
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1
+        ]
+      }
+    ],
+    "id": "j030"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Here are two of them that live in the woods.",
+    "tokens": [
+      "Here",
+      "are",
+      "two",
+      "of",
+      "them",
+      "that",
+      "live",
+      "in",
+      "the",
+      "woods",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "location",
+        "number": "sg",
+        "deixis": "proximal",
+        "animacy": "place"
+      },
+      "e2": {
+        "concept": "two",
+        "number": "sg",
+        "animacy": "object"
+      },
+      "e3": {
+        "concept": "wood",
+        "number": "pl",
+        "animacy": "object",
+        "definite": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.located",
+        "roles": {
+          "theme": "e2"
+        },
+        "spatial": [
+          {
+            "relation": "at",
+            "ground": "e1",
+            "figure": "e2"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "live",
+        "roles": {
+          "agent": "e2"
+        },
+        "modifies": "e2",
+        "spatial": [
+          {
+            "relation": "in",
+            "ground": "e3",
+            "figure": "e2"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          8,
+          9
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          5,
+          6,
+          7
+        ]
+      }
+    ],
+    "id": "j031"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Come to see me every day.",
+    "tokens": [
+      "Come",
+      "to",
+      "see",
+      "me",
+      "every",
+      "day",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person",
+        "implicit": true
+      },
+      "e2": {
+        "concept": "speaker",
+        "person": "1sg",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "come",
+        "roles": {
+          "agent": "e1"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "imperative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "see",
+        "roles": {
+          "theme": "e2"
+        },
+        "aspect": "simple"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          1,
+          2
+        ]
+      }
+    ],
+    "id": "j032"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "And the wild flowers fringe the brink.",
+    "tokens": [
+      "And",
+      "the",
+      "wild",
+      "flowers",
+      "fringe",
+      "the",
+      "brink",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "flower",
+        "number": "pl",
+        "animacy": "object",
+        "definite": true,
+        "modifiers": [
+          "wild"
+        ]
+      },
+      "e2": {
+        "concept": "brink",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "fringe",
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          5,
+          6
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          4
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          0
+        ]
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "sequence",
+        "from": "ev1",
+        "to": "ev1",
+        "marker": "and"
+      }
+    ],
+    "id": "j033"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "It played about, to the delight of all who saw it.",
+    "tokens": [
+      "It",
+      "played",
+      "about",
+      ",",
+      "to",
+      "the",
+      "delight",
+      "of",
+      "all",
+      "who",
+      "saw",
+      "it",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "thing",
+        "person": "3sg",
+        "number": "sg"
+      },
+      "e2": {
+        "concept": "delight",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true
+      },
+      "e3": {
+        "concept": "all",
+        "number": "sg",
+        "animacy": "object"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "play",
+        "roles": {
+          "agent": "e1"
+        },
+        "spatial": [
+          {
+            "relation": "to",
+            "ground": "e2",
+            "figure": "e1"
+          }
+        ],
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "see",
+        "roles": {
+          "agent": "e3",
+          "theme": "e1"
+        },
+        "modifies": "e3",
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          5,
+          6
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          4
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          8
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          11
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          9,
+          10
+        ]
+      }
+    ],
+    "id": "j034"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Her kisses will wake you instead!",
+    "tokens": [
+      "Her",
+      "kisses",
+      "will",
+      "wake",
+      "you",
+      "instead",
+      "!"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "kiss",
+        "number": "pl",
+        "animacy": "object",
+        "definite": true,
+        "possessor": "e2"
+      },
+      "e2": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "female",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e3": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "wake",
+        "roles": {
+          "agent": "e1",
+          "patient": "e3"
+        },
+        "tense": "future",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          4
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3
+        ]
+      }
+    ],
+    "id": "j035"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Listen to the kitchen clock!",
+    "tokens": [
+      "Listen",
+      "to",
+      "the",
+      "kitchen",
+      "clock",
+      "!"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "clock",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true
+      },
+      "e2": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person",
+        "implicit": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "listen",
+        "roles": {
+          "agent": "e2"
+        },
+        "spatial": [
+          {
+            "relation": "to",
+            "ground": "e1",
+            "figure": "e2"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "imperative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          1
+        ]
+      }
+    ],
+    "id": "j036"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Now the frightened mother of the children came to the door.",
+    "tokens": [
+      "Now",
+      "the",
+      "frightened",
+      "mother",
+      "of",
+      "the",
+      "children",
+      "came",
+      "to",
+      "the",
+      "door",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "mother",
+        "number": "sg",
+        "animacy": "person",
+        "gender": "female",
+        "definite": true,
+        "modifiers": [
+          "frightened"
+        ]
+      },
+      "e2": {
+        "concept": "door",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "come",
+        "roles": {
+          "agent": "e1"
+        },
+        "spatial": [
+          {
+            "relation": "to",
+            "ground": "e2",
+            "figure": "e1"
+          }
+        ],
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          9,
+          10
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          7,
+          8
+        ]
+      }
+    ],
+    "id": "j037"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "The snow laid a coverlet over their heads.",
+    "tokens": [
+      "The",
+      "snow",
+      "laid",
+      "a",
+      "coverlet",
+      "over",
+      "their",
+      "heads",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "snow",
+        "number": "mass",
+        "animacy": "object",
+        "definite": true
+      },
+      "e2": {
+        "concept": "coverlet",
+        "number": "sg",
+        "animacy": "object",
+        "definite": false
+      },
+      "e3": {
+        "concept": "head",
+        "number": "pl",
+        "animacy": "object",
+        "definite": true,
+        "possessor": "e4"
+      },
+      "e4": {
+        "concept": "thing",
+        "person": "3pl",
+        "number": "pl"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "lay",
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
+        "spatial": [
+          {
+            "relation": "over",
+            "ground": "e3",
+            "figure": "e2"
+          }
+        ],
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3,
+          4
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          6,
+          7
+        ]
+      },
+      {
+        "node": "e4",
+        "tokens": [
+          6
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          5
+        ]
+      }
+    ],
+    "id": "j038"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Ralph Wick was seven years old.",
+    "tokens": [
+      "Ralph",
+      "Wick",
+      "was",
+      "seven",
+      "years",
+      "old",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "Wick",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": {
+          "theme": "e1"
+        },
+        "attribute": "old",
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          5
+        ]
+      }
+    ],
+    "id": "j039"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "And the voices shrill!",
+    "tokens": [
+      "And",
+      "the",
+      "voices",
+      "shrill",
+      "!"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "voice",
+        "number": "pl",
+        "animacy": "object",
+        "definite": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "shrill",
+        "roles": {
+          "agent": "e1"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          3
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          0
+        ]
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "sequence",
+        "from": "ev1",
+        "to": "ev1",
+        "marker": "and"
+      }
+    ],
+    "id": "j040"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "John, you must be as still as a little mouse.",
+    "tokens": [
+      "John",
+      ",",
+      "you",
+      "must",
+      "be",
+      "as",
+      "still",
+      "as",
+      "a",
+      "little",
+      "mouse",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "John",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": {
+          "theme": "e2"
+        },
+        "phase": "still",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative",
+        "modality": "must"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          3,
+          4,
+          6
+        ]
+      }
+    ],
+    "address": "e1",
+    "id": "j041"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "To shine all through the night.",
+    "tokens": [
+      "To",
+      "shine",
+      "all",
+      "through",
+      "the",
+      "night",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "night",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true
+      },
+      "e2": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person",
+        "implicit": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "shine",
+        "roles": {
+          "agent": "e2"
+        },
+        "spatial": [
+          {
+            "relation": "through",
+            "ground": "e1",
+            "figure": "e2"
+          }
+        ],
+        "aspect": "simple"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          4,
+          5
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          1,
+          3
+        ]
+      }
+    ],
+    "id": "j042"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "One cold, windy night, they heard a knock at the door.",
+    "tokens": [
+      "One",
+      "cold",
+      ",",
+      "windy",
+      "night",
+      ",",
+      "they",
+      "heard",
+      "a",
+      "knock",
+      "at",
+      "the",
+      "door",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "thing",
+        "person": "3pl",
+        "number": "pl"
+      },
+      "e2": {
+        "concept": "knock",
+        "number": "sg",
+        "animacy": "object",
+        "definite": false,
+        "located": {
+          "relation": "at",
+          "ground": "e3"
+        }
+      },
+      "e3": {
+        "concept": "door",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "hear",
+        "roles": {
+          "experiencer": "e1",
+          "theme": "e2"
+        },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          6
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          8,
+          9
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          11,
+          12
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          10
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          7
+        ]
+      }
+    ],
+    "id": "j043"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "The bee is wiser than Laura.",
+    "tokens": [
+      "The",
+      "bee",
+      "is",
+      "wiser",
+      "than",
+      "Laura",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "bee",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true
+      },
+      "e2": {
+        "concept": "person",
+        "proper_name": "Laura",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": {
+          "theme": "e1"
+        },
+        "attribute": "wise",
+        "degree": "comparative",
+        "comparand": "e2",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          5
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "id": "j044"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "You are not offended with me, I hope.",
+    "tokens": [
+      "You",
+      "are",
+      "not",
+      "offended",
+      "with",
+      "me",
+      ",",
+      "I",
+      "hope",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "speaker",
+        "person": "1sg",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "offend",
+        "roles": {
+          "patient": "e1",
+          "comitative": "e2"
+        },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "negative",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "hope",
+        "roles": {
+          "agent": "e2"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          5
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          7
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          8
+        ]
+      }
+    ],
+    "review": [
+      {
+        "node": "ev2",
+        "reason": "not_depictable",
+        "message": "hope is a mental state with no depiction",
+        "score": 0.6
+      }
+    ],
+    "id": "j045"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Leading on to heaven and God.",
+    "tokens": [
+      "Leading",
+      "on",
+      "to",
+      "heaven",
+      "and",
+      "God",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "heaven",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "person",
+        "proper_name": "God",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "lead",
+        "spatial": [
+          {
+            "relation": "to",
+            "ground": [
+              "e1",
+              "e2"
+            ]
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          5
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          2
+        ]
+      }
+    ],
+    "id": "j046"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Ellet told George to go and look in his cap.",
+    "tokens": [
+      "Ellet",
+      "told",
+      "George",
+      "to",
+      "go",
+      "and",
+      "look",
+      "in",
+      "his",
+      "cap",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "Ellet",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "person",
+        "proper_name": "George",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e3": {
+        "concept": "cap",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true,
+        "possessor": "e4"
+      },
+      "e4": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "tell",
+        "roles": {
+          "agent": "e1",
+          "theme": "e2"
+        },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "go",
+        "roles": {
+          "agent": "e1"
+        },
+        "aspect": "simple"
+      },
+      {
+        "id": "ev3",
+        "predicate": "look",
+        "spatial": [
+          {
+            "relation": "in",
+            "ground": "e3"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          3,
+          4
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          8,
+          9
+        ]
+      },
+      {
+        "node": "e4",
+        "tokens": [
+          8
+        ]
+      },
+      {
+        "node": "ev3",
+        "tokens": [
+          6,
+          7
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          5
+        ]
+      },
+      {
+        "node": "d2",
+        "tokens": [
+          5
+        ]
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "sequence",
+        "from": "ev1",
+        "to": "ev2",
+        "marker": "and"
+      },
+      {
+        "id": "d2",
+        "type": "sequence",
+        "from": "ev2",
+        "to": "ev3",
+        "marker": "and"
+      }
+    ],
+    "id": "j047"
+  },
+  {
+    "schema_version": "0.2.0",
+    "text": "Then he told her all his trouble.",
+    "tokens": [
+      "Then",
+      "he",
+      "told",
+      "her",
+      "all",
+      "his",
+      "trouble",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "female",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e3": {
+        "concept": "trouble",
+        "number": "sg",
+        "animacy": "object",
+        "definite": true,
+        "possessor": "e1"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "tell",
+        "roles": {
+          "agent": "e1",
+          "recipient": "e2",
+          "theme": "e3"
+        },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          0
+        ]
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "sequence",
+        "from": "ev1",
+        "to": "ev1",
+        "marker": "then"
+      }
+    ],
+    "id": "j049"
+  }
+]

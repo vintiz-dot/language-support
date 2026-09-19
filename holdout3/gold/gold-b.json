@@ -1,0 +1,2576 @@
+[
+  {
+    "schema_version": "0.4.0",
+    "id": "k029",
+    "text": "In reading and in talking, we always speak some words with more force than others.",
+    "tokens": [
+      "In",
+      "reading",
+      "and",
+      "in",
+      "talking",
+      ",",
+      "we",
+      "always",
+      "speak",
+      "some",
+      "words",
+      "with",
+      "more",
+      "force",
+      "than",
+      "others",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "speaker",
+        "person": "1pl",
+        "number": "pl",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "word",
+        "number": "pl",
+        "quantifier": "some",
+        "animacy": "abstract"
+      },
+      "e3": {
+        "concept": "force",
+        "number": "mass",
+        "animacy": "abstract"
+      },
+      "e4": {
+        "concept": "word",
+        "number": "pl",
+        "animacy": "abstract"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "read",
+        "roles": {
+          "agent": "e1"
+        },
+        "aspect": "simple"
+      },
+      {
+        "id": "ev2",
+        "predicate": "talk",
+        "roles": {
+          "agent": "e1"
+        },
+        "aspect": "simple"
+      },
+      {
+        "id": "ev3",
+        "predicate": "speak",
+        "roles": {
+          "agent": "e1",
+          "theme": "e2",
+          "instrument": "e3"
+        },
+        "frequency": "always",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "addition",
+        "from": "ev1",
+        "to": "ev2",
+        "marker": "and"
+      },
+      {
+        "id": "d2",
+        "type": "simultaneous",
+        "from": "ev3",
+        "to": "ev1",
+        "inferred": true
+      }
+    ],
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          3,
+          4
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          6
+        ]
+      },
+      {
+        "node": "ev3",
+        "tokens": [
+          7,
+          8
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          9,
+          10
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          11,
+          12,
+          13
+        ]
+      },
+      {
+        "node": "e4",
+        "tokens": [
+          15
+        ]
+      }
+    ],
+    "notes": "GAP: with more force than others is a comparison of manner, and degree attaches to an attribute, of which this clause has none -- so more and than others go unrecorded and e4 is left with no role. The gerund frame is annotated as an inferred simultaneous relation, because a circumstantial frame has no discourse type of its own. force as an instrument is the nearest available role and is not really one."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k030",
+    "text": "But his cows never drank any water, And his sheep never needed a crook.",
+    "tokens": [
+      "But",
+      "his",
+      "cows",
+      "never",
+      "drank",
+      "any",
+      "water",
+      ",",
+      "And",
+      "his",
+      "sheep",
+      "never",
+      "needed",
+      "a",
+      "crook",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person",
+        "implicit": true
+      },
+      "e2": {
+        "concept": "cow",
+        "number": "pl",
+        "definite": true,
+        "animacy": "animal",
+        "possessor": "e1"
+      },
+      "e3": {
+        "concept": "water",
+        "number": "mass",
+        "quantifier": "any",
+        "animacy": "object"
+      },
+      "e4": {
+        "concept": "sheep",
+        "number": "pl",
+        "definite": true,
+        "animacy": "animal",
+        "possessor": "e1"
+      },
+      "e5": {
+        "concept": "crook",
+        "number": "sg",
+        "definite": false,
+        "animacy": "object"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "drink",
+        "roles": {
+          "agent": "e2",
+          "patient": "e3"
+        },
+        "frequency": "never",
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "negative",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "need",
+        "roles": {
+          "experiencer": "e4",
+          "theme": "e5"
+        },
+        "frequency": "never",
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "negative",
+        "mood": "declarative"
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "addition",
+        "from": "ev1",
+        "to": "ev2",
+        "marker": "and"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e2",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          3,
+          4
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          5,
+          6
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          8
+        ]
+      },
+      {
+        "node": "e4",
+        "tokens": [
+          9,
+          10
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          11,
+          12
+        ]
+      },
+      {
+        "node": "e5",
+        "tokens": [
+          13,
+          14
+        ]
+      }
+    ],
+    "notes": "GAP: sentence-initial But relates this to a clause outside the sentence. Two possessives share one implicit owner. sheep is plural with no plural marking, which only the verb agreement shows. crook is the shepherd's staff, not a criminal, and nothing but sheep disambiguates it."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k031",
+    "text": "I am truly very glad to see the rain falling.",
+    "tokens": [
+      "I",
+      "am",
+      "truly",
+      "very",
+      "glad",
+      "to",
+      "see",
+      "the",
+      "rain",
+      "falling",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "speaker",
+        "person": "1sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "rain",
+        "number": "mass",
+        "definite": true,
+        "animacy": "abstract"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": {
+          "theme": "e1"
+        },
+        "attribute": "glad",
+        "degree": "very",
+        "complement": "ev2",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "see",
+        "roles": {
+          "experiencer": "e1",
+          "theme": "e2"
+        },
+        "complement": "ev3",
+        "aspect": "simple"
+      },
+      {
+        "id": "ev3",
+        "predicate": "fall",
+        "roles": {
+          "agent": "e2"
+        },
+        "aspect": "progressive"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          3,
+          4
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          6
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          7,
+          8
+        ]
+      },
+      {
+        "node": "ev3",
+        "tokens": [
+          9
+        ]
+      }
+    ],
+    "notes": "GAP: truly and very are stacked intensifiers and there is one degree slot, so truly goes unaligned. Three events deep: being glad, about seeing, about falling."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k032",
+    "text": "What ugly, gray streaks on her side and her back!",
+    "tokens": [
+      "What",
+      "ugly",
+      ",",
+      "gray",
+      "streaks",
+      "on",
+      "her",
+      "side",
+      "and",
+      "her",
+      "back",
+      "!"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "female",
+        "number": "sg",
+        "animacy": "person",
+        "implicit": true
+      },
+      "e2": {
+        "concept": "side",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object",
+        "possessor": "e1"
+      },
+      "e3": {
+        "concept": "back",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object",
+        "possessor": "e1"
+      },
+      "e4": {
+        "members": [
+          "e2",
+          "e3"
+        ],
+        "coordination": "and",
+        "number": "pl",
+        "animacy": "object"
+      },
+      "e5": {
+        "concept": "streak",
+        "number": "pl",
+        "definite": false,
+        "animacy": "object",
+        "modifiers": [
+          "ugly",
+          "gray"
+        ],
+        "located": {
+          "relation": "on",
+          "ground": "e4"
+        }
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "exist",
+        "roles": {
+          "theme": "e5"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "exclamative"
+      }
+    ],
+    "review": [
+      {
+        "node": "ev1",
+        "reason": "parse_uncertain"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e5",
+        "tokens": [
+          1,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "node": "e4",
+        "tokens": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          6,
+          7
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          9,
+          10
+        ]
+      }
+    ],
+    "notes": "GAP: an exclamative noun phrase with no verb, as in k011, so exist is supplied. The first coordinated group used as the ground of a located anchoring rather than as a role filler, which the schema allows and nothing previously exercised."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k033",
+    "text": "Not seeing it, he grew uneasy.",
+    "tokens": [
+      "Not",
+      "seeing",
+      "it",
+      ",",
+      "he",
+      "grew",
+      "uneasy",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "thing",
+        "person": "3sg",
+        "number": "sg"
+      },
+      "e2": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "see",
+        "roles": {
+          "experiencer": "e2",
+          "theme": "e1"
+        },
+        "aspect": "progressive",
+        "polarity": "negative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "grow.become",
+        "roles": {
+          "theme": "e2"
+        },
+        "attribute": "uneasy",
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "cause",
+        "from": "ev1",
+        "to": "ev2",
+        "inferred": true
+      }
+    ],
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          5,
+          6
+        ]
+      }
+    ],
+    "notes": "A non-finite clause that carries polarity, which the usual rule forbids: it takes no tense or mood because it asserts nothing, but the Not is right there in the text and dropping it would invert the sentence. grew is sense-discriminated because grow alone means getting bigger. The causal link has no connective, so it is marked inferred."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k034",
+    "text": "Mother is always afraid we shall be drowned.",
+    "tokens": [
+      "Mother",
+      "is",
+      "always",
+      "afraid",
+      "we",
+      "shall",
+      "be",
+      "drowned",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "mother",
+        "number": "sg",
+        "definite": true,
+        "animacy": "person",
+        "gender": "female"
+      },
+      "e2": {
+        "concept": "speaker",
+        "person": "1pl",
+        "number": "pl",
+        "animacy": "person"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": {
+          "theme": "e1"
+        },
+        "attribute": "afraid",
+        "frequency": "always",
+        "complement": "ev2",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "drown",
+        "roles": {
+          "patient": "e2"
+        },
+        "tense": "future",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative",
+        "irrealis": true
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          5,
+          6,
+          7
+        ]
+      }
+    ],
+    "notes": "GAP: the modality enum has no shall, which the Dolch third-grade run also flagged, so it is recorded as future with irrealis and the deontic shade is lost. A passive with no agent. Mother is used as a name and takes the kinship concept anyway. drown takes patient here rather than the agent used for the intransitive in j012, because this one is done to them."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k035",
+    "text": "The shades of color that adorn its breast, are equally brilliant.",
+    "tokens": [
+      "The",
+      "shades",
+      "of",
+      "color",
+      "that",
+      "adorn",
+      "its",
+      "breast",
+      ",",
+      "are",
+      "equally",
+      "brilliant",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "shade",
+        "number": "pl",
+        "definite": true,
+        "animacy": "abstract",
+        "possessor": "e2"
+      },
+      "e2": {
+        "concept": "color",
+        "number": "mass",
+        "animacy": "abstract"
+      },
+      "e3": {
+        "concept": "animal",
+        "person": "3sg",
+        "number": "sg",
+        "animacy": "animal",
+        "implicit": true
+      },
+      "e4": {
+        "concept": "breast",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object",
+        "possessor": "e3"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": {
+          "theme": "e1"
+        },
+        "attribute": "brilliant",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "adorn",
+        "roles": {
+          "agent": "e1",
+          "patient": "e4"
+        },
+        "modifies": "e1",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          4,
+          5
+        ]
+      },
+      {
+        "node": "e4",
+        "tokens": [
+          6,
+          7
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          9,
+          11
+        ]
+      }
+    ],
+    "notes": "GAP: equally is an equative with no comparand -- as brilliant as each other -- and degree requires one, so token 10 goes unaligned and the comparison is lost. its refers to a bird, which the sentence does not say, so the owner is an implicit animal on the strength of breast alone."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k036",
+    "text": "His face lighted up as he took them.",
+    "tokens": [
+      "His",
+      "face",
+      "lighted",
+      "up",
+      "as",
+      "he",
+      "took",
+      "them",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person",
+        "implicit": true
+      },
+      "e2": {
+        "concept": "face",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object",
+        "possessor": "e1"
+      },
+      "e3": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person",
+        "coref": "e1"
+      },
+      "e4": {
+        "concept": "thing",
+        "person": "3pl",
+        "number": "pl"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "light-up",
+        "roles": {
+          "agent": "e2"
+        },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "take",
+        "roles": {
+          "agent": "e3",
+          "patient": "e4"
+        },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "simultaneous",
+        "from": "ev1",
+        "to": "ev2",
+        "marker": "as"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e2",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          4
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          5
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          6
+        ]
+      },
+      {
+        "node": "e4",
+        "tokens": [
+          7
+        ]
+      }
+    ],
+    "notes": "light up is a phrasal verb and figurative: a face brightening, not a lamp. The agent is a body part, which is ordinary English and awkward to draw. as marks simultaneity, as in k009."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k037",
+    "text": "When the sun was beginning to sink, George set out for home.",
+    "tokens": [
+      "When",
+      "the",
+      "sun",
+      "was",
+      "beginning",
+      "to",
+      "sink",
+      ",",
+      "George",
+      "set",
+      "out",
+      "for",
+      "home",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "sun",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      },
+      "e2": {
+        "concept": "person",
+        "proper_name": "George",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e3": {
+        "concept": "home",
+        "number": "sg",
+        "animacy": "place"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "begin",
+        "roles": {
+          "agent": "e1"
+        },
+        "complement": "ev2",
+        "tense": "past",
+        "aspect": "progressive",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "sink",
+        "roles": {
+          "agent": "e1"
+        },
+        "aspect": "simple"
+      },
+      {
+        "id": "ev3",
+        "predicate": "set-out",
+        "roles": {
+          "agent": "e2"
+        },
+        "spatial": [
+          {
+            "figure": "e2",
+            "relation": "to",
+            "ground": "e3"
+          }
+        ],
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "sequence",
+        "from": "ev1",
+        "to": "ev3",
+        "marker": "when"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "d1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          3,
+          4
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          6
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          8
+        ]
+      },
+      {
+        "node": "ev3",
+        "tokens": [
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          12
+        ]
+      }
+    ],
+    "notes": "set out is a phrasal verb and for marks a goal, not a beneficiary, so the relation is to. begin is the inceptive that the Dolch third-grade run flagged as missing from aspect; here it happens to be a verb in its own right, so nothing is lost."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k038",
+    "text": "Think, and by thinking you will learn how to think to some purpose.",
+    "tokens": [
+      "Think",
+      ",",
+      "and",
+      "by",
+      "thinking",
+      "you",
+      "will",
+      "learn",
+      "how",
+      "to",
+      "think",
+      "to",
+      "some",
+      "purpose",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "purpose",
+        "number": "sg",
+        "quantifier": "some",
+        "animacy": "abstract"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "think",
+        "roles": {
+          "agent": "e1"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "imperative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "think",
+        "roles": {
+          "agent": "e1"
+        },
+        "aspect": "simple"
+      },
+      {
+        "id": "ev3",
+        "predicate": "learn",
+        "roles": {
+          "experiencer": "e1"
+        },
+        "complement": "ev4",
+        "tense": "future",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev4",
+        "predicate": "think",
+        "roles": {
+          "agent": "e1"
+        },
+        "aspect": "simple"
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "sequence",
+        "from": "ev1",
+        "to": "ev3",
+        "marker": "and"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          3,
+          4
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          5
+        ]
+      },
+      {
+        "node": "ev3",
+        "tokens": [
+          6,
+          7
+        ]
+      },
+      {
+        "node": "ev4",
+        "tokens": [
+          10
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          12,
+          13
+        ]
+      }
+    ],
+    "notes": "GAP, three of them. by thinking is a means, and there is no means relation, so ev2 is left related to nothing. how opens an embedded question on a non-finite clause, which cannot carry one, as in k025. to some purpose is a purpose adjunct on a non-finite clause with no field for it, so e2 has no role. The same verb appears three times with three different jobs."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k039",
+    "text": "His poor mother soon died of grief and shame.",
+    "tokens": [
+      "His",
+      "poor",
+      "mother",
+      "soon",
+      "died",
+      "of",
+      "grief",
+      "and",
+      "shame",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person",
+        "implicit": true
+      },
+      "e2": {
+        "concept": "mother",
+        "number": "sg",
+        "definite": true,
+        "animacy": "person",
+        "gender": "female",
+        "modifiers": [
+          "poor"
+        ],
+        "possessor": "e1"
+      },
+      "e3": {
+        "concept": "grief",
+        "number": "mass",
+        "animacy": "abstract"
+      },
+      "e4": {
+        "concept": "shame",
+        "number": "mass",
+        "animacy": "abstract"
+      },
+      "e5": {
+        "members": [
+          "e3",
+          "e4"
+        ],
+        "coordination": "and",
+        "number": "pl",
+        "animacy": "abstract"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "die",
+        "roles": {
+          "theme": "e2",
+          "instrument": "e5"
+        },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "review": [
+      {
+        "node": "ev1",
+        "reason": "role_uncertain"
+      }
+    ],
+    "setting": {
+      "time": "soon"
+    },
+    "alignment": [
+      {
+        "node": "e2",
+        "tokens": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          4,
+          5
+        ]
+      },
+      {
+        "node": "e5",
+        "tokens": [
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          6
+        ]
+      },
+      {
+        "node": "e4",
+        "tokens": [
+          8
+        ]
+      }
+    ],
+    "notes": "GAP: died of X is a cause, and there is no cause role -- discourse.cause relates two events and there is only one here. instrument is the nearest slot and is wrong: grief is not a thing she used. Flagged rather than quietly accepted. poor here means pitiable, not without money, which no lexicon will get from the word alone."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k040",
+    "text": "How the frost has opened the burs!",
+    "tokens": [
+      "How",
+      "the",
+      "frost",
+      "has",
+      "opened",
+      "the",
+      "burs",
+      "!"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "frost",
+        "number": "mass",
+        "definite": true,
+        "animacy": "object"
+      },
+      "e2": {
+        "concept": "bur",
+        "number": "pl",
+        "definite": true,
+        "animacy": "object"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "open",
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
+        "tense": "past",
+        "aspect": "perfect",
+        "polarity": "positive",
+        "mood": "exclamative"
+      }
+    ],
+    "review": [
+      {
+        "node": "e2",
+        "reason": "out_of_vocabulary"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          3,
+          4
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          5,
+          6
+        ]
+      }
+    ],
+    "notes": "A fronted exclamative on a perfect, which no earlier sentence in any set combines. bur is a seed case and is not in the symbol vocabulary."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k041",
+    "text": "The little birds fly over, And oh, how sweet they sing!",
+    "tokens": [
+      "The",
+      "little",
+      "birds",
+      "fly",
+      "over",
+      ",",
+      "And",
+      "oh",
+      ",",
+      "how",
+      "sweet",
+      "they",
+      "sing",
+      "!"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "bird",
+        "number": "pl",
+        "definite": true,
+        "animacy": "animal",
+        "modifiers": [
+          "little"
+        ]
+      },
+      "e2": {
+        "concept": "location",
+        "deixis": "proximal",
+        "animacy": "place",
+        "implicit": true
+      },
+      "e3": {
+        "concept": "bird",
+        "person": "3pl",
+        "number": "pl",
+        "animacy": "animal",
+        "coref": "e1"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "fly",
+        "roles": {
+          "agent": "e1"
+        },
+        "spatial": [
+          {
+            "figure": "e1",
+            "relation": "over",
+            "ground": "e2"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "sing",
+        "roles": {
+          "agent": "e3"
+        },
+        "manner": "sweet",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "exclamative"
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "addition",
+        "from": "ev1",
+        "to": "ev2",
+        "marker": "and"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          3,
+          4
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          6
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          9,
+          10,
+          12
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          11
+        ]
+      }
+    ],
+    "notes": "GAP: oh is an interjection with no field, so token 7 goes unaligned. fly over elides what they fly over, and over is not a bare direction, so the ground is an implicit here as in k014. how sweet fronts a manner rather than an attribute, which is why the exclamative sits on a manner field."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k042",
+    "text": "Come, save your credit, and throw it.",
+    "tokens": [
+      "Come",
+      ",",
+      "save",
+      "your",
+      "credit",
+      ",",
+      "and",
+      "throw",
+      "it",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person",
+        "implicit": true
+      },
+      "e2": {
+        "concept": "credit",
+        "number": "mass",
+        "definite": true,
+        "animacy": "abstract",
+        "possessor": "e1"
+      },
+      "e3": {
+        "concept": "thing",
+        "person": "3sg",
+        "number": "sg"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "come",
+        "roles": {
+          "agent": "e1"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "imperative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "save",
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "imperative"
+      },
+      {
+        "id": "ev3",
+        "predicate": "throw",
+        "roles": {
+          "agent": "e1",
+          "patient": "e3"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "imperative"
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "sequence",
+        "from": "ev1",
+        "to": "ev2",
+        "inferred": true
+      },
+      {
+        "id": "d2",
+        "type": "sequence",
+        "from": "ev2",
+        "to": "ev3",
+        "marker": "and"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3,
+          4
+        ]
+      },
+      {
+        "node": "d2",
+        "tokens": [
+          6
+        ]
+      },
+      {
+        "node": "ev3",
+        "tokens": [
+          7
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          8
+        ]
+      }
+    ],
+    "notes": "Three imperatives, the first two joined by a comma alone, so that relation is inferred and carries no alignment. Come here is closer to an interjection than a real instruction to approach, which the graph cannot show. save your credit means protect your reputation; a literal reading puts money in a bank."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k043",
+    "text": "But it is not so good as mine.",
+    "tokens": [
+      "But",
+      "it",
+      "is",
+      "not",
+      "so",
+      "good",
+      "as",
+      "mine",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "thing",
+        "person": "3sg",
+        "number": "sg"
+      },
+      "e2": {
+        "concept": "speaker",
+        "person": "1sg",
+        "number": "sg",
+        "animacy": "person",
+        "implicit": true
+      },
+      "e3": {
+        "concept": "thing",
+        "number": "sg",
+        "possessor": "e2"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": {
+          "theme": "e1"
+        },
+        "attribute": "good",
+        "degree": "equative",
+        "comparand": "e3",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "negative",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          7
+        ]
+      }
+    ],
+    "notes": "GAP: sentence-initial But. A negated equative, which no earlier sentence has: not so good as says the equality fails, and polarity plus degree together are the only way to say it. mine is a thing with an owner, and the owner is implicit."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k044",
+    "text": "But what were you doing in the field?",
+    "tokens": [
+      "But",
+      "what",
+      "were",
+      "you",
+      "doing",
+      "in",
+      "the",
+      "field",
+      "?"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "thing",
+        "number": "sg"
+      },
+      "e3": {
+        "concept": "field",
+        "number": "sg",
+        "definite": true,
+        "animacy": "place"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "do",
+        "roles": {
+          "agent": "e1",
+          "theme": "e2"
+        },
+        "spatial": [
+          {
+            "figure": "e1",
+            "relation": "in",
+            "ground": "e3"
+          }
+        ],
+        "tense": "past",
+        "aspect": "progressive",
+        "polarity": "positive",
+        "mood": "interrogative",
+        "question": {
+          "type": "what",
+          "role": "theme",
+          "target": "e2"
+        }
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e2",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          4,
+          5
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          3
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          6,
+          7
+        ]
+      }
+    ],
+    "notes": "GAP: sentence-initial But. The questioned theme is an entity in its own right so the gap has something to point at, which is the convention g023 set."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k045",
+    "text": "Have you no playthings?",
+    "tokens": [
+      "Have",
+      "you",
+      "no",
+      "playthings",
+      "?"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "plaything",
+        "number": "pl",
+        "quantifier": "no",
+        "animacy": "object"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "have",
+        "roles": {
+          "agent": "e1",
+          "theme": "e2"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "interrogative",
+        "question": {
+          "type": "yes-no"
+        }
+      }
+    ],
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          2,
+          3
+        ]
+      }
+    ],
+    "notes": "The negation is in the quantifier rather than the clause, so polarity stays positive. Putting it on the event instead would say the having does not happen, which is nearly the same meaning here and quite different in general."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k046",
+    "text": "I have a better one at home.",
+    "tokens": [
+      "I",
+      "have",
+      "a",
+      "better",
+      "one",
+      "at",
+      "home",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "speaker",
+        "person": "1sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "thing",
+        "number": "sg",
+        "definite": false,
+        "modifiers": [
+          {
+            "concept": "good",
+            "degree": "comparative"
+          }
+        ],
+        "located": {
+          "relation": "at",
+          "ground": "e3"
+        }
+      },
+      "e3": {
+        "concept": "home",
+        "number": "sg",
+        "animacy": "place"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "have",
+        "roles": {
+          "agent": "e1",
+          "theme": "e2"
+        },
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          6
+        ]
+      }
+    ],
+    "notes": "GAP: better is a comparative and what it is better than is in the previous sentence, not this one, so the comparand is missing -- and comparand lives on an event while this comparative is on a modifier, so there is nowhere to put it even if it were here. one is a pro-form standing for whatever was being discussed. at home says which one, so it is located on the entity."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k047",
+    "text": "James Selton was one of the most insolent boys in the village where he lived.",
+    "tokens": [
+      "James",
+      "Selton",
+      "was",
+      "one",
+      "of",
+      "the",
+      "most",
+      "insolent",
+      "boys",
+      "in",
+      "the",
+      "village",
+      "where",
+      "he",
+      "lived",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "person",
+        "proper_name": "James Selton",
+        "number": "sg",
+        "animacy": "person",
+        "gender": "male"
+      },
+      "e2": {
+        "concept": "boy",
+        "number": "pl",
+        "definite": true,
+        "animacy": "person",
+        "gender": "male",
+        "modifiers": [
+          {
+            "concept": "insolent",
+            "degree": "superlative"
+          }
+        ],
+        "located": {
+          "relation": "in",
+          "ground": "e3"
+        }
+      },
+      "e3": {
+        "concept": "village",
+        "number": "sg",
+        "definite": true,
+        "animacy": "place"
+      },
+      "e4": {
+        "concept": "person",
+        "person": "3sg",
+        "gender": "male",
+        "number": "sg",
+        "animacy": "person",
+        "coref": "e1"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.category",
+        "roles": {
+          "theme": "e1"
+        },
+        "category": "e2",
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "live",
+        "roles": {
+          "agent": "e4"
+        },
+        "spatial": [
+          {
+            "figure": "e4",
+            "relation": "in",
+            "ground": "e3"
+          }
+        ],
+        "modifies": "e3",
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "review": [
+      {
+        "node": "e2",
+        "reason": "out_of_vocabulary"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          10,
+          11
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          12,
+          14
+        ]
+      },
+      {
+        "node": "e4",
+        "tokens": [
+          13
+        ]
+      }
+    ],
+    "notes": "The longest sentence in the set and it stacks four things: a partitive whose head is boys, a superlative modifier, a located anchoring on that head, and a relative clause on the village introduced by where rather than that. GAP: one of loses the singling-out, exactly as a piece of does in k012."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k048",
+    "text": "How cold papa and mamma will be when they return from their long ride!",
+    "tokens": [
+      "How",
+      "cold",
+      "papa",
+      "and",
+      "mamma",
+      "will",
+      "be",
+      "when",
+      "they",
+      "return",
+      "from",
+      "their",
+      "long",
+      "ride",
+      "!"
+    ],
+    "entities": {
+      "e1": {
+        "concept": "father",
+        "number": "sg",
+        "definite": true,
+        "animacy": "person",
+        "gender": "male"
+      },
+      "e2": {
+        "concept": "mother",
+        "number": "sg",
+        "definite": true,
+        "animacy": "person",
+        "gender": "female"
+      },
+      "e3": {
+        "members": [
+          "e1",
+          "e2"
+        ],
+        "coordination": "and",
+        "number": "pl",
+        "animacy": "person"
+      },
+      "e4": {
+        "concept": "person",
+        "person": "3pl",
+        "number": "pl",
+        "animacy": "person",
+        "coref": "e3"
+      },
+      "e5": {
+        "concept": "ride",
+        "number": "sg",
+        "definite": true,
+        "animacy": "abstract",
+        "modifiers": [
+          "long"
+        ],
+        "possessor": "e4"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.attribute",
+        "roles": {
+          "theme": "e3"
+        },
+        "attribute": "cold",
+        "tense": "future",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "exclamative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "return",
+        "roles": {
+          "agent": "e4"
+        },
+        "spatial": [
+          {
+            "figure": "e4",
+            "relation": "from",
+            "ground": "e5"
+          }
+        ],
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "sequence",
+        "from": "ev2",
+        "to": "ev1",
+        "marker": "when"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          1,
+          5,
+          6
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          7
+        ]
+      },
+      {
+        "node": "e4",
+        "tokens": [
+          8
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          9,
+          10
+        ]
+      },
+      {
+        "node": "e5",
+        "tokens": [
+          11,
+          12,
+          13
+        ]
+      }
+    ],
+    "notes": "A coordinated group that a pronoun then corefers with, which nothing earlier does. The temporal clause runs forward into the main clause, so the relation points from the returning to the being cold rather than in text order. from their long ride is a source, and the ride is an event being treated as a place."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k049",
+    "text": "I deserve to be punished, for I altered the mark you put in the stocking.",
+    "tokens": [
+      "I",
+      "deserve",
+      "to",
+      "be",
+      "punished",
+      ",",
+      "for",
+      "I",
+      "altered",
+      "the",
+      "mark",
+      "you",
+      "put",
+      "in",
+      "the",
+      "stocking",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "speaker",
+        "person": "1sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "addressee",
+        "person": "2sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e3": {
+        "concept": "mark",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      },
+      "e4": {
+        "concept": "stocking",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "deserve",
+        "roles": {
+          "experiencer": "e1"
+        },
+        "complement": "ev2",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev2",
+        "predicate": "punish",
+        "roles": {
+          "patient": "e1"
+        },
+        "aspect": "simple"
+      },
+      {
+        "id": "ev3",
+        "predicate": "alter",
+        "roles": {
+          "agent": "e1",
+          "patient": "e3"
+        },
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      },
+      {
+        "id": "ev4",
+        "predicate": "put",
+        "roles": {
+          "agent": "e2",
+          "patient": "e3"
+        },
+        "spatial": [
+          {
+            "figure": "e3",
+            "relation": "in",
+            "ground": "e4"
+          }
+        ],
+        "modifies": "e3",
+        "tense": "past",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "discourse": [
+      {
+        "id": "d1",
+        "type": "cause",
+        "from": "ev3",
+        "to": "ev1",
+        "marker": "for"
+      }
+    ],
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          3,
+          4
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          6
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          7
+        ]
+      },
+      {
+        "node": "ev3",
+        "tokens": [
+          8
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          9,
+          10
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          11
+        ]
+      },
+      {
+        "node": "ev4",
+        "tokens": [
+          12,
+          13
+        ]
+      },
+      {
+        "node": "e4",
+        "tokens": [
+          14,
+          15
+        ]
+      }
+    ],
+    "notes": "Four events. for is a causal connective here, not a preposition, and the cause runs from the altering to the deserving. the mark you put is a relative clause with no relative pronoun at all, which is the hardest shape for a rule parser to see. The speaker has two mentions and takes two alignment spans on one entity rather than a coref pair, which is the convention for speaker and addressee."
+  },
+  {
+    "schema_version": "0.4.0",
+    "id": "k050",
+    "text": "Indian corn is now the leading crop in the United States.",
+    "tokens": [
+      "Indian",
+      "corn",
+      "is",
+      "now",
+      "the",
+      "leading",
+      "crop",
+      "in",
+      "the",
+      "United",
+      "States",
+      "."
+    ],
+    "entities": {
+      "e1": {
+        "concept": "corn",
+        "number": "mass",
+        "definite": false,
+        "animacy": "object",
+        "modifiers": [
+          "indian"
+        ]
+      },
+      "e2": {
+        "concept": "crop",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object",
+        "modifiers": [
+          "leading"
+        ],
+        "located": {
+          "relation": "in",
+          "ground": "e3"
+        }
+      },
+      "e3": {
+        "concept": "country",
+        "proper_name": "United States",
+        "number": "sg",
+        "animacy": "place"
+      }
+    },
+    "events": [
+      {
+        "id": "ev1",
+        "predicate": "be.category",
+        "roles": {
+          "theme": "e1"
+        },
+        "category": "e2",
+        "tense": "present",
+        "aspect": "simple",
+        "polarity": "positive",
+        "mood": "declarative"
+      }
+    ],
+    "setting": {
+      "time": "now"
+    },
+    "alignment": [
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          8,
+          9,
+          10
+        ]
+      }
+    ],
+    "notes": "in the United States says which crop rather than where the being happens, so it is located on the entity. A multiword proper name on a place. GAP: setting carries no alignment, so now goes unaligned."
+  }
+]

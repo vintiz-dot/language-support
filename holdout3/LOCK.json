@@ -1,0 +1,8 @@
+{
+  "locked": "2026-09-19",
+  "note": "Annotations were written by hand and validated before the parser was run on any of these sentences. Scored once; the parser must not be tuned against this set.",
+  "files": {
+    "gold-a.json": "e5c9d0a097366a9e",
+    "gold-b.json": "5185ea1e80b33342"
+  }
+}

@@ -1,9 +1,15 @@
 [
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g061",
     "text": "Come here, Ben.",
-    "tokens": ["Come", "here", ",", "Ben", "."],
+    "tokens": [
+      "Come",
+      "here",
+      ",",
+      "Ben",
+      "."
+    ],
     "pattern": "imperative",
     "entities": {
       "e1": {
@@ -13,15 +19,26 @@
         "number": "sg",
         "animacy": "person"
       },
-      "e2": { "concept": "location", "number": "sg", "deixis": "proximal", "animacy": "place" }
+      "e2": {
+        "concept": "location",
+        "number": "sg",
+        "deixis": "proximal",
+        "animacy": "place"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "come",
-        "roles": { "agent": "e1" },
+        "roles": {
+          "agent": "e1"
+        },
         "spatial": [
-          { "figure": "e1", "relation": "at", "ground": "e2" }
+          {
+            "figure": "e1",
+            "relation": "at",
+            "ground": "e2"
+          }
         ],
         "tense": "present",
         "aspect": "simple",
@@ -31,17 +48,36 @@
     ],
     "address": "e1",
     "alignment": [
-      { "node": "ev1", "tokens": [0] },
-      { "node": "e2", "tokens": [1] },
-      { "node": "e1", "tokens": [3] }
+      {
+        "node": "ev1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "e1",
+        "tokens": [
+          3
+        ]
+      }
     ],
     "notes": "The vocative names the addressee, so it is one entity doing two jobs: agent of the imperative and the person spoken to. address points at it rather than duplicating it, which is why address is a reference and not a separate role."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g062",
     "text": "Good morning.",
-    "tokens": ["Good", "morning", "."],
+    "tokens": [
+      "Good",
+      "morning",
+      "."
+    ],
     "pattern": "other",
     "entities": {},
     "events": [],
@@ -50,10 +86,19 @@
     "notes": "No entities, no events, and still a complete utterance. This is the case 0.2.0 could not hold at all, and it is why events may now be empty. Known limitation: speech_act has no node id, so the words carrying it cannot be highlighted."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g063",
     "text": "The box on the shelf is red.",
-    "tokens": ["The", "box", "on", "the", "shelf", "is", "red", "."],
+    "tokens": [
+      "The",
+      "box",
+      "on",
+      "the",
+      "shelf",
+      "is",
+      "red",
+      "."
+    ],
     "pattern": "attribution",
     "entities": {
       "e1": {
@@ -61,15 +106,25 @@
         "number": "sg",
         "definite": true,
         "animacy": "object",
-        "located": { "relation": "on", "ground": "e2" }
+        "located": {
+          "relation": "on",
+          "ground": "e2"
+        }
       },
-      "e2": { "concept": "shelf", "number": "sg", "definite": true, "animacy": "object" }
+      "e2": {
+        "concept": "shelf",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "be.attribute",
-        "roles": { "theme": "e1" },
+        "roles": {
+          "theme": "e1"
+        },
         "attribute": "red",
         "tense": "present",
         "aspect": "simple",
@@ -78,17 +133,41 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1, 2] },
-      { "node": "e2", "tokens": [3, 4] },
-      { "node": "ev1", "tokens": [5, 6] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3,
+          4
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          5,
+          6
+        ]
+      }
     ],
     "notes": "The box being on the shelf is not something the sentence asserts; it identifies which box. That is why it sits on the entity rather than as a spatial relation on the event, and why a distractor showing a box beside the shelf is a different sentence, not a false one."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g064",
     "text": "She walked slowly.",
-    "tokens": ["She", "walked", "slowly", "."],
+    "tokens": [
+      "She",
+      "walked",
+      "slowly",
+      "."
+    ],
     "pattern": "intransitive",
     "entities": {
       "e1": {
@@ -103,7 +182,9 @@
       {
         "id": "ev1",
         "predicate": "walk",
-        "roles": { "agent": "e1" },
+        "roles": {
+          "agent": "e1"
+        },
         "manner": "slowly",
         "tense": "past",
         "aspect": "simple",
@@ -112,15 +193,32 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0] },
-      { "node": "ev1", "tokens": [1, 2] }
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      }
     ]
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g065",
     "text": "He always eats apples.",
-    "tokens": ["He", "always", "eats", "apples", "."],
+    "tokens": [
+      "He",
+      "always",
+      "eats",
+      "apples",
+      "."
+    ],
     "pattern": "svo",
     "entities": {
       "e1": {
@@ -130,13 +228,21 @@
         "number": "sg",
         "animacy": "person"
       },
-      "e2": { "concept": "apple", "number": "pl", "definite": false, "animacy": "object" }
+      "e2": {
+        "concept": "apple",
+        "number": "pl",
+        "definite": false,
+        "animacy": "object"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "eat",
-        "roles": { "agent": "e1", "patient": "e2" },
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
         "frequency": "always",
         "tense": "present",
         "aspect": "simple",
@@ -145,26 +251,56 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0] },
-      { "node": "ev1", "tokens": [1, 2] },
-      { "node": "e2", "tokens": [3] }
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3
+        ]
+      }
     ],
     "notes": "frequency is what makes the habitual reading of the present simple explicit rather than left to the renderer to guess, which was an open question from 0.2.0."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g066",
     "text": "The baby is still asleep.",
-    "tokens": ["The", "baby", "is", "still", "asleep", "."],
+    "tokens": [
+      "The",
+      "baby",
+      "is",
+      "still",
+      "asleep",
+      "."
+    ],
     "pattern": "attribution",
     "entities": {
-      "e1": { "concept": "baby", "number": "sg", "definite": true, "animacy": "person" }
+      "e1": {
+        "concept": "baby",
+        "number": "sg",
+        "definite": true,
+        "animacy": "person"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "be.attribute",
-        "roles": { "theme": "e1" },
+        "roles": {
+          "theme": "e1"
+        },
         "attribute": "asleep",
         "phase": "still",
         "tense": "present",
@@ -174,20 +310,53 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3, 4] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3,
+          4
+        ]
+      }
     ],
     "notes": "still says the state held before and holds now. aspect cannot say that, which is why phase is a separate field rather than another aspect value."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g067",
     "text": "I went to the park with my friend.",
-    "tokens": ["I", "went", "to", "the", "park", "with", "my", "friend", "."],
+    "tokens": [
+      "I",
+      "went",
+      "to",
+      "the",
+      "park",
+      "with",
+      "my",
+      "friend",
+      "."
+    ],
     "pattern": "sv_locative",
     "entities": {
-      "e1": { "concept": "speaker", "person": "1sg", "number": "sg", "animacy": "person" },
-      "e2": { "concept": "park", "number": "sg", "definite": true, "animacy": "place" },
+      "e1": {
+        "concept": "speaker",
+        "person": "1sg",
+        "number": "sg",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "park",
+        "number": "sg",
+        "definite": true,
+        "animacy": "place"
+      },
       "e3": {
         "concept": "friend",
         "number": "sg",
@@ -200,9 +369,16 @@
       {
         "id": "ev1",
         "predicate": "go",
-        "roles": { "agent": "e1", "comitative": "e3" },
+        "roles": {
+          "agent": "e1",
+          "comitative": "e3"
+        },
         "spatial": [
-          { "figure": "e1", "relation": "to", "ground": "e2" }
+          {
+            "figure": "e1",
+            "relation": "to",
+            "ground": "e2"
+          }
         ],
         "tense": "past",
         "aspect": "simple",
@@ -211,18 +387,50 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0] },
-      { "node": "ev1", "tokens": [1, 2, 5] },
-      { "node": "e2", "tokens": [3, 4] },
-      { "node": "e3", "tokens": [6, 7] }
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2,
+          5
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3,
+          4
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          6,
+          7
+        ]
+      }
     ],
     "notes": "The friend goes too. Without a comitative role the friend either disappears or is drawn as something being carried."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g068",
     "text": "She was reading while he cooked.",
-    "tokens": ["She", "was", "reading", "while", "he", "cooked", "."],
+    "tokens": [
+      "She",
+      "was",
+      "reading",
+      "while",
+      "he",
+      "cooked",
+      "."
+    ],
     "pattern": "intransitive",
     "entities": {
       "e1": {
@@ -244,7 +452,9 @@
       {
         "id": "ev1",
         "predicate": "read",
-        "roles": { "agent": "e1" },
+        "roles": {
+          "agent": "e1"
+        },
         "tense": "past",
         "aspect": "progressive",
         "polarity": "positive",
@@ -253,7 +463,9 @@
       {
         "id": "ev2",
         "predicate": "cook",
-        "roles": { "agent": "e2" },
+        "roles": {
+          "agent": "e2"
+        },
         "tense": "past",
         "aspect": "simple",
         "polarity": "positive",
@@ -261,31 +473,78 @@
       }
     ],
     "discourse": [
-      { "id": "d1", "type": "simultaneous", "from": "ev1", "to": "ev2", "marker": "while" }
+      {
+        "id": "d1",
+        "type": "simultaneous",
+        "from": "ev1",
+        "to": "ev2",
+        "marker": "while"
+      }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0] },
-      { "node": "ev1", "tokens": [1, 2] },
-      { "node": "d1", "tokens": [3] },
-      { "node": "e2", "tokens": [4] },
-      { "node": "ev2", "tokens": [5] }
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "d1",
+        "tokens": [
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          5
+        ]
+      }
     ],
     "notes": "One picture, not two panels. Every other discourse type implies an order, so rendering a simultaneous relation as a sequence would say something the sentence does not."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g069",
     "text": "The dog that barked is big.",
-    "tokens": ["The", "dog", "that", "barked", "is", "big", "."],
+    "tokens": [
+      "The",
+      "dog",
+      "that",
+      "barked",
+      "is",
+      "big",
+      "."
+    ],
     "pattern": "attribution",
     "entities": {
-      "e1": { "concept": "dog", "number": "sg", "definite": true, "animacy": "animal" }
+      "e1": {
+        "concept": "dog",
+        "number": "sg",
+        "definite": true,
+        "animacy": "animal"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "be.attribute",
-        "roles": { "theme": "e1" },
+        "roles": {
+          "theme": "e1"
+        },
         "attribute": "big",
         "tense": "present",
         "aspect": "simple",
@@ -295,7 +554,9 @@
       {
         "id": "ev2",
         "predicate": "bark",
-        "roles": { "agent": "e1" },
+        "roles": {
+          "agent": "e1"
+        },
         "modifies": "e1",
         "tense": "past",
         "aspect": "simple",
@@ -304,20 +565,50 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev2", "tokens": [2, 3] },
-      { "node": "ev1", "tokens": [4, 5] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev2",
+        "tokens": [
+          2,
+          3
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          4,
+          5
+        ]
+      }
     ],
     "notes": "The barking identifies which dog; only the bigness is asserted. modifies records that difference, and it matters for question generation: a distractor may contradict the bigness but not the barking."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g070",
     "text": "My sister is a nurse.",
-    "tokens": ["My", "sister", "is", "a", "nurse", "."],
+    "tokens": [
+      "My",
+      "sister",
+      "is",
+      "a",
+      "nurse",
+      "."
+    ],
     "pattern": "attribution",
     "entities": {
-      "e1": { "concept": "speaker", "person": "1sg", "number": "sg", "animacy": "person" },
+      "e1": {
+        "concept": "speaker",
+        "person": "1sg",
+        "number": "sg",
+        "animacy": "person"
+      },
       "e2": {
         "concept": "sister",
         "number": "sg",
@@ -326,13 +617,20 @@
         "gender": "female",
         "possessor": "e1"
       },
-      "e3": { "concept": "nurse", "number": "sg", "definite": false, "animacy": "person" }
+      "e3": {
+        "concept": "nurse",
+        "number": "sg",
+        "definite": false,
+        "animacy": "person"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "be.category",
-        "roles": { "theme": "e2" },
+        "roles": {
+          "theme": "e2"
+        },
         "category": "e3",
         "tense": "present",
         "aspect": "simple",
@@ -341,27 +639,61 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0] },
-      { "node": "e2", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2] },
-      { "node": "e3", "tokens": [3, 4] }
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          3,
+          4
+        ]
+      }
     ],
     "notes": "category holds an entity rather than a concept id, so a great storyteller or a very kind nurse keeps its modifier. attribute could not, which is what lost great in held-out h041."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g071",
     "text": "How big it is!",
-    "tokens": ["How", "big", "it", "is", "!"],
+    "tokens": [
+      "How",
+      "big",
+      "it",
+      "is",
+      "!"
+    ],
     "pattern": "attribution",
     "entities": {
-      "e1": { "concept": "thing", "person": "3sg", "number": "sg" }
+      "e1": {
+        "concept": "thing",
+        "person": "3sg",
+        "number": "sg"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "be.attribute",
-        "roles": { "theme": "e1" },
+        "roles": {
+          "theme": "e1"
+        },
         "attribute": "big",
         "tense": "present",
         "aspect": "simple",
@@ -370,25 +702,59 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [2] },
-      { "node": "ev1", "tokens": [0, 1, 3] }
+      {
+        "node": "e1",
+        "tokens": [
+          2
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          1,
+          3
+        ]
+      }
     ]
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g072",
     "text": "The cat is as big as the dog.",
-    "tokens": ["The", "cat", "is", "as", "big", "as", "the", "dog", "."],
+    "tokens": [
+      "The",
+      "cat",
+      "is",
+      "as",
+      "big",
+      "as",
+      "the",
+      "dog",
+      "."
+    ],
     "pattern": "attribution",
     "entities": {
-      "e1": { "concept": "cat", "number": "sg", "definite": true, "animacy": "animal" },
-      "e2": { "concept": "dog", "number": "sg", "definite": true, "animacy": "animal" }
+      "e1": {
+        "concept": "cat",
+        "number": "sg",
+        "definite": true,
+        "animacy": "animal"
+      },
+      "e2": {
+        "concept": "dog",
+        "number": "sg",
+        "definite": true,
+        "animacy": "animal"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "be.attribute",
-        "roles": { "theme": "e1" },
+        "roles": {
+          "theme": "e1"
+        },
         "attribute": "big",
         "degree": "equative",
         "comparand": "e2",
@@ -399,29 +765,73 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3, 4, 5] },
-      { "node": "e2", "tokens": [6, 7] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          6,
+          7
+        ]
+      }
     ],
     "notes": "Equative, not comparative. Both figures are drawn, as in g057, but at the same size rather than different ones, so confusing the two inverts the picture."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g073",
     "text": "We would go to the beach.",
-    "tokens": ["We", "would", "go", "to", "the", "beach", "."],
+    "tokens": [
+      "We",
+      "would",
+      "go",
+      "to",
+      "the",
+      "beach",
+      "."
+    ],
     "pattern": "sv_locative",
     "entities": {
-      "e1": { "concept": "speaker", "person": "1pl", "number": "pl", "animacy": "person" },
-      "e2": { "concept": "beach", "number": "sg", "definite": true, "animacy": "place" }
+      "e1": {
+        "concept": "speaker",
+        "person": "1pl",
+        "number": "pl",
+        "animacy": "person"
+      },
+      "e2": {
+        "concept": "beach",
+        "number": "sg",
+        "definite": true,
+        "animacy": "place"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "go",
-        "roles": { "agent": "e1" },
+        "roles": {
+          "agent": "e1"
+        },
         "spatial": [
-          { "figure": "e1", "relation": "to", "ground": "e2" }
+          {
+            "figure": "e1",
+            "relation": "to",
+            "ground": "e2"
+          }
         ],
         "tense": "present",
         "aspect": "simple",
@@ -432,27 +842,61 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0] },
-      { "node": "ev1", "tokens": [1, 2, 3] },
-      { "node": "e2", "tokens": [4, 5] }
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4,
+          5
+        ]
+      }
     ]
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g074",
     "text": "The ball rolled away.",
-    "tokens": ["The", "ball", "rolled", "away", "."],
+    "tokens": [
+      "The",
+      "ball",
+      "rolled",
+      "away",
+      "."
+    ],
     "pattern": "intransitive",
     "entities": {
-      "e1": { "concept": "ball", "number": "sg", "definite": true, "animacy": "object" }
+      "e1": {
+        "concept": "ball",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "roll",
-        "roles": { "agent": "e1" },
+        "roles": {
+          "agent": "e1"
+        },
         "spatial": [
-          { "figure": "e1", "relation": "away" }
+          {
+            "figure": "e1",
+            "relation": "away"
+          }
         ],
         "tense": "past",
         "aspect": "simple",
@@ -461,30 +905,78 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3
+        ]
+      }
     ],
     "notes": "A direction with no landmark. The only graph exercising spatial without a ground, which the validator permits for this short list of relations and forbids for every other."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g075",
     "text": "The cup is on the table near the window.",
-    "tokens": ["The", "cup", "is", "on", "the", "table", "near", "the", "window", "."],
+    "tokens": [
+      "The",
+      "cup",
+      "is",
+      "on",
+      "the",
+      "table",
+      "near",
+      "the",
+      "window",
+      "."
+    ],
     "pattern": "sv_locative",
     "entities": {
-      "e1": { "concept": "cup", "number": "sg", "definite": true, "animacy": "object" },
-      "e2": { "concept": "table", "number": "sg", "definite": true, "animacy": "object" },
-      "e3": { "concept": "window", "number": "sg", "definite": true, "animacy": "object" }
+      "e1": {
+        "concept": "cup",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      },
+      "e2": {
+        "concept": "table",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      },
+      "e3": {
+        "concept": "window",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "be.located",
-        "roles": { "theme": "e1" },
+        "roles": {
+          "theme": "e1"
+        },
         "spatial": [
-          { "figure": "e1", "relation": "on", "ground": "e2" },
-          { "figure": "e1", "relation": "near", "ground": "e3" }
+          {
+            "figure": "e1",
+            "relation": "on",
+            "ground": "e2"
+          },
+          {
+            "figure": "e1",
+            "relation": "near",
+            "ground": "e3"
+          }
         ],
         "tense": "present",
         "aspect": "simple",
@@ -493,10 +985,35 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3, 6] },
-      { "node": "e2", "tokens": [4, 5] },
-      { "node": "e3", "tokens": [7, 8] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3,
+          6
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4,
+          5
+        ]
+      },
+      {
+        "node": "e3",
+        "tokens": [
+          7,
+          8
+        ]
+      }
     ],
     "notes": "Two relations on one event, which 0.2.0 could not express. Held-out h007 lost half its picture to exactly this, and nothing in the output said so."
   }

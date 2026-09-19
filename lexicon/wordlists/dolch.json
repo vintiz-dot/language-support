@@ -1,14 +1,20 @@
 {
   "name": "Dolch",
-  "scope": "Pre-primer through second grade service words, plus the noun list. Third-grade service words are excluded as out of scope for Grade 1-2.",
+  "scope": "Pre-primer through third grade service words, plus the noun list. Third grade was added when the project's target widened from Grade 1-2 to Grade 1-3.",
   "provenance": "Transcribed from the standard published list (Dolch, 1936), which is public domain. VERIFY against an authoritative source before relying on it: this was written out by hand and may contain transcription errors.",
   "caveat": "The noun list is from 1936 and is culturally narrow. Entries marked dated are poor fits for a contemporary multilingual classroom and should not drive art commissioning priorities.",
   "classes": {
     "content": "Needs a symbol. Counted in the coverage denominator.",
     "function": "Carried by a scene graph field rather than a picture. handled_by names the field.",
-    "gap": "Function word with no home in schema 0.1.0. These are the findings."
+    "gap": "Function word with no home in the schema. assessed_against names the version the judgement was made at; closed_in names the version that fixed it, where one has."
   },
   "service_words": [
+    {
+      "word": "I",
+      "level": "pre-primer",
+      "class": "function",
+      "handled_by": "entity.person"
+    },
     {
       "word": "a",
       "level": "pre-primer",
@@ -84,13 +90,9 @@
       "word": "here",
       "level": "pre-primer",
       "class": "gap",
-      "handled_by": "deixis: no field for speaker-relative location"
-    },
-    {
-      "word": "I",
-      "level": "pre-primer",
-      "class": "function",
-      "handled_by": "entity.person"
+      "handled_by": "deixis: no field for speaker-relative location",
+      "assessed_against": "0.1.0",
+      "closed_in": "0.2.0"
     },
     {
       "word": "in",
@@ -392,7 +394,9 @@
       "word": "please",
       "level": "primer",
       "class": "gap",
-      "handled_by": "speech act: no field for politeness or interactional moves"
+      "handled_by": "speech act: no field for politeness or interactional moves",
+      "assessed_against": "0.1.0",
+      "closed_in": "0.3.0"
     },
     {
       "word": "pretty",
@@ -443,7 +447,9 @@
       "word": "that",
       "level": "primer",
       "class": "gap",
-      "handled_by": "deixis: no demonstrative field"
+      "handled_by": "deixis: no demonstrative field",
+      "assessed_against": "0.1.0",
+      "closed_in": "0.2.0"
     },
     {
       "word": "there",
@@ -461,13 +467,17 @@
       "word": "this",
       "level": "primer",
       "class": "gap",
-      "handled_by": "deixis: no demonstrative field"
+      "handled_by": "deixis: no demonstrative field",
+      "assessed_against": "0.1.0",
+      "closed_in": "0.2.0"
     },
     {
       "word": "too",
       "level": "primer",
       "class": "gap",
-      "handled_by": "intensifier: no degree field"
+      "handled_by": "intensifier: no degree field",
+      "assessed_against": "0.1.0",
+      "closed_in": "0.2.0"
     },
     {
       "word": "under",
@@ -524,13 +534,17 @@
       "word": "with",
       "level": "primer",
       "class": "gap",
-      "handled_by": "comitative: no accompaniment role"
+      "handled_by": "comitative: no accompaniment role",
+      "assessed_against": "0.1.0",
+      "closed_in": "0.3.0"
     },
     {
       "word": "yes",
       "level": "primer",
       "class": "gap",
-      "handled_by": "speech act: no field for response moves"
+      "handled_by": "speech act: no field for response moves",
+      "assessed_against": "0.1.0",
+      "closed_in": "0.3.0"
     },
     {
       "word": "after",
@@ -542,7 +556,9 @@
       "word": "again",
       "level": "first",
       "class": "gap",
-      "handled_by": "repetition: no iterative aspect value"
+      "handled_by": "repetition: no iterative aspect value",
+      "assessed_against": "0.1.0",
+      "closed_in": "0.3.0"
     },
     {
       "word": "an",
@@ -560,7 +576,9 @@
       "word": "as",
       "level": "first",
       "class": "gap",
-      "handled_by": "comparison: no field"
+      "handled_by": "comparison: no field",
+      "assessed_against": "0.1.0",
+      "closed_in": "0.3.0"
     },
     {
       "word": "ask",
@@ -647,7 +665,8 @@
       "word": "just",
       "level": "first",
       "class": "gap",
-      "handled_by": "focus particle: no field"
+      "handled_by": "focus particle: no field",
+      "assessed_against": "0.1.0"
     },
     {
       "word": "know",
@@ -658,7 +677,8 @@
       "word": "let",
       "level": "first",
       "class": "gap",
-      "handled_by": "hortative: mood enum has no let's value"
+      "handled_by": "hortative: mood enum has no let's value",
+      "assessed_against": "0.1.0"
     },
     {
       "word": "live",
@@ -730,7 +750,9 @@
       "word": "thank",
       "level": "first",
       "class": "gap",
-      "handled_by": "speech act: no field for politeness"
+      "handled_by": "speech act: no field for politeness",
+      "assessed_against": "0.1.0",
+      "closed_in": "0.3.0"
     },
     {
       "word": "them",
@@ -770,7 +792,9 @@
       "word": "always",
       "level": "second",
       "class": "gap",
-      "handled_by": "frequency: no habitual or frequency field"
+      "handled_by": "frequency: no habitual or frequency field",
+      "assessed_against": "0.1.0",
+      "closed_in": "0.3.0"
     },
     {
       "word": "around",
@@ -800,7 +824,9 @@
       "word": "best",
       "level": "second",
       "class": "gap",
-      "handled_by": "superlative: no degree field"
+      "handled_by": "superlative: no degree field",
+      "assessed_against": "0.1.0",
+      "closed_in": "0.2.0"
     },
     {
       "word": "both",
@@ -903,7 +929,9 @@
       "word": "or",
       "level": "second",
       "class": "gap",
-      "handled_by": "disjunction: discourse has no or relation type"
+      "handled_by": "disjunction: discourse has no or relation type",
+      "assessed_against": "0.1.0",
+      "closed_in": "0.2.0"
     },
     {
       "word": "pull",
@@ -950,13 +978,17 @@
       "word": "these",
       "level": "second",
       "class": "gap",
-      "handled_by": "deixis: no demonstrative field"
+      "handled_by": "deixis: no demonstrative field",
+      "assessed_against": "0.1.0",
+      "closed_in": "0.2.0"
     },
     {
       "word": "those",
       "level": "second",
       "class": "gap",
-      "handled_by": "deixis: no demonstrative field"
+      "handled_by": "deixis: no demonstrative field",
+      "assessed_against": "0.1.0",
+      "closed_in": "0.2.0"
     },
     {
       "word": "upon",
@@ -979,7 +1011,9 @@
       "word": "very",
       "level": "second",
       "class": "gap",
-      "handled_by": "intensifier: no degree field"
+      "handled_by": "intensifier: no degree field",
+      "assessed_against": "0.1.0",
+      "closed_in": "0.2.0"
     },
     {
       "word": "wash",
@@ -1024,6 +1058,236 @@
       "level": "second",
       "class": "function",
       "handled_by": "entity.possessor"
+    },
+    {
+      "word": "about",
+      "level": "third",
+      "class": "function",
+      "handled_by": "spatial.relation"
+    },
+    {
+      "word": "better",
+      "level": "third",
+      "class": "function",
+      "handled_by": "event.degree"
+    },
+    {
+      "word": "bring",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "carry",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "clean",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "cut",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "done",
+      "level": "third",
+      "class": "function",
+      "handled_by": "event.aspect",
+      "lemma": "do"
+    },
+    {
+      "word": "draw",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "drink",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "eight",
+      "level": "third",
+      "class": "function",
+      "handled_by": "entity.quantity"
+    },
+    {
+      "word": "fall",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "far",
+      "level": "third",
+      "class": "gap",
+      "handled_by": "distance: an attribute that takes a ground, and nothing holds both",
+      "assessed_against": "0.3.0"
+    },
+    {
+      "word": "full",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "got",
+      "level": "third",
+      "class": "content",
+      "lemma": "get"
+    },
+    {
+      "word": "grow",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "hold",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "hot",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "hurt",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "if",
+      "level": "third",
+      "class": "function",
+      "handled_by": "discourse.condition"
+    },
+    {
+      "word": "keep",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "kind",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "laugh",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "light",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "long",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "much",
+      "level": "third",
+      "class": "function",
+      "handled_by": "entity.quantifier"
+    },
+    {
+      "word": "myself",
+      "level": "third",
+      "class": "function",
+      "handled_by": "entity.coref"
+    },
+    {
+      "word": "never",
+      "level": "third",
+      "class": "function",
+      "handled_by": "event.frequency"
+    },
+    {
+      "word": "only",
+      "level": "third",
+      "class": "gap",
+      "handled_by": "focus particle: changes what is claimed and has no field",
+      "assessed_against": "0.3.0"
+    },
+    {
+      "word": "own",
+      "level": "third",
+      "class": "function",
+      "handled_by": "entity.possessor"
+    },
+    {
+      "word": "pick",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "seven",
+      "level": "third",
+      "class": "function",
+      "handled_by": "entity.quantity"
+    },
+    {
+      "word": "shall",
+      "level": "third",
+      "class": "gap",
+      "handled_by": "modality enum has no shall",
+      "assessed_against": "0.3.0"
+    },
+    {
+      "word": "show",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "six",
+      "level": "third",
+      "class": "function",
+      "handled_by": "entity.quantity"
+    },
+    {
+      "word": "small",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "start",
+      "level": "third",
+      "class": "gap",
+      "handled_by": "inceptive: aspect has no value for an event beginning",
+      "assessed_against": "0.3.0"
+    },
+    {
+      "word": "ten",
+      "level": "third",
+      "class": "function",
+      "handled_by": "entity.quantity"
+    },
+    {
+      "word": "today",
+      "level": "third",
+      "class": "function",
+      "handled_by": "setting.time"
+    },
+    {
+      "word": "together",
+      "level": "third",
+      "class": "gap",
+      "handled_by": "reciprocal with no partner named; comitative needs one",
+      "assessed_against": "0.3.0"
+    },
+    {
+      "word": "try",
+      "level": "third",
+      "class": "content"
+    },
+    {
+      "word": "warm",
+      "level": "third",
+      "class": "content"
     }
   ],
   "nouns": [

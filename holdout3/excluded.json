@@ -1,0 +1,20 @@
+[
+  {
+    "id": "k001",
+    "text": "Method, or a combination of the two.",
+    "source": "mcguffey-1",
+    "reason": "a fragment from the preface about teaching method; no predicate and no scene"
+  },
+  {
+    "id": "k017",
+    "text": "The summer day through.",
+    "source": "mcguffey-2",
+    "reason": "a verse line continuing the previous one; an adverbial with no predicate and no scene"
+  },
+  {
+    "id": "k023",
+    "text": "For poverty nor splendor.",
+    "source": "mcguffey-2",
+    "reason": "a verse fragment; a bare prepositional phrase with no predicate and no scene"
+  }
+]

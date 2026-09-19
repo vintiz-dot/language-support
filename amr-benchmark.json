@@ -1,0 +1,712 @@
+{
+  "gold_triples": 29,
+  "rule": {
+    "found": 29,
+    "right": 29,
+    "reversed": 0
+  },
+  "amr": {
+    "found": 27,
+    "right": 21,
+    "reversed": 0
+  },
+  "detail": [
+    {
+      "id": "g001",
+      "gold": [
+        [
+          "chase",
+          "dog",
+          "cat"
+        ]
+      ],
+      "rule": [
+        [
+          "chase",
+          "dog",
+          "cat"
+        ]
+      ],
+      "amr": [
+        [
+          "chase-01",
+          "dog",
+          "cat"
+        ]
+      ]
+    },
+    {
+      "id": "g001b",
+      "gold": [
+        [
+          "chase",
+          "cat",
+          "dog"
+        ]
+      ],
+      "rule": [
+        [
+          "chase",
+          "cat",
+          "dog"
+        ]
+      ],
+      "amr": [
+        [
+          "chase-01",
+          "cat",
+          "dog"
+        ]
+      ]
+    },
+    {
+      "id": "g004",
+      "gold": [
+        [
+          "have",
+          "speaker",
+          "dog"
+        ]
+      ],
+      "rule": [
+        [
+          "have",
+          "speaker",
+          "dog"
+        ]
+      ],
+      "amr": [
+        [
+          "have-03",
+          "i",
+          "dog"
+        ]
+      ]
+    },
+    {
+      "id": "g007",
+      "gold": [
+        [
+          "open",
+          "addressee",
+          "book"
+        ]
+      ],
+      "rule": [
+        [
+          "open",
+          "addressee",
+          "book"
+        ]
+      ],
+      "amr": [
+        [
+          "open-01",
+          "you",
+          "book"
+        ]
+      ]
+    },
+    {
+      "id": "g012",
+      "gold": [
+        [
+          "eat",
+          "girl",
+          "apple"
+        ]
+      ],
+      "rule": [
+        [
+          "eat",
+          "girl",
+          "apple"
+        ]
+      ],
+      "amr": [
+        [
+          "eat-01",
+          "girl",
+          "apple"
+        ]
+      ]
+    },
+    {
+      "id": "g013",
+      "gold": [
+        [
+          "eat",
+          "girl",
+          "apple"
+        ]
+      ],
+      "rule": [
+        [
+          "eat",
+          "girl",
+          "apple"
+        ]
+      ],
+      "amr": [
+        [
+          "eat-01",
+          "girl",
+          "apple"
+        ]
+      ]
+    },
+    {
+      "id": "g014",
+      "gold": [
+        [
+          "eat",
+          "person",
+          "cake"
+        ]
+      ],
+      "rule": [
+        [
+          "eat",
+          "person",
+          "cake"
+        ]
+      ],
+      "amr": [
+        [
+          "eat-01",
+          "she",
+          "cake"
+        ]
+      ]
+    },
+    {
+      "id": "g016",
+      "gold": [
+        [
+          "have",
+          "speaker",
+          "cat"
+        ]
+      ],
+      "rule": [
+        [
+          "have",
+          "speaker",
+          "cat"
+        ]
+      ],
+      "amr": [
+        [
+          "have-03",
+          "i",
+          "cat"
+        ]
+      ]
+    },
+    {
+      "id": "g018",
+      "gold": [
+        [
+          "open",
+          "addressee",
+          "door"
+        ]
+      ],
+      "rule": [
+        [
+          "open",
+          "addressee",
+          "door"
+        ]
+      ],
+      "amr": [
+        [
+          "open-01",
+          "you",
+          "door"
+        ]
+      ]
+    },
+    {
+      "id": "g022",
+      "gold": [
+        [
+          "eat",
+          "person",
+          "cake"
+        ]
+      ],
+      "rule": [
+        [
+          "eat",
+          "person",
+          "cake"
+        ]
+      ],
+      "amr": [
+        [
+          "eat-01",
+          "amr-unknown",
+          "cake"
+        ]
+      ]
+    },
+    {
+      "id": "g029",
+      "gold": [
+        [
+          "see",
+          "speaker",
+          "ball"
+        ]
+      ],
+      "rule": [
+        [
+          "see",
+          "speaker",
+          "ball"
+        ]
+      ],
+      "amr": [
+        [
+          "see-01",
+          "i",
+          "ball"
+        ]
+      ]
+    },
+    {
+      "id": "g031",
+      "gold": [
+        [
+          "have",
+          "person",
+          "book"
+        ]
+      ],
+      "rule": [
+        [
+          "have",
+          "person",
+          "book"
+        ]
+      ],
+      "amr": [
+        [
+          "have-03",
+          "she",
+          "book"
+        ]
+      ]
+    },
+    {
+      "id": "g038",
+      "gold": [
+        [
+          "have",
+          "person",
+          "ball"
+        ],
+        [
+          "kick",
+          "person",
+          "thing"
+        ]
+      ],
+      "rule": [
+        [
+          "have",
+          "person",
+          "ball"
+        ],
+        [
+          "kick",
+          "person",
+          "thing"
+        ]
+      ],
+      "amr": [
+        [
+          "have-03",
+          "person",
+          "ball"
+        ],
+        [
+          "kick-01",
+          "he",
+          "ball"
+        ]
+      ]
+    },
+    {
+      "id": "g039",
+      "gold": [
+        [
+          "see",
+          "girl",
+          "dog"
+        ]
+      ],
+      "rule": [
+        [
+          "see",
+          "girl",
+          "dog"
+        ]
+      ],
+      "amr": [
+        [
+          "see-01",
+          "girl",
+          "dog"
+        ]
+      ]
+    },
+    {
+      "id": "g040",
+      "gold": [
+        [
+          "give",
+          "mother",
+          "book"
+        ],
+        [
+          "read",
+          "speaker",
+          "thing"
+        ]
+      ],
+      "rule": [
+        [
+          "give",
+          "mother",
+          "book"
+        ],
+        [
+          "read",
+          "speaker",
+          "thing"
+        ]
+      ],
+      "amr": [
+        [
+          "give-01",
+          "person",
+          "book"
+        ],
+        [
+          "have-rel-role-91",
+          "person",
+          "i"
+        ],
+        [
+          "read-01",
+          "i",
+          "book"
+        ]
+      ]
+    },
+    {
+      "id": "g041",
+      "gold": [
+        [
+          "want",
+          "thing",
+          "food"
+        ]
+      ],
+      "rule": [
+        [
+          "want",
+          "thing",
+          "food"
+        ]
+      ],
+      "amr": [
+        [
+          "want-01",
+          "dog",
+          "food"
+        ]
+      ]
+    },
+    {
+      "id": "g043",
+      "gold": [
+        [
+          "wash",
+          "speaker",
+          "hand"
+        ]
+      ],
+      "rule": [
+        [
+          "wash",
+          "speaker",
+          "hand"
+        ]
+      ],
+      "amr": [
+        [
+          "wash-01",
+          "we",
+          "hand"
+        ]
+      ]
+    },
+    {
+      "id": "g045",
+      "gold": [
+        [
+          "like",
+          "speaker",
+          "apple"
+        ],
+        [
+          "like",
+          "speaker",
+          "pear"
+        ]
+      ],
+      "rule": [
+        [
+          "like",
+          "speaker",
+          "apple"
+        ],
+        [
+          "like",
+          "speaker",
+          "pear"
+        ]
+      ],
+      "amr": [
+        [
+          "like-01",
+          "i",
+          "apple"
+        ],
+        [
+          "dislike-01",
+          "i",
+          "apple"
+        ]
+      ]
+    },
+    {
+      "id": "g049",
+      "gold": [
+        [
+          "think",
+          "person",
+          "friend"
+        ]
+      ],
+      "rule": [
+        [
+          "think",
+          "person",
+          "friend"
+        ]
+      ],
+      "amr": [
+        [
+          "have-rel-role-91",
+          "person",
+          "she"
+        ]
+      ]
+    },
+    {
+      "id": "g050",
+      "gold": [
+        [
+          "look-after",
+          "person",
+          "sister"
+        ]
+      ],
+      "rule": [
+        [
+          "look-after",
+          "person",
+          "sister"
+        ]
+      ],
+      "amr": [
+        [
+          "look-after-07",
+          "he",
+          "person"
+        ],
+        [
+          "have-rel-role-91",
+          "person",
+          "he"
+        ]
+      ]
+    },
+    {
+      "id": "g051",
+      "gold": [
+        [
+          "want",
+          "speaker",
+          "cat"
+        ]
+      ],
+      "rule": [
+        [
+          "want",
+          "speaker",
+          "cat"
+        ]
+      ],
+      "amr": [
+        [
+          "want-01",
+          "i",
+          "cat"
+        ]
+      ]
+    },
+    {
+      "id": "g054",
+      "gold": [
+        [
+          "put",
+          "addressee",
+          "book"
+        ]
+      ],
+      "rule": [
+        [
+          "put",
+          "addressee",
+          "book"
+        ]
+      ],
+      "amr": [
+        [
+          "put-01",
+          "you",
+          "book"
+        ]
+      ]
+    },
+    {
+      "id": "g059",
+      "gold": [
+        [
+          "have",
+          "speaker",
+          "dog"
+        ]
+      ],
+      "rule": [
+        [
+          "have",
+          "speaker",
+          "dog"
+        ]
+      ],
+      "amr": [
+        [
+          "have-03",
+          "i",
+          "dog"
+        ]
+      ]
+    },
+    {
+      "id": "g065",
+      "gold": [
+        [
+          "eat",
+          "person",
+          "apple"
+        ]
+      ],
+      "rule": [
+        [
+          "eat",
+          "person",
+          "apple"
+        ]
+      ],
+      "amr": [
+        [
+          "eat-01",
+          "he",
+          "apple"
+        ]
+      ]
+    },
+    {
+      "id": "g077",
+      "gold": [
+        [
+          "like",
+          "speaker",
+          [
+            "bread",
+            "cheese"
+          ]
+        ]
+      ],
+      "rule": [
+        [
+          "like",
+          "speaker",
+          [
+            "bread",
+            "cheese"
+          ]
+        ]
+      ],
+      "amr": [
+        [
+          "like-01",
+          "i",
+          [
+            "bread",
+            "cheese"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "g078",
+      "gold": [
+        [
+          "have",
+          "addressee",
+          [
+            "milk",
+            "water"
+          ]
+        ]
+      ],
+      "rule": [
+        [
+          "have",
+          "addressee",
+          [
+            "milk",
+            "water"
+          ]
+        ]
+      ],
+      "amr": [
+        [
+          "have-03",
+          "you",
+          [
+            "milk",
+            "water"
+          ]
+        ]
+      ]
+    }
+  ]
+}

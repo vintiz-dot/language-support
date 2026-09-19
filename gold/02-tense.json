@@ -1,9 +1,16 @@
 [
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g009",
     "text": "The boy walks to school.",
-    "tokens": ["The", "boy", "walks", "to", "school", "."],
+    "tokens": [
+      "The",
+      "boy",
+      "walks",
+      "to",
+      "school",
+      "."
+    ],
     "pattern": "sv_locative",
     "entities": {
       "e1": {
@@ -13,15 +20,25 @@
         "animacy": "person",
         "gender": "male"
       },
-      "e2": { "concept": "school", "number": "sg", "animacy": "place" }
+      "e2": {
+        "concept": "school",
+        "number": "sg",
+        "animacy": "place"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "walk",
-        "roles": { "agent": "e1" },
+        "roles": {
+          "agent": "e1"
+        },
         "spatial": [
-          { "figure": "e1", "relation": "to", "ground": "e2" }
+          {
+            "figure": "e1",
+            "relation": "to",
+            "ground": "e2"
+          }
         ],
         "tense": "present",
         "aspect": "simple",
@@ -30,17 +47,41 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3] },
-      { "node": "e2", "tokens": [4] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4
+        ]
+      }
     ],
     "notes": "Present simple here is habitual, not now. The time strip should show it as repeated rather than as a single moment, or it collides with g012."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g010",
     "text": "The boy walked to school.",
-    "tokens": ["The", "boy", "walked", "to", "school", "."],
+    "tokens": [
+      "The",
+      "boy",
+      "walked",
+      "to",
+      "school",
+      "."
+    ],
     "pattern": "sv_locative",
     "entities": {
       "e1": {
@@ -50,15 +91,25 @@
         "animacy": "person",
         "gender": "male"
       },
-      "e2": { "concept": "school", "number": "sg", "animacy": "place" }
+      "e2": {
+        "concept": "school",
+        "number": "sg",
+        "animacy": "place"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "walk",
-        "roles": { "agent": "e1" },
+        "roles": {
+          "agent": "e1"
+        },
         "spatial": [
-          { "figure": "e1", "relation": "to", "ground": "e2" }
+          {
+            "figure": "e1",
+            "relation": "to",
+            "ground": "e2"
+          }
         ],
         "tense": "past",
         "aspect": "simple",
@@ -67,17 +118,44 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3] },
-      { "node": "e2", "tokens": [4] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4
+        ]
+      }
     ],
     "notes": "Minimal pair with g009. Only tense differs, so it is a ready-made tense distractor."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g011",
     "text": "The boy is going to walk to school.",
-    "tokens": ["The", "boy", "is", "going", "to", "walk", "to", "school", "."],
+    "tokens": [
+      "The",
+      "boy",
+      "is",
+      "going",
+      "to",
+      "walk",
+      "to",
+      "school",
+      "."
+    ],
     "pattern": "sv_locative",
     "entities": {
       "e1": {
@@ -87,15 +165,25 @@
         "animacy": "person",
         "gender": "male"
       },
-      "e2": { "concept": "school", "number": "sg", "animacy": "place" }
+      "e2": {
+        "concept": "school",
+        "number": "sg",
+        "animacy": "place"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "walk",
-        "roles": { "agent": "e1" },
+        "roles": {
+          "agent": "e1"
+        },
         "spatial": [
-          { "figure": "e1", "relation": "to", "ground": "e2" }
+          {
+            "figure": "e1",
+            "relation": "to",
+            "ground": "e2"
+          }
         ],
         "tense": "future",
         "aspect": "simple",
@@ -105,17 +193,45 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3, 4, 5, 6] },
-      { "node": "e2", "tokens": [7] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          7
+        ]
+      }
     ],
     "notes": "going to is a future marker, not motion. A parser that reads going as the predicate will draw the boy already walking, which is the error to catch here."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g012",
     "text": "The girl is eating an apple.",
-    "tokens": ["The", "girl", "is", "eating", "an", "apple", "."],
+    "tokens": [
+      "The",
+      "girl",
+      "is",
+      "eating",
+      "an",
+      "apple",
+      "."
+    ],
     "pattern": "svo",
     "entities": {
       "e1": {
@@ -125,13 +241,21 @@
         "animacy": "person",
         "gender": "female"
       },
-      "e2": { "concept": "apple", "number": "sg", "definite": false, "animacy": "object" }
+      "e2": {
+        "concept": "apple",
+        "number": "sg",
+        "definite": false,
+        "animacy": "object"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "eat",
-        "roles": { "agent": "e1", "patient": "e2" },
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
         "tense": "present",
         "aspect": "progressive",
         "polarity": "positive",
@@ -139,17 +263,43 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3] },
-      { "node": "e2", "tokens": [4, 5] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4,
+          5
+        ]
+      }
     ],
     "notes": "Progressive renders as a mid-action pose. The apple should be partly eaten, which is the visual cue distinguishing this from the simple aspect."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g013",
     "text": "The girl was eating an apple.",
-    "tokens": ["The", "girl", "was", "eating", "an", "apple", "."],
+    "tokens": [
+      "The",
+      "girl",
+      "was",
+      "eating",
+      "an",
+      "apple",
+      "."
+    ],
     "pattern": "svo",
     "entities": {
       "e1": {
@@ -159,13 +309,21 @@
         "animacy": "person",
         "gender": "female"
       },
-      "e2": { "concept": "apple", "number": "sg", "definite": false, "animacy": "object" }
+      "e2": {
+        "concept": "apple",
+        "number": "sg",
+        "definite": false,
+        "animacy": "object"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "eat",
-        "roles": { "agent": "e1", "patient": "e2" },
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
         "tense": "past",
         "aspect": "progressive",
         "polarity": "positive",
@@ -173,17 +331,41 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3] },
-      { "node": "e2", "tokens": [4, 5] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4,
+          5
+        ]
+      }
     ],
     "notes": "Tense and aspect vary independently. This is the cell that catches a renderer treating them as one combined dropdown."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g014",
     "text": "She ate the cake.",
-    "tokens": ["She", "ate", "the", "cake", "."],
+    "tokens": [
+      "She",
+      "ate",
+      "the",
+      "cake",
+      "."
+    ],
     "pattern": "svo",
     "entities": {
       "e1": {
@@ -193,13 +375,21 @@
         "number": "sg",
         "animacy": "person"
       },
-      "e2": { "concept": "cake", "number": "sg", "definite": true, "animacy": "object" }
+      "e2": {
+        "concept": "cake",
+        "number": "sg",
+        "definite": true,
+        "animacy": "object"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "eat",
-        "roles": { "agent": "e1", "patient": "e2" },
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
         "tense": "past",
         "aspect": "simple",
         "polarity": "positive",
@@ -207,9 +397,25 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0] },
-      { "node": "ev1", "tokens": [1] },
-      { "node": "e2", "tokens": [2, 3] }
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          2,
+          3
+        ]
+      }
     ],
     "review": [
       {

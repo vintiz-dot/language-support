@@ -1,0 +1,639 @@
+{
+  "gold_triples": 27,
+  "rule": {
+    "found": 18,
+    "right": 17,
+    "reversed": 0
+  },
+  "amr": {
+    "found": 20,
+    "right": 17,
+    "reversed": 0
+  },
+  "detail": [
+    {
+      "id": "k002",
+      "gold": [
+        [
+          "leave",
+          "person",
+          "nest"
+        ]
+      ],
+      "rule": [
+        [
+          "leave",
+          "person",
+          "nest"
+        ]
+      ],
+      "amr": [
+        [
+          "leave-11",
+          "she",
+          "nest"
+        ]
+      ]
+    },
+    {
+      "id": "k003",
+      "gold": [
+        [
+          "hand.give",
+          "person",
+          "whip"
+        ]
+      ],
+      "rule": [
+        [
+          "hand",
+          "person",
+          "whip"
+        ]
+      ],
+      "amr": [
+        [
+          "say-01",
+          "i",
+          "hand-01"
+        ],
+        [
+          "hand-01",
+          "person",
+          "whip"
+        ]
+      ]
+    },
+    {
+      "id": "k004",
+      "gold": [
+        [
+          "look-at",
+          [
+            "person",
+            "person",
+            "person",
+            "person",
+            "person"
+          ],
+          "duck"
+        ]
+      ],
+      "rule": [],
+      "amr": [
+        [
+          "look-01",
+          [
+            "person",
+            "person",
+            "person",
+            "person",
+            "person"
+          ],
+          "duck"
+        ]
+      ]
+    },
+    {
+      "id": "k005",
+      "gold": [
+        [
+          "toss",
+          "addressee",
+          "thing"
+        ]
+      ],
+      "rule": [
+        [
+          "toss",
+          "addressee",
+          "thing"
+        ]
+      ],
+      "amr": [
+        [
+          "toss-01",
+          "you",
+          "it"
+        ]
+      ]
+    },
+    {
+      "id": "k006",
+      "gold": [
+        [
+          "see",
+          [
+            "person",
+            "person"
+          ],
+          "person"
+        ]
+      ],
+      "rule": [],
+      "amr": [
+        [
+          "glad-02",
+          "see-01",
+          [
+            "person",
+            "person"
+          ]
+        ],
+        [
+          "see-01",
+          [
+            "person",
+            "person"
+          ],
+          "person"
+        ]
+      ]
+    },
+    {
+      "id": "k009",
+      "gold": [
+        [
+          "listen-to",
+          [
+            "person",
+            "person"
+          ],
+          "person"
+        ]
+      ],
+      "rule": [
+        [
+          "listen-to",
+          [
+            "person",
+            "person"
+          ],
+          "person"
+        ]
+      ],
+      "amr": [
+        [
+          "listen-01",
+          [
+            "person",
+            "person"
+          ],
+          "person"
+        ]
+      ]
+    },
+    {
+      "id": "k010",
+      "gold": [
+        [
+          "see",
+          "addressee",
+          [
+            "boy",
+            "girl"
+          ]
+        ]
+      ],
+      "rule": [
+        [
+          "see",
+          "addressee",
+          [
+            "boy",
+            "girl"
+          ]
+        ]
+      ],
+      "amr": [
+        [
+          "see-01",
+          "you",
+          [
+            "boy",
+            "girl"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "k012",
+      "gold": [
+        [
+          "find",
+          "person",
+          "bread"
+        ]
+      ],
+      "rule": [
+        [
+          "find",
+          "person",
+          "piece"
+        ]
+      ],
+      "amr": [
+        [
+          "find-01",
+          "she",
+          "piece"
+        ]
+      ]
+    },
+    {
+      "id": "k015",
+      "gold": [
+        [
+          "scatter",
+          "addressee",
+          "light"
+        ]
+      ],
+      "rule": [],
+      "amr": []
+    },
+    {
+      "id": "k022",
+      "gold": [
+        [
+          "happen",
+          "person",
+          "thing"
+        ]
+      ],
+      "rule": [],
+      "amr": []
+    },
+    {
+      "id": "k025",
+      "gold": [
+        [
+          "find",
+          "speaker",
+          "thing"
+        ]
+      ],
+      "rule": [
+        [
+          "find",
+          "speaker",
+          "thing"
+        ]
+      ],
+      "amr": [
+        [
+          "cause-01",
+          "amr-unknown",
+          "know-01"
+        ],
+        [
+          "know-01",
+          "i",
+          "thing"
+        ],
+        [
+          "find-01",
+          "i",
+          "thing"
+        ]
+      ]
+    },
+    {
+      "id": "k026",
+      "gold": [
+        [
+          "pay",
+          "person",
+          "glass"
+        ]
+      ],
+      "rule": [
+        [
+          "pay",
+          "person",
+          "glass"
+        ]
+      ],
+      "amr": [
+        [
+          "wish-01",
+          "he",
+          "pay-01"
+        ]
+      ]
+    },
+    {
+      "id": "k029",
+      "gold": [
+        [
+          "speak",
+          "speaker",
+          "word"
+        ]
+      ],
+      "rule": [
+        [
+          "speak",
+          "speaker",
+          "word"
+        ]
+      ],
+      "amr": [
+        [
+          "speak-01",
+          "we",
+          "word"
+        ]
+      ]
+    },
+    {
+      "id": "k030",
+      "gold": [
+        [
+          "drink",
+          "cow",
+          "water"
+        ],
+        [
+          "need",
+          "sheep",
+          "crook"
+        ]
+      ],
+      "rule": [
+        [
+          "drink",
+          "cow",
+          "water"
+        ],
+        [
+          "need",
+          "sheep",
+          "crook"
+        ]
+      ],
+      "amr": [
+        [
+          "drink-01",
+          "cow",
+          "water"
+        ],
+        [
+          "need-01",
+          "sheep",
+          "crook"
+        ]
+      ]
+    },
+    {
+      "id": "k031",
+      "gold": [
+        [
+          "see",
+          "speaker",
+          "rain"
+        ]
+      ],
+      "rule": [],
+      "amr": [
+        [
+          "glad-02",
+          "see-01",
+          "i"
+        ],
+        [
+          "see-01",
+          "i",
+          "fall-01"
+        ]
+      ]
+    },
+    {
+      "id": "k033",
+      "gold": [
+        [
+          "see",
+          "person",
+          "thing"
+        ]
+      ],
+      "rule": [
+        [
+          "see",
+          "person",
+          "thing"
+        ]
+      ],
+      "amr": [
+        [
+          "cause-01",
+          "see-01",
+          "grow-02"
+        ],
+        [
+          "see-01",
+          "he",
+          "it"
+        ]
+      ]
+    },
+    {
+      "id": "k035",
+      "gold": [
+        [
+          "adorn",
+          "shade",
+          "breast"
+        ]
+      ],
+      "rule": [
+        [
+          "adorn",
+          "shade",
+          "breast"
+        ]
+      ],
+      "amr": []
+    },
+    {
+      "id": "k036",
+      "gold": [
+        [
+          "take",
+          "person",
+          "thing"
+        ]
+      ],
+      "rule": [
+        [
+          "take",
+          "person",
+          "thing"
+        ]
+      ],
+      "amr": [
+        [
+          "take-01",
+          "he",
+          "they"
+        ]
+      ]
+    },
+    {
+      "id": "k040",
+      "gold": [
+        [
+          "open",
+          "frost",
+          "bur"
+        ]
+      ],
+      "rule": [
+        [
+          "open",
+          "frost",
+          "bur"
+        ]
+      ],
+      "amr": [
+        [
+          "open-01",
+          "frost",
+          "burs"
+        ]
+      ]
+    },
+    {
+      "id": "k042",
+      "gold": [
+        [
+          "save",
+          "addressee",
+          "credit"
+        ],
+        [
+          "throw",
+          "addressee",
+          "thing"
+        ]
+      ],
+      "rule": [],
+      "amr": [
+        [
+          "save-01",
+          "you",
+          "credit-01"
+        ],
+        [
+          "throw-01",
+          "you",
+          "credit-01"
+        ]
+      ]
+    },
+    {
+      "id": "k044",
+      "gold": [
+        [
+          "do",
+          "addressee",
+          "thing"
+        ]
+      ],
+      "rule": [
+        [
+          "do",
+          "addressee",
+          "thing"
+        ]
+      ],
+      "amr": [
+        [
+          "do-02",
+          "you",
+          "amr-unknown"
+        ]
+      ]
+    },
+    {
+      "id": "k045",
+      "gold": [
+        [
+          "have",
+          "addressee",
+          "plaything"
+        ]
+      ],
+      "rule": [],
+      "amr": []
+    },
+    {
+      "id": "k046",
+      "gold": [
+        [
+          "have",
+          "speaker",
+          "thing"
+        ]
+      ],
+      "rule": [
+        [
+          "have",
+          "speaker",
+          "one"
+        ]
+      ],
+      "amr": [
+        [
+          "have-03",
+          "i",
+          "one"
+        ]
+      ]
+    },
+    {
+      "id": "k049",
+      "gold": [
+        [
+          "alter",
+          "speaker",
+          "mark"
+        ],
+        [
+          "put",
+          "addressee",
+          "mark"
+        ]
+      ],
+      "rule": [
+        [
+          "alter",
+          "speaker",
+          "mark"
+        ]
+      ],
+      "amr": [
+        [
+          "deserve-01",
+          "i",
+          "punish-01"
+        ],
+        [
+          "cause-01",
+          "alter-01",
+          "deserve-01"
+        ],
+        [
+          "alter-01",
+          "i",
+          "mark"
+        ],
+        [
+          "put-01",
+          "you",
+          "mark"
+        ]
+      ]
+    }
+  ]
+}

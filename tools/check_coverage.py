@@ -1,4 +1,4 @@
-"""Measure how much Grade 1-2 vocabulary ARASAAC can actually draw.
+"""Measure how much Grade 1-3 vocabulary ARASAAC can actually draw.
 
 A search returning results is not coverage. ARASAAC's search is fuzzy, so asking for
 "hungry" can return food pictograms. Coverage here means a returned pictogram carries
@@ -7,7 +7,7 @@ the search term as an exact keyword; anything else is a near miss a human has to
 Two sources:
 
     python tools/check_coverage.py gold     concepts the gold set actually asks for
-    python tools/check_coverage.py dolch    a standard Grade 1-2 sight word list
+    python tools/check_coverage.py dolch    a standard Grade 1-3 sight word list
 
 The gold run is a floor check on a sample this project chose itself, so it is biased
 toward concrete nouns. The Dolch run is the real measurement, and it splits the list
@@ -232,9 +232,16 @@ def cmd_dolch():
     report(rows, "all words needing a symbol")
 
     print()
-    print(f"schema gaps found: {len(gaps)} words with no home in 0.1.0")
-    for entry in gaps:
-        print(f"  {entry['word']:<10} {entry['handled_by']}")
+    still_open = [entry for entry in gaps if "closed_in" not in entry]
+    closed = [entry for entry in gaps if "closed_in" in entry]
+    print(f"schema gaps: {len(still_open)} still open, {len(closed)} closed since first measured")
+    for entry in still_open:
+        print(f"  {entry['word']:<10} ({entry['level']}) {entry['handled_by']}")
+    if closed:
+        print()
+        print("  closed:")
+        for entry in closed:
+            print(f"    {entry['word']:<10} {entry['closed_in']}")
 
     print()
     print(f"written to {out.relative_to(ROOT)}")

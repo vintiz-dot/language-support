@@ -1,9 +1,17 @@
 [
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g047",
     "text": "It is raining cats and dogs.",
-    "tokens": ["It", "is", "raining", "cats", "and", "dogs", "."],
+    "tokens": [
+      "It",
+      "is",
+      "raining",
+      "cats",
+      "and",
+      "dogs",
+      "."
+    ],
     "pattern": "other",
     "entities": {},
     "events": [
@@ -17,7 +25,17 @@
       }
     ],
     "alignment": [
-      { "node": "ev1", "tokens": [0, 1, 2, 3, 4, 5] }
+      {
+        "node": "ev1",
+        "tokens": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
     ],
     "review": [
       {
@@ -30,22 +48,46 @@
     "notes": "The worst available failure: a literal render puts falling animals in the sky and teaches the child that the idiom is a description. Zero entities is correct and is why the schema permits an empty entity map. A multi-word expression lexicon has to run before role assignment, not after."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g048",
     "text": "The bat flew into the cave.",
-    "tokens": ["The", "bat", "flew", "into", "the", "cave", "."],
+    "tokens": [
+      "The",
+      "bat",
+      "flew",
+      "into",
+      "the",
+      "cave",
+      "."
+    ],
     "pattern": "sv_locative",
     "entities": {
-      "e1": { "concept": "bat.animal", "number": "sg", "definite": true, "animacy": "animal" },
-      "e2": { "concept": "cave", "number": "sg", "definite": true, "animacy": "place" }
+      "e1": {
+        "concept": "bat.animal",
+        "number": "sg",
+        "definite": true,
+        "animacy": "animal"
+      },
+      "e2": {
+        "concept": "cave",
+        "number": "sg",
+        "definite": true,
+        "animacy": "place"
+      }
     },
     "events": [
       {
         "id": "ev1",
         "predicate": "fly",
-        "roles": { "agent": "e1" },
+        "roles": {
+          "agent": "e1"
+        },
         "spatial": [
-          { "figure": "e1", "relation": "into", "ground": "e2" }
+          {
+            "figure": "e1",
+            "relation": "into",
+            "ground": "e2"
+          }
         ],
         "tense": "past",
         "aspect": "simple",
@@ -54,26 +96,54 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0, 1] },
-      { "node": "ev1", "tokens": [2, 3] },
-      { "node": "e2", "tokens": [4, 5] }
+      {
+        "node": "e1",
+        "tokens": [
+          0,
+          1
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          2,
+          3
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          4,
+          5
+        ]
+      }
     ],
     "review": [
       {
         "node": "e1",
         "reason": "sense_ambiguous",
         "score": 0.7,
-        "options": ["bat.animal", "bat.sport"],
+        "options": [
+          "bat.animal",
+          "bat.sport"
+        ],
         "message": "Resolved by fly and cave. A lexicon-only lookup that takes the first sense gets this wrong."
       }
     ],
     "notes": "Word sense disambiguation with enough context to resolve it. Flagged anyway, because the gold answer is only useful if it also records how a system could miss it. Selectional preference on the predicate is the cheap fix: fly takes animate agents."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g049",
     "text": "She thinks about her friend.",
-    "tokens": ["She", "thinks", "about", "her", "friend", "."],
+    "tokens": [
+      "She",
+      "thinks",
+      "about",
+      "her",
+      "friend",
+      "."
+    ],
     "pattern": "svo",
     "entities": {
       "e1": {
@@ -95,7 +165,10 @@
       {
         "id": "ev1",
         "predicate": "think",
-        "roles": { "experiencer": "e1", "theme": "e2" },
+        "roles": {
+          "experiencer": "e1",
+          "theme": "e2"
+        },
         "tense": "present",
         "aspect": "simple",
         "polarity": "positive",
@@ -103,9 +176,26 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0] },
-      { "node": "ev1", "tokens": [1, 2] },
-      { "node": "e2", "tokens": [3, 4] }
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3,
+          4
+        ]
+      }
     ],
     "review": [
       {
@@ -118,10 +208,17 @@
     "notes": "The abstract vocabulary problem in its mildest form. think, want, know and feel all need one documented convention applied consistently, and the convention itself has to be taught before it carries meaning."
   },
   {
-    "schema_version": "0.3.0",
+    "schema_version": "0.4.0",
     "id": "g050",
     "text": "He looked after his sister.",
-    "tokens": ["He", "looked", "after", "his", "sister", "."],
+    "tokens": [
+      "He",
+      "looked",
+      "after",
+      "his",
+      "sister",
+      "."
+    ],
     "pattern": "svo",
     "entities": {
       "e1": {
@@ -144,7 +241,10 @@
       {
         "id": "ev1",
         "predicate": "look-after",
-        "roles": { "agent": "e1", "patient": "e2" },
+        "roles": {
+          "agent": "e1",
+          "patient": "e2"
+        },
         "tense": "past",
         "aspect": "simple",
         "polarity": "positive",
@@ -152,9 +252,26 @@
       }
     ],
     "alignment": [
-      { "node": "e1", "tokens": [0] },
-      { "node": "ev1", "tokens": [1, 2] },
-      { "node": "e2", "tokens": [3, 4] }
+      {
+        "node": "e1",
+        "tokens": [
+          0
+        ]
+      },
+      {
+        "node": "ev1",
+        "tokens": [
+          1,
+          2
+        ]
+      },
+      {
+        "node": "e2",
+        "tokens": [
+          3,
+          4
+        ]
+      }
     ],
     "review": [
       {
